@@ -82,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,6 +96,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DMMMSU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DMMMSU_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
