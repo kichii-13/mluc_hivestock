@@ -68,6 +68,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserView_ProductCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserView_ProductCatalog.Designer.cs">
+      <DependentUpon>UserView_ProductCatalog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CRUD.resx">
       <DependentUpon>CRUD.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserView_ProductCatalog.resx">
+      <DependentUpon>UserView_ProductCatalog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,43 +107,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\id.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\password.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\account.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\password1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\account1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\password2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\acc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\password_icon.png" />
+    <None Include="Resources\dmmmsu_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\profile_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg_login.png" />
+    <None Include="Resources\account.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\login_bg.png" />
+    <None Include="Resources\padlock.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DMMMSU.png" />
+    <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DMMMSU_logo.png" />
+    <None Include="Resources\dmmmsu_logo_w_outline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

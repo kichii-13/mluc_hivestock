@@ -63,16 +63,6 @@ namespace LogIn_HiveStock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap acc {
-            get {
-                object obj = ResourceManager.GetObject("acc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap account {
             get {
                 object obj = ResourceManager.GetObject("account", resourceCulture);
@@ -83,9 +73,9 @@ namespace LogIn_HiveStock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap account1 {
+        internal static System.Drawing.Bitmap dmmmsu_logo {
             get {
-                object obj = ResourceManager.GetObject("account1", resourceCulture);
+                object obj = ResourceManager.GetObject("dmmmsu_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +83,9 @@ namespace LogIn_HiveStock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_login {
+        internal static System.Drawing.Bitmap dmmmsu_logo_w_outline {
             get {
-                object obj = ResourceManager.GetObject("bg_login", resourceCulture);
+                object obj = ResourceManager.GetObject("dmmmsu_logo_w_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +93,9 @@ namespace LogIn_HiveStock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DMMMSU {
+        internal static System.Drawing.Bitmap login {
             get {
-                object obj = ResourceManager.GetObject("DMMMSU", resourceCulture);
+                object obj = ResourceManager.GetObject("login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,69 +103,9 @@ namespace LogIn_HiveStock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DMMMSU_logo {
+        internal static System.Drawing.Bitmap padlock {
             get {
-                object obj = ResourceManager.GetObject("DMMMSU_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap id {
-            get {
-                object obj = ResourceManager.GetObject("id", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap login_bg {
-            get {
-                object obj = ResourceManager.GetObject("login_bg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap password {
-            get {
-                object obj = ResourceManager.GetObject("password", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap password_icon {
-            get {
-                object obj = ResourceManager.GetObject("password_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap password1 {
-            get {
-                object obj = ResourceManager.GetObject("password1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap password2 {
-            get {
-                object obj = ResourceManager.GetObject("password2", resourceCulture);
+                object obj = ResourceManager.GetObject("padlock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
