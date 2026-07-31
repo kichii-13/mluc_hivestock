@@ -96,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserView_ProductCatalog.resx">
       <DependentUpon>UserView_ProductCatalog.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dmmmsu_logo_w_outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dmmmsu_logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
