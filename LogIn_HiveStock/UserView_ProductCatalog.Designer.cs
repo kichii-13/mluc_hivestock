@@ -126,6 +126,7 @@
             this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.LogIn_Button.Location = new System.Drawing.Point(1097, 23);
             this.LogIn_Button.Name = "LogIn_Button";
             this.LogIn_Button.Size = new System.Drawing.Size(136, 38);

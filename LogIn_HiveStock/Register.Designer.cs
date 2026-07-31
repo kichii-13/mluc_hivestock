@@ -344,6 +344,7 @@
             this.AccountInfo_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.AccountInfo_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountInfo_Button.ForeColor = System.Drawing.Color.White;
+            this.AccountInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.AccountInfo_Button.Location = new System.Drawing.Point(467, 232);
             this.AccountInfo_Button.Name = "AccountInfo_Button";
             this.AccountInfo_Button.Size = new System.Drawing.Size(127, 29);
@@ -361,6 +362,7 @@
             this.PersonalInfo_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.PersonalInfo_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PersonalInfo_Button.ForeColor = System.Drawing.Color.White;
+            this.PersonalInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.PersonalInfo_Button.Location = new System.Drawing.Point(467, 110);
             this.PersonalInfo_Button.Name = "PersonalInfo_Button";
             this.PersonalInfo_Button.Size = new System.Drawing.Size(127, 29);
@@ -530,6 +532,7 @@
             this.Cancel_Button.FillColor = System.Drawing.Color.Gray;
             this.Cancel_Button.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel_Button.ForeColor = System.Drawing.Color.Black;
+            this.Cancel_Button.HoverState.FillColor = System.Drawing.Color.Gray;
             this.Cancel_Button.Location = new System.Drawing.Point(334, 19);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(127, 36);
@@ -548,6 +551,7 @@
             this.Register_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.Register_Button.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register_Button.ForeColor = System.Drawing.Color.Black;
+            this.Register_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.Register_Button.Location = new System.Drawing.Point(467, 19);
             this.Register_Button.Name = "Register_Button";
             this.Register_Button.Size = new System.Drawing.Size(127, 36);
