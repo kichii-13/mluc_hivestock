@@ -118,6 +118,7 @@
             // LogIn_Button
             // 
             this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -146,9 +147,10 @@
             // MLUC
             // 
             this.MLUC.AutoSize = true;
+            this.MLUC.BackColor = System.Drawing.Color.Transparent;
             this.MLUC.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.MLUC.Location = new System.Drawing.Point(101, 13);
+            this.MLUC.Location = new System.Drawing.Point(102, 17);
             this.MLUC.Name = "MLUC";
             this.MLUC.Size = new System.Drawing.Size(107, 15);
             this.MLUC.TabIndex = 2;
@@ -265,6 +267,7 @@
             // BuyNow4_Button
             // 
             this.BuyNow4_Button.BorderRadius = 8;
+            this.BuyNow4_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuyNow4_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow4_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow4_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -310,6 +313,7 @@
             // Notify4_Button
             // 
             this.Notify4_Button.BorderRadius = 8;
+            this.Notify4_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Notify4_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Notify4_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Notify4_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -391,6 +395,7 @@
             // BuyNow3_Button
             // 
             this.BuyNow3_Button.BorderRadius = 8;
+            this.BuyNow3_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuyNow3_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow3_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow3_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -437,6 +442,7 @@
             // Notify3_Button
             // 
             this.Notify3_Button.BorderRadius = 8;
+            this.Notify3_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Notify3_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Notify3_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Notify3_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -517,6 +523,7 @@
             // BuyNow2_Button
             // 
             this.BuyNow2_Button.BorderRadius = 8;
+            this.BuyNow2_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuyNow2_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow2_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow2_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -562,6 +569,7 @@
             // Notify2_Button
             // 
             this.Notify2_Button.BorderRadius = 8;
+            this.Notify2_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Notify2_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Notify2_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Notify2_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -643,6 +651,7 @@
             // BuyNow1_Button
             // 
             this.BuyNow1_Button.BorderRadius = 8;
+            this.BuyNow1_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuyNow1_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow1_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BuyNow1_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -688,6 +697,7 @@
             // Notify1_Button
             // 
             this.Notify1_Button.BorderRadius = 8;
+            this.Notify1_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Notify1_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Notify1_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Notify1_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

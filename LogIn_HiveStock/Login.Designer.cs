@@ -122,6 +122,7 @@
             this.SignUp_Hyperlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.SignUp_Hyperlink.AutoSize = true;
             this.SignUp_Hyperlink.BackColor = System.Drawing.Color.Transparent;
+            this.SignUp_Hyperlink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignUp_Hyperlink.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUp_Hyperlink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.SignUp_Hyperlink.Location = new System.Drawing.Point(232, 13);
@@ -222,6 +223,7 @@
             // LogIn_Button
             // 
             this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

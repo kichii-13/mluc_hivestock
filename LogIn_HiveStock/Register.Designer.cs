@@ -336,6 +336,7 @@
             // AccountInfo_Button
             // 
             this.AccountInfo_Button.BorderRadius = 5;
+            this.AccountInfo_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AccountInfo_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.AccountInfo_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.AccountInfo_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -352,6 +353,7 @@
             // PersonalInfo_Button
             // 
             this.PersonalInfo_Button.BorderRadius = 5;
+            this.PersonalInfo_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PersonalInfo_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.PersonalInfo_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.PersonalInfo_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -520,6 +522,7 @@
             // 
             this.Cancel_Button.BackColor = System.Drawing.Color.Transparent;
             this.Cancel_Button.BorderRadius = 5;
+            this.Cancel_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cancel_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Cancel_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Cancel_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -537,6 +540,7 @@
             // 
             this.Register_Button.BackColor = System.Drawing.Color.Transparent;
             this.Register_Button.BorderRadius = 5;
+            this.Register_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Register_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Register_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Register_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -555,6 +559,7 @@
             this.LogIn_Hyperlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
             this.LogIn_Hyperlink.AutoSize = true;
             this.LogIn_Hyperlink.BackColor = System.Drawing.Color.Transparent;
+            this.LogIn_Hyperlink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogIn_Hyperlink.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Hyperlink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.LogIn_Hyperlink.Location = new System.Drawing.Point(221, 26);
