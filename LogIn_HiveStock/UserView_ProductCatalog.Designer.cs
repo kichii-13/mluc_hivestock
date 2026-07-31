@@ -28,586 +28,833 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Header_Panel = new System.Windows.Forms.Panel();
+            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
+            this.MarketingCenter = new System.Windows.Forms.Label();
+            this.MLUC = new System.Windows.Forms.Label();
+            this.Search_Label = new System.Windows.Forms.Label();
+            this.Search_Input = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Filter_Dropdown = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.LogIn_Icon = new System.Windows.Forms.PictureBox();
+            this.Items_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Books_Label = new System.Windows.Forms.Label();
+            this.Book1_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.Book1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book1_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.Book1Title_Label = new System.Windows.Forms.Label();
+            this.Book1Info_Label = new System.Windows.Forms.Label();
+            this.Status1_Label = new System.Windows.Forms.Label();
+            this.Stock1_Status = new System.Windows.Forms.Label();
+            this.Price1_Label = new System.Windows.Forms.Label();
+            this.PricePeso1_Label = new System.Windows.Forms.Label();
+            this.Notify1_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.BuyNow1_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Book2_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.Book2_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.BuyNow2_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.PricePeso2_Label = new System.Windows.Forms.Label();
+            this.Price2_Label = new System.Windows.Forms.Label();
+            this.Stock2_Status = new System.Windows.Forms.Label();
+            this.Notify2_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Status2_Label = new System.Windows.Forms.Label();
+            this.Book2Info_Label = new System.Windows.Forms.Label();
+            this.Book2Title_Label = new System.Windows.Forms.Label();
+            this.Book2_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book4_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.Book4_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.BuyNow4_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.PricePeso4_Label = new System.Windows.Forms.Label();
+            this.Price4_Label = new System.Windows.Forms.Label();
+            this.Stock4_Status = new System.Windows.Forms.Label();
+            this.Notify4_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Status4_Label = new System.Windows.Forms.Label();
+            this.Book4Info_Label = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book3_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.Book3_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.BuyNow3_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.PricePeso3_Label = new System.Windows.Forms.Label();
+            this.Price3_Label = new System.Windows.Forms.Label();
+            this.Stock3_Status = new System.Windows.Forms.Label();
+            this.Notify3_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Status3_Label = new System.Windows.Forms.Label();
+            this.Book3Info_Label = new System.Windows.Forms.Label();
+            this.Book3Title_Label = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book4Title_Label = new System.Windows.Forms.Label();
+            this.Header_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogIn_Icon)).BeginInit();
+            this.Items_Panel.SuspendLayout();
+            this.Book1_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).BeginInit();
+            this.Book1_Information.SuspendLayout();
+            this.Book2_Container.SuspendLayout();
+            this.Book2_Information.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).BeginInit();
+            this.Book4_Container.SuspendLayout();
+            this.Book4_Information.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.Book3_Container.SuspendLayout();
+            this.Book3_Information.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // Header_Panel
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-7, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 79);
-            this.panel1.TabIndex = 0;
+            this.Header_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Header_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Header_Panel.Controls.Add(this.LogIn_Icon);
+            this.Header_Panel.Controls.Add(this.LogIn_Button);
+            this.Header_Panel.Controls.Add(this.DMMMSU_Logo);
+            this.Header_Panel.Controls.Add(this.MarketingCenter);
+            this.Header_Panel.Controls.Add(this.MLUC);
+            this.Header_Panel.Location = new System.Drawing.Point(-7, 0);
+            this.Header_Panel.Name = "Header_Panel";
+            this.Header_Panel.Size = new System.Drawing.Size(1272, 79);
+            this.Header_Panel.TabIndex = 0;
             // 
-            // pictureBox2
+            // DMMMSU_Logo
             // 
-            this.pictureBox2.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo_w_outline;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.DMMMSU_Logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo_w_outline;
+            this.DMMMSU_Logo.Location = new System.Drawing.Point(34, 9);
+            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
+            this.DMMMSU_Logo.Size = new System.Drawing.Size(65, 65);
+            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DMMMSU_Logo.TabIndex = 4;
+            this.DMMMSU_Logo.TabStop = false;
             // 
-            // label2
+            // MarketingCenter
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label2.Location = new System.Drawing.Point(98, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(318, 41);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "MARKETING CENTER";
+            this.MarketingCenter.AutoSize = true;
+            this.MarketingCenter.BackColor = System.Drawing.Color.Transparent;
+            this.MarketingCenter.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MarketingCenter.Location = new System.Drawing.Point(98, 29);
+            this.MarketingCenter.Name = "MarketingCenter";
+            this.MarketingCenter.Size = new System.Drawing.Size(253, 32);
+            this.MarketingCenter.TabIndex = 3;
+            this.MarketingCenter.Text = "MARKETING CENTER";
             // 
-            // label1
+            // MLUC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label1.Location = new System.Drawing.Point(101, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DMMMSU MLUC";
+            this.MLUC.AutoSize = true;
+            this.MLUC.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MLUC.Location = new System.Drawing.Point(101, 13);
+            this.MLUC.Name = "MLUC";
+            this.MLUC.Size = new System.Drawing.Size(107, 15);
+            this.MLUC.TabIndex = 2;
+            this.MLUC.Text = "DMMMSU MLUC";
             // 
-            // pictureBox1
+            // Search_Label
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::LogIn_HiveStock.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(1119, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.Search_Label.AutoSize = true;
+            this.Search_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Search_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_Label.Location = new System.Drawing.Point(803, 102);
+            this.Search_Label.Name = "Search_Label";
+            this.Search_Label.Size = new System.Drawing.Size(46, 15);
+            this.Search_Label.TabIndex = 7;
+            this.Search_Label.Text = "Search";
+            this.Search_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // Search_Input
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1097, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Log In   ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Search_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Search_Input.BorderRadius = 10;
+            this.Search_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Search_Input.DefaultText = "";
+            this.Search_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Search_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Search_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Search_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Search_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Search_Input.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_Input.ForeColor = System.Drawing.Color.Black;
+            this.Search_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Search_Input.Location = new System.Drawing.Point(855, 90);
+            this.Search_Input.Name = "Search_Input";
+            this.Search_Input.PlaceholderText = "Products";
+            this.Search_Input.SelectedText = "";
+            this.Search_Input.Size = new System.Drawing.Size(229, 36);
+            this.Search_Input.TabIndex = 8;
             // 
-            // comboBox1
+            // Filter_Dropdown
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.comboBox1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Uniform",
+            this.Filter_Dropdown.BackColor = System.Drawing.Color.Transparent;
+            this.Filter_Dropdown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Filter_Dropdown.BorderRadius = 10;
+            this.Filter_Dropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Filter_Dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Filter_Dropdown.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Filter_Dropdown.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Filter_Dropdown.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filter_Dropdown.ForeColor = System.Drawing.Color.Black;
+            this.Filter_Dropdown.ItemHeight = 30;
+            this.Filter_Dropdown.Items.AddRange(new object[] {
+            "Filter",
             "Books",
-            "Lanyard"});
-            this.comboBox1.Location = new System.Drawing.Point(1090, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 28);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Filter";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel2.AutoScroll = true;
-            this.panel2.AutoScrollMinSize = new System.Drawing.Size(0, 800);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(0, 136);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1265, 538);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(27, 63);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(282, 381);
-            this.panel3.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(47, 327);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 38);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Notify me";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 45);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Books";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(862, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 27);
-            this.textBox1.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(798, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Search";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.pictureBox3.Location = new System.Drawing.Point(47, 13);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(190, 190);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(65, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Art Appreciation";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 295);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Status:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.label7.Location = new System.Drawing.Point(72, 295);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "In Stock";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(171, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 20);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Price: ₱250";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 234);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(269, 34);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "A course book covering the fundamentals \r\nof art, culture, and creative expressio" +
-    "n.";
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(328, 63);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(282, 381);
-            this.panel4.TabIndex = 7;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 234);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(268, 51);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Explores the life, works, and contributions \r\nof Dr. José Rizal to Philippine his" +
-    "tory \r\nand nationalism.";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(171, 295);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 20);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Price: ₱250";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(72, 295);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 20);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Low Stock";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(20, 295);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 20);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Status:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(2, 206);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(276, 23);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "The Life and Works of Jose Rizal";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.pictureBox4.Location = new System.Drawing.Point(47, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(190, 190);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(47, 327);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(190, 38);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Notify me";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.label16);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label19);
-            this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(630, 63);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(282, 381);
-            this.panel5.TabIndex = 7;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(25, 234);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 51);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Examines major global issues, trends,\r\n and developments shaping the \r\ncontempora" +
-    "ry world.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(171, 295);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 20);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Price: ₱250";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Maroon;
-            this.label17.Location = new System.Drawing.Point(68, 295);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(99, 20);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Out of Stock";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(16, 295);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 20);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Status:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(26, 206);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(230, 25);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "The Contemporary World";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.pictureBox5.Location = new System.Drawing.Point(47, 13);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(190, 190);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(47, 327);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(190, 38);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Notify me";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.label23);
-            this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Controls.Add(this.button5);
-            this.panel6.Location = new System.Drawing.Point(933, 63);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(282, 381);
-            this.panel6.TabIndex = 7;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(4, 234);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(281, 51);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "Explores personal identity, self-development, \r\nand the factors that shape human " +
-    "behavior \r\nand experiences.";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(171, 295);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(83, 20);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "Price: ₱250";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.label22.Location = new System.Drawing.Point(72, 295);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 20);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "In Stock";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(20, 295);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 20);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Status:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(38, 206);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(210, 25);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Understanding the Self";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.pictureBox6.Location = new System.Drawing.Point(47, 13);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(190, 190);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(47, 327);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(190, 38);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Notify me";
-            this.button5.UseVisualStyleBackColor = false;
+            "ID Lace",
+            "Uniform"});
+            this.Filter_Dropdown.Location = new System.Drawing.Point(1090, 90);
+            this.Filter_Dropdown.Name = "Filter_Dropdown";
+            this.Filter_Dropdown.Size = new System.Drawing.Size(136, 36);
+            this.Filter_Dropdown.StartIndex = 0;
+            this.Filter_Dropdown.TabIndex = 9;
+            this.Filter_Dropdown.Tag = "";
+            // 
+            // LogIn_Button
+            // 
+            this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogIn_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogIn_Button.Location = new System.Drawing.Point(1097, 23);
+            this.LogIn_Button.Name = "LogIn_Button";
+            this.LogIn_Button.Size = new System.Drawing.Size(136, 38);
+            this.LogIn_Button.TabIndex = 11;
+            this.LogIn_Button.Text = "      Log In";
+            // 
+            // LogIn_Icon
+            // 
+            this.LogIn_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogIn_Icon.Image = global::LogIn_HiveStock.Properties.Resources.login;
+            this.LogIn_Icon.Location = new System.Drawing.Point(1123, 33);
+            this.LogIn_Icon.Name = "LogIn_Icon";
+            this.LogIn_Icon.Size = new System.Drawing.Size(20, 20);
+            this.LogIn_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogIn_Icon.TabIndex = 12;
+            this.LogIn_Icon.TabStop = false;
+            // 
+            // Items_Panel
+            // 
+            this.Items_Panel.AutoScroll = true;
+            this.Items_Panel.AutoScrollMinSize = new System.Drawing.Size(0, 800);
+            this.Items_Panel.Controls.Add(this.Book4_Container);
+            this.Items_Panel.Controls.Add(this.Book3_Container);
+            this.Items_Panel.Controls.Add(this.Book2_Container);
+            this.Items_Panel.Controls.Add(this.Book1_Container);
+            this.Items_Panel.Controls.Add(this.Books_Label);
+            this.Items_Panel.Location = new System.Drawing.Point(-1, 141);
+            this.Items_Panel.Name = "Items_Panel";
+            this.Items_Panel.Size = new System.Drawing.Size(1266, 532);
+            this.Items_Panel.TabIndex = 10;
+            // 
+            // Books_Label
+            // 
+            this.Books_Label.AutoSize = true;
+            this.Books_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Books_Label.Location = new System.Drawing.Point(27, 6);
+            this.Books_Label.Name = "Books_Label";
+            this.Books_Label.Size = new System.Drawing.Size(83, 32);
+            this.Books_Label.TabIndex = 0;
+            this.Books_Label.Text = "Books";
+            // 
+            // Book1_Container
+            // 
+            this.Book1_Container.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Book1_Container.BorderRadius = 10;
+            this.Book1_Container.BorderThickness = 1;
+            this.Book1_Container.Controls.Add(this.Book1_Information);
+            this.Book1_Container.Controls.Add(this.Book1_Image);
+            this.Book1_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Book1_Container.Location = new System.Drawing.Point(32, 43);
+            this.Book1_Container.Name = "Book1_Container";
+            this.Book1_Container.Size = new System.Drawing.Size(277, 322);
+            this.Book1_Container.TabIndex = 1;
+            this.Book1_Container.Text = "guna2ContainerControl1";
+            // 
+            // Book1_Image
+            // 
+            this.Book1_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book1_Image.BorderRadius = 10;
+            this.Book1_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book1_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book1_Image.ImageRotate = 0F;
+            this.Book1_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book1_Image.Name = "Book1_Image";
+            this.Book1_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book1_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book1_Image.TabIndex = 0;
+            this.Book1_Image.TabStop = false;
+            this.Book1_Image.UseTransparentBackground = true;
+            // 
+            // Book1_Information
+            // 
+            this.Book1_Information.BackColor = System.Drawing.Color.Transparent;
+            this.Book1_Information.BorderRadius = 5;
+            this.Book1_Information.Controls.Add(this.BuyNow1_Button);
+            this.Book1_Information.Controls.Add(this.PricePeso1_Label);
+            this.Book1_Information.Controls.Add(this.Price1_Label);
+            this.Book1_Information.Controls.Add(this.Stock1_Status);
+            this.Book1_Information.Controls.Add(this.Notify1_Button);
+            this.Book1_Information.Controls.Add(this.Status1_Label);
+            this.Book1_Information.Controls.Add(this.Book1Info_Label);
+            this.Book1_Information.Controls.Add(this.Book1Title_Label);
+            this.Book1_Information.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(217)))));
+            this.Book1_Information.Location = new System.Drawing.Point(7, 156);
+            this.Book1_Information.Name = "Book1_Information";
+            this.Book1_Information.Size = new System.Drawing.Size(263, 159);
+            this.Book1_Information.TabIndex = 1;
+            this.Book1_Information.Text = "guna2ContainerControl1";
+            // 
+            // Book1Title_Label
+            // 
+            this.Book1Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book1Title_Label.Location = new System.Drawing.Point(3, 0);
+            this.Book1Title_Label.Name = "Book1Title_Label";
+            this.Book1Title_Label.Size = new System.Drawing.Size(260, 33);
+            this.Book1Title_Label.TabIndex = 0;
+            this.Book1Title_Label.Text = "Art Appreciation";
+            this.Book1Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Book1Info_Label
+            // 
+            this.Book1Info_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book1Info_Label.Location = new System.Drawing.Point(6, 33);
+            this.Book1Info_Label.Name = "Book1Info_Label";
+            this.Book1Info_Label.Size = new System.Drawing.Size(247, 51);
+            this.Book1Info_Label.TabIndex = 1;
+            this.Book1Info_Label.Text = "A course book covering the fundamentals of art, culture, and creative expression." +
+    "";
+            this.Book1Info_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Status1_Label
+            // 
+            this.Status1_Label.AutoSize = true;
+            this.Status1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status1_Label.Location = new System.Drawing.Point(17, 83);
+            this.Status1_Label.Name = "Status1_Label";
+            this.Status1_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status1_Label.TabIndex = 2;
+            this.Status1_Label.Text = "Status:";
+            // 
+            // Stock1_Status
+            // 
+            this.Stock1_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stock1_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Stock1_Status.Location = new System.Drawing.Point(65, 83);
+            this.Stock1_Status.Name = "Stock1_Status";
+            this.Stock1_Status.Size = new System.Drawing.Size(98, 16);
+            this.Stock1_Status.TabIndex = 3;
+            this.Stock1_Status.Text = "In Stock";
+            // 
+            // Price1_Label
+            // 
+            this.Price1_Label.AutoSize = true;
+            this.Price1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price1_Label.Location = new System.Drawing.Point(159, 83);
+            this.Price1_Label.Name = "Price1_Label";
+            this.Price1_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price1_Label.TabIndex = 4;
+            this.Price1_Label.Text = "Price:";
+            // 
+            // PricePeso1_Label
+            // 
+            this.PricePeso1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PricePeso1_Label.Location = new System.Drawing.Point(203, 83);
+            this.PricePeso1_Label.Name = "PricePeso1_Label";
+            this.PricePeso1_Label.Size = new System.Drawing.Size(57, 16);
+            this.PricePeso1_Label.TabIndex = 5;
+            this.PricePeso1_Label.Text = "₱250";
+            // 
+            // Notify1_Button
+            // 
+            this.Notify1_Button.BorderRadius = 8;
+            this.Notify1_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Notify1_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Notify1_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Notify1_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Notify1_Button.Enabled = false;
+            this.Notify1_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notify1_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notify1_Button.ForeColor = System.Drawing.Color.Black;
+            this.Notify1_Button.Location = new System.Drawing.Point(15, 111);
+            this.Notify1_Button.Name = "Notify1_Button";
+            this.Notify1_Button.Size = new System.Drawing.Size(115, 36);
+            this.Notify1_Button.TabIndex = 12;
+            this.Notify1_Button.Text = "Notify Me";
+            // 
+            // BuyNow1_Button
+            // 
+            this.BuyNow1_Button.BorderRadius = 8;
+            this.BuyNow1_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow1_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow1_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuyNow1_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BuyNow1_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.BuyNow1_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyNow1_Button.ForeColor = System.Drawing.Color.White;
+            this.BuyNow1_Button.Location = new System.Drawing.Point(133, 111);
+            this.BuyNow1_Button.Name = "BuyNow1_Button";
+            this.BuyNow1_Button.Size = new System.Drawing.Size(115, 36);
+            this.BuyNow1_Button.TabIndex = 13;
+            this.BuyNow1_Button.Text = "Buy Now";
+            // 
+            // Book2_Container
+            // 
+            this.Book2_Container.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Book2_Container.BorderRadius = 10;
+            this.Book2_Container.BorderThickness = 1;
+            this.Book2_Container.Controls.Add(this.Book2_Information);
+            this.Book2_Container.Controls.Add(this.Book2_Image);
+            this.Book2_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Book2_Container.Location = new System.Drawing.Point(334, 43);
+            this.Book2_Container.Name = "Book2_Container";
+            this.Book2_Container.Size = new System.Drawing.Size(277, 322);
+            this.Book2_Container.TabIndex = 2;
+            this.Book2_Container.Text = "guna2ContainerControl1";
+            // 
+            // Book2_Information
+            // 
+            this.Book2_Information.BackColor = System.Drawing.Color.Transparent;
+            this.Book2_Information.BorderRadius = 5;
+            this.Book2_Information.Controls.Add(this.BuyNow2_Button);
+            this.Book2_Information.Controls.Add(this.PricePeso2_Label);
+            this.Book2_Information.Controls.Add(this.Price2_Label);
+            this.Book2_Information.Controls.Add(this.Stock2_Status);
+            this.Book2_Information.Controls.Add(this.Notify2_Button);
+            this.Book2_Information.Controls.Add(this.Status2_Label);
+            this.Book2_Information.Controls.Add(this.Book2Info_Label);
+            this.Book2_Information.Controls.Add(this.Book2Title_Label);
+            this.Book2_Information.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(217)))));
+            this.Book2_Information.Location = new System.Drawing.Point(7, 156);
+            this.Book2_Information.Name = "Book2_Information";
+            this.Book2_Information.Size = new System.Drawing.Size(263, 159);
+            this.Book2_Information.TabIndex = 1;
+            this.Book2_Information.Text = "guna2ContainerControl1";
+            // 
+            // BuyNow2_Button
+            // 
+            this.BuyNow2_Button.BorderRadius = 8;
+            this.BuyNow2_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow2_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow2_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuyNow2_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BuyNow2_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.BuyNow2_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyNow2_Button.ForeColor = System.Drawing.Color.White;
+            this.BuyNow2_Button.Location = new System.Drawing.Point(133, 111);
+            this.BuyNow2_Button.Name = "BuyNow2_Button";
+            this.BuyNow2_Button.Size = new System.Drawing.Size(115, 36);
+            this.BuyNow2_Button.TabIndex = 13;
+            this.BuyNow2_Button.Text = "Buy Now";
+            // 
+            // PricePeso2_Label
+            // 
+            this.PricePeso2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PricePeso2_Label.Location = new System.Drawing.Point(203, 83);
+            this.PricePeso2_Label.Name = "PricePeso2_Label";
+            this.PricePeso2_Label.Size = new System.Drawing.Size(57, 16);
+            this.PricePeso2_Label.TabIndex = 5;
+            this.PricePeso2_Label.Text = "₱250";
+            // 
+            // Price2_Label
+            // 
+            this.Price2_Label.AutoSize = true;
+            this.Price2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price2_Label.Location = new System.Drawing.Point(159, 83);
+            this.Price2_Label.Name = "Price2_Label";
+            this.Price2_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price2_Label.TabIndex = 4;
+            this.Price2_Label.Text = "Price:";
+            // 
+            // Stock2_Status
+            // 
+            this.Stock2_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stock2_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Stock2_Status.Location = new System.Drawing.Point(65, 83);
+            this.Stock2_Status.Name = "Stock2_Status";
+            this.Stock2_Status.Size = new System.Drawing.Size(98, 16);
+            this.Stock2_Status.TabIndex = 3;
+            this.Stock2_Status.Text = "Low Stock";
+            // 
+            // Notify2_Button
+            // 
+            this.Notify2_Button.BorderRadius = 8;
+            this.Notify2_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Notify2_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Notify2_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Notify2_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Notify2_Button.Enabled = false;
+            this.Notify2_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notify2_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notify2_Button.ForeColor = System.Drawing.Color.Black;
+            this.Notify2_Button.Location = new System.Drawing.Point(15, 111);
+            this.Notify2_Button.Name = "Notify2_Button";
+            this.Notify2_Button.Size = new System.Drawing.Size(115, 36);
+            this.Notify2_Button.TabIndex = 12;
+            this.Notify2_Button.Text = "Notify Me";
+            // 
+            // Status2_Label
+            // 
+            this.Status2_Label.AutoSize = true;
+            this.Status2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status2_Label.Location = new System.Drawing.Point(17, 83);
+            this.Status2_Label.Name = "Status2_Label";
+            this.Status2_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status2_Label.TabIndex = 2;
+            this.Status2_Label.Text = "Status:";
+            // 
+            // Book2Info_Label
+            // 
+            this.Book2Info_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book2Info_Label.Location = new System.Drawing.Point(6, 33);
+            this.Book2Info_Label.Name = "Book2Info_Label";
+            this.Book2Info_Label.Size = new System.Drawing.Size(247, 51);
+            this.Book2Info_Label.TabIndex = 1;
+            this.Book2Info_Label.Text = "Explores the life, works, and contributions of Dr. Jose Rizal to Philippine histo" +
+    "ry and nationalism.";
+            this.Book2Info_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Book2Title_Label
+            // 
+            this.Book2Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book2Title_Label.Location = new System.Drawing.Point(3, 0);
+            this.Book2Title_Label.Name = "Book2Title_Label";
+            this.Book2Title_Label.Size = new System.Drawing.Size(260, 33);
+            this.Book2Title_Label.TabIndex = 0;
+            this.Book2Title_Label.Text = "The Life and Works of Jose Rizal";
+            this.Book2Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Book2_Image
+            // 
+            this.Book2_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book2_Image.BorderRadius = 10;
+            this.Book2_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book2_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book2_Image.ImageRotate = 0F;
+            this.Book2_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book2_Image.Name = "Book2_Image";
+            this.Book2_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book2_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book2_Image.TabIndex = 0;
+            this.Book2_Image.TabStop = false;
+            this.Book2_Image.UseTransparentBackground = true;
+            // 
+            // Book4_Container
+            // 
+            this.Book4_Container.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Book4_Container.BorderRadius = 10;
+            this.Book4_Container.BorderThickness = 1;
+            this.Book4_Container.Controls.Add(this.Book4_Information);
+            this.Book4_Container.Controls.Add(this.guna2PictureBox1);
+            this.Book4_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Book4_Container.Location = new System.Drawing.Point(937, 43);
+            this.Book4_Container.Name = "Book4_Container";
+            this.Book4_Container.Size = new System.Drawing.Size(277, 322);
+            this.Book4_Container.TabIndex = 4;
+            this.Book4_Container.Text = "guna2ContainerControl1";
+            // 
+            // Book4_Information
+            // 
+            this.Book4_Information.BackColor = System.Drawing.Color.Transparent;
+            this.Book4_Information.BorderRadius = 5;
+            this.Book4_Information.Controls.Add(this.BuyNow4_Button);
+            this.Book4_Information.Controls.Add(this.PricePeso4_Label);
+            this.Book4_Information.Controls.Add(this.Price4_Label);
+            this.Book4_Information.Controls.Add(this.Stock4_Status);
+            this.Book4_Information.Controls.Add(this.Notify4_Button);
+            this.Book4_Information.Controls.Add(this.Status4_Label);
+            this.Book4_Information.Controls.Add(this.Book4Info_Label);
+            this.Book4_Information.Controls.Add(this.Book4Title_Label);
+            this.Book4_Information.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(217)))));
+            this.Book4_Information.Location = new System.Drawing.Point(7, 156);
+            this.Book4_Information.Name = "Book4_Information";
+            this.Book4_Information.Size = new System.Drawing.Size(263, 159);
+            this.Book4_Information.TabIndex = 1;
+            this.Book4_Information.Text = "guna2ContainerControl1";
+            // 
+            // BuyNow4_Button
+            // 
+            this.BuyNow4_Button.BorderRadius = 8;
+            this.BuyNow4_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow4_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow4_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuyNow4_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BuyNow4_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.BuyNow4_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyNow4_Button.ForeColor = System.Drawing.Color.White;
+            this.BuyNow4_Button.Location = new System.Drawing.Point(133, 111);
+            this.BuyNow4_Button.Name = "BuyNow4_Button";
+            this.BuyNow4_Button.Size = new System.Drawing.Size(115, 36);
+            this.BuyNow4_Button.TabIndex = 13;
+            this.BuyNow4_Button.Text = "Buy Now";
+            // 
+            // PricePeso4_Label
+            // 
+            this.PricePeso4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PricePeso4_Label.Location = new System.Drawing.Point(203, 83);
+            this.PricePeso4_Label.Name = "PricePeso4_Label";
+            this.PricePeso4_Label.Size = new System.Drawing.Size(57, 16);
+            this.PricePeso4_Label.TabIndex = 5;
+            this.PricePeso4_Label.Text = "₱250";
+            // 
+            // Price4_Label
+            // 
+            this.Price4_Label.AutoSize = true;
+            this.Price4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price4_Label.Location = new System.Drawing.Point(159, 83);
+            this.Price4_Label.Name = "Price4_Label";
+            this.Price4_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price4_Label.TabIndex = 4;
+            this.Price4_Label.Text = "Price:";
+            // 
+            // Stock4_Status
+            // 
+            this.Stock4_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stock4_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Stock4_Status.Location = new System.Drawing.Point(65, 83);
+            this.Stock4_Status.Name = "Stock4_Status";
+            this.Stock4_Status.Size = new System.Drawing.Size(97, 16);
+            this.Stock4_Status.TabIndex = 3;
+            this.Stock4_Status.Text = "Low Stock";
+            // 
+            // Notify4_Button
+            // 
+            this.Notify4_Button.BorderRadius = 8;
+            this.Notify4_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Notify4_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Notify4_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Notify4_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Notify4_Button.Enabled = false;
+            this.Notify4_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notify4_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notify4_Button.ForeColor = System.Drawing.Color.Black;
+            this.Notify4_Button.Location = new System.Drawing.Point(15, 111);
+            this.Notify4_Button.Name = "Notify4_Button";
+            this.Notify4_Button.Size = new System.Drawing.Size(115, 36);
+            this.Notify4_Button.TabIndex = 12;
+            this.Notify4_Button.Text = "Notify Me";
+            // 
+            // Status4_Label
+            // 
+            this.Status4_Label.AutoSize = true;
+            this.Status4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status4_Label.Location = new System.Drawing.Point(17, 83);
+            this.Status4_Label.Name = "Status4_Label";
+            this.Status4_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status4_Label.TabIndex = 2;
+            this.Status4_Label.Text = "Status:";
+            // 
+            // Book4Info_Label
+            // 
+            this.Book4Info_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book4Info_Label.Location = new System.Drawing.Point(6, 33);
+            this.Book4Info_Label.Name = "Book4Info_Label";
+            this.Book4Info_Label.Size = new System.Drawing.Size(247, 51);
+            this.Book4Info_Label.TabIndex = 1;
+            this.Book4Info_Label.Text = "Explores personal identity, self-development, and the factors that shape human be" +
+    "havior and experiences.";
+            this.Book4Info_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(258, 141);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // Book3_Container
+            // 
+            this.Book3_Container.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Book3_Container.BorderRadius = 10;
+            this.Book3_Container.BorderThickness = 1;
+            this.Book3_Container.Controls.Add(this.Book3_Information);
+            this.Book3_Container.Controls.Add(this.guna2PictureBox2);
+            this.Book3_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Book3_Container.Location = new System.Drawing.Point(635, 43);
+            this.Book3_Container.Name = "Book3_Container";
+            this.Book3_Container.Size = new System.Drawing.Size(277, 322);
+            this.Book3_Container.TabIndex = 3;
+            this.Book3_Container.Text = "guna2ContainerControl1";
+            // 
+            // Book3_Information
+            // 
+            this.Book3_Information.BackColor = System.Drawing.Color.Transparent;
+            this.Book3_Information.BorderRadius = 5;
+            this.Book3_Information.Controls.Add(this.BuyNow3_Button);
+            this.Book3_Information.Controls.Add(this.PricePeso3_Label);
+            this.Book3_Information.Controls.Add(this.Price3_Label);
+            this.Book3_Information.Controls.Add(this.Stock3_Status);
+            this.Book3_Information.Controls.Add(this.Notify3_Button);
+            this.Book3_Information.Controls.Add(this.Status3_Label);
+            this.Book3_Information.Controls.Add(this.Book3Info_Label);
+            this.Book3_Information.Controls.Add(this.Book3Title_Label);
+            this.Book3_Information.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(217)))));
+            this.Book3_Information.Location = new System.Drawing.Point(7, 156);
+            this.Book3_Information.Name = "Book3_Information";
+            this.Book3_Information.Size = new System.Drawing.Size(263, 159);
+            this.Book3_Information.TabIndex = 1;
+            this.Book3_Information.Text = "guna2ContainerControl1";
+            // 
+            // BuyNow3_Button
+            // 
+            this.BuyNow3_Button.BorderRadius = 8;
+            this.BuyNow3_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow3_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BuyNow3_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BuyNow3_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BuyNow3_Button.Enabled = false;
+            this.BuyNow3_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.BuyNow3_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyNow3_Button.ForeColor = System.Drawing.Color.White;
+            this.BuyNow3_Button.Location = new System.Drawing.Point(133, 111);
+            this.BuyNow3_Button.Name = "BuyNow3_Button";
+            this.BuyNow3_Button.Size = new System.Drawing.Size(115, 36);
+            this.BuyNow3_Button.TabIndex = 13;
+            this.BuyNow3_Button.Text = "Buy Now";
+            // 
+            // PricePeso3_Label
+            // 
+            this.PricePeso3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PricePeso3_Label.Location = new System.Drawing.Point(203, 83);
+            this.PricePeso3_Label.Name = "PricePeso3_Label";
+            this.PricePeso3_Label.Size = new System.Drawing.Size(57, 16);
+            this.PricePeso3_Label.TabIndex = 5;
+            this.PricePeso3_Label.Text = "₱250";
+            // 
+            // Price3_Label
+            // 
+            this.Price3_Label.AutoSize = true;
+            this.Price3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price3_Label.Location = new System.Drawing.Point(159, 83);
+            this.Price3_Label.Name = "Price3_Label";
+            this.Price3_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price3_Label.TabIndex = 4;
+            this.Price3_Label.Text = "Price:";
+            // 
+            // Stock3_Status
+            // 
+            this.Stock3_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stock3_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Stock3_Status.Location = new System.Drawing.Point(65, 83);
+            this.Stock3_Status.Name = "Stock3_Status";
+            this.Stock3_Status.Size = new System.Drawing.Size(99, 16);
+            this.Stock3_Status.TabIndex = 3;
+            this.Stock3_Status.Text = "Out of Stock";
+            // 
+            // Notify3_Button
+            // 
+            this.Notify3_Button.BorderRadius = 8;
+            this.Notify3_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Notify3_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Notify3_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Notify3_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Notify3_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notify3_Button.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notify3_Button.ForeColor = System.Drawing.Color.Black;
+            this.Notify3_Button.Location = new System.Drawing.Point(15, 111);
+            this.Notify3_Button.Name = "Notify3_Button";
+            this.Notify3_Button.Size = new System.Drawing.Size(115, 36);
+            this.Notify3_Button.TabIndex = 12;
+            this.Notify3_Button.Text = "Notify Me";
+            // 
+            // Status3_Label
+            // 
+            this.Status3_Label.AutoSize = true;
+            this.Status3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status3_Label.Location = new System.Drawing.Point(17, 83);
+            this.Status3_Label.Name = "Status3_Label";
+            this.Status3_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status3_Label.TabIndex = 2;
+            this.Status3_Label.Text = "Status:";
+            // 
+            // Book3Info_Label
+            // 
+            this.Book3Info_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book3Info_Label.Location = new System.Drawing.Point(6, 33);
+            this.Book3Info_Label.Name = "Book3Info_Label";
+            this.Book3Info_Label.Size = new System.Drawing.Size(247, 51);
+            this.Book3Info_Label.TabIndex = 1;
+            this.Book3Info_Label.Text = "Examines major global issues, trends, and developments shaping the contemporary w" +
+    "orld.\r\n";
+            this.Book3Info_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Book3Title_Label
+            // 
+            this.Book3Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book3Title_Label.Location = new System.Drawing.Point(3, 0);
+            this.Book3Title_Label.Name = "Book3Title_Label";
+            this.Book3Title_Label.Size = new System.Drawing.Size(260, 33);
+            this.Book3Title_Label.TabIndex = 0;
+            this.Book3Title_Label.Text = "The Contemporary World";
+            this.Book3Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.BorderRadius = 10;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(9, 10);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(258, 141);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // Book4Title_Label
+            // 
+            this.Book4Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book4Title_Label.Location = new System.Drawing.Point(0, 0);
+            this.Book4Title_Label.Name = "Book4Title_Label";
+            this.Book4Title_Label.Size = new System.Drawing.Size(260, 33);
+            this.Book4Title_Label.TabIndex = 14;
+            this.Book4Title_Label.Text = "Understanding The Self";
+            this.Book4Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserView_ProductCatalog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Items_Panel);
+            this.Controls.Add(this.Filter_Dropdown);
+            this.Controls.Add(this.Search_Input);
+            this.Controls.Add(this.Search_Label);
+            this.Controls.Add(this.Header_Panel);
             this.Name = "UserView_ProductCatalog";
             this.Text = "Product Catalog";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Header_Panel.ResumeLayout(false);
+            this.Header_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogIn_Icon)).EndInit();
+            this.Items_Panel.ResumeLayout(false);
+            this.Items_Panel.PerformLayout();
+            this.Book1_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).EndInit();
+            this.Book1_Information.ResumeLayout(false);
+            this.Book1_Information.PerformLayout();
+            this.Book2_Container.ResumeLayout(false);
+            this.Book2_Information.ResumeLayout(false);
+            this.Book2_Information.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).EndInit();
+            this.Book4_Container.ResumeLayout(false);
+            this.Book4_Information.ResumeLayout(false);
+            this.Book4_Information.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.Book3_Container.ResumeLayout(false);
+            this.Book3_Information.ResumeLayout(false);
+            this.Book3_Information.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,48 +862,60 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel Header_Panel;
+        private System.Windows.Forms.Label MLUC;
+        private System.Windows.Forms.PictureBox DMMMSU_Logo;
+        private System.Windows.Forms.Label MarketingCenter;
+        private System.Windows.Forms.Label Search_Label;
+        private Guna.UI2.WinForms.Guna2TextBox Search_Input;
+        private Guna.UI2.WinForms.Guna2ComboBox Filter_Dropdown;
+        private System.Windows.Forms.PictureBox LogIn_Icon;
+        private Guna.UI2.WinForms.Guna2Button LogIn_Button;
+        private Guna.UI2.WinForms.Guna2Panel Items_Panel;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book1_Container;
+        private System.Windows.Forms.Label Books_Label;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book1_Information;
+        private Guna.UI2.WinForms.Guna2PictureBox Book1_Image;
+        private System.Windows.Forms.Label Book1Title_Label;
+        private System.Windows.Forms.Label Stock1_Status;
+        private System.Windows.Forms.Label Status1_Label;
+        private System.Windows.Forms.Label Book1Info_Label;
+        private System.Windows.Forms.Label Price1_Label;
+        private System.Windows.Forms.Label PricePeso1_Label;
+        private Guna.UI2.WinForms.Guna2Button Notify1_Button;
+        private Guna.UI2.WinForms.Guna2Button BuyNow1_Button;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book2_Container;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book2_Information;
+        private Guna.UI2.WinForms.Guna2Button BuyNow2_Button;
+        private System.Windows.Forms.Label PricePeso2_Label;
+        private System.Windows.Forms.Label Price2_Label;
+        private System.Windows.Forms.Label Stock2_Status;
+        private Guna.UI2.WinForms.Guna2Button Notify2_Button;
+        private System.Windows.Forms.Label Status2_Label;
+        private System.Windows.Forms.Label Book2Info_Label;
+        private System.Windows.Forms.Label Book2Title_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox Book2_Image;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book4_Container;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book4_Information;
+        private Guna.UI2.WinForms.Guna2Button BuyNow4_Button;
+        private System.Windows.Forms.Label PricePeso4_Label;
+        private System.Windows.Forms.Label Price4_Label;
+        private System.Windows.Forms.Label Stock4_Status;
+        private Guna.UI2.WinForms.Guna2Button Notify4_Button;
+        private System.Windows.Forms.Label Status4_Label;
+        private System.Windows.Forms.Label Book4Info_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book3_Container;
+        private Guna.UI2.WinForms.Guna2ContainerControl Book3_Information;
+        private Guna.UI2.WinForms.Guna2Button BuyNow3_Button;
+        private System.Windows.Forms.Label PricePeso3_Label;
+        private System.Windows.Forms.Label Price3_Label;
+        private System.Windows.Forms.Label Stock3_Status;
+        private Guna.UI2.WinForms.Guna2Button Notify3_Button;
+        private System.Windows.Forms.Label Status3_Label;
+        private System.Windows.Forms.Label Book3Info_Label;
+        private System.Windows.Forms.Label Book3Title_Label;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private System.Windows.Forms.Label Book4Title_Label;
     }
 }

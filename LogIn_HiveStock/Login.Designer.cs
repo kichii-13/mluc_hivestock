@@ -28,281 +28,320 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel8.SuspendLayout();
+            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
+            this.MLUC = new System.Windows.Forms.Label();
+            this.MarketingCenter = new System.Windows.Forms.Label();
+            this.GreenPanel = new System.Windows.Forms.Panel();
+            this.User_Label = new System.Windows.Forms.Label();
+            this.Password_Label = new System.Windows.Forms.Label();
+            this.Profile_Icon = new System.Windows.Forms.PictureBox();
+            this.Password_Icon = new System.Windows.Forms.PictureBox();
+            this.Input_Panel = new System.Windows.Forms.Panel();
+            this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Input_UserID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LogIn_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.LogIn_Label = new System.Windows.Forms.Label();
+            this.SignUp_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
+            this.SignUp_Label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
+            this.GreenPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Profile_Icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password_Icon)).BeginInit();
+            this.Input_Panel.SuspendLayout();
+            this.LogIn_Container.SuspendLayout();
+            this.SignUp_Container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // linkLabel1
+            // DMMMSU_Logo
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(267, 65);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(0, 16);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.DMMMSU_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.DMMMSU_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DMMMSU_Logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.DMMMSU_Logo.Location = new System.Drawing.Point(129, 14);
+            this.DMMMSU_Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
+            this.DMMMSU_Logo.Size = new System.Drawing.Size(320, 320);
+            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DMMMSU_Logo.TabIndex = 8;
+            this.DMMMSU_Logo.TabStop = false;
             // 
-            // panel1
+            // MLUC
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Location = new System.Drawing.Point(0, 424);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1262, 249);
-            this.panel1.TabIndex = 2;
+            this.MLUC.AutoSize = true;
+            this.MLUC.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MLUC.Location = new System.Drawing.Point(134, 21);
+            this.MLUC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MLUC.Name = "MLUC";
+            this.MLUC.Size = new System.Drawing.Size(306, 47);
+            this.MLUC.TabIndex = 2;
+            this.MLUC.Text = "DMMMSU MLUC";
             // 
-            // panel6
+            // MarketingCenter
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.CausesValidation = false;
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Location = new System.Drawing.Point(713, 179);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(467, 357);
-            this.panel6.TabIndex = 7;
+            this.MarketingCenter.AutoSize = true;
+            this.MarketingCenter.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MarketingCenter.Location = new System.Drawing.Point(98, 64);
+            this.MarketingCenter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MarketingCenter.Name = "MarketingCenter";
+            this.MarketingCenter.Size = new System.Drawing.Size(371, 47);
+            this.MarketingCenter.TabIndex = 3;
+            this.MarketingCenter.Text = "MARKETING CENTER";
             // 
-            // panel7
+            // GreenPanel
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(713, 120);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(467, 63);
-            this.panel7.TabIndex = 9;
+            this.GreenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.GreenPanel.Controls.Add(this.SignUp_Container);
+            this.GreenPanel.Controls.Add(this.MarketingCenter);
+            this.GreenPanel.Controls.Add(this.MLUC);
+            this.GreenPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GreenPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.GreenPanel.Location = new System.Drawing.Point(0, 339);
+            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.GreenPanel.Name = "GreenPanel";
+            this.GreenPanel.Size = new System.Drawing.Size(1010, 199);
+            this.GreenPanel.TabIndex = 2;
             // 
-            // label1
+            // User_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label1.Location = new System.Drawing.Point(145, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Login";
+            this.User_Label.AutoSize = true;
+            this.User_Label.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.User_Label.Location = new System.Drawing.Point(26, 31);
+            this.User_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.User_Label.Name = "User_Label";
+            this.User_Label.Size = new System.Drawing.Size(62, 20);
+            this.User_Label.TabIndex = 1;
+            this.User_Label.Text = "User ID";
             // 
-            // textBox1
+            // Password_Label
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(82, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(338, 34);
-            this.textBox1.TabIndex = 0;
+            this.Password_Label.AutoSize = true;
+            this.Password_Label.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Password_Label.Location = new System.Drawing.Point(26, 105);
+            this.Password_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Password_Label.Name = "Password_Label";
+            this.Password_Label.Size = new System.Drawing.Size(76, 20);
+            this.Password_Label.TabIndex = 3;
+            this.Password_Label.Text = "Password";
+            this.Password_Label.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label2
+            // Profile_Icon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(33, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User ID";
+            this.Profile_Icon.Image = global::LogIn_HiveStock.Properties.Resources.account;
+            this.Profile_Icon.Location = new System.Drawing.Point(40, 62);
+            this.Profile_Icon.Margin = new System.Windows.Forms.Padding(2);
+            this.Profile_Icon.Name = "Profile_Icon";
+            this.Profile_Icon.Size = new System.Drawing.Size(20, 20);
+            this.Profile_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Profile_Icon.TabIndex = 4;
+            this.Profile_Icon.TabStop = false;
             // 
-            // label3
+            // Password_Icon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(33, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.Password_Icon.Image = global::LogIn_HiveStock.Properties.Resources.padlock;
+            this.Password_Icon.Location = new System.Drawing.Point(41, 137);
+            this.Password_Icon.Margin = new System.Windows.Forms.Padding(2);
+            this.Password_Icon.Name = "Password_Icon";
+            this.Password_Icon.Size = new System.Drawing.Size(20, 20);
+            this.Password_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Password_Icon.TabIndex = 5;
+            this.Password_Icon.TabStop = false;
             // 
-            // textBox2
+            // Input_Panel
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(82, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(338, 34);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.Input_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Input_Panel.CausesValidation = false;
+            this.Input_Panel.Controls.Add(this.Input_Password);
+            this.Input_Panel.Controls.Add(this.Input_UserID);
+            this.Input_Panel.Controls.Add(this.Password_Icon);
+            this.Input_Panel.Controls.Add(this.LogIn_Button);
+            this.Input_Panel.Controls.Add(this.Profile_Icon);
+            this.Input_Panel.Controls.Add(this.Password_Label);
+            this.Input_Panel.Controls.Add(this.User_Label);
+            this.Input_Panel.Location = new System.Drawing.Point(570, 143);
+            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.Input_Panel.Name = "Input_Panel";
+            this.Input_Panel.Size = new System.Drawing.Size(374, 240);
+            this.Input_Panel.TabIndex = 7;
             // 
-            // pictureBox1
+            // LogIn_Button
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(161, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogIn_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogIn_Button.Location = new System.Drawing.Point(42, 179);
+            this.LogIn_Button.Name = "LogIn_Button";
+            this.LogIn_Button.Size = new System.Drawing.Size(298, 38);
+            this.LogIn_Button.TabIndex = 10;
+            this.LogIn_Button.Text = "LOG IN";
             // 
-            // pictureBox2
+            // Input_UserID
             // 
-            this.pictureBox2.Image = global::LogIn_HiveStock.Properties.Resources.account;
-            this.pictureBox2.Location = new System.Drawing.Point(50, 77);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.Input_UserID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_UserID.BorderRadius = 10;
+            this.Input_UserID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_UserID.DefaultText = "";
+            this.Input_UserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_UserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_UserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Input_UserID.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_UserID.ForeColor = System.Drawing.Color.Black;
+            this.Input_UserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Input_UserID.Location = new System.Drawing.Point(65, 52);
+            this.Input_UserID.MaxLength = 15;
+            this.Input_UserID.Name = "Input_UserID";
+            this.Input_UserID.PlaceholderText = "";
+            this.Input_UserID.SelectedText = "";
+            this.Input_UserID.Size = new System.Drawing.Size(275, 40);
+            this.Input_UserID.TabIndex = 4;
             // 
-            // pictureBox3
+            // Input_Password
             // 
-            this.pictureBox3.Image = global::LogIn_HiveStock.Properties.Resources.padlock;
-            this.pictureBox3.Location = new System.Drawing.Point(53, 166);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.Input_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_Password.BorderRadius = 10;
+            this.Input_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_Password.DefaultText = "";
+            this.Input_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_Password.ForeColor = System.Drawing.Color.Black;
+            this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Input_Password.Location = new System.Drawing.Point(65, 127);
+            this.Input_Password.MaxLength = 30;
+            this.Input_Password.Name = "Input_Password";
+            this.Input_Password.PlaceholderText = "";
+            this.Input_Password.SelectedText = "";
+            this.Input_Password.Size = new System.Drawing.Size(275, 40);
+            this.Input_Password.TabIndex = 11;
+            this.Input_Password.UseSystemPasswordChar = true;
             // 
-            // button1
+            // LogIn_Container
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(47, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(373, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = false;
+            this.LogIn_Container.BorderRadius = 10;
+            this.LogIn_Container.BorderThickness = 2;
+            this.LogIn_Container.Controls.Add(this.LogIn_Label);
+            this.LogIn_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.LogIn_Container.Location = new System.Drawing.Point(562, 99);
+            this.LogIn_Container.Name = "LogIn_Container";
+            this.LogIn_Container.Size = new System.Drawing.Size(390, 48);
+            this.LogIn_Container.TabIndex = 10;
+            this.LogIn_Container.Text = "guna2ContainerControl1";
             // 
-            // label4
+            // LogIn_Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(97, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Doesn\'t have an account?";
+            this.LogIn_Label.AutoSize = true;
+            this.LogIn_Label.BackColor = System.Drawing.Color.Transparent;
+            this.LogIn_Label.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogIn_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.LogIn_Label.Location = new System.Drawing.Point(156, 8);
+            this.LogIn_Label.Name = "LogIn_Label";
+            this.LogIn_Label.Size = new System.Drawing.Size(77, 30);
+            this.LogIn_Label.TabIndex = 0;
+            this.LogIn_Label.Text = "Log In";
             // 
-            // linkLabel2
+            // SignUp_Container
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.linkLabel2.Location = new System.Drawing.Point(278, 12);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(64, 20);
-            this.linkLabel2.TabIndex = 8;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Sign Up";
+            this.SignUp_Container.BorderRadius = 5;
+            this.SignUp_Container.Controls.Add(this.SignUp_Label);
+            this.SignUp_Container.Controls.Add(this.SignUp_Hyperlink);
+            this.SignUp_Container.FillColor = System.Drawing.Color.LightGray;
+            this.SignUp_Container.Location = new System.Drawing.Point(570, 40);
+            this.SignUp_Container.Name = "SignUp_Container";
+            this.SignUp_Container.Size = new System.Drawing.Size(374, 41);
+            this.SignUp_Container.TabIndex = 4;
+            this.SignUp_Container.Text = "guna2ContainerControl1";
             // 
-            // label5
+            // SignUp_Hyperlink
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label5.Location = new System.Drawing.Point(168, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(381, 60);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "DMMMSU MLUC";
+            this.SignUp_Hyperlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.SignUp_Hyperlink.AutoSize = true;
+            this.SignUp_Hyperlink.BackColor = System.Drawing.Color.Transparent;
+            this.SignUp_Hyperlink.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUp_Hyperlink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.SignUp_Hyperlink.Location = new System.Drawing.Point(231, 13);
+            this.SignUp_Hyperlink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SignUp_Hyperlink.Name = "SignUp_Hyperlink";
+            this.SignUp_Hyperlink.Size = new System.Drawing.Size(53, 15);
+            this.SignUp_Hyperlink.TabIndex = 9;
+            this.SignUp_Hyperlink.TabStop = true;
+            this.SignUp_Hyperlink.Text = "Sign Up";
             // 
-            // label6
+            // SignUp_Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label6.Location = new System.Drawing.Point(123, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(467, 60);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "MARKETING CENTER";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.linkLabel2);
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Location = new System.Drawing.Point(-1, 304);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(467, 51);
-            this.panel8.TabIndex = 9;
+            this.SignUp_Label.AutoSize = true;
+            this.SignUp_Label.BackColor = System.Drawing.Color.Transparent;
+            this.SignUp_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUp_Label.ForeColor = System.Drawing.Color.Black;
+            this.SignUp_Label.Location = new System.Drawing.Point(87, 13);
+            this.SignUp_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SignUp_Label.Name = "SignUp_Label";
+            this.SignUp_Label.Size = new System.Drawing.Size(147, 15);
+            this.SignUp_Label.TabIndex = 10;
+            this.SignUp_Label.Text = "Doesn\'t have an account?";
             // 
             // LogIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1010, 538);
+            this.Controls.Add(this.LogIn_Container);
+            this.Controls.Add(this.DMMMSU_Logo);
+            this.Controls.Add(this.Input_Panel);
+            this.Controls.Add(this.GreenPanel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LogIn";
             this.Text = "HiveStock";
             this.Load += new System.EventHandler(this.LogIn_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
+            this.GreenPanel.ResumeLayout(false);
+            this.GreenPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Profile_Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password_Icon)).EndInit();
+            this.Input_Panel.ResumeLayout(false);
+            this.Input_Panel.PerformLayout();
+            this.LogIn_Container.ResumeLayout(false);
+            this.LogIn_Container.PerformLayout();
+            this.SignUp_Container.ResumeLayout(false);
+            this.SignUp_Container.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.PictureBox DMMMSU_Logo;
+        private System.Windows.Forms.Label MLUC;
+        private System.Windows.Forms.Label MarketingCenter;
+        private System.Windows.Forms.Panel GreenPanel;
+        private System.Windows.Forms.Label User_Label;
+        private System.Windows.Forms.Label Password_Label;
+        private System.Windows.Forms.PictureBox Profile_Icon;
+        private System.Windows.Forms.PictureBox Password_Icon;
+        private System.Windows.Forms.Panel Input_Panel;
+        private Guna.UI2.WinForms.Guna2Button LogIn_Button;
+        private Guna.UI2.WinForms.Guna2TextBox Input_UserID;
+        private Guna.UI2.WinForms.Guna2TextBox Input_Password;
+        private Guna.UI2.WinForms.Guna2ContainerControl LogIn_Container;
+        private System.Windows.Forms.Label LogIn_Label;
+        private Guna.UI2.WinForms.Guna2ContainerControl SignUp_Container;
+        private System.Windows.Forms.Label SignUp_Label;
+        private System.Windows.Forms.LinkLabel SignUp_Hyperlink;
     }
 }
 

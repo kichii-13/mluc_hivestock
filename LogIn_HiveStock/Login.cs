@@ -56,5 +56,10 @@ namespace LogIn_HiveStock
         {
 
         }
+
+        private void guna2ContainerControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
