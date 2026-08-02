@@ -182,5 +182,8 @@
   <ItemGroup>
     <None Include="Resources\dmmmsu_logo1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

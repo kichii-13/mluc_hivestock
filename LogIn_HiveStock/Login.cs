@@ -68,5 +68,12 @@ namespace LogIn_HiveStock
             f.Show();
             this.Hide();
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            var f = new UserView_ProductCatalog();
+            f.Show();
+            this.Hide();
+        }
     }
 }
