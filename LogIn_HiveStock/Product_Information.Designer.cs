@@ -489,12 +489,12 @@
             this.Search_Input.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_Input.ForeColor = System.Drawing.Color.Black;
             this.Search_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Search_Input.Location = new System.Drawing.Point(1010, 168);
+            this.Search_Input.Location = new System.Drawing.Point(1010, 164);
             this.Search_Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Search_Input.Name = "Search_Input";
             this.Search_Input.PlaceholderText = "Products";
             this.Search_Input.SelectedText = "";
-            this.Search_Input.Size = new System.Drawing.Size(146, 18);
+            this.Search_Input.Size = new System.Drawing.Size(146, 27);
             this.Search_Input.TabIndex = 22;
             // 
             // Header_Panel
