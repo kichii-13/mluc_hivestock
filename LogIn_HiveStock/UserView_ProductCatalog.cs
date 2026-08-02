@@ -36,5 +36,17 @@ namespace LogIn_HiveStock
         {
 
         }
+
+        private void LogIn_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogIn_Button_Click(object sender, EventArgs e)
+        {
+            var f = new LogIn();
+            f.Show();
+            this.Hide();
+        }
     }
 }

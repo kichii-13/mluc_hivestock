@@ -573,6 +573,7 @@
             this.LogIn_Hyperlink.TabIndex = 11;
             this.LogIn_Hyperlink.TabStop = true;
             this.LogIn_Hyperlink.Text = "Log In";
+            this.LogIn_Hyperlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogIn_Hyperlink_LinkClicked);
             // 
             // LogIn_Label
             // 

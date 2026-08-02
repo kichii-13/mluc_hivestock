@@ -99,28 +99,30 @@ namespace LogIn_HiveStock
             f.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void AdminDashboard_Button_Click(object sender, EventArgs e)
         {
-            var f = new Product_Information();   // replace with your target form class9
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            var f = new Notification_Management();   // replace with your target form class
+            var f = new Admin_Dashboard();
             f.Show();
-            
+            this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void NotificationButton_Click_1(object sender, EventArgs e)
         {
-            var f = new Admin_Dashboard();   // replace with your target form class
+            var f = new Notification_Management();
             f.Show();
-            this.Close();
+            this.Hide();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void ProductManagementButton_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            var f = new UserView_ProductCatalog();
+            f.Show();
+            this.Hide();
         }
     }
 }

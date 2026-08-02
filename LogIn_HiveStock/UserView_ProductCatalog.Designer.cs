@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Header_Panel = new System.Windows.Forms.Panel();
-            this.LogIn_Icon = new System.Windows.Forms.PictureBox();
             this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
             this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
             this.MarketingCenter = new System.Windows.Forms.Label();
@@ -84,7 +83,6 @@
             this.Book1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Books_Label = new System.Windows.Forms.Label();
             this.Header_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogIn_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
             this.Items_Panel.SuspendLayout();
             this.Book4_Container.SuspendLayout();
@@ -105,7 +103,6 @@
             // 
             this.Header_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Header_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Header_Panel.Controls.Add(this.LogIn_Icon);
             this.Header_Panel.Controls.Add(this.LogIn_Button);
             this.Header_Panel.Controls.Add(this.DMMMSU_Logo);
             this.Header_Panel.Controls.Add(this.MarketingCenter);
@@ -114,18 +111,6 @@
             this.Header_Panel.Name = "Header_Panel";
             this.Header_Panel.Size = new System.Drawing.Size(1272, 79);
             this.Header_Panel.TabIndex = 0;
-            // 
-            // LogIn_Icon
-            // 
-            this.LogIn_Icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.LogIn_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogIn_Icon.Image = global::LogIn_HiveStock.Properties.Resources.login;
-            this.LogIn_Icon.Location = new System.Drawing.Point(1123, 33);
-            this.LogIn_Icon.Name = "LogIn_Icon";
-            this.LogIn_Icon.Size = new System.Drawing.Size(20, 20);
-            this.LogIn_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogIn_Icon.TabIndex = 12;
-            this.LogIn_Icon.TabStop = false;
             // 
             // LogIn_Button
             // 
@@ -139,11 +124,13 @@
             this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
             this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Image = global::LogIn_HiveStock.Properties.Resources.login;
             this.LogIn_Button.Location = new System.Drawing.Point(1097, 23);
             this.LogIn_Button.Name = "LogIn_Button";
             this.LogIn_Button.Size = new System.Drawing.Size(136, 38);
             this.LogIn_Button.TabIndex = 11;
-            this.LogIn_Button.Text = "      Log In";
+            this.LogIn_Button.Text = "Log In";
+            this.LogIn_Button.Click += new System.EventHandler(this.LogIn_Button_Click);
             // 
             // DMMMSU_Logo
             // 
@@ -851,7 +838,6 @@
             this.Text = "Product Catalog";
             this.Header_Panel.ResumeLayout(false);
             this.Header_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogIn_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
             this.Items_Panel.ResumeLayout(false);
             this.Items_Panel.PerformLayout();
@@ -885,7 +871,6 @@
         private System.Windows.Forms.Label Search_Label;
         private Guna.UI2.WinForms.Guna2TextBox Search_Input;
         private Guna.UI2.WinForms.Guna2ComboBox Filter_Dropdown;
-        private System.Windows.Forms.PictureBox LogIn_Icon;
         private Guna.UI2.WinForms.Guna2Button LogIn_Button;
         private Guna.UI2.WinForms.Guna2Panel Items_Panel;
         private Guna.UI2.WinForms.Guna2ContainerControl Book1_Container;

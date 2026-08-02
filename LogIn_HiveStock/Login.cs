@@ -61,5 +61,12 @@ namespace LogIn_HiveStock
         {
 
         }
+
+        private void SignUp_Hyperlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var f = new Register();
+            f.Show();
+            this.Hide();
+        }
     }
 }

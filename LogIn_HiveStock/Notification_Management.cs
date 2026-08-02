@@ -42,5 +42,26 @@ namespace LogIn_HiveStock
         {
 
         }
+
+        private void AdminDashboard_Button_Click(object sender, EventArgs e)
+        {
+            var f = new Admin_Dashboard();
+            f.Show();
+            this.Hide();
+        }
+
+        private void ProductManagement_Button_Click(object sender, EventArgs e)
+        {
+            var f = new Product_Information();
+            f.Show();
+            this.Hide();
+        }
+
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            var f = new UserView_ProductCatalog();
+            f.Show();
+            this.Hide();
+        }
     }
 }
