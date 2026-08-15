@@ -42,10 +42,12 @@
             this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
             this.LogIn_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.LogIn_Label = new System.Windows.Forms.Label();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
             this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
             this.Password_Icon = new System.Windows.Forms.PictureBox();
             this.Profile_Icon = new System.Windows.Forms.PictureBox();
+            this.LogIn_Panel = new System.Windows.Forms.Panel();
+            this.White_Panel = new System.Windows.Forms.Panel();
             this.GreenPanel.SuspendLayout();
             this.SignUp_Container.SuspendLayout();
             this.Input_Panel.SuspendLayout();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Password_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_Icon)).BeginInit();
+            this.LogIn_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MLUC
@@ -87,10 +90,10 @@
             this.GreenPanel.Controls.Add(this.MLUC);
             this.GreenPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GreenPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.GreenPanel.Location = new System.Drawing.Point(0, 417);
+            this.GreenPanel.Location = new System.Drawing.Point(0, 461);
             this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
             this.GreenPanel.Name = "GreenPanel";
-            this.GreenPanel.Size = new System.Drawing.Size(1232, 259);
+            this.GreenPanel.Size = new System.Drawing.Size(1280, 259);
             this.GreenPanel.TabIndex = 2;
             // 
             // SignUp_Container
@@ -99,7 +102,7 @@
             this.SignUp_Container.Controls.Add(this.SignUp_Label);
             this.SignUp_Container.Controls.Add(this.SignUp_Hyperlink);
             this.SignUp_Container.FillColor = System.Drawing.Color.LightGray;
-            this.SignUp_Container.Location = new System.Drawing.Point(760, 40);
+            this.SignUp_Container.Location = new System.Drawing.Point(760, 3);
             this.SignUp_Container.Name = "SignUp_Container";
             this.SignUp_Container.Size = new System.Drawing.Size(374, 41);
             this.SignUp_Container.TabIndex = 4;
@@ -266,28 +269,27 @@
             this.LogIn_Label.TabIndex = 0;
             this.LogIn_Label.Text = "Log In";
             // 
-            // guna2CircleButton1
+            // Back_Button
             // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = global::LogIn_HiveStock.Properties.Resources.back_button;
-            this.guna2CircleButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2CircleButton1.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2CircleButton1.IndicateFocus = true;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(12, 12);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.TabIndex = 11;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            this.Back_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Back_Button.FillColor = System.Drawing.Color.White;
+            this.Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Back_Button.ForeColor = System.Drawing.Color.White;
+            this.Back_Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Back_Button.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.Back_Button.ImageSize = new System.Drawing.Size(30, 30);
+            this.Back_Button.IndicateFocus = true;
+            this.Back_Button.Location = new System.Drawing.Point(8, 2);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Back_Button.Size = new System.Drawing.Size(40, 40);
+            this.Back_Button.TabIndex = 11;
+            this.Back_Button.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // DMMMSU_Logo
             // 
@@ -324,18 +326,36 @@
             this.Profile_Icon.TabIndex = 4;
             this.Profile_Icon.TabStop = false;
             // 
+            // LogIn_Panel
+            // 
+            this.LogIn_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.LogIn_Panel.Controls.Add(this.DMMMSU_Logo);
+            this.LogIn_Panel.Controls.Add(this.Back_Button);
+            this.LogIn_Panel.Controls.Add(this.Input_Panel);
+            this.LogIn_Panel.Controls.Add(this.LogIn_Container);
+            this.LogIn_Panel.Controls.Add(this.GreenPanel);
+            this.LogIn_Panel.Controls.Add(this.White_Panel);
+            this.LogIn_Panel.Location = new System.Drawing.Point(0, 0);
+            this.LogIn_Panel.Name = "LogIn_Panel";
+            this.LogIn_Panel.Size = new System.Drawing.Size(1280, 720);
+            this.LogIn_Panel.TabIndex = 12;
+            // 
+            // White_Panel
+            // 
+            this.White_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.White_Panel.Location = new System.Drawing.Point(0, 0);
+            this.White_Panel.Name = "White_Panel";
+            this.White_Panel.Size = new System.Drawing.Size(1263, 462);
+            this.White_Panel.TabIndex = 12;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1232, 676);
-            this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.LogIn_Container);
-            this.Controls.Add(this.DMMMSU_Logo);
-            this.Controls.Add(this.Input_Panel);
-            this.Controls.Add(this.GreenPanel);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.LogIn_Panel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
             this.Text = "HiveStock";
@@ -351,6 +371,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Password_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Profile_Icon)).EndInit();
+            this.LogIn_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,7 +394,9 @@
         private Guna.UI2.WinForms.Guna2ContainerControl SignUp_Container;
         private System.Windows.Forms.Label SignUp_Label;
         private System.Windows.Forms.LinkLabel SignUp_Hyperlink;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton Back_Button;
+        private System.Windows.Forms.Panel LogIn_Panel;
+        private System.Windows.Forms.Panel White_Panel;
     }
 }
 

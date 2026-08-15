@@ -44,7 +44,7 @@ namespace LogIn_HiveStock
 
         private void LogIn_Button_Click(object sender, EventArgs e)
         {
-            var f = new LogIn();
+            var f = new LogIn_Register();
             f.Show();
             this.Hide();
         }

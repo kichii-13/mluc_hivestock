@@ -1,6 +1,6 @@
 ﻿namespace LogIn_HiveStock
 {
-    partial class Register
+    partial class LogIn_Register
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Header_Container = new System.Windows.Forms.Panel();
-            this.RegistrationForm_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.RegistrationForm_Label = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn_Register));
+            this.Register_Panel = new System.Windows.Forms.Panel();
+            this.R_Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Register_Input = new System.Windows.Forms.Panel();
             this.ConfirmPassword_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Pasword_Input = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,59 +52,87 @@
             this.PhoneNumber_Label = new System.Windows.Forms.Label();
             this.FirstName_Label = new System.Windows.Forms.Label();
             this.LastName_Label = new System.Windows.Forms.Label();
-            this.MLUC = new System.Windows.Forms.Label();
-            this.MarketingCenter = new System.Windows.Forms.Label();
             this.LogIn_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Cancel_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Register_Button = new Guna.UI2.WinForms.Guna2Button();
             this.LogIn_Hyperlink = new System.Windows.Forms.LinkLabel();
             this.LogIn_Label = new System.Windows.Forms.Label();
+            this.Header_Container = new System.Windows.Forms.Panel();
+            this.RegistrationForm_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.RegistrationForm_Label = new System.Windows.Forms.Label();
             this.DMMMSU_logo = new System.Windows.Forms.PictureBox();
-            this.Register_Panel = new System.Windows.Forms.Panel();
-            this.Header_Container.SuspendLayout();
-            this.RegistrationForm_Container.SuspendLayout();
+            this.MarketingCenter = new System.Windows.Forms.Label();
+            this.MLUC = new System.Windows.Forms.Label();
+            this.LogIn_Panel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.L_Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Input_Panel = new System.Windows.Forms.Panel();
+            this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Input_UserID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.User_Label = new System.Windows.Forms.Label();
+            this.guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.GreenPanel = new System.Windows.Forms.Panel();
+            this.SignUp_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.SignUp_Label = new System.Windows.Forms.Label();
+            this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Register_Panel.SuspendLayout();
             this.Register_Input.SuspendLayout();
             this.LogIn_Container.SuspendLayout();
+            this.Header_Container.SuspendLayout();
+            this.RegistrationForm_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_logo)).BeginInit();
-            this.Register_Panel.SuspendLayout();
+            this.LogIn_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Input_Panel.SuspendLayout();
+            this.guna2ContainerControl1.SuspendLayout();
+            this.GreenPanel.SuspendLayout();
+            this.SignUp_Container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Header_Container
+            // Register_Panel
             // 
-            this.Header_Container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.Header_Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Header_Container.Controls.Add(this.RegistrationForm_Container);
-            this.Header_Container.Controls.Add(this.DMMMSU_logo);
-            this.Header_Container.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Header_Container.Location = new System.Drawing.Point(0, 0);
-            this.Header_Container.Name = "Header_Container";
-            this.Header_Container.Size = new System.Drawing.Size(1280, 435);
-            this.Header_Container.TabIndex = 1;
+            this.Register_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Register_Panel.Controls.Add(this.R_Back_Button);
+            this.Register_Panel.Controls.Add(this.Register_Input);
+            this.Register_Panel.Controls.Add(this.LogIn_Container);
+            this.Register_Panel.Controls.Add(this.Header_Container);
+            this.Register_Panel.Controls.Add(this.MarketingCenter);
+            this.Register_Panel.Controls.Add(this.MLUC);
+            this.Register_Panel.Location = new System.Drawing.Point(0, 0);
+            this.Register_Panel.Name = "Register_Panel";
+            this.Register_Panel.Size = new System.Drawing.Size(1280, 726);
+            this.Register_Panel.TabIndex = 7;
+            this.Register_Panel.Visible = false;
             // 
-            // RegistrationForm_Container
+            // R_Back_Button
             // 
-            this.RegistrationForm_Container.BorderRadius = 10;
-            this.RegistrationForm_Container.BorderThickness = 2;
-            this.RegistrationForm_Container.Controls.Add(this.RegistrationForm_Label);
-            this.RegistrationForm_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.RegistrationForm_Container.Location = new System.Drawing.Point(56, 54);
-            this.RegistrationForm_Container.Name = "RegistrationForm_Container";
-            this.RegistrationForm_Container.Size = new System.Drawing.Size(646, 57);
-            this.RegistrationForm_Container.TabIndex = 26;
-            this.RegistrationForm_Container.Text = "guna2ContainerControl1";
-            // 
-            // RegistrationForm_Label
-            // 
-            this.RegistrationForm_Label.AutoSize = true;
-            this.RegistrationForm_Label.BackColor = System.Drawing.Color.Transparent;
-            this.RegistrationForm_Label.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistrationForm_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.RegistrationForm_Label.Location = new System.Drawing.Point(228, 13);
-            this.RegistrationForm_Label.Name = "RegistrationForm_Label";
-            this.RegistrationForm_Label.Size = new System.Drawing.Size(193, 30);
-            this.RegistrationForm_Label.TabIndex = 0;
-            this.RegistrationForm_Label.Text = "Registration Form";
-            this.RegistrationForm_Label.Click += new System.EventHandler(this.LogIn_Label_Click);
+            this.R_Back_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.R_Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.R_Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.R_Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.R_Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.R_Back_Button.FillColor = System.Drawing.Color.White;
+            this.R_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.R_Back_Button.ForeColor = System.Drawing.Color.White;
+            this.R_Back_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.R_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("R_Back_Button.Image")));
+            this.R_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.R_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
+            this.R_Back_Button.IndicateFocus = true;
+            this.R_Back_Button.Location = new System.Drawing.Point(13, 13);
+            this.R_Back_Button.Name = "R_Back_Button";
+            this.R_Back_Button.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.R_Back_Button.PressedDepth = 100;
+            this.R_Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.R_Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.R_Back_Button.Size = new System.Drawing.Size(40, 40);
+            this.R_Back_Button.TabIndex = 14;
+            this.R_Back_Button.Click += new System.EventHandler(this.R_Back_Button_Click);
             // 
             // Register_Input
             // 
@@ -136,7 +164,7 @@
             this.Register_Input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.Register_Input.Location = new System.Drawing.Point(70, 111);
             this.Register_Input.Name = "Register_Input";
-            this.Register_Input.Size = new System.Drawing.Size(621, 441);
+            this.Register_Input.Size = new System.Drawing.Size(621, 442);
             this.Register_Input.TabIndex = 2;
             // 
             // ConfirmPassword_Input
@@ -371,7 +399,6 @@
             this.Confirm_Label.Size = new System.Drawing.Size(149, 21);
             this.Confirm_Label.TabIndex = 17;
             this.Confirm_Label.Text = "Confirm Password";
-            this.Confirm_Label.Click += new System.EventHandler(this.label11_Click);
             // 
             // Password_Label
             // 
@@ -383,7 +410,6 @@
             this.Password_Label.Size = new System.Drawing.Size(82, 21);
             this.Password_Label.TabIndex = 15;
             this.Password_Label.Text = "Password";
-            this.Password_Label.Click += new System.EventHandler(this.label10_Click);
             // 
             // AccountInfo_Label
             // 
@@ -461,7 +487,6 @@
             this.FirstName_Label.Size = new System.Drawing.Size(93, 21);
             this.FirstName_Label.TabIndex = 3;
             this.FirstName_Label.Text = "First Name";
-            this.FirstName_Label.Click += new System.EventHandler(this.label3_Click);
             // 
             // LastName_Label
             // 
@@ -473,30 +498,6 @@
             this.LastName_Label.Size = new System.Drawing.Size(92, 21);
             this.LastName_Label.TabIndex = 1;
             this.LastName_Label.Text = "Last Name";
-            // 
-            // MLUC
-            // 
-            this.MLUC.AutoSize = true;
-            this.MLUC.BackColor = System.Drawing.Color.Transparent;
-            this.MLUC.Font = new System.Drawing.Font("Malgun Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.MLUC.Location = new System.Drawing.Point(827, 472);
-            this.MLUC.Name = "MLUC";
-            this.MLUC.Size = new System.Drawing.Size(325, 50);
-            this.MLUC.TabIndex = 3;
-            this.MLUC.Text = "DMMMSU MLUC";
-            // 
-            // MarketingCenter
-            // 
-            this.MarketingCenter.AutoSize = true;
-            this.MarketingCenter.BackColor = System.Drawing.Color.Transparent;
-            this.MarketingCenter.Font = new System.Drawing.Font("Malgun Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.MarketingCenter.Location = new System.Drawing.Point(791, 523);
-            this.MarketingCenter.Name = "MarketingCenter";
-            this.MarketingCenter.Size = new System.Drawing.Size(395, 50);
-            this.MarketingCenter.TabIndex = 4;
-            this.MarketingCenter.Text = "MARKETING CENTER";
             // 
             // LogIn_Container
             // 
@@ -530,6 +531,7 @@
             this.Cancel_Button.Size = new System.Drawing.Size(127, 36);
             this.Cancel_Button.TabIndex = 35;
             this.Cancel_Button.Text = "CANCEL";
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
             // Register_Button
             // 
@@ -580,6 +582,42 @@
             this.LogIn_Label.TabIndex = 10;
             this.LogIn_Label.Text = "Already have an account?";
             // 
+            // Header_Container
+            // 
+            this.Header_Container.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Header_Container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Header_Container.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header_Container.Controls.Add(this.RegistrationForm_Container);
+            this.Header_Container.Controls.Add(this.DMMMSU_logo);
+            this.Header_Container.Location = new System.Drawing.Point(-6, -8);
+            this.Header_Container.Name = "Header_Container";
+            this.Header_Container.Size = new System.Drawing.Size(1286, 440);
+            this.Header_Container.TabIndex = 1;
+            // 
+            // RegistrationForm_Container
+            // 
+            this.RegistrationForm_Container.BorderRadius = 10;
+            this.RegistrationForm_Container.BorderThickness = 2;
+            this.RegistrationForm_Container.Controls.Add(this.RegistrationForm_Label);
+            this.RegistrationForm_Container.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.RegistrationForm_Container.Location = new System.Drawing.Point(62, 62);
+            this.RegistrationForm_Container.Name = "RegistrationForm_Container";
+            this.RegistrationForm_Container.Size = new System.Drawing.Size(646, 57);
+            this.RegistrationForm_Container.TabIndex = 26;
+            this.RegistrationForm_Container.Text = "guna2ContainerControl1";
+            // 
+            // RegistrationForm_Label
+            // 
+            this.RegistrationForm_Label.AutoSize = true;
+            this.RegistrationForm_Label.BackColor = System.Drawing.Color.Transparent;
+            this.RegistrationForm_Label.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistrationForm_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.RegistrationForm_Label.Location = new System.Drawing.Point(228, 13);
+            this.RegistrationForm_Label.Name = "RegistrationForm_Label";
+            this.RegistrationForm_Label.Size = new System.Drawing.Size(193, 30);
+            this.RegistrationForm_Label.TabIndex = 0;
+            this.RegistrationForm_Label.Text = "Registration Form";
+            // 
             // DMMMSU_logo
             // 
             this.DMMMSU_logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo1;
@@ -590,77 +628,378 @@
             this.DMMMSU_logo.TabIndex = 0;
             this.DMMMSU_logo.TabStop = false;
             // 
-            // Register_Panel
+            // MarketingCenter
             // 
-            this.Register_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Register_Panel.Controls.Add(this.LogIn_Container);
-            this.Register_Panel.Controls.Add(this.Register_Input);
-            this.Register_Panel.Controls.Add(this.Header_Container);
-            this.Register_Panel.Controls.Add(this.MarketingCenter);
-            this.Register_Panel.Controls.Add(this.MLUC);
-            this.Register_Panel.Location = new System.Drawing.Point(0, 0);
-            this.Register_Panel.Name = "Register_Panel";
-            this.Register_Panel.Size = new System.Drawing.Size(1280, 720);
-            this.Register_Panel.TabIndex = 6;
+            this.MarketingCenter.AutoSize = true;
+            this.MarketingCenter.BackColor = System.Drawing.Color.Transparent;
+            this.MarketingCenter.Font = new System.Drawing.Font("Malgun Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MarketingCenter.Location = new System.Drawing.Point(791, 523);
+            this.MarketingCenter.Name = "MarketingCenter";
+            this.MarketingCenter.Size = new System.Drawing.Size(395, 50);
+            this.MarketingCenter.TabIndex = 4;
+            this.MarketingCenter.Text = "MARKETING CENTER";
             // 
-            // Register
+            // MLUC
+            // 
+            this.MLUC.AutoSize = true;
+            this.MLUC.BackColor = System.Drawing.Color.Transparent;
+            this.MLUC.Font = new System.Drawing.Font("Malgun Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.MLUC.Location = new System.Drawing.Point(827, 472);
+            this.MLUC.Name = "MLUC";
+            this.MLUC.Size = new System.Drawing.Size(325, 50);
+            this.MLUC.TabIndex = 3;
+            this.MLUC.Text = "DMMMSU MLUC";
+            // 
+            // LogIn_Panel
+            // 
+            this.LogIn_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.LogIn_Panel.Controls.Add(this.pictureBox1);
+            this.LogIn_Panel.Controls.Add(this.L_Back_Button);
+            this.LogIn_Panel.Controls.Add(this.Input_Panel);
+            this.LogIn_Panel.Controls.Add(this.guna2ContainerControl1);
+            this.LogIn_Panel.Controls.Add(this.GreenPanel);
+            this.LogIn_Panel.Location = new System.Drawing.Point(0, 0);
+            this.LogIn_Panel.Name = "LogIn_Panel";
+            this.LogIn_Panel.Size = new System.Drawing.Size(1280, 720);
+            this.LogIn_Panel.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(207, 73);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(330, 330);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // L_Back_Button
+            // 
+            this.L_Back_Button.BackColor = System.Drawing.Color.Transparent;
+            this.L_Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.L_Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.L_Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.L_Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.L_Back_Button.FillColor = System.Drawing.Color.White;
+            this.L_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.L_Back_Button.ForeColor = System.Drawing.Color.White;
+            this.L_Back_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.L_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("L_Back_Button.Image")));
+            this.L_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.L_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
+            this.L_Back_Button.IndicateFocus = true;
+            this.L_Back_Button.Location = new System.Drawing.Point(13, 13);
+            this.L_Back_Button.Name = "L_Back_Button";
+            this.L_Back_Button.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.L_Back_Button.PressedDepth = 100;
+            this.L_Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.L_Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.L_Back_Button.Size = new System.Drawing.Size(40, 40);
+            this.L_Back_Button.TabIndex = 11;
+            this.L_Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
+            // 
+            // Input_Panel
+            // 
+            this.Input_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Input_Panel.CausesValidation = false;
+            this.Input_Panel.Controls.Add(this.Input_Password);
+            this.Input_Panel.Controls.Add(this.Input_UserID);
+            this.Input_Panel.Controls.Add(this.LogIn_Button);
+            this.Input_Panel.Controls.Add(this.label1);
+            this.Input_Panel.Controls.Add(this.User_Label);
+            this.Input_Panel.Location = new System.Drawing.Point(760, 198);
+            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.Input_Panel.Name = "Input_Panel";
+            this.Input_Panel.Size = new System.Drawing.Size(374, 269);
+            this.Input_Panel.TabIndex = 7;
+            // 
+            // Input_Password
+            // 
+            this.Input_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_Password.BorderRadius = 10;
+            this.Input_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_Password.DefaultText = "";
+            this.Input_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_Password.ForeColor = System.Drawing.Color.Black;
+            this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_Password.IconLeft = global::LogIn_HiveStock.Properties.Resources.padlock;
+            this.Input_Password.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Input_Password.Location = new System.Drawing.Point(31, 127);
+            this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Input_Password.MaxLength = 30;
+            this.Input_Password.Name = "Input_Password";
+            this.Input_Password.PlaceholderText = "";
+            this.Input_Password.SelectedText = "";
+            this.Input_Password.Size = new System.Drawing.Size(309, 40);
+            this.Input_Password.TabIndex = 11;
+            this.Input_Password.UseSystemPasswordChar = true;
+            // 
+            // Input_UserID
+            // 
+            this.Input_UserID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_UserID.BorderRadius = 10;
+            this.Input_UserID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_UserID.DefaultText = "";
+            this.Input_UserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_UserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_UserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_UserID.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_UserID.ForeColor = System.Drawing.Color.Black;
+            this.Input_UserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_UserID.IconLeft = global::LogIn_HiveStock.Properties.Resources.login;
+            this.Input_UserID.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Input_UserID.Location = new System.Drawing.Point(30, 52);
+            this.Input_UserID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Input_UserID.MaxLength = 15;
+            this.Input_UserID.Name = "Input_UserID";
+            this.Input_UserID.PlaceholderText = "";
+            this.Input_UserID.SelectedText = "";
+            this.Input_UserID.Size = new System.Drawing.Size(310, 40);
+            this.Input_UserID.TabIndex = 4;
+            // 
+            // LogIn_Button
+            // 
+            this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogIn_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Location = new System.Drawing.Point(31, 191);
+            this.LogIn_Button.Name = "LogIn_Button";
+            this.LogIn_Button.Size = new System.Drawing.Size(309, 38);
+            this.LogIn_Button.TabIndex = 10;
+            this.LogIn_Button.Text = "LOG IN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(26, 105);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Password";
+            // 
+            // User_Label
+            // 
+            this.User_Label.AutoSize = true;
+            this.User_Label.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Label.ForeColor = System.Drawing.Color.DimGray;
+            this.User_Label.Location = new System.Drawing.Point(26, 31);
+            this.User_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.User_Label.Name = "User_Label";
+            this.User_Label.Size = new System.Drawing.Size(62, 20);
+            this.User_Label.TabIndex = 1;
+            this.User_Label.Text = "User ID";
+            // 
+            // guna2ContainerControl1
+            // 
+            this.guna2ContainerControl1.BorderRadius = 10;
+            this.guna2ContainerControl1.BorderThickness = 2;
+            this.guna2ContainerControl1.Controls.Add(this.label2);
+            this.guna2ContainerControl1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.guna2ContainerControl1.Location = new System.Drawing.Point(752, 142);
+            this.guna2ContainerControl1.Name = "guna2ContainerControl1";
+            this.guna2ContainerControl1.Size = new System.Drawing.Size(390, 57);
+            this.guna2ContainerControl1.TabIndex = 10;
+            this.guna2ContainerControl1.Text = "guna2ContainerControl1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.label2.Location = new System.Drawing.Point(156, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Log In";
+            // 
+            // GreenPanel
+            // 
+            this.GreenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.GreenPanel.Controls.Add(this.SignUp_Container);
+            this.GreenPanel.Controls.Add(this.label3);
+            this.GreenPanel.Controls.Add(this.label4);
+            this.GreenPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GreenPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.GreenPanel.Location = new System.Drawing.Point(0, 432);
+            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.GreenPanel.Name = "GreenPanel";
+            this.GreenPanel.Size = new System.Drawing.Size(1280, 288);
+            this.GreenPanel.TabIndex = 2;
+            // 
+            // SignUp_Container
+            // 
+            this.SignUp_Container.BorderRadius = 5;
+            this.SignUp_Container.Controls.Add(this.SignUp_Label);
+            this.SignUp_Container.Controls.Add(this.SignUp_Hyperlink);
+            this.SignUp_Container.FillColor = System.Drawing.Color.LightGray;
+            this.SignUp_Container.Location = new System.Drawing.Point(760, 30);
+            this.SignUp_Container.Name = "SignUp_Container";
+            this.SignUp_Container.Size = new System.Drawing.Size(374, 41);
+            this.SignUp_Container.TabIndex = 4;
+            this.SignUp_Container.Text = "guna2ContainerControl1";
+            // 
+            // SignUp_Label
+            // 
+            this.SignUp_Label.AutoSize = true;
+            this.SignUp_Label.BackColor = System.Drawing.Color.Transparent;
+            this.SignUp_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUp_Label.ForeColor = System.Drawing.Color.Black;
+            this.SignUp_Label.Location = new System.Drawing.Point(84, 13);
+            this.SignUp_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SignUp_Label.Name = "SignUp_Label";
+            this.SignUp_Label.Size = new System.Drawing.Size(151, 17);
+            this.SignUp_Label.TabIndex = 10;
+            this.SignUp_Label.Text = "Don\'t have an account?";
+            // 
+            // SignUp_Hyperlink
+            // 
+            this.SignUp_Hyperlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.SignUp_Hyperlink.AutoSize = true;
+            this.SignUp_Hyperlink.BackColor = System.Drawing.Color.Transparent;
+            this.SignUp_Hyperlink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SignUp_Hyperlink.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUp_Hyperlink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.SignUp_Hyperlink.Location = new System.Drawing.Point(232, 13);
+            this.SignUp_Hyperlink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SignUp_Hyperlink.Name = "SignUp_Hyperlink";
+            this.SignUp_Hyperlink.Size = new System.Drawing.Size(58, 17);
+            this.SignUp_Hyperlink.TabIndex = 9;
+            this.SignUp_Hyperlink.TabStop = true;
+            this.SignUp_Hyperlink.Text = "Sign Up";
+            this.SignUp_Hyperlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignUp_Hyperlink_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.label3.Location = new System.Drawing.Point(121, 95);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(509, 65);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "MARKETING CENTER";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.label4.Location = new System.Drawing.Point(167, 34);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(418, 65);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "DMMMSU MLUC";
+            // 
+            // LogIn_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.LogIn_Panel);
             this.Controls.Add(this.Register_Panel);
-            this.MaximizeBox = false;
-            this.Name = "Register";
-            this.Text = "Registration Form";
-            this.Header_Container.ResumeLayout(false);
-            this.RegistrationForm_Container.ResumeLayout(false);
-            this.RegistrationForm_Container.PerformLayout();
+            this.Name = "LogIn_Register";
+            this.Text = "LogIn_Register";
+            this.Register_Panel.ResumeLayout(false);
+            this.Register_Panel.PerformLayout();
             this.Register_Input.ResumeLayout(false);
             this.Register_Input.PerformLayout();
             this.LogIn_Container.ResumeLayout(false);
             this.LogIn_Container.PerformLayout();
+            this.Header_Container.ResumeLayout(false);
+            this.RegistrationForm_Container.ResumeLayout(false);
+            this.RegistrationForm_Container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_logo)).EndInit();
-            this.Register_Panel.ResumeLayout(false);
-            this.Register_Panel.PerformLayout();
+            this.LogIn_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Input_Panel.ResumeLayout(false);
+            this.Input_Panel.PerformLayout();
+            this.guna2ContainerControl1.ResumeLayout(false);
+            this.guna2ContainerControl1.PerformLayout();
+            this.GreenPanel.ResumeLayout(false);
+            this.GreenPanel.PerformLayout();
+            this.SignUp_Container.ResumeLayout(false);
+            this.SignUp_Container.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel Header_Container;
+        private System.Windows.Forms.Panel Register_Panel;
+        private Guna.UI2.WinForms.Guna2ContainerControl LogIn_Container;
+        private Guna.UI2.WinForms.Guna2Button Cancel_Button;
+        private Guna.UI2.WinForms.Guna2Button Register_Button;
+        private System.Windows.Forms.LinkLabel LogIn_Hyperlink;
+        private System.Windows.Forms.Label LogIn_Label;
         private System.Windows.Forms.Panel Register_Input;
-        private System.Windows.Forms.Label LastName_Label;
-        private System.Windows.Forms.Label FirstName_Label;
-        private System.Windows.Forms.Label PhoneNumber_Label;
-        private System.Windows.Forms.Label PersonalInfo_Label;
+        private Guna.UI2.WinForms.Guna2TextBox ConfirmPassword_Input;
+        private Guna.UI2.WinForms.Guna2TextBox Pasword_Input;
+        private Guna.UI2.WinForms.Guna2TextBox Email_Input;
+        private Guna.UI2.WinForms.Guna2TextBox ID_Input;
+        private Guna.UI2.WinForms.Guna2TextBox Username_Input;
+        private Guna.UI2.WinForms.Guna2TextBox PhoneNumber_Input;
+        private Guna.UI2.WinForms.Guna2TextBox FirstName_Input;
+        private Guna.UI2.WinForms.Guna2TextBox LastName_Input;
+        private Guna.UI2.WinForms.Guna2Button AccountInfo_Button;
+        private Guna.UI2.WinForms.Guna2Button PersonalInfo_Button;
         private System.Windows.Forms.Label Confirm_Label;
         private System.Windows.Forms.Label Password_Label;
         private System.Windows.Forms.Label AccountInfo_Label;
         private System.Windows.Forms.Label Email_Label;
         private System.Windows.Forms.Label ID_Label;
         private System.Windows.Forms.Label Username_Label;
-        private System.Windows.Forms.PictureBox DMMMSU_logo;
-        private System.Windows.Forms.Label MLUC;
-        private System.Windows.Forms.Label MarketingCenter;
-        private Guna.UI2.WinForms.Guna2Button AccountInfo_Button;
-        private Guna.UI2.WinForms.Guna2Button PersonalInfo_Button;
+        private System.Windows.Forms.Label PersonalInfo_Label;
+        private System.Windows.Forms.Label PhoneNumber_Label;
+        private System.Windows.Forms.Label FirstName_Label;
+        private System.Windows.Forms.Label LastName_Label;
+        private System.Windows.Forms.Panel Header_Container;
         private Guna.UI2.WinForms.Guna2ContainerControl RegistrationForm_Container;
         private System.Windows.Forms.Label RegistrationForm_Label;
-        private Guna.UI2.WinForms.Guna2TextBox LastName_Input;
-        private Guna.UI2.WinForms.Guna2TextBox PhoneNumber_Input;
-        private Guna.UI2.WinForms.Guna2TextBox FirstName_Input;
-        private Guna.UI2.WinForms.Guna2TextBox ConfirmPassword_Input;
-        private Guna.UI2.WinForms.Guna2TextBox Pasword_Input;
-        private Guna.UI2.WinForms.Guna2TextBox Email_Input;
-        private Guna.UI2.WinForms.Guna2TextBox ID_Input;
-        private Guna.UI2.WinForms.Guna2TextBox Username_Input;
-        private Guna.UI2.WinForms.Guna2ContainerControl LogIn_Container;
-        private System.Windows.Forms.Label LogIn_Label;
-        private System.Windows.Forms.LinkLabel LogIn_Hyperlink;
-        private Guna.UI2.WinForms.Guna2Button Register_Button;
-        private Guna.UI2.WinForms.Guna2Button Cancel_Button;
-        private System.Windows.Forms.Panel Register_Panel;
+        private System.Windows.Forms.PictureBox DMMMSU_logo;
+        private System.Windows.Forms.Label MarketingCenter;
+        private System.Windows.Forms.Label MLUC;
+        private System.Windows.Forms.Panel LogIn_Panel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2CircleButton L_Back_Button;
+        private System.Windows.Forms.Panel Input_Panel;
+        private Guna.UI2.WinForms.Guna2TextBox Input_Password;
+        private Guna.UI2.WinForms.Guna2TextBox Input_UserID;
+        private Guna.UI2.WinForms.Guna2Button LogIn_Button;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label User_Label;
+        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel GreenPanel;
+        private Guna.UI2.WinForms.Guna2ContainerControl SignUp_Container;
+        private System.Windows.Forms.Label SignUp_Label;
+        private System.Windows.Forms.LinkLabel SignUp_Hyperlink;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2CircleButton R_Back_Button;
     }
 }

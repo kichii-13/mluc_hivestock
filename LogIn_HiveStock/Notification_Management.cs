@@ -63,5 +63,10 @@ namespace LogIn_HiveStock
             f.Show();
             this.Hide();
         }
+
+        private void DataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSide.Designer.cs">
+      <DependentUpon>AdminSide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogIn_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn_Register.Designer.cs">
+      <DependentUpon>LogIn_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notification_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,11 @@
     </Compile>
     <Compile Include="Product_Information.Designer.cs">
       <DependentUpon>Product_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -110,6 +127,9 @@
     <Compile Include="UserView_ProductCatalog.Designer.cs">
       <DependentUpon>UserView_ProductCatalog.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminSide.resx">
+      <DependentUpon>AdminSide.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard.resx">
       <DependentUpon>Admin_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +145,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LogIn_Register.resx">
+      <DependentUpon>LogIn_Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notification_Management.resx">
       <DependentUpon>Notification_Management.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,14 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,7 +201,16 @@
     <None Include="Resources\dmmmsu_logo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back-button.png" />
+    <None Include="Resources\complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
