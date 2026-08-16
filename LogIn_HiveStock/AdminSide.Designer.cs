@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSide));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSide));
             this.Side_Panel = new System.Windows.Forms.Panel();
             this.Logo_Panel = new System.Windows.Forms.Panel();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -45,6 +45,7 @@
             this.StaffName_Label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HiveStock = new System.Windows.Forms.Label();
+            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
             this.LogOut_Button = new Guna.UI2.WinForms.Guna2Button();
             this.AdminDashboard_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Order_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -66,7 +67,12 @@
             this.TP_Color = new Guna.UI2.WinForms.Guna2Panel();
             this.TP_Counter = new System.Windows.Forms.Label();
             this.TP_Label = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Search_Input = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Edit_Button = new System.Windows.Forms.Button();
+            this.Delete_Button = new System.Windows.Forms.Button();
+            this.Create_Button = new System.Windows.Forms.Button();
             this.Search_Label = new System.Windows.Forms.Label();
             this.DataTable = new System.Windows.Forms.DataGridView();
             this.ProductID_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,6 +129,7 @@
             this.CustomerDemandTrend_Label = new Guna.UI2.WinForms.Guna2Panel();
             this.CDT_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.CDT_Label = new System.Windows.Forms.Label();
+            this.CDT_Graph = new System.Windows.Forms.PictureBox();
             this.HighestDemandProducts = new Guna.UI2.WinForms.Guna2Panel();
             this.HDP_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.HDP_Label = new System.Windows.Forms.Label();
@@ -136,6 +143,7 @@
             this.TR1_Counter = new System.Windows.Forms.Label();
             this.TRLine1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.TotalR_Label = new System.Windows.Forms.Label();
+            this.HDP_Graph = new System.Windows.Forms.PictureBox();
             this.HDP_P7 = new System.Windows.Forms.Label();
             this.HDP_P6 = new System.Windows.Forms.Label();
             this.HDP_P5 = new System.Windows.Forms.Label();
@@ -158,6 +166,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AdminDashboard_Label = new System.Windows.Forms.Label();
             this.OrderManagement_Panel = new System.Windows.Forms.Panel();
+            this.OM_Panel = new System.Windows.Forms.Panel();
+            this.OM_Label = new System.Windows.Forms.Label();
+            this.Complete_Button = new System.Windows.Forms.Button();
+            this.View_Button = new System.Windows.Forms.Button();
             this.OMSearch_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.OMSearch_Label = new System.Windows.Forms.Label();
             this.OM_OrdersCompleted_Panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -182,26 +194,16 @@
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
-            this.CDT_Graph = new System.Windows.Forms.PictureBox();
-            this.HDP_Graph = new System.Windows.Forms.PictureBox();
-            this.Edit_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
-            this.Create_Button = new System.Windows.Forms.Button();
-            this.Complete_Button = new System.Windows.Forms.Button();
-            this.View_Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.OM_Panel = new System.Windows.Forms.Panel();
-            this.OM_Label = new System.Windows.Forms.Label();
             this.Side_Panel.SuspendLayout();
             this.Logo_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
             this.Product_Mgmt_Panel.SuspendLayout();
             this.OutOfStock_Panel.SuspendLayout();
             this.LowStock_Panel.SuspendLayout();
             this.InStock_Panel.SuspendLayout();
             this.TP_Panel.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable)).BeginInit();
             this.AdminDashboard_Panel.SuspendLayout();
             this.Orders_Panel.SuspendLayout();
@@ -219,23 +221,21 @@
             this.RU_Panel.SuspendLayout();
             this.CustomerDemandTrend_Label.SuspendLayout();
             this.CDT_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).BeginInit();
             this.HighestDemandProducts.SuspendLayout();
             this.HDP_Panel.SuspendLayout();
             this.TotalRequests_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).BeginInit();
             this.NotifyRequest_Panel.SuspendLayout();
             this.NR_Panel.SuspendLayout();
             this.NRCounter_Panel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.OrderManagement_Panel.SuspendLayout();
+            this.OM_Panel.SuspendLayout();
             this.OM_OrdersCompleted_Panel.SuspendLayout();
             this.OM_PendingPickups_Panel.SuspendLayout();
             this.OM_TotalOrders_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.OM_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Side_Panel
@@ -264,7 +264,7 @@
             this.Logo_Panel.Location = new System.Drawing.Point(0, 0);
             this.Logo_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Logo_Panel.Name = "Logo_Panel";
-            this.Logo_Panel.Size = new System.Drawing.Size(183, 235);
+            this.Logo_Panel.Size = new System.Drawing.Size(183, 223);
             this.Logo_Panel.TabIndex = 23;
             // 
             // guna2Shapes1
@@ -273,7 +273,7 @@
             this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.guna2Shapes1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Shapes1.LineThickness = 1;
-            this.guna2Shapes1.Location = new System.Drawing.Point(0, 136);
+            this.guna2Shapes1.Location = new System.Drawing.Point(0, 124);
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
@@ -288,7 +288,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.label7.Location = new System.Drawing.Point(22, 151);
+            this.label7.Location = new System.Drawing.Point(22, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 17);
             this.label7.TabIndex = 20;
@@ -300,7 +300,7 @@
             this.StaffIDNumber_Label.BackColor = System.Drawing.Color.Transparent;
             this.StaffIDNumber_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StaffIDNumber_Label.ForeColor = System.Drawing.Color.Black;
-            this.StaffIDNumber_Label.Location = new System.Drawing.Point(22, 174);
+            this.StaffIDNumber_Label.Location = new System.Drawing.Point(22, 165);
             this.StaffIDNumber_Label.Name = "StaffIDNumber_Label";
             this.StaffIDNumber_Label.Size = new System.Drawing.Size(138, 17);
             this.StaffIDNumber_Label.TabIndex = 19;
@@ -310,9 +310,9 @@
             // StaffName_Label
             // 
             this.StaffName_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StaffName_Label.Location = new System.Drawing.Point(3, 187);
+            this.StaffName_Label.Location = new System.Drawing.Point(3, 178);
             this.StaffName_Label.Name = "StaffName_Label";
-            this.StaffName_Label.Size = new System.Drawing.Size(177, 48);
+            this.StaffName_Label.Size = new System.Drawing.Size(177, 45);
             this.StaffName_Label.TabIndex = 13;
             this.StaffName_Label.Text = "Michael Jackson";
             this.StaffName_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -323,19 +323,31 @@
             this.panel1.Controls.Add(this.DMMMSU_Logo);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 139);
+            this.panel1.Size = new System.Drawing.Size(181, 125);
             this.panel1.TabIndex = 12;
             // 
             // HiveStock
             // 
             this.HiveStock.AutoSize = true;
             this.HiveStock.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HiveStock.Location = new System.Drawing.Point(52, 112);
+            this.HiveStock.Location = new System.Drawing.Point(52, 103);
             this.HiveStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HiveStock.Name = "HiveStock";
             this.HiveStock.Size = new System.Drawing.Size(77, 19);
             this.HiveStock.TabIndex = 11;
             this.HiveStock.Text = "HiveStock";
+            // 
+            // DMMMSU_Logo
+            // 
+            this.DMMMSU_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.DMMMSU_Logo.Image = ((System.Drawing.Image)(resources.GetObject("DMMMSU_Logo.Image")));
+            this.DMMMSU_Logo.Location = new System.Drawing.Point(46, 10);
+            this.DMMMSU_Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
+            this.DMMMSU_Logo.Size = new System.Drawing.Size(87, 91);
+            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DMMMSU_Logo.TabIndex = 9;
+            this.DMMMSU_Logo.TabStop = false;
             // 
             // LogOut_Button
             // 
@@ -626,6 +638,30 @@
             this.TP_Label.TabIndex = 2;
             this.TP_Label.Text = "Total Products";
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(179, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1104, 64);
+            this.panel2.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "PRODUCT MANAGEMENT";
+            // 
             // Search_Input
             // 
             this.Search_Input.BorderColor = System.Drawing.Color.DarkGray;
@@ -647,6 +683,50 @@
             this.Search_Input.SelectedText = "";
             this.Search_Input.Size = new System.Drawing.Size(176, 27);
             this.Search_Input.TabIndex = 22;
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit_Button.Image = ((System.Drawing.Image)(resources.GetObject("Edit_Button.Image")));
+            this.Edit_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Edit_Button.Location = new System.Drawing.Point(396, 158);
+            this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Edit_Button.Size = new System.Drawing.Size(105, 37);
+            this.Edit_Button.TabIndex = 9;
+            this.Edit_Button.Text = "  Edit";
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            // 
+            // Delete_Button
+            // 
+            this.Delete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Button.Image")));
+            this.Delete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Delete_Button.Location = new System.Drawing.Point(531, 158);
+            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Delete_Button.Size = new System.Drawing.Size(128, 37);
+            this.Delete_Button.TabIndex = 10;
+            this.Delete_Button.Text = "Delete";
+            this.Delete_Button.UseVisualStyleBackColor = true;
+            // 
+            // Create_Button
+            // 
+            this.Create_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Create_Button.Image = ((System.Drawing.Image)(resources.GetObject("Create_Button.Image")));
+            this.Create_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Create_Button.Location = new System.Drawing.Point(258, 158);
+            this.Create_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Create_Button.Name = "Create_Button";
+            this.Create_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Create_Button.Size = new System.Drawing.Size(112, 37);
+            this.Create_Button.TabIndex = 8;
+            this.Create_Button.Text = "     Create";
+            this.Create_Button.UseVisualStyleBackColor = true;
+            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
             // 
             // Search_Label
             // 
@@ -1358,6 +1438,16 @@
             this.CDT_Label.Text = "CUSTOMER DEMAND TREND";
             this.CDT_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // CDT_Graph
+            // 
+            this.CDT_Graph.Image = ((System.Drawing.Image)(resources.GetObject("CDT_Graph.Image")));
+            this.CDT_Graph.Location = new System.Drawing.Point(-13, 39);
+            this.CDT_Graph.Name = "CDT_Graph";
+            this.CDT_Graph.Size = new System.Drawing.Size(359, 323);
+            this.CDT_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CDT_Graph.TabIndex = 16;
+            this.CDT_Graph.TabStop = false;
+            // 
             // HighestDemandProducts
             // 
             this.HighestDemandProducts.BackColor = System.Drawing.Color.Transparent;
@@ -1554,6 +1644,16 @@
             this.TotalR_Label.TabIndex = 18;
             this.TotalR_Label.Text = "Total Requests";
             this.TotalR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // HDP_Graph
+            // 
+            this.HDP_Graph.Image = ((System.Drawing.Image)(resources.GetObject("HDP_Graph.Image")));
+            this.HDP_Graph.Location = new System.Drawing.Point(305, 20);
+            this.HDP_Graph.Name = "HDP_Graph";
+            this.HDP_Graph.Size = new System.Drawing.Size(417, 399);
+            this.HDP_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HDP_Graph.TabIndex = 17;
+            this.HDP_Graph.TabStop = false;
             // 
             // HDP_P7
             // 
@@ -1853,6 +1953,58 @@
             this.OrderManagement_Panel.Name = "OrderManagement_Panel";
             this.OrderManagement_Panel.Size = new System.Drawing.Size(1271, 682);
             this.OrderManagement_Panel.TabIndex = 13;
+            // 
+            // OM_Panel
+            // 
+            this.OM_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.OM_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.OM_Panel.Controls.Add(this.OM_Label);
+            this.OM_Panel.Location = new System.Drawing.Point(181, 0);
+            this.OM_Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.OM_Panel.Name = "OM_Panel";
+            this.OM_Panel.Size = new System.Drawing.Size(1090, 64);
+            this.OM_Panel.TabIndex = 36;
+            // 
+            // OM_Label
+            // 
+            this.OM_Label.AutoSize = true;
+            this.OM_Label.BackColor = System.Drawing.Color.Transparent;
+            this.OM_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OM_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.OM_Label.Location = new System.Drawing.Point(15, 15);
+            this.OM_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OM_Label.Name = "OM_Label";
+            this.OM_Label.Size = new System.Drawing.Size(279, 32);
+            this.OM_Label.TabIndex = 6;
+            this.OM_Label.Text = "ORDER MANAGEMENT";
+            // 
+            // Complete_Button
+            // 
+            this.Complete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Complete_Button.Image = global::LogIn_HiveStock.Properties.Resources.complete;
+            this.Complete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Complete_Button.Location = new System.Drawing.Point(398, 158);
+            this.Complete_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Complete_Button.Name = "Complete_Button";
+            this.Complete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Complete_Button.Size = new System.Drawing.Size(130, 37);
+            this.Complete_Button.TabIndex = 35;
+            this.Complete_Button.Text = "      Complete";
+            this.Complete_Button.UseVisualStyleBackColor = true;
+            // 
+            // View_Button
+            // 
+            this.View_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_Button.Image = global::LogIn_HiveStock.Properties.Resources.view;
+            this.View_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.View_Button.Location = new System.Drawing.Point(258, 158);
+            this.View_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.View_Button.Name = "View_Button";
+            this.View_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.View_Button.Size = new System.Drawing.Size(130, 37);
+            this.View_Button.TabIndex = 34;
+            this.View_Button.Text = "      View";
+            this.View_Button.UseVisualStyleBackColor = true;
             // 
             // OMSearch_Input
             // 
@@ -2156,158 +2308,6 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
-            // DMMMSU_Logo
-            // 
-            this.DMMMSU_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.DMMMSU_Logo.Image = ((System.Drawing.Image)(resources.GetObject("DMMMSU_Logo.Image")));
-            this.DMMMSU_Logo.Location = new System.Drawing.Point(46, 19);
-            this.DMMMSU_Logo.Margin = new System.Windows.Forms.Padding(2);
-            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
-            this.DMMMSU_Logo.Size = new System.Drawing.Size(87, 91);
-            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DMMMSU_Logo.TabIndex = 9;
-            this.DMMMSU_Logo.TabStop = false;
-            // 
-            // CDT_Graph
-            // 
-            this.CDT_Graph.Image = ((System.Drawing.Image)(resources.GetObject("CDT_Graph.Image")));
-            this.CDT_Graph.Location = new System.Drawing.Point(-13, 39);
-            this.CDT_Graph.Name = "CDT_Graph";
-            this.CDT_Graph.Size = new System.Drawing.Size(359, 323);
-            this.CDT_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CDT_Graph.TabIndex = 16;
-            this.CDT_Graph.TabStop = false;
-            // 
-            // HDP_Graph
-            // 
-            this.HDP_Graph.Image = ((System.Drawing.Image)(resources.GetObject("HDP_Graph.Image")));
-            this.HDP_Graph.Location = new System.Drawing.Point(305, 20);
-            this.HDP_Graph.Name = "HDP_Graph";
-            this.HDP_Graph.Size = new System.Drawing.Size(417, 399);
-            this.HDP_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.HDP_Graph.TabIndex = 17;
-            this.HDP_Graph.TabStop = false;
-            // 
-            // Edit_Button
-            // 
-            this.Edit_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Edit_Button.Image = ((System.Drawing.Image)(resources.GetObject("Edit_Button.Image")));
-            this.Edit_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Edit_Button.Location = new System.Drawing.Point(396, 158);
-            this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Edit_Button.Size = new System.Drawing.Size(105, 37);
-            this.Edit_Button.TabIndex = 9;
-            this.Edit_Button.Text = "  Edit";
-            this.Edit_Button.UseVisualStyleBackColor = true;
-            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
-            // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Button.Image")));
-            this.Delete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Delete_Button.Location = new System.Drawing.Point(531, 158);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Delete_Button.Size = new System.Drawing.Size(128, 37);
-            this.Delete_Button.TabIndex = 10;
-            this.Delete_Button.Text = "Delete";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
-            // Create_Button
-            // 
-            this.Create_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_Button.Image = ((System.Drawing.Image)(resources.GetObject("Create_Button.Image")));
-            this.Create_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Create_Button.Location = new System.Drawing.Point(258, 158);
-            this.Create_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Create_Button.Name = "Create_Button";
-            this.Create_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Create_Button.Size = new System.Drawing.Size(112, 37);
-            this.Create_Button.TabIndex = 8;
-            this.Create_Button.Text = "     Create";
-            this.Create_Button.UseVisualStyleBackColor = true;
-            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
-            // 
-            // Complete_Button
-            // 
-            this.Complete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Complete_Button.Image = global::LogIn_HiveStock.Properties.Resources.complete;
-            this.Complete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Complete_Button.Location = new System.Drawing.Point(398, 158);
-            this.Complete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Complete_Button.Name = "Complete_Button";
-            this.Complete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Complete_Button.Size = new System.Drawing.Size(130, 37);
-            this.Complete_Button.TabIndex = 35;
-            this.Complete_Button.Text = "      Complete";
-            this.Complete_Button.UseVisualStyleBackColor = true;
-            // 
-            // View_Button
-            // 
-            this.View_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_Button.Image = global::LogIn_HiveStock.Properties.Resources.view;
-            this.View_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.View_Button.Location = new System.Drawing.Point(258, 158);
-            this.View_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.View_Button.Name = "View_Button";
-            this.View_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.View_Button.Size = new System.Drawing.Size(130, 37);
-            this.View_Button.TabIndex = 34;
-            this.View_Button.Text = "      View";
-            this.View_Button.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label1.Location = new System.Drawing.Point(13, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "PRODUCT MANAGEMENT";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(179, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 64);
-            this.panel2.TabIndex = 25;
-            // 
-            // OM_Panel
-            // 
-            this.OM_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.OM_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.OM_Panel.Controls.Add(this.OM_Label);
-            this.OM_Panel.Location = new System.Drawing.Point(181, 0);
-            this.OM_Panel.Margin = new System.Windows.Forms.Padding(2);
-            this.OM_Panel.Name = "OM_Panel";
-            this.OM_Panel.Size = new System.Drawing.Size(1090, 64);
-            this.OM_Panel.TabIndex = 36;
-            // 
-            // OM_Label
-            // 
-            this.OM_Label.AutoSize = true;
-            this.OM_Label.BackColor = System.Drawing.Color.Transparent;
-            this.OM_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OM_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.OM_Label.Location = new System.Drawing.Point(15, 15);
-            this.OM_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.OM_Label.Name = "OM_Label";
-            this.OM_Label.Size = new System.Drawing.Size(279, 32);
-            this.OM_Label.TabIndex = 6;
-            this.OM_Label.Text = "ORDER MANAGEMENT";
-            // 
             // AdminSide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2324,6 +2324,7 @@
             this.Logo_Panel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
             this.Product_Mgmt_Panel.ResumeLayout(false);
             this.Product_Mgmt_Panel.PerformLayout();
             this.OutOfStock_Panel.ResumeLayout(false);
@@ -2334,6 +2335,8 @@
             this.InStock_Panel.PerformLayout();
             this.TP_Panel.ResumeLayout(false);
             this.TP_Panel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable)).EndInit();
             this.AdminDashboard_Panel.ResumeLayout(false);
             this.Orders_Panel.ResumeLayout(false);
@@ -2358,9 +2361,11 @@
             this.RU_Panel.ResumeLayout(false);
             this.CustomerDemandTrend_Label.ResumeLayout(false);
             this.CDT_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).EndInit();
             this.HighestDemandProducts.ResumeLayout(false);
             this.HDP_Panel.ResumeLayout(false);
             this.TotalRequests_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).EndInit();
             this.NotifyRequest_Panel.ResumeLayout(false);
             this.NR_Panel.ResumeLayout(false);
             this.NRCounter_Panel.ResumeLayout(false);
@@ -2368,6 +2373,8 @@
             this.panel3.PerformLayout();
             this.OrderManagement_Panel.ResumeLayout(false);
             this.OrderManagement_Panel.PerformLayout();
+            this.OM_Panel.ResumeLayout(false);
+            this.OM_Panel.PerformLayout();
             this.OM_OrdersCompleted_Panel.ResumeLayout(false);
             this.OM_OrdersCompleted_Panel.PerformLayout();
             this.OM_PendingPickups_Panel.ResumeLayout(false);
@@ -2375,13 +2382,6 @@
             this.OM_TotalOrders_Panel.ResumeLayout(false);
             this.OM_TotalOrders_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.OM_Panel.ResumeLayout(false);
-            this.OM_Panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
