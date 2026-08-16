@@ -17,35 +17,34 @@ namespace LogIn_HiveStock
             InitializeComponent();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void ATC1_Button_Click(object sender, EventArgs e)
+        {
+            AddToCart_PopUp AddToCart = new AddToCart_PopUp();
+            AddToCart.ShowDialog();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void Cart_Button_Click(object sender, EventArgs e)
         {
-
+            Cart cart = new Cart();
+            cart.ShowDialog();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void Notify3_Button_Click(object sender, EventArgs e)
         {
-
+            Notify_PopUp notify = new Notify_PopUp();
+            notify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Profile_Button_Click_1(object sender, EventArgs e)
         {
+            Profile profile = new Profile();
+            profile.Show();
 
-        }
-
-        private void LogIn_Icon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogIn_Button_Click(object sender, EventArgs e)
-        {
-            var f = new LogIn_Register();
-            f.Show();
             this.Hide();
         }
     }

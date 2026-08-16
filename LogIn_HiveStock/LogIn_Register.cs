@@ -50,5 +50,19 @@ namespace LogIn_HiveStock
         {
             ShowPanel(LogIn_Panel);
         }
+
+        private void LogIn_Button_Click(object sender, EventArgs e)
+        {
+            UserView_ProductCatalog catalog = new UserView_ProductCatalog();
+            catalog.Show();
+            this.Hide();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            AdminSide adminside = new AdminSide();
+            adminside.Show();
+            this.Hide();
+        }
     }
 }

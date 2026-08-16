@@ -39,13 +39,6 @@ namespace LogIn_HiveStock
             ShowPanel(OrderManagement_Panel);
         }
 
-        private void Exit_Button_Click_1(object sender, EventArgs e)
-        {
-            UserView_ProductCatalog catalog = new UserView_ProductCatalog();
-            catalog.Show();
-            this.Hide();
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -54,6 +47,25 @@ namespace LogIn_HiveStock
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LogOut_Button_Click_1(object sender, EventArgs e)
+        {
+            LogIn_Register loginregister = new LogIn_Register();
+            loginregister.Show();
+            this.Hide();
+        }
+
+        private void Create_Button_Click(object sender, EventArgs e)
+        {
+            PM_CreateProduct createProductForm = new PM_CreateProduct();
+            createProductForm.ShowDialog();
+        }
+
+        private void Edit_Button_Click(object sender, EventArgs e)
+        {
+            PM_EditProduct editProductForm = new PM_EditProduct();
+            editProductForm.ShowDialog();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace LogIn_HiveStock
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminSide());
+            Application.Run(new LogIn_Register());
         }
     }
 }

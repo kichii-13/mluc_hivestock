@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace LogIn_HiveStock
 {
-    public partial class CRUD : Form
+    public partial class PM_EditProduct : Form
     {
-        public CRUD()
+        public PM_EditProduct()
         {
             InitializeComponent();
+        }
+
+        private void EPCancel_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void EPCreate_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

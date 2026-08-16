@@ -65,7 +65,6 @@
             this.MLUC = new System.Windows.Forms.Label();
             this.LogIn_Panel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.L_Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Input_Panel = new System.Windows.Forms.Panel();
             this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.Input_UserID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -80,6 +79,7 @@
             this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Register_Panel.SuspendLayout();
             this.Register_Input.SuspendLayout();
             this.LogIn_Container.SuspendLayout();
@@ -656,7 +656,6 @@
             // 
             this.LogIn_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.LogIn_Panel.Controls.Add(this.pictureBox1);
-            this.LogIn_Panel.Controls.Add(this.L_Back_Button);
             this.LogIn_Panel.Controls.Add(this.Input_Panel);
             this.LogIn_Panel.Controls.Add(this.guna2ContainerControl1);
             this.LogIn_Panel.Controls.Add(this.GreenPanel);
@@ -678,35 +677,11 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // L_Back_Button
-            // 
-            this.L_Back_Button.BackColor = System.Drawing.Color.Transparent;
-            this.L_Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.L_Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.L_Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.L_Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.L_Back_Button.FillColor = System.Drawing.Color.White;
-            this.L_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.L_Back_Button.ForeColor = System.Drawing.Color.White;
-            this.L_Back_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.L_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("L_Back_Button.Image")));
-            this.L_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.L_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
-            this.L_Back_Button.IndicateFocus = true;
-            this.L_Back_Button.Location = new System.Drawing.Point(13, 13);
-            this.L_Back_Button.Name = "L_Back_Button";
-            this.L_Back_Button.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.L_Back_Button.PressedDepth = 100;
-            this.L_Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.L_Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.L_Back_Button.Size = new System.Drawing.Size(40, 40);
-            this.L_Back_Button.TabIndex = 11;
-            this.L_Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
-            // 
             // Input_Panel
             // 
             this.Input_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Input_Panel.CausesValidation = false;
+            this.Input_Panel.Controls.Add(this.guna2Button1);
             this.Input_Panel.Controls.Add(this.Input_Password);
             this.Input_Panel.Controls.Add(this.Input_UserID);
             this.Input_Panel.Controls.Add(this.LogIn_Button);
@@ -734,7 +709,7 @@
             this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.Input_Password.IconLeft = global::LogIn_HiveStock.Properties.Resources.padlock;
             this.Input_Password.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Input_Password.Location = new System.Drawing.Point(31, 127);
+            this.Input_Password.Location = new System.Drawing.Point(31, 111);
             this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_Password.MaxLength = 30;
             this.Input_Password.Name = "Input_Password";
@@ -760,7 +735,7 @@
             this.Input_UserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.Input_UserID.IconLeft = global::LogIn_HiveStock.Properties.Resources.login;
             this.Input_UserID.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Input_UserID.Location = new System.Drawing.Point(30, 52);
+            this.Input_UserID.Location = new System.Drawing.Point(30, 36);
             this.Input_UserID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_UserID.MaxLength = 15;
             this.Input_UserID.Name = "Input_UserID";
@@ -781,18 +756,19 @@
             this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
             this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.LogIn_Button.Location = new System.Drawing.Point(31, 191);
+            this.LogIn_Button.Location = new System.Drawing.Point(31, 181);
             this.LogIn_Button.Name = "LogIn_Button";
             this.LogIn_Button.Size = new System.Drawing.Size(309, 38);
             this.LogIn_Button.TabIndex = 10;
             this.LogIn_Button.Text = "LOG IN";
+            this.LogIn_Button.Click += new System.EventHandler(this.LogIn_Button_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(26, 105);
+            this.label1.Location = new System.Drawing.Point(26, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 20);
@@ -804,7 +780,7 @@
             this.User_Label.AutoSize = true;
             this.User_Label.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.User_Label.Location = new System.Drawing.Point(26, 31);
+            this.User_Label.Location = new System.Drawing.Point(26, 15);
             this.User_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.User_Label.Name = "User_Label";
             this.User_Label.Size = new System.Drawing.Size(62, 20);
@@ -896,7 +872,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label3.Location = new System.Drawing.Point(121, 95);
+            this.label3.Location = new System.Drawing.Point(120, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(509, 65);
@@ -908,12 +884,31 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label4.Location = new System.Drawing.Point(167, 34);
+            this.label4.Location = new System.Drawing.Point(169, 34);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(418, 65);
             this.label4.TabIndex = 2;
             this.label4.Text = "DMMMSU MLUC";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2Button1.Location = new System.Drawing.Point(31, 226);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(309, 30);
+            this.guna2Button1.TabIndex = 12;
+            this.guna2Button1.Text = "LOG IN AS STAFF";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // LogIn_Register
             // 
@@ -923,7 +918,8 @@
             this.Controls.Add(this.LogIn_Panel);
             this.Controls.Add(this.Register_Panel);
             this.Name = "LogIn_Register";
-            this.Text = "LogIn_Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Account";
             this.Register_Panel.ResumeLayout(false);
             this.Register_Panel.PerformLayout();
             this.Register_Input.ResumeLayout(false);
@@ -985,7 +981,6 @@
         private System.Windows.Forms.Label MLUC;
         private System.Windows.Forms.Panel LogIn_Panel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2CircleButton L_Back_Button;
         private System.Windows.Forms.Panel Input_Panel;
         private Guna.UI2.WinForms.Guna2TextBox Input_Password;
         private Guna.UI2.WinForms.Guna2TextBox Input_UserID;
@@ -1001,5 +996,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2CircleButton R_Back_Button;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

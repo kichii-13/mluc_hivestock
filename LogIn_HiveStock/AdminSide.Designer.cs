@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSide));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Side_Panel = new System.Windows.Forms.Panel();
             this.Logo_Panel = new System.Windows.Forms.Panel();
+            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.label7 = new System.Windows.Forms.Label();
+            this.StaffIDNumber_Label = new System.Windows.Forms.Label();
+            this.StaffName_Label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HiveStock = new System.Windows.Forms.Label();
-            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
-            this.Exit_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.LogOut_Button = new Guna.UI2.WinForms.Guna2Button();
             this.AdminDashboard_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Order_Button = new Guna.UI2.WinForms.Guna2Button();
             this.ProductManagement_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -63,22 +66,51 @@
             this.TP_Color = new Guna.UI2.WinForms.Guna2Panel();
             this.TP_Counter = new System.Windows.Forms.Label();
             this.TP_Label = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Search_Input = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Edit_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
-            this.Create_Button = new System.Windows.Forms.Button();
             this.Search_Label = new System.Windows.Forms.Label();
             this.DataTable = new System.Windows.Forms.DataGridView();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockQuantity_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockStatus_PM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminDashboard_Panel = new System.Windows.Forms.Panel();
+            this.Orders_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.PP_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.PP_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.PP_Counter = new System.Windows.Forms.Label();
+            this.PP_Label = new System.Windows.Forms.Label();
+            this.OC_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.OC_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.OC_Counter = new System.Windows.Forms.Label();
+            this.OC_Label = new System.Windows.Forms.Label();
+            this.TO_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.TO_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.TO_Counter = new System.Windows.Forms.Label();
+            this.TO_Label = new System.Windows.Forms.Label();
+            this.OR_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.OR_Label = new System.Windows.Forms.Label();
+            this.Products_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADOOS_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADOOS_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADOOS_Counter = new System.Windows.Forms.Label();
+            this.ADOOS_Label = new System.Windows.Forms.Label();
+            this.ADLS_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADLS_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADLS_Counter = new System.Windows.Forms.Label();
+            this.ADLS_Label = new System.Windows.Forms.Label();
+            this.ADIS_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADIS_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADIS_Counter = new System.Windows.Forms.Label();
+            this.ADIS_Label = new System.Windows.Forms.Label();
+            this.ADTO_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADTO_Color = new Guna.UI2.WinForms.Guna2Panel();
+            this.ADTO_Counter = new System.Windows.Forms.Label();
+            this.ADTP_Label = new System.Windows.Forms.Label();
+            this.PR_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.PR_Label = new System.Windows.Forms.Label();
             this.RecentUpdates_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.PD3 = new System.Windows.Forms.Label();
             this.P3 = new System.Windows.Forms.Label();
@@ -91,8 +123,9 @@
             this.CustomerDemandTrend_Label = new Guna.UI2.WinForms.Guna2Panel();
             this.CDT_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.CDT_Label = new System.Windows.Forms.Label();
-            this.CDT_Graph = new System.Windows.Forms.PictureBox();
             this.HighestDemandProducts = new Guna.UI2.WinForms.Guna2Panel();
+            this.HDP_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.HDP_Label = new System.Windows.Forms.Label();
             this.TotalRequests_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.TR7_Counter = new System.Windows.Forms.Label();
             this.TR6_Counter = new System.Windows.Forms.Label();
@@ -103,7 +136,6 @@
             this.TR1_Counter = new System.Windows.Forms.Label();
             this.TRLine1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.TotalR_Label = new System.Windows.Forms.Label();
-            this.HDP_Graph = new System.Windows.Forms.PictureBox();
             this.HDP_P7 = new System.Windows.Forms.Label();
             this.HDP_P6 = new System.Windows.Forms.Label();
             this.HDP_P5 = new System.Windows.Forms.Label();
@@ -111,8 +143,6 @@
             this.HDP_P3 = new System.Windows.Forms.Label();
             this.HDP_P2 = new System.Windows.Forms.Label();
             this.HDP_P1 = new System.Windows.Forms.Label();
-            this.HDP_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.HDP_Label = new System.Windows.Forms.Label();
             this.HDP_Line = new Guna.UI2.WinForms.Guna2Shapes();
             this.HDPProduct_Label = new System.Windows.Forms.Label();
             this.NotifyRequest_Panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -128,8 +158,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AdminDashboard_Label = new System.Windows.Forms.Label();
             this.OrderManagement_Panel = new System.Windows.Forms.Panel();
-            this.Complete_Button = new System.Windows.Forms.Button();
-            this.View_Button = new System.Windows.Forms.Button();
             this.OMSearch_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.OMSearch_Label = new System.Windows.Forms.Label();
             this.OM_OrdersCompleted_Panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -154,63 +182,46 @@
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Header_Panel = new System.Windows.Forms.Panel();
-            this.MarketingCenter = new System.Windows.Forms.Label();
-            this.Products_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.PR_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.PR_Label = new System.Windows.Forms.Label();
-            this.Orders_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.OR_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.OR_Label = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.TotalOrders_Color = new Guna.UI2.WinForms.Guna2Panel();
-            this.TotalOrders_Count = new System.Windows.Forms.Label();
-            this.TotalOrders_Label = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ADTO_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADTO_Color = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADTO_Counter = new System.Windows.Forms.Label();
-            this.ADTO_Label = new System.Windows.Forms.Label();
-            this.ADIS_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADIS_Color = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADIS_Counter = new System.Windows.Forms.Label();
-            this.ADIS_Label = new System.Windows.Forms.Label();
-            this.ADLS_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADLS_Color = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADLS_Counter = new System.Windows.Forms.Label();
-            this.ADLS_Label = new System.Windows.Forms.Label();
-            this.ADOOS_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADOOS_Color = new Guna.UI2.WinForms.Guna2Panel();
-            this.ADOOS_Counter = new System.Windows.Forms.Label();
-            this.ADOOS_Label = new System.Windows.Forms.Label();
+            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
+            this.CDT_Graph = new System.Windows.Forms.PictureBox();
+            this.HDP_Graph = new System.Windows.Forms.PictureBox();
+            this.Edit_Button = new System.Windows.Forms.Button();
+            this.Delete_Button = new System.Windows.Forms.Button();
+            this.Create_Button = new System.Windows.Forms.Button();
+            this.Complete_Button = new System.Windows.Forms.Button();
+            this.View_Button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.OM_Panel = new System.Windows.Forms.Panel();
+            this.OM_Label = new System.Windows.Forms.Label();
             this.Side_Panel.SuspendLayout();
             this.Logo_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
             this.Product_Mgmt_Panel.SuspendLayout();
             this.OutOfStock_Panel.SuspendLayout();
             this.LowStock_Panel.SuspendLayout();
             this.InStock_Panel.SuspendLayout();
             this.TP_Panel.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable)).BeginInit();
             this.AdminDashboard_Panel.SuspendLayout();
+            this.Orders_Panel.SuspendLayout();
+            this.PP_Panel.SuspendLayout();
+            this.OC_Panel.SuspendLayout();
+            this.TO_Panel.SuspendLayout();
+            this.OR_Panel.SuspendLayout();
+            this.Products_Panel.SuspendLayout();
+            this.ADOOS_Panel.SuspendLayout();
+            this.ADLS_Panel.SuspendLayout();
+            this.ADIS_Panel.SuspendLayout();
+            this.ADTO_Panel.SuspendLayout();
+            this.PR_Panel.SuspendLayout();
             this.RecentUpdates_Panel.SuspendLayout();
             this.RU_Panel.SuspendLayout();
             this.CustomerDemandTrend_Label.SuspendLayout();
             this.CDT_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).BeginInit();
             this.HighestDemandProducts.SuspendLayout();
-            this.TotalRequests_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).BeginInit();
             this.HDP_Panel.SuspendLayout();
+            this.TotalRequests_Panel.SuspendLayout();
             this.NotifyRequest_Panel.SuspendLayout();
             this.NR_Panel.SuspendLayout();
             this.NRCounter_Panel.SuspendLayout();
@@ -220,25 +231,18 @@
             this.OM_PendingPickups_Panel.SuspendLayout();
             this.OM_TotalOrders_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Header_Panel.SuspendLayout();
-            this.Products_Panel.SuspendLayout();
-            this.PR_Panel.SuspendLayout();
-            this.Orders_Panel.SuspendLayout();
-            this.OR_Panel.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            this.ADTO_Panel.SuspendLayout();
-            this.ADIS_Panel.SuspendLayout();
-            this.ADLS_Panel.SuspendLayout();
-            this.ADOOS_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.OM_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Side_Panel
             // 
             this.Side_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.Side_Panel.Controls.Add(this.Logo_Panel);
-            this.Side_Panel.Controls.Add(this.Exit_Button);
+            this.Side_Panel.Controls.Add(this.LogOut_Button);
             this.Side_Panel.Controls.Add(this.AdminDashboard_Button);
             this.Side_Panel.Controls.Add(this.Order_Button);
             this.Side_Panel.Controls.Add(this.ProductManagement_Button);
@@ -252,12 +256,66 @@
             // Logo_Panel
             // 
             this.Logo_Panel.BackColor = System.Drawing.Color.White;
+            this.Logo_Panel.Controls.Add(this.guna2Shapes1);
+            this.Logo_Panel.Controls.Add(this.label7);
+            this.Logo_Panel.Controls.Add(this.StaffIDNumber_Label);
+            this.Logo_Panel.Controls.Add(this.StaffName_Label);
             this.Logo_Panel.Controls.Add(this.panel1);
             this.Logo_Panel.Location = new System.Drawing.Point(0, 0);
             this.Logo_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Logo_Panel.Name = "Logo_Panel";
-            this.Logo_Panel.Size = new System.Drawing.Size(183, 149);
+            this.Logo_Panel.Size = new System.Drawing.Size(183, 235);
             this.Logo_Panel.TabIndex = 23;
+            // 
+            // guna2Shapes1
+            // 
+            this.guna2Shapes1.BorderThickness = 0;
+            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.guna2Shapes1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2Shapes1.LineThickness = 1;
+            this.guna2Shapes1.Location = new System.Drawing.Point(0, 136);
+            this.guna2Shapes1.Name = "guna2Shapes1";
+            this.guna2Shapes1.PolygonSkip = 1;
+            this.guna2Shapes1.Rotate = 0F;
+            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.guna2Shapes1.Size = new System.Drawing.Size(183, 10);
+            this.guna2Shapes1.TabIndex = 19;
+            this.guna2Shapes1.Text = "guna2Shapes3";
+            this.guna2Shapes1.Zoom = 100;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.label7.Location = new System.Drawing.Point(22, 151);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 17);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "STAFF:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // StaffIDNumber_Label
+            // 
+            this.StaffIDNumber_Label.BackColor = System.Drawing.Color.Transparent;
+            this.StaffIDNumber_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffIDNumber_Label.ForeColor = System.Drawing.Color.Black;
+            this.StaffIDNumber_Label.Location = new System.Drawing.Point(22, 174);
+            this.StaffIDNumber_Label.Name = "StaffIDNumber_Label";
+            this.StaffIDNumber_Label.Size = new System.Drawing.Size(138, 17);
+            this.StaffIDNumber_Label.TabIndex = 19;
+            this.StaffIDNumber_Label.Text = "321123";
+            this.StaffIDNumber_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // StaffName_Label
+            // 
+            this.StaffName_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffName_Label.Location = new System.Drawing.Point(3, 187);
+            this.StaffName_Label.Name = "StaffName_Label";
+            this.StaffName_Label.Size = new System.Drawing.Size(177, 48);
+            this.StaffName_Label.TabIndex = 13;
+            this.StaffName_Label.Text = "Michael Jackson";
+            this.StaffName_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
             // 
@@ -265,7 +323,7 @@
             this.panel1.Controls.Add(this.DMMMSU_Logo);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 147);
+            this.panel1.Size = new System.Drawing.Size(181, 139);
             this.panel1.TabIndex = 12;
             // 
             // HiveStock
@@ -279,37 +337,25 @@
             this.HiveStock.TabIndex = 11;
             this.HiveStock.Text = "HiveStock";
             // 
-            // DMMMSU_Logo
+            // LogOut_Button
             // 
-            this.DMMMSU_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.DMMMSU_Logo.Image = ((System.Drawing.Image)(resources.GetObject("DMMMSU_Logo.Image")));
-            this.DMMMSU_Logo.Location = new System.Drawing.Point(46, 19);
-            this.DMMMSU_Logo.Margin = new System.Windows.Forms.Padding(2);
-            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
-            this.DMMMSU_Logo.Size = new System.Drawing.Size(87, 91);
-            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DMMMSU_Logo.TabIndex = 9;
-            this.DMMMSU_Logo.TabStop = false;
-            // 
-            // Exit_Button
-            // 
-            this.Exit_Button.BorderRadius = 6;
-            this.Exit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Exit_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Exit_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Exit_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Exit_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.Exit_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit_Button.ForeColor = System.Drawing.Color.Black;
-            this.Exit_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.Exit_Button.Location = new System.Drawing.Point(31, 631);
-            this.Exit_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Exit_Button.Name = "Exit_Button";
-            this.Exit_Button.Size = new System.Drawing.Size(120, 29);
-            this.Exit_Button.TabIndex = 21;
-            this.Exit_Button.Text = "EXIT";
-            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click_1);
+            this.LogOut_Button.BorderRadius = 6;
+            this.LogOut_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOut_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogOut_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogOut_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogOut_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogOut_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.LogOut_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogOut_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.LogOut_Button.Location = new System.Drawing.Point(31, 631);
+            this.LogOut_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.LogOut_Button.Name = "LogOut_Button";
+            this.LogOut_Button.Size = new System.Drawing.Size(120, 29);
+            this.LogOut_Button.TabIndex = 21;
+            this.LogOut_Button.Text = "Log Out";
+            this.LogOut_Button.Click += new System.EventHandler(this.LogOut_Button_Click_1);
             // 
             // AdminDashboard_Button
             // 
@@ -323,7 +369,7 @@
             this.AdminDashboard_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminDashboard_Button.ForeColor = System.Drawing.Color.Black;
             this.AdminDashboard_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.AdminDashboard_Button.Location = new System.Drawing.Point(31, 179);
+            this.AdminDashboard_Button.Location = new System.Drawing.Point(31, 245);
             this.AdminDashboard_Button.Margin = new System.Windows.Forms.Padding(2);
             this.AdminDashboard_Button.Name = "AdminDashboard_Button";
             this.AdminDashboard_Button.Size = new System.Drawing.Size(120, 43);
@@ -343,7 +389,7 @@
             this.Order_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Order_Button.ForeColor = System.Drawing.Color.Black;
             this.Order_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.Order_Button.Location = new System.Drawing.Point(31, 302);
+            this.Order_Button.Location = new System.Drawing.Point(31, 368);
             this.Order_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Order_Button.Name = "Order_Button";
             this.Order_Button.Size = new System.Drawing.Size(120, 43);
@@ -363,7 +409,7 @@
             this.ProductManagement_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductManagement_Button.ForeColor = System.Drawing.Color.Black;
             this.ProductManagement_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.ProductManagement_Button.Location = new System.Drawing.Point(31, 240);
+            this.ProductManagement_Button.Location = new System.Drawing.Point(31, 306);
             this.ProductManagement_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ProductManagement_Button.Name = "ProductManagement_Button";
             this.ProductManagement_Button.Size = new System.Drawing.Size(120, 43);
@@ -580,30 +626,6 @@
             this.TP_Label.TabIndex = 2;
             this.TP_Label.Text = "Total Products";
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(181, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1094, 64);
-            this.panel2.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.label1.Location = new System.Drawing.Point(13, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "PRODUCT MANAGEMENT";
-            // 
             // Search_Input
             // 
             this.Search_Input.BorderColor = System.Drawing.Color.DarkGray;
@@ -626,48 +648,6 @@
             this.Search_Input.Size = new System.Drawing.Size(176, 27);
             this.Search_Input.TabIndex = 22;
             // 
-            // Edit_Button
-            // 
-            this.Edit_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Edit_Button.Image = ((System.Drawing.Image)(resources.GetObject("Edit_Button.Image")));
-            this.Edit_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Edit_Button.Location = new System.Drawing.Point(396, 158);
-            this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Edit_Button.Size = new System.Drawing.Size(105, 37);
-            this.Edit_Button.TabIndex = 9;
-            this.Edit_Button.Text = "  Edit";
-            this.Edit_Button.UseVisualStyleBackColor = true;
-            // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Button.Image")));
-            this.Delete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Delete_Button.Location = new System.Drawing.Point(531, 158);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Delete_Button.Size = new System.Drawing.Size(128, 37);
-            this.Delete_Button.TabIndex = 10;
-            this.Delete_Button.Text = "Delete";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
-            // Create_Button
-            // 
-            this.Create_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_Button.Image = ((System.Drawing.Image)(resources.GetObject("Create_Button.Image")));
-            this.Create_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Create_Button.Location = new System.Drawing.Point(258, 158);
-            this.Create_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Create_Button.Name = "Create_Button";
-            this.Create_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Create_Button.Size = new System.Drawing.Size(112, 37);
-            this.Create_Button.TabIndex = 8;
-            this.Create_Button.Text = "     Create";
-            this.Create_Button.UseVisualStyleBackColor = true;
-            // 
             // Search_Label
             // 
             this.Search_Label.AutoSize = true;
@@ -682,32 +662,32 @@
             // 
             this.DataTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.DataTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataTable.ColumnHeadersHeight = 40;
             this.DataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductID,
-            this.ProductName,
-            this.Category,
-            this.Description,
-            this.Price,
-            this.StockQuantity,
-            this.StockStatus});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataTable.DefaultCellStyle = dataGridViewCellStyle26;
+            this.ProductID_PM,
+            this.ProductName_PM,
+            this.Category_PM,
+            this.Description_PM,
+            this.Price_PM,
+            this.StockQuantity_PM,
+            this.StockStatus_PM});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataTable.EnableHeadersVisualStyles = false;
             this.DataTable.GridColor = System.Drawing.Color.DarkOliveGreen;
@@ -716,77 +696,77 @@
             this.DataTable.Margin = new System.Windows.Forms.Padding(2);
             this.DataTable.Name = "DataTable";
             this.DataTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataTable.RowHeadersWidth = 51;
             this.DataTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DataTable.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DataTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DataTable.RowTemplate.Height = 24;
             this.DataTable.Size = new System.Drawing.Size(928, 446);
             this.DataTable.TabIndex = 0;
             // 
-            // ProductID
+            // ProductID_PM
             // 
-            this.ProductID.HeaderText = "Product ID";
-            this.ProductID.MinimumWidth = 6;
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Width = 95;
+            this.ProductID_PM.HeaderText = "Product ID";
+            this.ProductID_PM.MinimumWidth = 6;
+            this.ProductID_PM.Name = "ProductID_PM";
+            this.ProductID_PM.ReadOnly = true;
+            this.ProductID_PM.Width = 95;
             // 
-            // ProductName
+            // ProductName_PM
             // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 155;
+            this.ProductName_PM.HeaderText = "Product Name";
+            this.ProductName_PM.MinimumWidth = 6;
+            this.ProductName_PM.Name = "ProductName_PM";
+            this.ProductName_PM.ReadOnly = true;
+            this.ProductName_PM.Width = 155;
             // 
-            // Category
+            // Category_PM
             // 
-            this.Category.HeaderText = "Category";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            this.Category.Width = 125;
+            this.Category_PM.HeaderText = "Category";
+            this.Category_PM.MinimumWidth = 6;
+            this.Category_PM.Name = "Category_PM";
+            this.Category_PM.ReadOnly = true;
+            this.Category_PM.Width = 125;
             // 
-            // Description
+            // Description_PM
             // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 170;
+            this.Description_PM.HeaderText = "Description";
+            this.Description_PM.MinimumWidth = 6;
+            this.Description_PM.Name = "Description_PM";
+            this.Description_PM.ReadOnly = true;
+            this.Description_PM.Width = 170;
             // 
-            // Price
+            // Price_PM
             // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 90;
+            this.Price_PM.HeaderText = "Price";
+            this.Price_PM.MinimumWidth = 6;
+            this.Price_PM.Name = "Price_PM";
+            this.Price_PM.ReadOnly = true;
+            this.Price_PM.Width = 90;
             // 
-            // StockQuantity
+            // StockQuantity_PM
             // 
-            this.StockQuantity.HeaderText = "Stock Quantity";
-            this.StockQuantity.MinimumWidth = 6;
-            this.StockQuantity.Name = "StockQuantity";
-            this.StockQuantity.ReadOnly = true;
-            this.StockQuantity.Width = 120;
+            this.StockQuantity_PM.HeaderText = "Stock Quantity";
+            this.StockQuantity_PM.MinimumWidth = 6;
+            this.StockQuantity_PM.Name = "StockQuantity_PM";
+            this.StockQuantity_PM.ReadOnly = true;
+            this.StockQuantity_PM.Width = 120;
             // 
-            // StockStatus
+            // StockStatus_PM
             // 
-            this.StockStatus.HeaderText = "Stock Status";
-            this.StockStatus.MinimumWidth = 6;
-            this.StockStatus.Name = "StockStatus";
-            this.StockStatus.ReadOnly = true;
-            this.StockStatus.Width = 120;
+            this.StockStatus_PM.HeaderText = "Stock Status";
+            this.StockStatus_PM.MinimumWidth = 6;
+            this.StockStatus_PM.Name = "StockStatus_PM";
+            this.StockStatus_PM.ReadOnly = true;
+            this.StockStatus_PM.Width = 120;
             // 
             // AdminDashboard_Panel
             // 
@@ -802,6 +782,424 @@
             this.AdminDashboard_Panel.Name = "AdminDashboard_Panel";
             this.AdminDashboard_Panel.Size = new System.Drawing.Size(1271, 682);
             this.AdminDashboard_Panel.TabIndex = 12;
+            // 
+            // Orders_Panel
+            // 
+            this.Orders_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Orders_Panel.BorderColor = System.Drawing.Color.Black;
+            this.Orders_Panel.BorderRadius = 10;
+            this.Orders_Panel.BorderThickness = 1;
+            this.Orders_Panel.Controls.Add(this.PP_Panel);
+            this.Orders_Panel.Controls.Add(this.OC_Panel);
+            this.Orders_Panel.Controls.Add(this.TO_Panel);
+            this.Orders_Panel.Controls.Add(this.OR_Panel);
+            this.Orders_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Orders_Panel.Location = new System.Drawing.Point(443, 81);
+            this.Orders_Panel.Name = "Orders_Panel";
+            this.Orders_Panel.Size = new System.Drawing.Size(234, 172);
+            this.Orders_Panel.TabIndex = 29;
+            // 
+            // PP_Panel
+            // 
+            this.PP_Panel.BorderRadius = 10;
+            this.PP_Panel.Controls.Add(this.PP_Color);
+            this.PP_Panel.Controls.Add(this.PP_Counter);
+            this.PP_Panel.Controls.Add(this.PP_Label);
+            this.PP_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.PP_Panel.Location = new System.Drawing.Point(8, 131);
+            this.PP_Panel.Name = "PP_Panel";
+            this.PP_Panel.Size = new System.Drawing.Size(216, 33);
+            this.PP_Panel.TabIndex = 32;
+            // 
+            // PP_Color
+            // 
+            this.PP_Color.BorderRadius = 5;
+            this.PP_Color.CustomizableEdges.BottomRight = false;
+            this.PP_Color.CustomizableEdges.TopRight = false;
+            this.PP_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.PP_Color.Location = new System.Drawing.Point(0, 0);
+            this.PP_Color.Name = "PP_Color";
+            this.PP_Color.Size = new System.Drawing.Size(10, 33);
+            this.PP_Color.TabIndex = 0;
+            // 
+            // PP_Counter
+            // 
+            this.PP_Counter.AutoSize = true;
+            this.PP_Counter.CausesValidation = false;
+            this.PP_Counter.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PP_Counter.Location = new System.Drawing.Point(189, 6);
+            this.PP_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PP_Counter.Name = "PP_Counter";
+            this.PP_Counter.Size = new System.Drawing.Size(19, 21);
+            this.PP_Counter.TabIndex = 3;
+            this.PP_Counter.Text = "0";
+            // 
+            // PP_Label
+            // 
+            this.PP_Label.AutoSize = true;
+            this.PP_Label.CausesValidation = false;
+            this.PP_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PP_Label.Location = new System.Drawing.Point(21, 8);
+            this.PP_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PP_Label.Name = "PP_Label";
+            this.PP_Label.Size = new System.Drawing.Size(107, 17);
+            this.PP_Label.TabIndex = 2;
+            this.PP_Label.Text = "Pending Pickups";
+            // 
+            // OC_Panel
+            // 
+            this.OC_Panel.BorderRadius = 10;
+            this.OC_Panel.Controls.Add(this.OC_Color);
+            this.OC_Panel.Controls.Add(this.OC_Counter);
+            this.OC_Panel.Controls.Add(this.OC_Label);
+            this.OC_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.OC_Panel.Location = new System.Drawing.Point(8, 92);
+            this.OC_Panel.Name = "OC_Panel";
+            this.OC_Panel.Size = new System.Drawing.Size(216, 33);
+            this.OC_Panel.TabIndex = 32;
+            // 
+            // OC_Color
+            // 
+            this.OC_Color.BorderRadius = 5;
+            this.OC_Color.CustomizableEdges.BottomRight = false;
+            this.OC_Color.CustomizableEdges.TopRight = false;
+            this.OC_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.OC_Color.Location = new System.Drawing.Point(0, 0);
+            this.OC_Color.Name = "OC_Color";
+            this.OC_Color.Size = new System.Drawing.Size(10, 33);
+            this.OC_Color.TabIndex = 0;
+            // 
+            // OC_Counter
+            // 
+            this.OC_Counter.AutoSize = true;
+            this.OC_Counter.CausesValidation = false;
+            this.OC_Counter.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OC_Counter.Location = new System.Drawing.Point(189, 6);
+            this.OC_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OC_Counter.Name = "OC_Counter";
+            this.OC_Counter.Size = new System.Drawing.Size(19, 21);
+            this.OC_Counter.TabIndex = 3;
+            this.OC_Counter.Text = "0";
+            // 
+            // OC_Label
+            // 
+            this.OC_Label.AutoSize = true;
+            this.OC_Label.CausesValidation = false;
+            this.OC_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OC_Label.Location = new System.Drawing.Point(21, 8);
+            this.OC_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OC_Label.Name = "OC_Label";
+            this.OC_Label.Size = new System.Drawing.Size(118, 17);
+            this.OC_Label.TabIndex = 2;
+            this.OC_Label.Text = "Orders Completed";
+            // 
+            // TO_Panel
+            // 
+            this.TO_Panel.BorderRadius = 10;
+            this.TO_Panel.Controls.Add(this.TO_Color);
+            this.TO_Panel.Controls.Add(this.TO_Counter);
+            this.TO_Panel.Controls.Add(this.TO_Label);
+            this.TO_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.TO_Panel.Location = new System.Drawing.Point(8, 53);
+            this.TO_Panel.Name = "TO_Panel";
+            this.TO_Panel.Size = new System.Drawing.Size(216, 33);
+            this.TO_Panel.TabIndex = 31;
+            // 
+            // TO_Color
+            // 
+            this.TO_Color.BorderRadius = 5;
+            this.TO_Color.CustomizableEdges.BottomRight = false;
+            this.TO_Color.CustomizableEdges.TopRight = false;
+            this.TO_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.TO_Color.Location = new System.Drawing.Point(0, 0);
+            this.TO_Color.Name = "TO_Color";
+            this.TO_Color.Size = new System.Drawing.Size(10, 33);
+            this.TO_Color.TabIndex = 0;
+            // 
+            // TO_Counter
+            // 
+            this.TO_Counter.AutoSize = true;
+            this.TO_Counter.CausesValidation = false;
+            this.TO_Counter.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TO_Counter.Location = new System.Drawing.Point(189, 6);
+            this.TO_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TO_Counter.Name = "TO_Counter";
+            this.TO_Counter.Size = new System.Drawing.Size(19, 21);
+            this.TO_Counter.TabIndex = 3;
+            this.TO_Counter.Text = "0";
+            // 
+            // TO_Label
+            // 
+            this.TO_Label.AutoSize = true;
+            this.TO_Label.CausesValidation = false;
+            this.TO_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TO_Label.Location = new System.Drawing.Point(21, 8);
+            this.TO_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TO_Label.Name = "TO_Label";
+            this.TO_Label.Size = new System.Drawing.Size(83, 17);
+            this.TO_Label.TabIndex = 2;
+            this.TO_Label.Text = "Total Orders";
+            // 
+            // OR_Panel
+            // 
+            this.OR_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.OR_Panel.BorderColor = System.Drawing.Color.Black;
+            this.OR_Panel.BorderRadius = 10;
+            this.OR_Panel.BorderThickness = 1;
+            this.OR_Panel.Controls.Add(this.OR_Label);
+            this.OR_Panel.CustomizableEdges.BottomLeft = false;
+            this.OR_Panel.CustomizableEdges.BottomRight = false;
+            this.OR_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.OR_Panel.Location = new System.Drawing.Point(0, 0);
+            this.OR_Panel.Name = "OR_Panel";
+            this.OR_Panel.Size = new System.Drawing.Size(234, 46);
+            this.OR_Panel.TabIndex = 14;
+            // 
+            // OR_Label
+            // 
+            this.OR_Label.BackColor = System.Drawing.Color.Transparent;
+            this.OR_Label.CausesValidation = false;
+            this.OR_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OR_Label.ForeColor = System.Drawing.Color.White;
+            this.OR_Label.Location = new System.Drawing.Point(4, 13);
+            this.OR_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OR_Label.Name = "OR_Label";
+            this.OR_Label.Size = new System.Drawing.Size(230, 21);
+            this.OR_Label.TabIndex = 3;
+            this.OR_Label.Text = "ORDERS";
+            this.OR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OR_Label.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // Products_Panel
+            // 
+            this.Products_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Products_Panel.BorderColor = System.Drawing.Color.Black;
+            this.Products_Panel.BorderRadius = 10;
+            this.Products_Panel.BorderThickness = 1;
+            this.Products_Panel.Controls.Add(this.ADOOS_Panel);
+            this.Products_Panel.Controls.Add(this.ADLS_Panel);
+            this.Products_Panel.Controls.Add(this.ADIS_Panel);
+            this.Products_Panel.Controls.Add(this.ADTO_Panel);
+            this.Products_Panel.Controls.Add(this.PR_Panel);
+            this.Products_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Products_Panel.Location = new System.Drawing.Point(203, 81);
+            this.Products_Panel.Name = "Products_Panel";
+            this.Products_Panel.Size = new System.Drawing.Size(224, 172);
+            this.Products_Panel.TabIndex = 18;
+            // 
+            // ADOOS_Panel
+            // 
+            this.ADOOS_Panel.BorderRadius = 10;
+            this.ADOOS_Panel.Controls.Add(this.ADOOS_Color);
+            this.ADOOS_Panel.Controls.Add(this.ADOOS_Counter);
+            this.ADOOS_Panel.Controls.Add(this.ADOOS_Label);
+            this.ADOOS_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.ADOOS_Panel.Location = new System.Drawing.Point(115, 111);
+            this.ADOOS_Panel.Name = "ADOOS_Panel";
+            this.ADOOS_Panel.Size = new System.Drawing.Size(100, 55);
+            this.ADOOS_Panel.TabIndex = 34;
+            // 
+            // ADOOS_Color
+            // 
+            this.ADOOS_Color.BorderRadius = 5;
+            this.ADOOS_Color.CustomizableEdges.BottomRight = false;
+            this.ADOOS_Color.CustomizableEdges.TopRight = false;
+            this.ADOOS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ADOOS_Color.Location = new System.Drawing.Point(0, 0);
+            this.ADOOS_Color.Name = "ADOOS_Color";
+            this.ADOOS_Color.Size = new System.Drawing.Size(10, 55);
+            this.ADOOS_Color.TabIndex = 0;
+            // 
+            // ADOOS_Counter
+            // 
+            this.ADOOS_Counter.CausesValidation = false;
+            this.ADOOS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADOOS_Counter.Location = new System.Drawing.Point(19, 18);
+            this.ADOOS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADOOS_Counter.Name = "ADOOS_Counter";
+            this.ADOOS_Counter.Size = new System.Drawing.Size(74, 29);
+            this.ADOOS_Counter.TabIndex = 3;
+            this.ADOOS_Counter.Text = "0";
+            // 
+            // ADOOS_Label
+            // 
+            this.ADOOS_Label.AutoSize = true;
+            this.ADOOS_Label.CausesValidation = false;
+            this.ADOOS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADOOS_Label.Location = new System.Drawing.Point(14, 8);
+            this.ADOOS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADOOS_Label.Name = "ADOOS_Label";
+            this.ADOOS_Label.Size = new System.Drawing.Size(72, 13);
+            this.ADOOS_Label.TabIndex = 2;
+            this.ADOOS_Label.Text = "Out of Stock";
+            // 
+            // ADLS_Panel
+            // 
+            this.ADLS_Panel.BorderRadius = 10;
+            this.ADLS_Panel.Controls.Add(this.ADLS_Color);
+            this.ADLS_Panel.Controls.Add(this.ADLS_Counter);
+            this.ADLS_Panel.Controls.Add(this.ADLS_Label);
+            this.ADLS_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.ADLS_Panel.Location = new System.Drawing.Point(9, 111);
+            this.ADLS_Panel.Name = "ADLS_Panel";
+            this.ADLS_Panel.Size = new System.Drawing.Size(100, 55);
+            this.ADLS_Panel.TabIndex = 33;
+            // 
+            // ADLS_Color
+            // 
+            this.ADLS_Color.BorderRadius = 5;
+            this.ADLS_Color.CustomizableEdges.BottomRight = false;
+            this.ADLS_Color.CustomizableEdges.TopRight = false;
+            this.ADLS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.ADLS_Color.Location = new System.Drawing.Point(0, 0);
+            this.ADLS_Color.Name = "ADLS_Color";
+            this.ADLS_Color.Size = new System.Drawing.Size(10, 55);
+            this.ADLS_Color.TabIndex = 0;
+            // 
+            // ADLS_Counter
+            // 
+            this.ADLS_Counter.CausesValidation = false;
+            this.ADLS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADLS_Counter.Location = new System.Drawing.Point(19, 18);
+            this.ADLS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADLS_Counter.Name = "ADLS_Counter";
+            this.ADLS_Counter.Size = new System.Drawing.Size(74, 29);
+            this.ADLS_Counter.TabIndex = 3;
+            this.ADLS_Counter.Text = "0";
+            // 
+            // ADLS_Label
+            // 
+            this.ADLS_Label.AutoSize = true;
+            this.ADLS_Label.CausesValidation = false;
+            this.ADLS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADLS_Label.Location = new System.Drawing.Point(14, 8);
+            this.ADLS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADLS_Label.Name = "ADLS_Label";
+            this.ADLS_Label.Size = new System.Drawing.Size(59, 13);
+            this.ADLS_Label.TabIndex = 2;
+            this.ADLS_Label.Text = "Low Stock";
+            // 
+            // ADIS_Panel
+            // 
+            this.ADIS_Panel.BorderRadius = 10;
+            this.ADIS_Panel.Controls.Add(this.ADIS_Color);
+            this.ADIS_Panel.Controls.Add(this.ADIS_Counter);
+            this.ADIS_Panel.Controls.Add(this.ADIS_Label);
+            this.ADIS_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.ADIS_Panel.Location = new System.Drawing.Point(115, 52);
+            this.ADIS_Panel.Name = "ADIS_Panel";
+            this.ADIS_Panel.Size = new System.Drawing.Size(100, 55);
+            this.ADIS_Panel.TabIndex = 33;
+            // 
+            // ADIS_Color
+            // 
+            this.ADIS_Color.BorderRadius = 5;
+            this.ADIS_Color.CustomizableEdges.BottomRight = false;
+            this.ADIS_Color.CustomizableEdges.TopRight = false;
+            this.ADIS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.ADIS_Color.Location = new System.Drawing.Point(0, 0);
+            this.ADIS_Color.Name = "ADIS_Color";
+            this.ADIS_Color.Size = new System.Drawing.Size(10, 55);
+            this.ADIS_Color.TabIndex = 0;
+            // 
+            // ADIS_Counter
+            // 
+            this.ADIS_Counter.CausesValidation = false;
+            this.ADIS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADIS_Counter.Location = new System.Drawing.Point(19, 18);
+            this.ADIS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADIS_Counter.Name = "ADIS_Counter";
+            this.ADIS_Counter.Size = new System.Drawing.Size(74, 29);
+            this.ADIS_Counter.TabIndex = 3;
+            this.ADIS_Counter.Text = "0";
+            // 
+            // ADIS_Label
+            // 
+            this.ADIS_Label.AutoSize = true;
+            this.ADIS_Label.CausesValidation = false;
+            this.ADIS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADIS_Label.Location = new System.Drawing.Point(14, 8);
+            this.ADIS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADIS_Label.Name = "ADIS_Label";
+            this.ADIS_Label.Size = new System.Drawing.Size(48, 13);
+            this.ADIS_Label.TabIndex = 2;
+            this.ADIS_Label.Text = "In Stock";
+            // 
+            // ADTO_Panel
+            // 
+            this.ADTO_Panel.BorderRadius = 10;
+            this.ADTO_Panel.Controls.Add(this.ADTO_Color);
+            this.ADTO_Panel.Controls.Add(this.ADTO_Counter);
+            this.ADTO_Panel.Controls.Add(this.ADTP_Label);
+            this.ADTO_Panel.FillColor = System.Drawing.Color.Gainsboro;
+            this.ADTO_Panel.Location = new System.Drawing.Point(9, 51);
+            this.ADTO_Panel.Name = "ADTO_Panel";
+            this.ADTO_Panel.Size = new System.Drawing.Size(100, 55);
+            this.ADTO_Panel.TabIndex = 32;
+            // 
+            // ADTO_Color
+            // 
+            this.ADTO_Color.BorderRadius = 5;
+            this.ADTO_Color.CustomizableEdges.BottomRight = false;
+            this.ADTO_Color.CustomizableEdges.TopRight = false;
+            this.ADTO_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.ADTO_Color.Location = new System.Drawing.Point(0, 0);
+            this.ADTO_Color.Name = "ADTO_Color";
+            this.ADTO_Color.Size = new System.Drawing.Size(10, 55);
+            this.ADTO_Color.TabIndex = 0;
+            // 
+            // ADTO_Counter
+            // 
+            this.ADTO_Counter.CausesValidation = false;
+            this.ADTO_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADTO_Counter.Location = new System.Drawing.Point(19, 18);
+            this.ADTO_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADTO_Counter.Name = "ADTO_Counter";
+            this.ADTO_Counter.Size = new System.Drawing.Size(74, 29);
+            this.ADTO_Counter.TabIndex = 3;
+            this.ADTO_Counter.Text = "0";
+            // 
+            // ADTP_Label
+            // 
+            this.ADTP_Label.AutoSize = true;
+            this.ADTP_Label.CausesValidation = false;
+            this.ADTP_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADTP_Label.Location = new System.Drawing.Point(13, 8);
+            this.ADTP_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ADTP_Label.Name = "ADTP_Label";
+            this.ADTP_Label.Size = new System.Drawing.Size(81, 13);
+            this.ADTP_Label.TabIndex = 2;
+            this.ADTP_Label.Text = "Total Products";
+            this.ADTP_Label.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // PR_Panel
+            // 
+            this.PR_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.PR_Panel.BorderColor = System.Drawing.Color.Black;
+            this.PR_Panel.BorderRadius = 10;
+            this.PR_Panel.BorderThickness = 1;
+            this.PR_Panel.Controls.Add(this.PR_Label);
+            this.PR_Panel.CustomizableEdges.BottomLeft = false;
+            this.PR_Panel.CustomizableEdges.BottomRight = false;
+            this.PR_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.PR_Panel.Location = new System.Drawing.Point(0, 0);
+            this.PR_Panel.Name = "PR_Panel";
+            this.PR_Panel.Size = new System.Drawing.Size(224, 46);
+            this.PR_Panel.TabIndex = 14;
+            // 
+            // PR_Label
+            // 
+            this.PR_Label.BackColor = System.Drawing.Color.Transparent;
+            this.PR_Label.CausesValidation = false;
+            this.PR_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PR_Label.ForeColor = System.Drawing.Color.White;
+            this.PR_Label.Location = new System.Drawing.Point(4, 13);
+            this.PR_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PR_Label.Name = "PR_Label";
+            this.PR_Label.Size = new System.Drawing.Size(220, 21);
+            this.PR_Label.TabIndex = 3;
+            this.PR_Label.Text = "PRODUCTS";
+            this.PR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RecentUpdates_Panel
             // 
@@ -926,7 +1324,7 @@
             this.CustomerDemandTrend_Label.Controls.Add(this.CDT_Panel);
             this.CustomerDemandTrend_Label.Controls.Add(this.CDT_Graph);
             this.CustomerDemandTrend_Label.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.CustomerDemandTrend_Label.Location = new System.Drawing.Point(926, 81);
+            this.CustomerDemandTrend_Label.Location = new System.Drawing.Point(926, 80);
             this.CustomerDemandTrend_Label.Name = "CustomerDemandTrend_Label";
             this.CustomerDemandTrend_Label.Size = new System.Drawing.Size(318, 362);
             this.CustomerDemandTrend_Label.TabIndex = 17;
@@ -960,16 +1358,6 @@
             this.CDT_Label.Text = "CUSTOMER DEMAND TREND";
             this.CDT_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CDT_Graph
-            // 
-            this.CDT_Graph.Image = ((System.Drawing.Image)(resources.GetObject("CDT_Graph.Image")));
-            this.CDT_Graph.Location = new System.Drawing.Point(-17, 39);
-            this.CDT_Graph.Name = "CDT_Graph";
-            this.CDT_Graph.Size = new System.Drawing.Size(359, 304);
-            this.CDT_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CDT_Graph.TabIndex = 16;
-            this.CDT_Graph.TabStop = false;
-            // 
             // HighestDemandProducts
             // 
             this.HighestDemandProducts.BackColor = System.Drawing.Color.Transparent;
@@ -989,10 +1377,39 @@
             this.HighestDemandProducts.Controls.Add(this.HDP_Line);
             this.HighestDemandProducts.Controls.Add(this.HDPProduct_Label);
             this.HighestDemandProducts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.HighestDemandProducts.Location = new System.Drawing.Point(206, 267);
+            this.HighestDemandProducts.Location = new System.Drawing.Point(203, 267);
             this.HighestDemandProducts.Name = "HighestDemandProducts";
             this.HighestDemandProducts.Size = new System.Drawing.Size(709, 397);
             this.HighestDemandProducts.TabIndex = 14;
+            // 
+            // HDP_Panel
+            // 
+            this.HDP_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.HDP_Panel.BorderColor = System.Drawing.Color.Black;
+            this.HDP_Panel.BorderRadius = 10;
+            this.HDP_Panel.BorderThickness = 1;
+            this.HDP_Panel.Controls.Add(this.HDP_Label);
+            this.HDP_Panel.CustomizableEdges.BottomLeft = false;
+            this.HDP_Panel.CustomizableEdges.BottomRight = false;
+            this.HDP_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.HDP_Panel.Location = new System.Drawing.Point(0, 0);
+            this.HDP_Panel.Name = "HDP_Panel";
+            this.HDP_Panel.Size = new System.Drawing.Size(709, 46);
+            this.HDP_Panel.TabIndex = 14;
+            // 
+            // HDP_Label
+            // 
+            this.HDP_Label.BackColor = System.Drawing.Color.Transparent;
+            this.HDP_Label.CausesValidation = false;
+            this.HDP_Label.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HDP_Label.ForeColor = System.Drawing.Color.White;
+            this.HDP_Label.Location = new System.Drawing.Point(2, 13);
+            this.HDP_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HDP_Label.Name = "HDP_Label";
+            this.HDP_Label.Size = new System.Drawing.Size(707, 21);
+            this.HDP_Label.TabIndex = 3;
+            this.HDP_Label.Text = "HIGHEST-DEMAND PRODUCTS";
+            this.HDP_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TotalRequests_Panel
             // 
@@ -1138,16 +1555,6 @@
             this.TotalR_Label.Text = "Total Requests";
             this.TotalR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // HDP_Graph
-            // 
-            this.HDP_Graph.Image = ((System.Drawing.Image)(resources.GetObject("HDP_Graph.Image")));
-            this.HDP_Graph.Location = new System.Drawing.Point(305, 28);
-            this.HDP_Graph.Name = "HDP_Graph";
-            this.HDP_Graph.Size = new System.Drawing.Size(417, 399);
-            this.HDP_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.HDP_Graph.TabIndex = 17;
-            this.HDP_Graph.TabStop = false;
-            // 
             // HDP_P7
             // 
             this.HDP_P7.CausesValidation = false;
@@ -1232,35 +1639,6 @@
             this.HDP_P1.Text = "ID Lace v2025";
             this.HDP_P1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // HDP_Panel
-            // 
-            this.HDP_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.HDP_Panel.BorderColor = System.Drawing.Color.Black;
-            this.HDP_Panel.BorderRadius = 10;
-            this.HDP_Panel.BorderThickness = 1;
-            this.HDP_Panel.Controls.Add(this.HDP_Label);
-            this.HDP_Panel.CustomizableEdges.BottomLeft = false;
-            this.HDP_Panel.CustomizableEdges.BottomRight = false;
-            this.HDP_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.HDP_Panel.Location = new System.Drawing.Point(0, 0);
-            this.HDP_Panel.Name = "HDP_Panel";
-            this.HDP_Panel.Size = new System.Drawing.Size(709, 46);
-            this.HDP_Panel.TabIndex = 14;
-            // 
-            // HDP_Label
-            // 
-            this.HDP_Label.BackColor = System.Drawing.Color.Transparent;
-            this.HDP_Label.CausesValidation = false;
-            this.HDP_Label.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HDP_Label.ForeColor = System.Drawing.Color.White;
-            this.HDP_Label.Location = new System.Drawing.Point(2, 13);
-            this.HDP_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.HDP_Label.Name = "HDP_Label";
-            this.HDP_Label.Size = new System.Drawing.Size(707, 21);
-            this.HDP_Label.TabIndex = 3;
-            this.HDP_Label.Text = "HIGHEST-DEMAND PRODUCTS";
-            this.HDP_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // HDP_Line
             // 
             this.HDP_Line.BorderThickness = 0;
@@ -1301,7 +1679,7 @@
             this.NotifyRequest_Panel.Controls.Add(this.NRCounter_Panel);
             this.NotifyRequest_Panel.Controls.Add(this.guna2Shapes2);
             this.NotifyRequest_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.NotifyRequest_Panel.Location = new System.Drawing.Point(695, 81);
+            this.NotifyRequest_Panel.Location = new System.Drawing.Point(692, 81);
             this.NotifyRequest_Panel.Name = "NotifyRequest_Panel";
             this.NotifyRequest_Panel.Size = new System.Drawing.Size(220, 173);
             this.NotifyRequest_Panel.TabIndex = 13;
@@ -1440,10 +1818,10 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.panel3.Controls.Add(this.AdminDashboard_Label);
-            this.panel3.Location = new System.Drawing.Point(177, 0);
+            this.panel3.Location = new System.Drawing.Point(181, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1094, 64);
+            this.panel3.Size = new System.Drawing.Size(1090, 64);
             this.panel3.TabIndex = 5;
             // 
             // AdminDashboard_Label
@@ -1452,7 +1830,7 @@
             this.AdminDashboard_Label.BackColor = System.Drawing.Color.Transparent;
             this.AdminDashboard_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminDashboard_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.AdminDashboard_Label.Location = new System.Drawing.Point(13, 15);
+            this.AdminDashboard_Label.Location = new System.Drawing.Point(15, 15);
             this.AdminDashboard_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AdminDashboard_Label.Name = "AdminDashboard_Label";
             this.AdminDashboard_Label.Size = new System.Drawing.Size(258, 32);
@@ -1462,6 +1840,7 @@
             // OrderManagement_Panel
             // 
             this.OrderManagement_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.OrderManagement_Panel.Controls.Add(this.OM_Panel);
             this.OrderManagement_Panel.Controls.Add(this.Complete_Button);
             this.OrderManagement_Panel.Controls.Add(this.View_Button);
             this.OrderManagement_Panel.Controls.Add(this.OMSearch_Input);
@@ -1470,39 +1849,10 @@
             this.OrderManagement_Panel.Controls.Add(this.OM_PendingPickups_Panel);
             this.OrderManagement_Panel.Controls.Add(this.OM_TotalOrders_Panel);
             this.OrderManagement_Panel.Controls.Add(this.dataGridView1);
-            this.OrderManagement_Panel.Controls.Add(this.Header_Panel);
-            this.OrderManagement_Panel.Location = new System.Drawing.Point(-3, -1);
+            this.OrderManagement_Panel.Location = new System.Drawing.Point(0, 0);
             this.OrderManagement_Panel.Name = "OrderManagement_Panel";
             this.OrderManagement_Panel.Size = new System.Drawing.Size(1271, 682);
             this.OrderManagement_Panel.TabIndex = 13;
-            // 
-            // Complete_Button
-            // 
-            this.Complete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Complete_Button.Image = global::LogIn_HiveStock.Properties.Resources.complete;
-            this.Complete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Complete_Button.Location = new System.Drawing.Point(398, 158);
-            this.Complete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Complete_Button.Name = "Complete_Button";
-            this.Complete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Complete_Button.Size = new System.Drawing.Size(130, 37);
-            this.Complete_Button.TabIndex = 35;
-            this.Complete_Button.Text = "      Complete";
-            this.Complete_Button.UseVisualStyleBackColor = true;
-            // 
-            // View_Button
-            // 
-            this.View_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_Button.Image = global::LogIn_HiveStock.Properties.Resources.view;
-            this.View_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.View_Button.Location = new System.Drawing.Point(258, 158);
-            this.View_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.View_Button.Name = "View_Button";
-            this.View_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.View_Button.Size = new System.Drawing.Size(130, 37);
-            this.View_Button.TabIndex = 34;
-            this.View_Button.Text = "      View";
-            this.View_Button.UseVisualStyleBackColor = true;
             // 
             // OMSearch_Input
             // 
@@ -1681,14 +2031,14 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1701,14 +2051,14 @@
             this.OrderDate,
             this.dataGridViewTextBoxColumn7,
             this.Status});
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.DarkOliveGreen;
@@ -1718,20 +2068,20 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.Size = new System.Drawing.Size(928, 446);
@@ -1806,447 +2156,157 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
-            // Header_Panel
-            // 
-            this.Header_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Header_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Header_Panel.Controls.Add(this.MarketingCenter);
-            this.Header_Panel.Location = new System.Drawing.Point(185, 1);
-            this.Header_Panel.Margin = new System.Windows.Forms.Padding(2);
-            this.Header_Panel.Name = "Header_Panel";
-            this.Header_Panel.Size = new System.Drawing.Size(1086, 64);
-            this.Header_Panel.TabIndex = 6;
-            // 
-            // MarketingCenter
-            // 
-            this.MarketingCenter.AutoSize = true;
-            this.MarketingCenter.BackColor = System.Drawing.Color.Transparent;
-            this.MarketingCenter.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.MarketingCenter.Location = new System.Drawing.Point(13, 15);
-            this.MarketingCenter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MarketingCenter.Name = "MarketingCenter";
-            this.MarketingCenter.Size = new System.Drawing.Size(279, 32);
-            this.MarketingCenter.TabIndex = 6;
-            this.MarketingCenter.Text = "ORDER MANAGEMENT";
-            // 
-            // Products_Panel
-            // 
-            this.Products_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Products_Panel.BorderColor = System.Drawing.Color.Black;
-            this.Products_Panel.BorderRadius = 10;
-            this.Products_Panel.BorderThickness = 1;
-            this.Products_Panel.Controls.Add(this.ADOOS_Panel);
-            this.Products_Panel.Controls.Add(this.ADLS_Panel);
-            this.Products_Panel.Controls.Add(this.ADIS_Panel);
-            this.Products_Panel.Controls.Add(this.ADTO_Panel);
-            this.Products_Panel.Controls.Add(this.PR_Panel);
-            this.Products_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.Products_Panel.Location = new System.Drawing.Point(206, 81);
-            this.Products_Panel.Name = "Products_Panel";
-            this.Products_Panel.Size = new System.Drawing.Size(224, 172);
-            this.Products_Panel.TabIndex = 18;
-            // 
-            // PR_Panel
-            // 
-            this.PR_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.PR_Panel.BorderColor = System.Drawing.Color.Black;
-            this.PR_Panel.BorderRadius = 10;
-            this.PR_Panel.BorderThickness = 1;
-            this.PR_Panel.Controls.Add(this.PR_Label);
-            this.PR_Panel.CustomizableEdges.BottomLeft = false;
-            this.PR_Panel.CustomizableEdges.BottomRight = false;
-            this.PR_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.PR_Panel.Location = new System.Drawing.Point(0, 0);
-            this.PR_Panel.Name = "PR_Panel";
-            this.PR_Panel.Size = new System.Drawing.Size(224, 46);
-            this.PR_Panel.TabIndex = 14;
-            // 
-            // PR_Label
-            // 
-            this.PR_Label.BackColor = System.Drawing.Color.Transparent;
-            this.PR_Label.CausesValidation = false;
-            this.PR_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PR_Label.ForeColor = System.Drawing.Color.White;
-            this.PR_Label.Location = new System.Drawing.Point(4, 13);
-            this.PR_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PR_Label.Name = "PR_Label";
-            this.PR_Label.Size = new System.Drawing.Size(220, 21);
-            this.PR_Label.TabIndex = 3;
-            this.PR_Label.Text = "PRODUCTS";
-            this.PR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Orders_Panel
-            // 
-            this.Orders_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Orders_Panel.BorderColor = System.Drawing.Color.Black;
-            this.Orders_Panel.BorderRadius = 10;
-            this.Orders_Panel.BorderThickness = 1;
-            this.Orders_Panel.Controls.Add(this.guna2Panel4);
-            this.Orders_Panel.Controls.Add(this.guna2Panel1);
-            this.Orders_Panel.Controls.Add(this.guna2Panel3);
-            this.Orders_Panel.Controls.Add(this.OR_Panel);
-            this.Orders_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.Orders_Panel.Location = new System.Drawing.Point(446, 81);
-            this.Orders_Panel.Name = "Orders_Panel";
-            this.Orders_Panel.Size = new System.Drawing.Size(234, 172);
-            this.Orders_Panel.TabIndex = 29;
-            // 
-            // OR_Panel
-            // 
-            this.OR_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.OR_Panel.BorderColor = System.Drawing.Color.Black;
-            this.OR_Panel.BorderRadius = 10;
-            this.OR_Panel.BorderThickness = 1;
-            this.OR_Panel.Controls.Add(this.OR_Label);
-            this.OR_Panel.CustomizableEdges.BottomLeft = false;
-            this.OR_Panel.CustomizableEdges.BottomRight = false;
-            this.OR_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.OR_Panel.Location = new System.Drawing.Point(0, 0);
-            this.OR_Panel.Name = "OR_Panel";
-            this.OR_Panel.Size = new System.Drawing.Size(234, 46);
-            this.OR_Panel.TabIndex = 14;
-            // 
-            // OR_Label
-            // 
-            this.OR_Label.BackColor = System.Drawing.Color.Transparent;
-            this.OR_Label.CausesValidation = false;
-            this.OR_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OR_Label.ForeColor = System.Drawing.Color.White;
-            this.OR_Label.Location = new System.Drawing.Point(4, 13);
-            this.OR_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.OR_Label.Name = "OR_Label";
-            this.OR_Label.Size = new System.Drawing.Size(230, 21);
-            this.OR_Label.TabIndex = 3;
-            this.OR_Label.Text = "ORDERS";
-            this.OR_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.OR_Label.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BorderRadius = 10;
-            this.guna2Panel3.Controls.Add(this.TotalOrders_Color);
-            this.guna2Panel3.Controls.Add(this.TotalOrders_Count);
-            this.guna2Panel3.Controls.Add(this.TotalOrders_Label);
-            this.guna2Panel3.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel3.Location = new System.Drawing.Point(8, 53);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(216, 33);
-            this.guna2Panel3.TabIndex = 31;
-            // 
-            // TotalOrders_Color
-            // 
-            this.TotalOrders_Color.BorderRadius = 5;
-            this.TotalOrders_Color.CustomizableEdges.BottomRight = false;
-            this.TotalOrders_Color.CustomizableEdges.TopRight = false;
-            this.TotalOrders_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.TotalOrders_Color.Location = new System.Drawing.Point(0, 0);
-            this.TotalOrders_Color.Name = "TotalOrders_Color";
-            this.TotalOrders_Color.Size = new System.Drawing.Size(12, 33);
-            this.TotalOrders_Color.TabIndex = 0;
-            // 
-            // TotalOrders_Count
-            // 
-            this.TotalOrders_Count.AutoSize = true;
-            this.TotalOrders_Count.CausesValidation = false;
-            this.TotalOrders_Count.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalOrders_Count.Location = new System.Drawing.Point(189, 6);
-            this.TotalOrders_Count.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TotalOrders_Count.Name = "TotalOrders_Count";
-            this.TotalOrders_Count.Size = new System.Drawing.Size(19, 21);
-            this.TotalOrders_Count.TabIndex = 3;
-            this.TotalOrders_Count.Text = "0";
-            // 
-            // TotalOrders_Label
-            // 
-            this.TotalOrders_Label.AutoSize = true;
-            this.TotalOrders_Label.CausesValidation = false;
-            this.TotalOrders_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalOrders_Label.Location = new System.Drawing.Point(21, 8);
-            this.TotalOrders_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TotalOrders_Label.Name = "TotalOrders_Label";
-            this.TotalOrders_Label.Size = new System.Drawing.Size(83, 17);
-            this.TotalOrders_Label.TabIndex = 2;
-            this.TotalOrders_Label.Text = "Total Orders";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel1.Location = new System.Drawing.Point(8, 92);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(216, 33);
-            this.guna2Panel1.TabIndex = 32;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 5;
-            this.guna2Panel2.CustomizableEdges.BottomRight = false;
-            this.guna2Panel2.CustomizableEdges.TopRight = false;
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(12, 33);
-            this.guna2Panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.CausesValidation = false;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(189, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.CausesValidation = false;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Orders Completed";
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BorderRadius = 10;
-            this.guna2Panel4.Controls.Add(this.guna2Panel5);
-            this.guna2Panel4.Controls.Add(this.label4);
-            this.guna2Panel4.Controls.Add(this.label5);
-            this.guna2Panel4.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel4.Location = new System.Drawing.Point(8, 131);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(216, 33);
-            this.guna2Panel4.TabIndex = 32;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BorderRadius = 5;
-            this.guna2Panel5.CustomizableEdges.BottomRight = false;
-            this.guna2Panel5.CustomizableEdges.TopRight = false;
-            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(12, 33);
-            this.guna2Panel5.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.CausesValidation = false;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(189, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.CausesValidation = false;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 8);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Pending Pickups";
-            // 
-            // ADTO_Panel
-            // 
-            this.ADTO_Panel.BorderRadius = 10;
-            this.ADTO_Panel.Controls.Add(this.ADTO_Color);
-            this.ADTO_Panel.Controls.Add(this.ADTO_Counter);
-            this.ADTO_Panel.Controls.Add(this.ADTO_Label);
-            this.ADTO_Panel.FillColor = System.Drawing.Color.Gainsboro;
-            this.ADTO_Panel.Location = new System.Drawing.Point(9, 51);
-            this.ADTO_Panel.Name = "ADTO_Panel";
-            this.ADTO_Panel.Size = new System.Drawing.Size(100, 55);
-            this.ADTO_Panel.TabIndex = 32;
-            // 
-            // ADTO_Color
-            // 
-            this.ADTO_Color.BorderRadius = 5;
-            this.ADTO_Color.CustomizableEdges.BottomRight = false;
-            this.ADTO_Color.CustomizableEdges.TopRight = false;
-            this.ADTO_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.ADTO_Color.Location = new System.Drawing.Point(0, 0);
-            this.ADTO_Color.Name = "ADTO_Color";
-            this.ADTO_Color.Size = new System.Drawing.Size(10, 55);
-            this.ADTO_Color.TabIndex = 0;
-            // 
-            // ADTO_Counter
-            // 
-            this.ADTO_Counter.CausesValidation = false;
-            this.ADTO_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADTO_Counter.Location = new System.Drawing.Point(19, 20);
-            this.ADTO_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADTO_Counter.Name = "ADTO_Counter";
-            this.ADTO_Counter.Size = new System.Drawing.Size(74, 29);
-            this.ADTO_Counter.TabIndex = 3;
-            this.ADTO_Counter.Text = "0";
-            // 
-            // ADTO_Label
-            // 
-            this.ADTO_Label.AutoSize = true;
-            this.ADTO_Label.CausesValidation = false;
-            this.ADTO_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADTO_Label.Location = new System.Drawing.Point(17, 10);
-            this.ADTO_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADTO_Label.Name = "ADTO_Label";
-            this.ADTO_Label.Size = new System.Drawing.Size(72, 13);
-            this.ADTO_Label.TabIndex = 2;
-            this.ADTO_Label.Text = "Total Orders";
-            this.ADTO_Label.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // ADIS_Panel
-            // 
-            this.ADIS_Panel.BorderRadius = 10;
-            this.ADIS_Panel.Controls.Add(this.ADIS_Color);
-            this.ADIS_Panel.Controls.Add(this.ADIS_Counter);
-            this.ADIS_Panel.Controls.Add(this.ADIS_Label);
-            this.ADIS_Panel.FillColor = System.Drawing.Color.Gainsboro;
-            this.ADIS_Panel.Location = new System.Drawing.Point(115, 52);
-            this.ADIS_Panel.Name = "ADIS_Panel";
-            this.ADIS_Panel.Size = new System.Drawing.Size(100, 55);
-            this.ADIS_Panel.TabIndex = 33;
-            // 
-            // ADIS_Color
-            // 
-            this.ADIS_Color.BorderRadius = 5;
-            this.ADIS_Color.CustomizableEdges.BottomRight = false;
-            this.ADIS_Color.CustomizableEdges.TopRight = false;
-            this.ADIS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.ADIS_Color.Location = new System.Drawing.Point(0, 0);
-            this.ADIS_Color.Name = "ADIS_Color";
-            this.ADIS_Color.Size = new System.Drawing.Size(10, 55);
-            this.ADIS_Color.TabIndex = 0;
-            // 
-            // ADIS_Counter
-            // 
-            this.ADIS_Counter.CausesValidation = false;
-            this.ADIS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADIS_Counter.Location = new System.Drawing.Point(19, 20);
-            this.ADIS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADIS_Counter.Name = "ADIS_Counter";
-            this.ADIS_Counter.Size = new System.Drawing.Size(74, 29);
-            this.ADIS_Counter.TabIndex = 3;
-            this.ADIS_Counter.Text = "0";
-            // 
-            // ADIS_Label
-            // 
-            this.ADIS_Label.AutoSize = true;
-            this.ADIS_Label.CausesValidation = false;
-            this.ADIS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADIS_Label.Location = new System.Drawing.Point(17, 10);
-            this.ADIS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADIS_Label.Name = "ADIS_Label";
-            this.ADIS_Label.Size = new System.Drawing.Size(48, 13);
-            this.ADIS_Label.TabIndex = 2;
-            this.ADIS_Label.Text = "In Stock";
-            // 
-            // ADLS_Panel
-            // 
-            this.ADLS_Panel.BorderRadius = 10;
-            this.ADLS_Panel.Controls.Add(this.ADLS_Color);
-            this.ADLS_Panel.Controls.Add(this.ADLS_Counter);
-            this.ADLS_Panel.Controls.Add(this.ADLS_Label);
-            this.ADLS_Panel.FillColor = System.Drawing.Color.Gainsboro;
-            this.ADLS_Panel.Location = new System.Drawing.Point(9, 111);
-            this.ADLS_Panel.Name = "ADLS_Panel";
-            this.ADLS_Panel.Size = new System.Drawing.Size(100, 55);
-            this.ADLS_Panel.TabIndex = 33;
-            // 
-            // ADLS_Color
-            // 
-            this.ADLS_Color.BorderRadius = 5;
-            this.ADLS_Color.CustomizableEdges.BottomRight = false;
-            this.ADLS_Color.CustomizableEdges.TopRight = false;
-            this.ADLS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.ADLS_Color.Location = new System.Drawing.Point(0, 0);
-            this.ADLS_Color.Name = "ADLS_Color";
-            this.ADLS_Color.Size = new System.Drawing.Size(10, 55);
-            this.ADLS_Color.TabIndex = 0;
-            // 
-            // ADLS_Counter
-            // 
-            this.ADLS_Counter.CausesValidation = false;
-            this.ADLS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADLS_Counter.Location = new System.Drawing.Point(19, 20);
-            this.ADLS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADLS_Counter.Name = "ADLS_Counter";
-            this.ADLS_Counter.Size = new System.Drawing.Size(74, 29);
-            this.ADLS_Counter.TabIndex = 3;
-            this.ADLS_Counter.Text = "0";
-            // 
-            // ADLS_Label
-            // 
-            this.ADLS_Label.AutoSize = true;
-            this.ADLS_Label.CausesValidation = false;
-            this.ADLS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADLS_Label.Location = new System.Drawing.Point(17, 10);
-            this.ADLS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADLS_Label.Name = "ADLS_Label";
-            this.ADLS_Label.Size = new System.Drawing.Size(59, 13);
-            this.ADLS_Label.TabIndex = 2;
-            this.ADLS_Label.Text = "Low Stock";
-            // 
-            // ADOOS_Panel
-            // 
-            this.ADOOS_Panel.BorderRadius = 10;
-            this.ADOOS_Panel.Controls.Add(this.ADOOS_Color);
-            this.ADOOS_Panel.Controls.Add(this.ADOOS_Counter);
-            this.ADOOS_Panel.Controls.Add(this.ADOOS_Label);
-            this.ADOOS_Panel.FillColor = System.Drawing.Color.Gainsboro;
-            this.ADOOS_Panel.Location = new System.Drawing.Point(115, 111);
-            this.ADOOS_Panel.Name = "ADOOS_Panel";
-            this.ADOOS_Panel.Size = new System.Drawing.Size(100, 55);
-            this.ADOOS_Panel.TabIndex = 34;
-            // 
-            // ADOOS_Color
-            // 
-            this.ADOOS_Color.BorderRadius = 5;
-            this.ADOOS_Color.CustomizableEdges.BottomRight = false;
-            this.ADOOS_Color.CustomizableEdges.TopRight = false;
-            this.ADOOS_Color.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ADOOS_Color.Location = new System.Drawing.Point(0, 0);
-            this.ADOOS_Color.Name = "ADOOS_Color";
-            this.ADOOS_Color.Size = new System.Drawing.Size(10, 55);
-            this.ADOOS_Color.TabIndex = 0;
-            // 
-            // ADOOS_Counter
-            // 
-            this.ADOOS_Counter.CausesValidation = false;
-            this.ADOOS_Counter.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADOOS_Counter.Location = new System.Drawing.Point(19, 20);
-            this.ADOOS_Counter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADOOS_Counter.Name = "ADOOS_Counter";
-            this.ADOOS_Counter.Size = new System.Drawing.Size(74, 29);
-            this.ADOOS_Counter.TabIndex = 3;
-            this.ADOOS_Counter.Text = "0";
-            // 
-            // ADOOS_Label
-            // 
-            this.ADOOS_Label.AutoSize = true;
-            this.ADOOS_Label.CausesValidation = false;
-            this.ADOOS_Label.Font = new System.Drawing.Font("Malgun Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADOOS_Label.Location = new System.Drawing.Point(17, 10);
-            this.ADOOS_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ADOOS_Label.Name = "ADOOS_Label";
-            this.ADOOS_Label.Size = new System.Drawing.Size(72, 13);
-            this.ADOOS_Label.TabIndex = 2;
-            this.ADOOS_Label.Text = "Out of Stock";
+            // DMMMSU_Logo
+            // 
+            this.DMMMSU_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.DMMMSU_Logo.Image = ((System.Drawing.Image)(resources.GetObject("DMMMSU_Logo.Image")));
+            this.DMMMSU_Logo.Location = new System.Drawing.Point(46, 19);
+            this.DMMMSU_Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
+            this.DMMMSU_Logo.Size = new System.Drawing.Size(87, 91);
+            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DMMMSU_Logo.TabIndex = 9;
+            this.DMMMSU_Logo.TabStop = false;
+            // 
+            // CDT_Graph
+            // 
+            this.CDT_Graph.Image = ((System.Drawing.Image)(resources.GetObject("CDT_Graph.Image")));
+            this.CDT_Graph.Location = new System.Drawing.Point(-13, 39);
+            this.CDT_Graph.Name = "CDT_Graph";
+            this.CDT_Graph.Size = new System.Drawing.Size(359, 323);
+            this.CDT_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CDT_Graph.TabIndex = 16;
+            this.CDT_Graph.TabStop = false;
+            // 
+            // HDP_Graph
+            // 
+            this.HDP_Graph.Image = ((System.Drawing.Image)(resources.GetObject("HDP_Graph.Image")));
+            this.HDP_Graph.Location = new System.Drawing.Point(305, 20);
+            this.HDP_Graph.Name = "HDP_Graph";
+            this.HDP_Graph.Size = new System.Drawing.Size(417, 399);
+            this.HDP_Graph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HDP_Graph.TabIndex = 17;
+            this.HDP_Graph.TabStop = false;
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit_Button.Image = ((System.Drawing.Image)(resources.GetObject("Edit_Button.Image")));
+            this.Edit_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Edit_Button.Location = new System.Drawing.Point(396, 158);
+            this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Edit_Button.Size = new System.Drawing.Size(105, 37);
+            this.Edit_Button.TabIndex = 9;
+            this.Edit_Button.Text = "  Edit";
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            // 
+            // Delete_Button
+            // 
+            this.Delete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Delete_Button.Image")));
+            this.Delete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Delete_Button.Location = new System.Drawing.Point(531, 158);
+            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Delete_Button.Size = new System.Drawing.Size(128, 37);
+            this.Delete_Button.TabIndex = 10;
+            this.Delete_Button.Text = "Delete";
+            this.Delete_Button.UseVisualStyleBackColor = true;
+            // 
+            // Create_Button
+            // 
+            this.Create_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Create_Button.Image = ((System.Drawing.Image)(resources.GetObject("Create_Button.Image")));
+            this.Create_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Create_Button.Location = new System.Drawing.Point(258, 158);
+            this.Create_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Create_Button.Name = "Create_Button";
+            this.Create_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Create_Button.Size = new System.Drawing.Size(112, 37);
+            this.Create_Button.TabIndex = 8;
+            this.Create_Button.Text = "     Create";
+            this.Create_Button.UseVisualStyleBackColor = true;
+            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
+            // 
+            // Complete_Button
+            // 
+            this.Complete_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Complete_Button.Image = global::LogIn_HiveStock.Properties.Resources.complete;
+            this.Complete_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Complete_Button.Location = new System.Drawing.Point(398, 158);
+            this.Complete_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Complete_Button.Name = "Complete_Button";
+            this.Complete_Button.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.Complete_Button.Size = new System.Drawing.Size(130, 37);
+            this.Complete_Button.TabIndex = 35;
+            this.Complete_Button.Text = "      Complete";
+            this.Complete_Button.UseVisualStyleBackColor = true;
+            // 
+            // View_Button
+            // 
+            this.View_Button.Font = new System.Drawing.Font("Malgun Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_Button.Image = global::LogIn_HiveStock.Properties.Resources.view;
+            this.View_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.View_Button.Location = new System.Drawing.Point(258, 158);
+            this.View_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.View_Button.Name = "View_Button";
+            this.View_Button.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.View_Button.Size = new System.Drawing.Size(130, 37);
+            this.View_Button.TabIndex = 34;
+            this.View_Button.Text = "      View";
+            this.View_Button.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "PRODUCT MANAGEMENT";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(179, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1104, 64);
+            this.panel2.TabIndex = 25;
+            // 
+            // OM_Panel
+            // 
+            this.OM_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.OM_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.OM_Panel.Controls.Add(this.OM_Label);
+            this.OM_Panel.Location = new System.Drawing.Point(181, 0);
+            this.OM_Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.OM_Panel.Name = "OM_Panel";
+            this.OM_Panel.Size = new System.Drawing.Size(1090, 64);
+            this.OM_Panel.TabIndex = 36;
+            // 
+            // OM_Label
+            // 
+            this.OM_Label.AutoSize = true;
+            this.OM_Label.BackColor = System.Drawing.Color.Transparent;
+            this.OM_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OM_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.OM_Label.Location = new System.Drawing.Point(15, 15);
+            this.OM_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OM_Label.Name = "OM_Label";
+            this.OM_Label.Size = new System.Drawing.Size(279, 32);
+            this.OM_Label.TabIndex = 6;
+            this.OM_Label.Text = "ORDER MANAGEMENT";
             // 
             // AdminSide
             // 
@@ -2258,12 +2318,12 @@
             this.Controls.Add(this.Product_Mgmt_Panel);
             this.Controls.Add(this.OrderManagement_Panel);
             this.Name = "AdminSide";
-            this.Text = "Admin Window";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Marketing Center Staff";
             this.Side_Panel.ResumeLayout(false);
             this.Logo_Panel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
             this.Product_Mgmt_Panel.ResumeLayout(false);
             this.Product_Mgmt_Panel.PerformLayout();
             this.OutOfStock_Panel.ResumeLayout(false);
@@ -2274,19 +2334,33 @@
             this.InStock_Panel.PerformLayout();
             this.TP_Panel.ResumeLayout(false);
             this.TP_Panel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable)).EndInit();
             this.AdminDashboard_Panel.ResumeLayout(false);
+            this.Orders_Panel.ResumeLayout(false);
+            this.PP_Panel.ResumeLayout(false);
+            this.PP_Panel.PerformLayout();
+            this.OC_Panel.ResumeLayout(false);
+            this.OC_Panel.PerformLayout();
+            this.TO_Panel.ResumeLayout(false);
+            this.TO_Panel.PerformLayout();
+            this.OR_Panel.ResumeLayout(false);
+            this.Products_Panel.ResumeLayout(false);
+            this.ADOOS_Panel.ResumeLayout(false);
+            this.ADOOS_Panel.PerformLayout();
+            this.ADLS_Panel.ResumeLayout(false);
+            this.ADLS_Panel.PerformLayout();
+            this.ADIS_Panel.ResumeLayout(false);
+            this.ADIS_Panel.PerformLayout();
+            this.ADTO_Panel.ResumeLayout(false);
+            this.ADTO_Panel.PerformLayout();
+            this.PR_Panel.ResumeLayout(false);
             this.RecentUpdates_Panel.ResumeLayout(false);
             this.RU_Panel.ResumeLayout(false);
             this.CustomerDemandTrend_Label.ResumeLayout(false);
             this.CDT_Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).EndInit();
             this.HighestDemandProducts.ResumeLayout(false);
-            this.TotalRequests_Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).EndInit();
             this.HDP_Panel.ResumeLayout(false);
+            this.TotalRequests_Panel.ResumeLayout(false);
             this.NotifyRequest_Panel.ResumeLayout(false);
             this.NR_Panel.ResumeLayout(false);
             this.NRCounter_Panel.ResumeLayout(false);
@@ -2301,26 +2375,13 @@
             this.OM_TotalOrders_Panel.ResumeLayout(false);
             this.OM_TotalOrders_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Header_Panel.ResumeLayout(false);
-            this.Header_Panel.PerformLayout();
-            this.Products_Panel.ResumeLayout(false);
-            this.PR_Panel.ResumeLayout(false);
-            this.Orders_Panel.ResumeLayout(false);
-            this.OR_Panel.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
-            this.ADTO_Panel.ResumeLayout(false);
-            this.ADTO_Panel.PerformLayout();
-            this.ADIS_Panel.ResumeLayout(false);
-            this.ADIS_Panel.PerformLayout();
-            this.ADLS_Panel.ResumeLayout(false);
-            this.ADLS_Panel.PerformLayout();
-            this.ADOOS_Panel.ResumeLayout(false);
-            this.ADOOS_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CDT_Graph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HDP_Graph)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.OM_Panel.ResumeLayout(false);
+            this.OM_Panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2332,7 +2393,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label HiveStock;
         private System.Windows.Forms.PictureBox DMMMSU_Logo;
-        private Guna.UI2.WinForms.Guna2Button Exit_Button;
+        private Guna.UI2.WinForms.Guna2Button LogOut_Button;
         private Guna.UI2.WinForms.Guna2Button Order_Button;
         private Guna.UI2.WinForms.Guna2Button ProductManagement_Button;
         private System.Windows.Forms.Panel Product_Mgmt_Panel;
@@ -2342,17 +2403,8 @@
         private System.Windows.Forms.Button Create_Button;
         private System.Windows.Forms.Label Search_Label;
         private System.Windows.Forms.DataGridView DataTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockStatus;
         private System.Windows.Forms.Label TP_Counter;
         private System.Windows.Forms.Label TP_Label;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button AdminDashboard_Button;
         private System.Windows.Forms.Panel AdminDashboard_Panel;
         private Guna.UI2.WinForms.Guna2Panel RecentUpdates_Panel;
@@ -2444,30 +2496,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.Panel Header_Panel;
-        private System.Windows.Forms.Label MarketingCenter;
         private Guna.UI2.WinForms.Guna2Panel Products_Panel;
         private Guna.UI2.WinForms.Guna2Panel PR_Panel;
         private System.Windows.Forms.Label PR_Label;
         private Guna.UI2.WinForms.Guna2Panel Orders_Panel;
         private Guna.UI2.WinForms.Guna2Panel OR_Panel;
         private System.Windows.Forms.Label OR_Label;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Panel TotalOrders_Color;
-        private System.Windows.Forms.Label TotalOrders_Count;
-        private System.Windows.Forms.Label TotalOrders_Label;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Panel TO_Panel;
+        private Guna.UI2.WinForms.Guna2Panel TO_Color;
+        private System.Windows.Forms.Label TO_Counter;
+        private System.Windows.Forms.Label TO_Label;
+        private Guna.UI2.WinForms.Guna2Panel PP_Panel;
+        private Guna.UI2.WinForms.Guna2Panel PP_Color;
+        private System.Windows.Forms.Label PP_Counter;
+        private System.Windows.Forms.Label PP_Label;
+        private Guna.UI2.WinForms.Guna2Panel OC_Panel;
+        private Guna.UI2.WinForms.Guna2Panel OC_Color;
+        private System.Windows.Forms.Label OC_Counter;
+        private System.Windows.Forms.Label OC_Label;
         private Guna.UI2.WinForms.Guna2Panel ADTO_Panel;
         private Guna.UI2.WinForms.Guna2Panel ADTO_Color;
         private System.Windows.Forms.Label ADTO_Counter;
-        private System.Windows.Forms.Label ADTO_Label;
+        private System.Windows.Forms.Label ADTP_Label;
         private Guna.UI2.WinForms.Guna2Panel ADIS_Panel;
         private Guna.UI2.WinForms.Guna2Panel ADIS_Color;
         private System.Windows.Forms.Label ADIS_Counter;
@@ -2480,5 +2530,20 @@
         private Guna.UI2.WinForms.Guna2Panel ADOOS_Color;
         private System.Windows.Forms.Label ADOOS_Counter;
         private System.Windows.Forms.Label ADOOS_Label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockQuantity_PM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockStatus_PM;
+        private System.Windows.Forms.Label StaffName_Label;
+        private System.Windows.Forms.Label StaffIDNumber_Label;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel OM_Panel;
+        private System.Windows.Forms.Label OM_Label;
     }
 }
