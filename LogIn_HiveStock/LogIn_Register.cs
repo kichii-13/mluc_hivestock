@@ -64,5 +64,23 @@ namespace LogIn_HiveStock
             adminside.Show();
             this.Hide();
         }
+
+        private void ForgotPassword_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Forgot_Panel.Visible = true;
+            ForgotPassword_Label.Visible = true;
+        }
+
+        private void ForgotCancel_Button_Click(object sender, EventArgs e)
+        {
+            Forgot_Panel.Visible = false;
+            ForgotPassword_Label.Visible = false;
+        }
+
+        private void Done_Button_Click(object sender, EventArgs e)
+        {
+            Forgot_Panel.Visible = false;
+            ForgotPassword_Label.Visible = false;
+        }
     }
 }
