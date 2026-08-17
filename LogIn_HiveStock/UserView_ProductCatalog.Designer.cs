@@ -2144,7 +2144,7 @@
             this.Middle_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.Middle_Panel.Location = new System.Drawing.Point(0, 68);
             this.Middle_Panel.Name = "Middle_Panel";
-            this.Middle_Panel.Size = new System.Drawing.Size(1266, 85);
+            this.Middle_Panel.Size = new System.Drawing.Size(1278, 85);
             this.Middle_Panel.TabIndex = 11;
             // 
             // UserView_ProductCatalog
@@ -2157,7 +2157,7 @@
             this.Controls.Add(this.Middle_Panel);
             this.Name = "UserView_ProductCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Products";
+            this.Text = "HiveStock";
             this.Header_Panel.ResumeLayout(false);
             this.Header_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();

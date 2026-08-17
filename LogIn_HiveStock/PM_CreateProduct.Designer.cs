@@ -70,10 +70,10 @@
             this.CPInfo_Panel.Controls.Add(this.CPCategory_Label);
             this.CPInfo_Panel.Controls.Add(this.CPProductID_TextBox);
             this.CPInfo_Panel.Controls.Add(this.CPProductID_Label);
-            this.CPInfo_Panel.Location = new System.Drawing.Point(-1, 67);
+            this.CPInfo_Panel.Location = new System.Drawing.Point(5, 70);
             this.CPInfo_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.CPInfo_Panel.Name = "CPInfo_Panel";
-            this.CPInfo_Panel.Size = new System.Drawing.Size(618, 338);
+            this.CPInfo_Panel.Size = new System.Drawing.Size(606, 327);
             this.CPInfo_Panel.TabIndex = 1;
             // 
             // CPStatus_Dropdown
@@ -96,7 +96,7 @@
             "Out of Stock"});
             this.CPStatus_Dropdown.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.CPStatus_Dropdown.ItemsAppearance.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.CPStatus_Dropdown.Location = new System.Drawing.Point(455, 119);
+            this.CPStatus_Dropdown.Location = new System.Drawing.Point(450, 119);
             this.CPStatus_Dropdown.Margin = new System.Windows.Forms.Padding(2);
             this.CPStatus_Dropdown.Name = "CPStatus_Dropdown";
             this.CPStatus_Dropdown.ShadowDecoration.Depth = 0;
@@ -110,7 +110,7 @@
             this.CPStatus_Label.AutoSize = true;
             this.CPStatus_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPStatus_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPStatus_Label.Location = new System.Drawing.Point(411, 127);
+            this.CPStatus_Label.Location = new System.Drawing.Point(406, 127);
             this.CPStatus_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPStatus_Label.Name = "CPStatus_Label";
             this.CPStatus_Label.Size = new System.Drawing.Size(44, 15);
@@ -122,7 +122,7 @@
             this.CPQuantity_Label.AutoSize = true;
             this.CPQuantity_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPQuantity_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPQuantity_Label.Location = new System.Drawing.Point(238, 127);
+            this.CPQuantity_Label.Location = new System.Drawing.Point(233, 127);
             this.CPQuantity_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPQuantity_Label.Name = "CPQuantity_Label";
             this.CPQuantity_Label.Size = new System.Drawing.Size(56, 15);
@@ -136,7 +136,7 @@
             this.CPQuantity_UpDown.BorderRadius = 10;
             this.CPQuantity_UpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.CPQuantity_UpDown.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPQuantity_UpDown.Location = new System.Drawing.Point(296, 118);
+            this.CPQuantity_UpDown.Location = new System.Drawing.Point(291, 118);
             this.CPQuantity_UpDown.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CPQuantity_UpDown.Name = "CPQuantity_UpDown";
             this.CPQuantity_UpDown.Size = new System.Drawing.Size(102, 38);
@@ -149,7 +149,7 @@
             this.CPPrice_Label.AutoSize = true;
             this.CPPrice_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPPrice_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPPrice_Label.Location = new System.Drawing.Point(70, 127);
+            this.CPPrice_Label.Location = new System.Drawing.Point(65, 127);
             this.CPPrice_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPPrice_Label.Name = "CPPrice_Label";
             this.CPPrice_Label.Size = new System.Drawing.Size(35, 15);
@@ -163,7 +163,7 @@
             this.CPPrice_UpDown.BorderRadius = 10;
             this.CPPrice_UpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.CPPrice_UpDown.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPPrice_UpDown.Location = new System.Drawing.Point(110, 118);
+            this.CPPrice_UpDown.Location = new System.Drawing.Point(105, 118);
             this.CPPrice_UpDown.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CPPrice_UpDown.Name = "CPPrice_UpDown";
             this.CPPrice_UpDown.Size = new System.Drawing.Size(117, 38);
@@ -184,7 +184,7 @@
             this.CPCancel_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPCancel_Button.ForeColor = System.Drawing.Color.Black;
             this.CPCancel_Button.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.CPCancel_Button.Location = new System.Drawing.Point(173, 277);
+            this.CPCancel_Button.Location = new System.Drawing.Point(168, 277);
             this.CPCancel_Button.Name = "CPCancel_Button";
             this.CPCancel_Button.Size = new System.Drawing.Size(127, 36);
             this.CPCancel_Button.TabIndex = 37;
@@ -204,7 +204,7 @@
             this.CPCreate_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPCreate_Button.ForeColor = System.Drawing.Color.Black;
             this.CPCreate_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.CPCreate_Button.Location = new System.Drawing.Point(314, 277);
+            this.CPCreate_Button.Location = new System.Drawing.Point(309, 277);
             this.CPCreate_Button.Name = "CPCreate_Button";
             this.CPCreate_Button.Size = new System.Drawing.Size(127, 36);
             this.CPCreate_Button.TabIndex = 36;
@@ -225,7 +225,7 @@
             this.CPDescription_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CPDescription_TextBox.ForeColor = System.Drawing.Color.Black;
             this.CPDescription_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CPDescription_TextBox.Location = new System.Drawing.Point(110, 175);
+            this.CPDescription_TextBox.Location = new System.Drawing.Point(105, 175);
             this.CPDescription_TextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CPDescription_TextBox.MaxLength = 200;
             this.CPDescription_TextBox.Multiline = true;
@@ -240,7 +240,7 @@
             this.CPDescription_Label.AutoSize = true;
             this.CPDescription_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPDescription_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPDescription_Label.Location = new System.Drawing.Point(34, 181);
+            this.CPDescription_Label.Location = new System.Drawing.Point(29, 181);
             this.CPDescription_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPDescription_Label.Name = "CPDescription_Label";
             this.CPDescription_Label.Size = new System.Drawing.Size(73, 15);
@@ -267,7 +267,7 @@
             "Uniform"});
             this.CPCategory_Dropdown.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.CPCategory_Dropdown.ItemsAppearance.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.CPCategory_Dropdown.Location = new System.Drawing.Point(442, 18);
+            this.CPCategory_Dropdown.Location = new System.Drawing.Point(437, 18);
             this.CPCategory_Dropdown.Margin = new System.Windows.Forms.Padding(2);
             this.CPCategory_Dropdown.Name = "CPCategory_Dropdown";
             this.CPCategory_Dropdown.ShadowDecoration.Depth = 0;
@@ -282,7 +282,7 @@
             this.CPProductName_Label.BackColor = System.Drawing.Color.Transparent;
             this.CPProductName_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPProductName_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPProductName_Label.Location = new System.Drawing.Point(18, 76);
+            this.CPProductName_Label.Location = new System.Drawing.Point(13, 76);
             this.CPProductName_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPProductName_Label.Name = "CPProductName_Label";
             this.CPProductName_Label.Size = new System.Drawing.Size(91, 15);
@@ -303,7 +303,7 @@
             this.CPProductName_TextBox.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPProductName_TextBox.ForeColor = System.Drawing.Color.Black;
             this.CPProductName_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.CPProductName_TextBox.Location = new System.Drawing.Point(110, 69);
+            this.CPProductName_TextBox.Location = new System.Drawing.Point(105, 69);
             this.CPProductName_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CPProductName_TextBox.MaxLength = 15;
             this.CPProductName_TextBox.Name = "CPProductName_TextBox";
@@ -317,7 +317,7 @@
             this.CPCategory_Label.AutoSize = true;
             this.CPCategory_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPCategory_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPCategory_Label.Location = new System.Drawing.Point(382, 28);
+            this.CPCategory_Label.Location = new System.Drawing.Point(377, 28);
             this.CPCategory_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPCategory_Label.Name = "CPCategory_Label";
             this.CPCategory_Label.Size = new System.Drawing.Size(60, 15);
@@ -338,7 +338,7 @@
             this.CPProductID_TextBox.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPProductID_TextBox.ForeColor = System.Drawing.Color.Black;
             this.CPProductID_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.CPProductID_TextBox.Location = new System.Drawing.Point(110, 19);
+            this.CPProductID_TextBox.Location = new System.Drawing.Point(105, 19);
             this.CPProductID_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CPProductID_TextBox.MaxLength = 15;
             this.CPProductID_TextBox.Name = "CPProductID_TextBox";
@@ -352,7 +352,7 @@
             this.CPProductID_Label.AutoSize = true;
             this.CPProductID_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPProductID_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.CPProductID_Label.Location = new System.Drawing.Point(38, 28);
+            this.CPProductID_Label.Location = new System.Drawing.Point(33, 28);
             this.CPProductID_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CPProductID_Label.Name = "CPProductID_Label";
             this.CPProductID_Label.Size = new System.Drawing.Size(69, 15);
