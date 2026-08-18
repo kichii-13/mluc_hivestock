@@ -92,7 +92,7 @@
             // 
             // ProfileInfo_Panel
             // 
-            this.ProfileInfo_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.ProfileInfo_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(90)))), ((int)(((byte)(28)))));
             this.ProfileInfo_Panel.Controls.Add(this.EditDetails_Panel);
             this.ProfileInfo_Panel.Controls.Add(this.LogOut_Button);
             this.ProfileInfo_Panel.Controls.Add(this.EditDetails_Button);
@@ -228,6 +228,7 @@
             this.Cancel_Button.HoverState.FillColor = System.Drawing.Color.DimGray;
             this.Cancel_Button.Location = new System.Drawing.Point(8, 337);
             this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.PressedColor = System.Drawing.Color.DimGray;
             this.Cancel_Button.Size = new System.Drawing.Size(84, 36);
             this.Cancel_Button.TabIndex = 22;
             this.Cancel_Button.Text = "Cancel";
@@ -351,12 +352,13 @@
             this.LogOut_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LogOut_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.LogOut_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.LogOut_Button.FillColor = System.Drawing.Color.Gray;
+            this.LogOut_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.LogOut_Button.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOut_Button.ForeColor = System.Drawing.Color.Black;
-            this.LogOut_Button.HoverState.FillColor = System.Drawing.Color.DimGray;
+            this.LogOut_Button.HoverState.FillColor = System.Drawing.Color.White;
             this.LogOut_Button.Location = new System.Drawing.Point(18, 633);
             this.LogOut_Button.Name = "LogOut_Button";
+            this.LogOut_Button.PressedColor = System.Drawing.Color.Gray;
             this.LogOut_Button.Size = new System.Drawing.Size(174, 38);
             this.LogOut_Button.TabIndex = 19;
             this.LogOut_Button.Text = "Log Out";
@@ -426,7 +428,7 @@
             this.Profile_Back_Button.FocusedColor = System.Drawing.Color.White;
             this.Profile_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Profile_Back_Button.ForeColor = System.Drawing.Color.White;
-            this.Profile_Back_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.Profile_Back_Button.HoverState.FillColor = System.Drawing.Color.White;
             this.Profile_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("Profile_Back_Button.Image")));
             this.Profile_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
             this.Profile_Back_Button.ImageSize = new System.Drawing.Size(25, 25);

@@ -101,7 +101,7 @@
             this.L_Back_Button.FocusedColor = System.Drawing.Color.White;
             this.L_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.L_Back_Button.ForeColor = System.Drawing.Color.White;
-            this.L_Back_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.L_Back_Button.HoverState.FillColor = System.Drawing.Color.White;
             this.L_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("L_Back_Button.Image")));
             this.L_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
             this.L_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
