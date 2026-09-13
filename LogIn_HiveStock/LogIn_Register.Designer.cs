@@ -32,9 +32,8 @@
             this.Register_Panel = new System.Windows.Forms.Panel();
             this.Register_Input = new System.Windows.Forms.Panel();
             this.ConfirmPassword_Input = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Pasword_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Email_Input = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ID_Input = new Guna.UI2.WinForms.Guna2TextBox();
+            this.IDNumber_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Username_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.PhoneNumber_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.FirstName_Input = new Guna.UI2.WinForms.Guna2TextBox();
@@ -84,14 +83,15 @@
             this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.R_Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Password_Input = new Guna.UI2.WinForms.Guna2TextBox();
+            this.DMMMSU_logo = new System.Windows.Forms.PictureBox();
+            this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Input_UserID = new Guna.UI2.WinForms.Guna2TextBox();
             this.Confirm_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.NewPass_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.FEmail_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Input_UserID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.R_Back_Button = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.DMMMSU_logo = new System.Windows.Forms.PictureBox();
             this.Register_Panel.SuspendLayout();
             this.Register_Input.SuspendLayout();
             this.LogIn_Container.SuspendLayout();
@@ -103,8 +103,8 @@
             this.guna2ContainerControl1.SuspendLayout();
             this.GreenPanel.SuspendLayout();
             this.SignUp_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Register_Panel
@@ -130,9 +130,9 @@
             this.Register_Input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.Register_Input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Register_Input.Controls.Add(this.ConfirmPassword_Input);
-            this.Register_Input.Controls.Add(this.Pasword_Input);
+            this.Register_Input.Controls.Add(this.Password_Input);
             this.Register_Input.Controls.Add(this.Email_Input);
-            this.Register_Input.Controls.Add(this.ID_Input);
+            this.Register_Input.Controls.Add(this.IDNumber_Input);
             this.Register_Input.Controls.Add(this.Username_Input);
             this.Register_Input.Controls.Add(this.PhoneNumber_Input);
             this.Register_Input.Controls.Add(this.FirstName_Input);
@@ -169,6 +169,8 @@
             this.ConfirmPassword_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmPassword_Input.ForeColor = System.Drawing.Color.Black;
             this.ConfirmPassword_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.ConfirmPassword_Input.IconRight = global::LogIn_HiveStock.Properties.Resources.hide;
+            this.ConfirmPassword_Input.IconRightOffset = new System.Drawing.Point(5, 0);
             this.ConfirmPassword_Input.Location = new System.Drawing.Point(26, 379);
             this.ConfirmPassword_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ConfirmPassword_Input.MaxLength = 30;
@@ -178,30 +180,7 @@
             this.ConfirmPassword_Input.Size = new System.Drawing.Size(568, 29);
             this.ConfirmPassword_Input.TabIndex = 33;
             this.ConfirmPassword_Input.UseSystemPasswordChar = true;
-            // 
-            // Pasword_Input
-            // 
-            this.Pasword_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Pasword_Input.BorderRadius = 5;
-            this.Pasword_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Pasword_Input.DefaultText = "";
-            this.Pasword_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Pasword_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Pasword_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Pasword_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Pasword_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Pasword_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pasword_Input.ForeColor = System.Drawing.Color.Black;
-            this.Pasword_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Pasword_Input.Location = new System.Drawing.Point(25, 310);
-            this.Pasword_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Pasword_Input.MaxLength = 30;
-            this.Pasword_Input.Name = "Pasword_Input";
-            this.Pasword_Input.PlaceholderText = "";
-            this.Pasword_Input.SelectedText = "";
-            this.Pasword_Input.Size = new System.Drawing.Size(568, 29);
-            this.Pasword_Input.TabIndex = 32;
-            this.Pasword_Input.UseSystemPasswordChar = true;
+            this.ConfirmPassword_Input.IconRightClick += new System.EventHandler(this.ConfirmPassword_Input_IconRightClick);
             // 
             // Email_Input
             // 
@@ -226,28 +205,28 @@
             this.Email_Input.Size = new System.Drawing.Size(236, 29);
             this.Email_Input.TabIndex = 31;
             // 
-            // ID_Input
+            // IDNumber_Input
             // 
-            this.ID_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.ID_Input.BorderRadius = 5;
-            this.ID_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ID_Input.DefaultText = "";
-            this.ID_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ID_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ID_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ID_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ID_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.ID_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_Input.ForeColor = System.Drawing.Color.Black;
-            this.ID_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.ID_Input.Location = new System.Drawing.Point(190, 197);
-            this.ID_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ID_Input.MaxLength = 10;
-            this.ID_Input.Name = "ID_Input";
-            this.ID_Input.PlaceholderText = "";
-            this.ID_Input.SelectedText = "";
-            this.ID_Input.Size = new System.Drawing.Size(161, 29);
-            this.ID_Input.TabIndex = 30;
+            this.IDNumber_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.IDNumber_Input.BorderRadius = 5;
+            this.IDNumber_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.IDNumber_Input.DefaultText = "";
+            this.IDNumber_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.IDNumber_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.IDNumber_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IDNumber_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IDNumber_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.IDNumber_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDNumber_Input.ForeColor = System.Drawing.Color.Black;
+            this.IDNumber_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.IDNumber_Input.Location = new System.Drawing.Point(190, 197);
+            this.IDNumber_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDNumber_Input.MaxLength = 10;
+            this.IDNumber_Input.Name = "IDNumber_Input";
+            this.IDNumber_Input.PlaceholderText = "";
+            this.IDNumber_Input.SelectedText = "";
+            this.IDNumber_Input.Size = new System.Drawing.Size(161, 29);
+            this.IDNumber_Input.TabIndex = 30;
             // 
             // Username_Input
             // 
@@ -352,12 +331,13 @@
             this.AccountInfo_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.AccountInfo_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountInfo_Button.ForeColor = System.Drawing.Color.White;
-            this.AccountInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.AccountInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.AccountInfo_Button.Location = new System.Drawing.Point(467, 232);
             this.AccountInfo_Button.Name = "AccountInfo_Button";
             this.AccountInfo_Button.Size = new System.Drawing.Size(127, 29);
             this.AccountInfo_Button.TabIndex = 25;
             this.AccountInfo_Button.Text = "Verify";
+            this.AccountInfo_Button.Click += new System.EventHandler(this.AccountInfo_Button_Click);
             // 
             // PersonalInfo_Button
             // 
@@ -370,12 +350,13 @@
             this.PersonalInfo_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.PersonalInfo_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PersonalInfo_Button.ForeColor = System.Drawing.Color.White;
-            this.PersonalInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.PersonalInfo_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.PersonalInfo_Button.Location = new System.Drawing.Point(467, 110);
             this.PersonalInfo_Button.Name = "PersonalInfo_Button";
             this.PersonalInfo_Button.Size = new System.Drawing.Size(127, 29);
             this.PersonalInfo_Button.TabIndex = 24;
             this.PersonalInfo_Button.Text = "Verify";
+            this.PersonalInfo_Button.Click += new System.EventHandler(this.PersonalInfo_Button_Click_1);
             // 
             // Confirm_Label
             // 
@@ -539,6 +520,7 @@
             this.Register_Button.Size = new System.Drawing.Size(127, 36);
             this.Register_Button.TabIndex = 34;
             this.Register_Button.Text = "REGISTER";
+            this.Register_Button.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // LogIn_Hyperlink
             // 
@@ -634,8 +616,8 @@
             // 
             this.LogIn_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.LogIn_Panel.Controls.Add(this.Forgot_Panel);
-            this.LogIn_Panel.Controls.Add(this.pictureBox1);
             this.LogIn_Panel.Controls.Add(this.Input_Panel);
+            this.LogIn_Panel.Controls.Add(this.pictureBox1);
             this.LogIn_Panel.Controls.Add(this.guna2ContainerControl1);
             this.LogIn_Panel.Controls.Add(this.GreenPanel);
             this.LogIn_Panel.Location = new System.Drawing.Point(0, 0);
@@ -769,7 +751,7 @@
             this.Input_Panel.Controls.Add(this.label1);
             this.Input_Panel.Controls.Add(this.User_Label);
             this.Input_Panel.Location = new System.Drawing.Point(760, 198);
-            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Input_Panel.Name = "Input_Panel";
             this.Input_Panel.Size = new System.Drawing.Size(374, 269);
             this.Input_Panel.TabIndex = 7;
@@ -900,7 +882,7 @@
             this.GreenPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GreenPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.GreenPanel.Location = new System.Drawing.Point(0, 432);
-            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
             this.GreenPanel.Name = "GreenPanel";
             this.GreenPanel.Size = new System.Drawing.Size(1280, 288);
             this.GreenPanel.TabIndex = 2;
@@ -970,6 +952,123 @@
             this.label4.Size = new System.Drawing.Size(418, 65);
             this.label4.TabIndex = 2;
             this.label4.Text = "DMMMSU MLUC";
+            // 
+            // R_Back_Button
+            // 
+            this.R_Back_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
+            this.R_Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.R_Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.R_Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.R_Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.R_Back_Button.FillColor = System.Drawing.Color.White;
+            this.R_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.R_Back_Button.ForeColor = System.Drawing.Color.White;
+            this.R_Back_Button.HoverState.FillColor = System.Drawing.Color.White;
+            this.R_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("R_Back_Button.Image")));
+            this.R_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.R_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
+            this.R_Back_Button.IndicateFocus = true;
+            this.R_Back_Button.Location = new System.Drawing.Point(13, 13);
+            this.R_Back_Button.Name = "R_Back_Button";
+            this.R_Back_Button.PressedColor = System.Drawing.Color.White;
+            this.R_Back_Button.PressedDepth = 100;
+            this.R_Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.R_Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.R_Back_Button.Size = new System.Drawing.Size(40, 40);
+            this.R_Back_Button.TabIndex = 14;
+            this.R_Back_Button.Click += new System.EventHandler(this.R_Back_Button_Click);
+            // 
+            // Password_Input
+            // 
+            this.Password_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Password_Input.BorderRadius = 5;
+            this.Password_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Password_Input.DefaultText = "";
+            this.Password_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Password_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Password_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Password_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_Input.ForeColor = System.Drawing.Color.Black;
+            this.Password_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Password_Input.IconRight = global::LogIn_HiveStock.Properties.Resources.hide;
+            this.Password_Input.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.Password_Input.Location = new System.Drawing.Point(25, 310);
+            this.Password_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password_Input.MaxLength = 30;
+            this.Password_Input.Name = "Password_Input";
+            this.Password_Input.PlaceholderText = "";
+            this.Password_Input.SelectedText = "";
+            this.Password_Input.Size = new System.Drawing.Size(568, 29);
+            this.Password_Input.TabIndex = 32;
+            this.Password_Input.UseSystemPasswordChar = true;
+            this.Password_Input.IconRightClick += new System.EventHandler(this.Password_Input_IconRightClick);
+            this.Password_Input.TextChanged += new System.EventHandler(this.Password_Input_TextChanged);
+            // 
+            // DMMMSU_logo
+            // 
+            this.DMMMSU_logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo1;
+            this.DMMMSU_logo.Location = new System.Drawing.Point(797, 36);
+            this.DMMMSU_logo.Name = "DMMMSU_logo";
+            this.DMMMSU_logo.Size = new System.Drawing.Size(373, 382);
+            this.DMMMSU_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DMMMSU_logo.TabIndex = 0;
+            this.DMMMSU_logo.TabStop = false;
+            // 
+            // Input_Password
+            // 
+            this.Input_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_Password.BorderRadius = 10;
+            this.Input_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_Password.DefaultText = "";
+            this.Input_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_Password.ForeColor = System.Drawing.Color.Black;
+            this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_Password.IconLeft = global::LogIn_HiveStock.Properties.Resources.padlock;
+            this.Input_Password.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Input_Password.IconRight = global::LogIn_HiveStock.Properties.Resources.hide;
+            this.Input_Password.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.Input_Password.Location = new System.Drawing.Point(31, 106);
+            this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Input_Password.MaxLength = 30;
+            this.Input_Password.Name = "Input_Password";
+            this.Input_Password.PlaceholderText = "";
+            this.Input_Password.SelectedText = "";
+            this.Input_Password.Size = new System.Drawing.Size(309, 40);
+            this.Input_Password.TabIndex = 11;
+            this.Input_Password.UseSystemPasswordChar = true;
+            this.Input_Password.IconRightClick += new System.EventHandler(this.Input_Password_IconRightClick);
+            // 
+            // Input_UserID
+            // 
+            this.Input_UserID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Input_UserID.BorderRadius = 10;
+            this.Input_UserID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Input_UserID.DefaultText = "";
+            this.Input_UserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Input_UserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Input_UserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Input_UserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_UserID.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_UserID.ForeColor = System.Drawing.Color.Black;
+            this.Input_UserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Input_UserID.IconLeft = global::LogIn_HiveStock.Properties.Resources.login;
+            this.Input_UserID.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Input_UserID.Location = new System.Drawing.Point(30, 35);
+            this.Input_UserID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Input_UserID.MaxLength = 15;
+            this.Input_UserID.Name = "Input_UserID";
+            this.Input_UserID.PlaceholderText = "";
+            this.Input_UserID.SelectedText = "";
+            this.Input_UserID.Size = new System.Drawing.Size(310, 40);
+            this.Input_UserID.TabIndex = 4;
             // 
             // Confirm_Input
             // 
@@ -1061,92 +1160,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // Input_Password
-            // 
-            this.Input_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Input_Password.BorderRadius = 10;
-            this.Input_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Input_Password.DefaultText = "";
-            this.Input_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Input_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Input_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Input_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Input_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Input_Password.ForeColor = System.Drawing.Color.Black;
-            this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Input_Password.IconLeft = global::LogIn_HiveStock.Properties.Resources.padlock;
-            this.Input_Password.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Input_Password.Location = new System.Drawing.Point(31, 106);
-            this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Input_Password.MaxLength = 30;
-            this.Input_Password.Name = "Input_Password";
-            this.Input_Password.PlaceholderText = "";
-            this.Input_Password.SelectedText = "";
-            this.Input_Password.Size = new System.Drawing.Size(309, 40);
-            this.Input_Password.TabIndex = 11;
-            this.Input_Password.UseSystemPasswordChar = true;
-            // 
-            // Input_UserID
-            // 
-            this.Input_UserID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Input_UserID.BorderRadius = 10;
-            this.Input_UserID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Input_UserID.DefaultText = "";
-            this.Input_UserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Input_UserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Input_UserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Input_UserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Input_UserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Input_UserID.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Input_UserID.ForeColor = System.Drawing.Color.Black;
-            this.Input_UserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Input_UserID.IconLeft = global::LogIn_HiveStock.Properties.Resources.login;
-            this.Input_UserID.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Input_UserID.Location = new System.Drawing.Point(30, 35);
-            this.Input_UserID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Input_UserID.MaxLength = 15;
-            this.Input_UserID.Name = "Input_UserID";
-            this.Input_UserID.PlaceholderText = "";
-            this.Input_UserID.SelectedText = "";
-            this.Input_UserID.Size = new System.Drawing.Size(310, 40);
-            this.Input_UserID.TabIndex = 4;
-            // 
-            // R_Back_Button
-            // 
-            this.R_Back_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.R_Back_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.R_Back_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.R_Back_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.R_Back_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.R_Back_Button.FillColor = System.Drawing.Color.White;
-            this.R_Back_Button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.R_Back_Button.ForeColor = System.Drawing.Color.White;
-            this.R_Back_Button.HoverState.FillColor = System.Drawing.Color.White;
-            this.R_Back_Button.Image = ((System.Drawing.Image)(resources.GetObject("R_Back_Button.Image")));
-            this.R_Back_Button.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.R_Back_Button.ImageSize = new System.Drawing.Size(25, 25);
-            this.R_Back_Button.IndicateFocus = true;
-            this.R_Back_Button.Location = new System.Drawing.Point(13, 13);
-            this.R_Back_Button.Name = "R_Back_Button";
-            this.R_Back_Button.PressedColor = System.Drawing.Color.White;
-            this.R_Back_Button.PressedDepth = 100;
-            this.R_Back_Button.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.R_Back_Button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.R_Back_Button.Size = new System.Drawing.Size(40, 40);
-            this.R_Back_Button.TabIndex = 14;
-            this.R_Back_Button.Click += new System.EventHandler(this.R_Back_Button_Click);
-            // 
-            // DMMMSU_logo
-            // 
-            this.DMMMSU_logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo1;
-            this.DMMMSU_logo.Location = new System.Drawing.Point(797, 36);
-            this.DMMMSU_logo.Name = "DMMMSU_logo";
-            this.DMMMSU_logo.Size = new System.Drawing.Size(373, 382);
-            this.DMMMSU_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DMMMSU_logo.TabIndex = 0;
-            this.DMMMSU_logo.TabStop = false;
-            // 
             // LogIn_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1177,8 +1190,8 @@
             this.GreenPanel.PerformLayout();
             this.SignUp_Container.ResumeLayout(false);
             this.SignUp_Container.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1193,9 +1206,9 @@
         private System.Windows.Forms.Label LogIn_Label;
         private System.Windows.Forms.Panel Register_Input;
         private Guna.UI2.WinForms.Guna2TextBox ConfirmPassword_Input;
-        private Guna.UI2.WinForms.Guna2TextBox Pasword_Input;
+        private Guna.UI2.WinForms.Guna2TextBox Password_Input;
         private Guna.UI2.WinForms.Guna2TextBox Email_Input;
-        private Guna.UI2.WinForms.Guna2TextBox ID_Input;
+        private Guna.UI2.WinForms.Guna2TextBox IDNumber_Input;
         private Guna.UI2.WinForms.Guna2TextBox Username_Input;
         private Guna.UI2.WinForms.Guna2TextBox PhoneNumber_Input;
         private Guna.UI2.WinForms.Guna2TextBox FirstName_Input;
