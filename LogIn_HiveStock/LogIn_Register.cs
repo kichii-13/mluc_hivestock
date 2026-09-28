@@ -123,6 +123,9 @@ namespace LogIn_HiveStock
             FEmail_Input.Enabled = true;
             FEmail_Input.Clear();
 
+            Phone_Input.Enabled = true;
+            Phone_Input.Clear();
+
             ForgotEmailVerify_Button.Enabled = true;
             ForgotEmailVerify_Button.Text = "Verify";
             ForgotEmailVerify_Button.FillColor = defaultButtonColor;
@@ -253,7 +256,7 @@ namespace LogIn_HiveStock
         {
             if (!isForgotEmailVerified)
             {
-                MessageBox.Show("Please verify your email address first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please verify your account information first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -601,10 +604,18 @@ namespace LogIn_HiveStock
         private void ForgotEmailVerify_Button_Click(object sender, EventArgs e)
         {
             string email = FEmail_Input.Text.Trim();
+            string phone = Phone_Input.Text.Trim();
 
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phone))
             {
-                MessageBox.Show("Please enter your email address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter both your email address and phone number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Phone Number Validation: Check that input contains only numbers and is exactly 11 digits
+            if (!Regex.IsMatch(phone, @"^[0-9]{11}$"))
+            {
+                MessageBox.Show("Phone number must contain only numbers and be exactly 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -614,16 +625,17 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string checkQuery = "SELECT COUNT(*) FROM users WHERE email_address = @email";
+                    string checkQuery = "SELECT COUNT(*) FROM users WHERE email_address = @email AND phone_number = @phone";
                     using (MySqlCommand cmd = new MySqlCommand(checkQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@phone", phone);
 
                         long count = Convert.ToInt64(cmd.ExecuteScalar());
 
                         if (count > 0)
                         {
-                            // SUCCESS - UPDATE BUTTON STYLE & DISABLE EMAIL INPUT
+                            // SUCCESS - UPDATE BUTTON STYLE & DISABLE INPUTS
                             isForgotEmailVerified = true;
                             ForgotEmailVerify_Button.Text = "Verified";
                             ForgotEmailVerify_Button.FillColor = verifiedButtonColor;
@@ -631,13 +643,14 @@ namespace LogIn_HiveStock
                             ForgotEmailVerify_Button.ForeColor = Color.White;
 
                             FEmail_Input.Enabled = false;
+                            Phone_Input.Enabled = false;
                             NewPass_Input.Enabled = true;
                             Confirm_Input.Enabled = true;
                             Done_Button.Enabled = true;
                         }
                         else
                         {
-                            MessageBox.Show("No account found registered with this email address.", "Email Verification Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No account found matching this email address and phone number.", "Verification Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -645,6 +658,34 @@ namespace LogIn_HiveStock
             catch (Exception ex)
             {
                 MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NewPass_Input_IconRightClick(object sender, EventArgs e)
+        {
+            if (NewPass_Input.PasswordChar == '•')
+            {
+                NewPass_Input.PasswordChar = '\0';
+                NewPass_Input.IconRight = Properties.Resources.show;
+            }
+            else
+            {
+                NewPass_Input.PasswordChar = '•';
+                NewPass_Input.IconRight = Properties.Resources.hide;
+            }
+        }
+
+        private void Confirm_Input_IconRightClick(object sender, EventArgs e)
+        {
+            if (Confirm_Input.PasswordChar == '•')
+            {
+                Confirm_Input.PasswordChar = '\0';
+                Confirm_Input.IconRight = Properties.Resources.show;
+            }
+            else
+            {
+                Confirm_Input.PasswordChar = '•';
+                Confirm_Input.IconRight = Properties.Resources.hide;
             }
         }
     }
