@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySqlConnector;
+using BCrypt.Net; // ADDED: BCrypt namespace
 
 namespace LogIn_HiveStock
 {
@@ -175,6 +176,7 @@ namespace LogIn_HiveStock
             ShowPanel(LogIn_Panel);
         }
 
+        // MODIFIED: LOGIN WITH BCRYPT VERIFICATION
         private void LogIn_Button_Click(object sender, EventArgs e)
         {
             string userIdInput = Input_StudentID.Text.Trim();
@@ -201,22 +203,31 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string query = @"SELECT COUNT(*) FROM users 
-                            WHERE (id_number = @userId OR username = @userId) 
-                            AND password = @password";
+                    // Query the stored hash instead of comparing plain text directly
+                    string query = @"SELECT password FROM users 
+                                    WHERE id_number = @userId OR username = @userId";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userIdInput);
-                        cmd.Parameters.AddWithValue("@password", passwordInput);
 
-                        long count = Convert.ToInt64(cmd.ExecuteScalar());
+                        object result = cmd.ExecuteScalar();
 
-                        if (count > 0)
+                        if (result != null)
                         {
-                            UserView_ProductCatalog catalog = new UserView_ProductCatalog();
-                            catalog.Show();
-                            this.Hide();
+                            string storedHash = result.ToString();
+
+                            // Verify plain text password against the stored BCrypt hash
+                            if (BCrypt.Net.BCrypt.Verify(passwordInput, storedHash))
+                            {
+                                UserView_ProductCatalog catalog = new UserView_ProductCatalog();
+                                catalog.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
@@ -251,7 +262,7 @@ namespace LogIn_HiveStock
             ShowPanel(LogIn_Panel);
         }
 
-        // SAVE NEW PASSWORD
+        // MODIFIED: SAVE NEW HASHED PASSWORD
         private void Done_Button_Click(object sender, EventArgs e)
         {
             if (!isForgotEmailVerified)
@@ -284,6 +295,9 @@ namespace LogIn_HiveStock
                 return;
             }
 
+            // Hash the new password before updating database
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
+
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -293,7 +307,7 @@ namespace LogIn_HiveStock
                     string updateQuery = "UPDATE users SET password = @password WHERE email_address = @email";
                     using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, connection))
                     {
-                        updateCmd.Parameters.AddWithValue("@password", newPassword);
+                        updateCmd.Parameters.AddWithValue("@password", hashedPassword);
                         updateCmd.Parameters.AddWithValue("@email", email);
 
                         int rows = updateCmd.ExecuteNonQuery();
@@ -480,7 +494,7 @@ namespace LogIn_HiveStock
             CheckRegisterButtonState();
         }
 
-        // FINAL REGISTRATION SUBMISSION
+        // MODIFIED: FINAL REGISTRATION SUBMISSION WITH BCRYPT HASHING
         private void Register_Button_Click(object sender, EventArgs e)
         {
             string lastName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(LastName_Input.Text.Trim().ToLower());
@@ -519,6 +533,9 @@ namespace LogIn_HiveStock
                 idNumber = string.Format("{0}-{1}-{2}", cleanId.Substring(0, 3), cleanId.Substring(3, 4), cleanId.Substring(7, 1));
             }
 
+            // Hash the password using BCrypt before database insert
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -526,7 +543,7 @@ namespace LogIn_HiveStock
                     connection.Open();
 
                     string insertQuery = @"INSERT INTO users (id_number, first_name, last_name, username, email_address, phone_number, password, created_at) 
-                                   VALUES (@id_number, @first_name, @last_name, @username, @email_address, @phone_number, @password, NOW())";
+                                       VALUES (@id_number, @first_name, @last_name, @username, @email_address, @phone_number, @password, NOW())";
 
                     using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, connection))
                     {
@@ -536,7 +553,7 @@ namespace LogIn_HiveStock
                         insertCmd.Parameters.AddWithValue("@username", username);
                         insertCmd.Parameters.AddWithValue("@email_address", email);
                         insertCmd.Parameters.AddWithValue("@phone_number", phone);
-                        insertCmd.Parameters.AddWithValue("@password", password);
+                        insertCmd.Parameters.AddWithValue("@password", hashedPassword); // Store hash, not plain text
 
                         int rows = insertCmd.ExecuteNonQuery();
 

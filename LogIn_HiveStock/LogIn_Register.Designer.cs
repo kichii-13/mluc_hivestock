@@ -65,8 +65,6 @@
             this.MLUC = new System.Windows.Forms.Label();
             this.LogIn_Panel = new System.Windows.Forms.Panel();
             this.Forgot_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.Phone_Label = new System.Windows.Forms.Label();
-            this.Phone_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.FConfirmNewPass_Label = new System.Windows.Forms.Label();
             this.Confirm_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.ForgotCancel_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -94,6 +92,8 @@
             this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ForgotPhoneNumber_Label = new System.Windows.Forms.Label();
+            this.Phone_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Register_Panel.SuspendLayout();
             this.Register_Input.SuspendLayout();
             this.LogIn_Container.SuspendLayout();
@@ -681,6 +681,7 @@
             // 
             this.LogIn_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.LogIn_Panel.Controls.Add(this.Forgot_Panel);
+            this.LogIn_Panel.Controls.Add(this.Input_Panel);
             this.LogIn_Panel.Controls.Add(this.pictureBox1);
             this.LogIn_Panel.Controls.Add(this.guna2ContainerControl1);
             this.LogIn_Panel.Controls.Add(this.GreenPanel);
@@ -694,8 +695,7 @@
             this.Forgot_Panel.BackColor = System.Drawing.Color.Transparent;
             this.Forgot_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.Forgot_Panel.BorderThickness = 1;
-            this.Forgot_Panel.Controls.Add(this.Input_Panel);
-            this.Forgot_Panel.Controls.Add(this.Phone_Label);
+            this.Forgot_Panel.Controls.Add(this.ForgotPhoneNumber_Label);
             this.Forgot_Panel.Controls.Add(this.Phone_Input);
             this.Forgot_Panel.Controls.Add(this.FConfirmNewPass_Label);
             this.Forgot_Panel.Controls.Add(this.Confirm_Input);
@@ -709,53 +709,16 @@
             this.Forgot_Panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.Forgot_Panel.Location = new System.Drawing.Point(760, 198);
             this.Forgot_Panel.Name = "Forgot_Panel";
-            this.Forgot_Panel.Size = new System.Drawing.Size(374, 298);
+            this.Forgot_Panel.Size = new System.Drawing.Size(374, 302);
             this.Forgot_Panel.TabIndex = 11;
             this.Forgot_Panel.Visible = false;
-            // 
-            // Phone_Label
-            // 
-            this.Phone_Label.AutoSize = true;
-            this.Phone_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.Phone_Label.Location = new System.Drawing.Point(28, 59);
-            this.Phone_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Phone_Label.Name = "Phone_Label";
-            this.Phone_Label.Size = new System.Drawing.Size(94, 15);
-            this.Phone_Label.TabIndex = 29;
-            this.Phone_Label.Text = "Phone Number";
-            // 
-            // Phone_Input
-            // 
-            this.Phone_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Phone_Input.BorderRadius = 10;
-            this.Phone_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Phone_Input.DefaultText = "";
-            this.Phone_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Phone_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Phone_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Phone_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Phone_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Phone_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone_Input.ForeColor = System.Drawing.Color.Black;
-            this.Phone_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Phone_Input.IconLeft = ((System.Drawing.Image)(resources.GetObject("Phone_Input.IconLeft")));
-            this.Phone_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Phone_Input.Location = new System.Drawing.Point(32, 75);
-            this.Phone_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Phone_Input.MaxLength = 11;
-            this.Phone_Input.Name = "Phone_Input";
-            this.Phone_Input.PlaceholderText = "09xxxxxxxxx";
-            this.Phone_Input.SelectedText = "";
-            this.Phone_Input.Size = new System.Drawing.Size(310, 34);
-            this.Phone_Input.TabIndex = 30;
             // 
             // FConfirmNewPass_Label
             // 
             this.FConfirmNewPass_Label.AutoSize = true;
             this.FConfirmNewPass_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FConfirmNewPass_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.FConfirmNewPass_Label.Location = new System.Drawing.Point(28, 199);
+            this.FConfirmNewPass_Label.Location = new System.Drawing.Point(27, 203);
             this.FConfirmNewPass_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FConfirmNewPass_Label.Name = "FConfirmNewPass_Label";
             this.FConfirmNewPass_Label.Size = new System.Drawing.Size(143, 15);
@@ -780,11 +743,11 @@
             this.Confirm_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.Confirm_Input.IconRight = global::LogIn_HiveStock.Properties.Resources.hide;
             this.Confirm_Input.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.Confirm_Input.Location = new System.Drawing.Point(32, 215);
+            this.Confirm_Input.Location = new System.Drawing.Point(32, 220);
             this.Confirm_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Confirm_Input.MaxLength = 600;
             this.Confirm_Input.Name = "Confirm_Input";
-            this.Confirm_Input.PlaceholderText = "Re-enter your password";
+            this.Confirm_Input.PlaceholderText = "";
             this.Confirm_Input.SelectedText = "";
             this.Confirm_Input.Size = new System.Drawing.Size(310, 34);
             this.Confirm_Input.TabIndex = 28;
@@ -803,10 +766,10 @@
             this.ForgotCancel_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForgotCancel_Button.ForeColor = System.Drawing.Color.Black;
             this.ForgotCancel_Button.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.ForgotCancel_Button.Location = new System.Drawing.Point(32, 257);
+            this.ForgotCancel_Button.Location = new System.Drawing.Point(32, 262);
             this.ForgotCancel_Button.Name = "ForgotCancel_Button";
             this.ForgotCancel_Button.PressedColor = System.Drawing.Color.Gray;
-            this.ForgotCancel_Button.Size = new System.Drawing.Size(150, 33);
+            this.ForgotCancel_Button.Size = new System.Drawing.Size(150, 32);
             this.ForgotCancel_Button.TabIndex = 26;
             this.ForgotCancel_Button.Text = "Cancel";
             this.ForgotCancel_Button.Click += new System.EventHandler(this.ForgotCancel_Button_Click);
@@ -825,7 +788,7 @@
             this.ForgotEmailVerify_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.ForgotEmailVerify_Button.Location = new System.Drawing.Point(190, 116);
             this.ForgotEmailVerify_Button.Name = "ForgotEmailVerify_Button";
-            this.ForgotEmailVerify_Button.Size = new System.Drawing.Size(150, 30);
+            this.ForgotEmailVerify_Button.Size = new System.Drawing.Size(150, 32);
             this.ForgotEmailVerify_Button.TabIndex = 25;
             this.ForgotEmailVerify_Button.Text = "Verify";
             this.ForgotEmailVerify_Button.Click += new System.EventHandler(this.ForgotEmailVerify_Button_Click);
@@ -835,7 +798,7 @@
             this.FEmail_Label.AutoSize = true;
             this.FEmail_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FEmail_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.FEmail_Label.Location = new System.Drawing.Point(29, 5);
+            this.FEmail_Label.Location = new System.Drawing.Point(26, 5);
             this.FEmail_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FEmail_Label.Name = "FEmail_Label";
             this.FEmail_Label.Size = new System.Drawing.Size(37, 15);
@@ -847,7 +810,7 @@
             this.FNewPass_Label.AutoSize = true;
             this.FNewPass_Label.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FNewPass_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.FNewPass_Label.Location = new System.Drawing.Point(29, 144);
+            this.FNewPass_Label.Location = new System.Drawing.Point(26, 142);
             this.FNewPass_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FNewPass_Label.Name = "FNewPass_Label";
             this.FNewPass_Label.Size = new System.Drawing.Size(98, 17);
@@ -876,7 +839,7 @@
             this.NewPass_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NewPass_Input.MaxLength = 600;
             this.NewPass_Input.Name = "NewPass_Input";
-            this.NewPass_Input.PlaceholderText = "Enter Password";
+            this.NewPass_Input.PlaceholderText = "";
             this.NewPass_Input.SelectedText = "";
             this.NewPass_Input.Size = new System.Drawing.Size(310, 34);
             this.NewPass_Input.TabIndex = 18;
@@ -895,9 +858,9 @@
             this.Done_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Done_Button.ForeColor = System.Drawing.Color.Black;
             this.Done_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.Done_Button.Location = new System.Drawing.Point(192, 257);
+            this.Done_Button.Location = new System.Drawing.Point(192, 262);
             this.Done_Button.Name = "Done_Button";
-            this.Done_Button.Size = new System.Drawing.Size(150, 33);
+            this.Done_Button.Size = new System.Drawing.Size(150, 32);
             this.Done_Button.TabIndex = 16;
             this.Done_Button.Text = "Done";
             this.Done_Button.Click += new System.EventHandler(this.Done_Button_Click);
@@ -918,11 +881,11 @@
             this.FEmail_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.FEmail_Input.IconLeft = ((System.Drawing.Image)(resources.GetObject("FEmail_Input.IconLeft")));
             this.FEmail_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.FEmail_Input.Location = new System.Drawing.Point(32, 21);
+            this.FEmail_Input.Location = new System.Drawing.Point(30, 22);
             this.FEmail_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FEmail_Input.MaxLength = 600;
             this.FEmail_Input.Name = "FEmail_Input";
-            this.FEmail_Input.PlaceholderText = "Ex. dmmmsu@domain.com";
+            this.FEmail_Input.PlaceholderText = "";
             this.FEmail_Input.SelectedText = "";
             this.FEmail_Input.Size = new System.Drawing.Size(310, 34);
             this.FEmail_Input.TabIndex = 15;
@@ -939,7 +902,7 @@
             this.Input_Panel.Controls.Add(this.label1);
             this.Input_Panel.Controls.Add(this.User_Label);
             this.Input_Panel.Location = new System.Drawing.Point(760, 198);
-            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Input_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.Input_Panel.Name = "Input_Panel";
             this.Input_Panel.Size = new System.Drawing.Size(374, 269);
             this.Input_Panel.TabIndex = 7;
@@ -991,7 +954,7 @@
             this.Input_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Input_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Input_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_Password.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Input_Password.ForeColor = System.Drawing.Color.Black;
             this.Input_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.Input_Password.IconLeft = global::LogIn_HiveStock.Properties.Resources.padlock;
@@ -1002,7 +965,7 @@
             this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_Password.MaxLength = 30;
             this.Input_Password.Name = "Input_Password";
-            this.Input_Password.PlaceholderText = "Enter your password";
+            this.Input_Password.PlaceholderText = "";
             this.Input_Password.SelectedText = "";
             this.Input_Password.Size = new System.Drawing.Size(309, 40);
             this.Input_Password.TabIndex = 11;
@@ -1029,7 +992,7 @@
             this.Input_StudentID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_StudentID.MaxLength = 15;
             this.Input_StudentID.Name = "Input_StudentID";
-            this.Input_StudentID.PlaceholderText = "Enter your 8-digit number";
+            this.Input_StudentID.PlaceholderText = "";
             this.Input_StudentID.SelectedText = "";
             this.Input_StudentID.Size = new System.Drawing.Size(310, 40);
             this.Input_StudentID.TabIndex = 4;
@@ -1083,7 +1046,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo1;
             this.pictureBox1.Location = new System.Drawing.Point(207, 73);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(330, 330);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1137,7 +1100,7 @@
             this.GreenPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GreenPanel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.GreenPanel.Location = new System.Drawing.Point(0, 432);
-            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GreenPanel.Margin = new System.Windows.Forms.Padding(2);
             this.GreenPanel.Name = "GreenPanel";
             this.GreenPanel.Size = new System.Drawing.Size(1280, 288);
             this.GreenPanel.TabIndex = 2;
@@ -1207,6 +1170,43 @@
             this.label4.Size = new System.Drawing.Size(418, 65);
             this.label4.TabIndex = 2;
             this.label4.Text = "DMMMSU MLUC";
+            // 
+            // ForgotPhoneNumber_Label
+            // 
+            this.ForgotPhoneNumber_Label.AutoSize = true;
+            this.ForgotPhoneNumber_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotPhoneNumber_Label.ForeColor = System.Drawing.Color.DimGray;
+            this.ForgotPhoneNumber_Label.Location = new System.Drawing.Point(28, 58);
+            this.ForgotPhoneNumber_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ForgotPhoneNumber_Label.Name = "ForgotPhoneNumber_Label";
+            this.ForgotPhoneNumber_Label.Size = new System.Drawing.Size(94, 15);
+            this.ForgotPhoneNumber_Label.TabIndex = 29;
+            this.ForgotPhoneNumber_Label.Text = "Phone Number";
+            // 
+            // Phone_Input
+            // 
+            this.Phone_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Phone_Input.BorderRadius = 10;
+            this.Phone_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Phone_Input.DefaultText = "";
+            this.Phone_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Phone_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Phone_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Phone_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Phone_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Phone_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phone_Input.ForeColor = System.Drawing.Color.Black;
+            this.Phone_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Phone_Input.IconLeft = ((System.Drawing.Image)(resources.GetObject("Phone_Input.IconLeft")));
+            this.Phone_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Phone_Input.Location = new System.Drawing.Point(32, 75);
+            this.Phone_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Phone_Input.MaxLength = 600;
+            this.Phone_Input.Name = "Phone_Input";
+            this.Phone_Input.PlaceholderText = "";
+            this.Phone_Input.SelectedText = "";
+            this.Phone_Input.Size = new System.Drawing.Size(310, 34);
+            this.Phone_Input.TabIndex = 30;
             // 
             // LogIn_Register
             // 
@@ -1309,7 +1309,7 @@
         private System.Windows.Forms.Label FConfirmNewPass_Label;
         private Guna.UI2.WinForms.Guna2TextBox Confirm_Input;
         private System.Windows.Forms.Label ForgotPassword_Label;
-        private System.Windows.Forms.Label Phone_Label;
+        private System.Windows.Forms.Label ForgotPhoneNumber_Label;
         private Guna.UI2.WinForms.Guna2TextBox Phone_Input;
     }
 }
