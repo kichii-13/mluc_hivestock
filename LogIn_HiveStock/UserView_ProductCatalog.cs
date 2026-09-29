@@ -32,6 +32,7 @@ namespace LogIn_HiveStock
             public int CategoryId { get; set; }
             public string ContainerName { get; set; }
             public Image ProductImage { get; set; }
+            public int StockQty { get; set; }
         }
 
         private Dictionary<int, ProductData> productsCache = new Dictionary<int, ProductData>();
@@ -133,7 +134,7 @@ namespace LogIn_HiveStock
         {
             productsCache.Clear();
 
-            string query = "SELECT product_id, product_name, description, stock_status, price, category_id, product_img FROM product";
+            string query = "SELECT product_id, product_name, description, stock_status, price, category_id, product_img, stock_qty FROM product";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -155,10 +156,10 @@ namespace LogIn_HiveStock
 
                                 if (!string.IsNullOrEmpty(resolvedPath) && File.Exists(resolvedPath))
                                 {
-                                    byte[] bytes = File.ReadAllBytes(resolvedPath);
-                                    using (MemoryStream ms = new MemoryStream(bytes))
+                                    using (FileStream fs = new FileStream(resolvedPath, FileMode.Open, FileAccess.Read))
+                                    using (Image temp = Image.FromStream(fs))
                                     {
-                                        img = Image.FromStream(ms);
+                                        img = new Bitmap(temp);
                                     }
                                 }
                             }
@@ -170,6 +171,7 @@ namespace LogIn_HiveStock
                                 StockStatus = reader["stock_status"].ToString().Trim(),
                                 Price = Convert.ToDecimal(reader["price"]),
                                 CategoryId = Convert.ToInt32(reader["category_id"]),
+                                StockQty = Convert.ToInt32(reader["stock_qty"]),
                                 ProductImage = img
                             };
                         }
@@ -211,11 +213,11 @@ namespace LogIn_HiveStock
             string fileName = Path.GetFileName(cleanPath);
             string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
 
-            string baseFolder = @"C:\xampp\htdocs\hivestock\images";
+            string baseFolder = Path.Combine(Application.StartupPath, "hivestock", "images");
 
             if (!Directory.Exists(baseFolder))
             {
-                baseFolder = Path.Combine(Application.StartupPath, "hivestock", "images");
+                baseFolder = @"C:\xampp\htdocs\hivestock\images";
             }
 
             List<string> candidates = new List<string>
@@ -256,6 +258,13 @@ namespace LogIn_HiveStock
             Control[] priceControls = this.Controls.Find(priceName, true);
 
             Control[] atcButtons = this.Controls.Find(atcName, true);
+            if (atcButtons.Length > 0)
+            {
+                atcButtons[0].Tag = productId;
+                atcButtons[0].Click -= ATC_Button_Click;
+                atcButtons[0].Click += ATC_Button_Click;
+            }
+
             Control[] notifyButtons = this.Controls.Find(notifyName, true);
 
             if (picControls.Length > 0 && picControls[0] is PictureBox pb && p.ProductImage != null)
@@ -447,10 +456,14 @@ namespace LogIn_HiveStock
         }
 
         // --- STUBS FOR DESIGNER CLICK EVENTS ---
-        private void ATC1_Button_Click(object sender, EventArgs e)
+        private void ATC_Button_Click(object sender, EventArgs e)
         {
-            AddToCart_PopUp AddToCart = new AddToCart_PopUp();
-            AddToCart.ShowDialog();
+            if (!(sender is Control ctrl) || !(ctrl.Tag is int productId)) return;
+            if (!productsCache.TryGetValue(productId, out ProductData p)) return;
+
+            AddToCart_PopUp popup = new AddToCart_PopUp();
+            popup.SetProduct(productId, p.Name, p.Price, p.ProductImage, p.StockQty);
+            popup.ShowDialog();
         }
 
         private void Notify3_Button_Click(object sender, EventArgs e)

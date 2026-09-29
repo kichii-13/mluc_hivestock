@@ -1193,7 +1193,7 @@
             // 
             // Book7Title_Label
             // 
-            this.Book7Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book7Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Book7Title_Label.Location = new System.Drawing.Point(0, 0);
             this.Book7Title_Label.Name = "Book7Title_Label";
             this.Book7Title_Label.Size = new System.Drawing.Size(260, 33);
@@ -2044,7 +2044,7 @@
             // 
             // Book1Title_Label
             // 
-            this.Book1Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book1Title_Label.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Book1Title_Label.Location = new System.Drawing.Point(3, 0);
             this.Book1Title_Label.Name = "Book1Title_Label";
             this.Book1Title_Label.Size = new System.Drawing.Size(260, 33);

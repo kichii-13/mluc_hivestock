@@ -135,6 +135,7 @@
     <Compile Include="Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="CartManager.cs" />
     <Compile Include="CheckOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +302,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hivestock\images\2023lace.png" />
+    <Content Include="hivestock\images\2025lace.png" />
+    <Content Include="hivestock\images\artappreciation.jpg" />
+    <Content Include="hivestock\images\contempo.jpg" />
+    <Content Include="hivestock\images\ethics.jpg" />
+    <Content Include="hivestock\images\joserizal.jpg" />
+    <Content Include="hivestock\images\mmw.jpg" />
+    <Content Include="hivestock\images\pathfitshirt.jpg" />
+    <Content Include="hivestock\images\purposivecomm.jpg" />
+    <Content Include="hivestock\images\readingsph.jpg" />
+    <Content Include="hivestock\images\understandingtheself.jpg" />
+    <Content Include="hivestock\images\univgala.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
