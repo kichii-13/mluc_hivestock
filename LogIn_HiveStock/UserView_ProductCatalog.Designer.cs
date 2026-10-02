@@ -293,7 +293,7 @@
             this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.MarketingCenter.Location = new System.Drawing.Point(98, 33);
             this.MarketingCenter.Name = "MarketingCenter";
-            this.MarketingCenter.Size = new System.Drawing.Size(253, 32);
+            this.MarketingCenter.Size = new System.Drawing.Size(318, 41);
             this.MarketingCenter.TabIndex = 3;
             this.MarketingCenter.Text = "MARKETING CENTER";
             // 
@@ -305,7 +305,7 @@
             this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.MLUC.Location = new System.Drawing.Point(102, 17);
             this.MLUC.Name = "MLUC";
-            this.MLUC.Size = new System.Drawing.Size(107, 15);
+            this.MLUC.Size = new System.Drawing.Size(129, 20);
             this.MLUC.TabIndex = 2;
             this.MLUC.Text = "DMMMSU MLUC";
             // 
@@ -316,7 +316,7 @@
             this.Search_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_Label.Location = new System.Drawing.Point(803, 33);
             this.Search_Label.Name = "Search_Label";
-            this.Search_Label.Size = new System.Drawing.Size(46, 15);
+            this.Search_Label.Size = new System.Drawing.Size(55, 20);
             this.Search_Label.TabIndex = 7;
             this.Search_Label.Text = "Search";
             this.Search_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -424,7 +424,7 @@
             this.UPFPrice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPFPrice_Label.Location = new System.Drawing.Point(155, 83);
             this.UPFPrice_Label.Name = "UPFPrice_Label";
-            this.UPFPrice_Label.Size = new System.Drawing.Size(41, 16);
+            this.UPFPrice_Label.Size = new System.Drawing.Size(53, 20);
             this.UPFPrice_Label.TabIndex = 4;
             this.UPFPrice_Label.Text = "Price:";
             // 
@@ -461,7 +461,7 @@
             this.UPFStatus_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPFStatus_Label.Location = new System.Drawing.Point(13, 83);
             this.UPFStatus_Label.Name = "UPFStatus_Label";
-            this.UPFStatus_Label.Size = new System.Drawing.Size(47, 16);
+            this.UPFStatus_Label.Size = new System.Drawing.Size(62, 20);
             this.UPFStatus_Label.TabIndex = 2;
             this.UPFStatus_Label.Text = "Status:";
             // 
@@ -563,7 +563,7 @@
             this.UGPrice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UGPrice_Label.Location = new System.Drawing.Point(155, 83);
             this.UGPrice_Label.Name = "UGPrice_Label";
-            this.UGPrice_Label.Size = new System.Drawing.Size(41, 16);
+            this.UGPrice_Label.Size = new System.Drawing.Size(53, 20);
             this.UGPrice_Label.TabIndex = 4;
             this.UGPrice_Label.Text = "Price:";
             // 
@@ -600,7 +600,7 @@
             this.UGStatus_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UGStatus_Label.Location = new System.Drawing.Point(13, 83);
             this.UGStatus_Label.Name = "UGStatus_Label";
-            this.UGStatus_Label.Size = new System.Drawing.Size(47, 16);
+            this.UGStatus_Label.Size = new System.Drawing.Size(62, 20);
             this.UGStatus_Label.TabIndex = 2;
             this.UGStatus_Label.Text = "Status:";
             // 
@@ -714,7 +714,7 @@
             this.IDPrice2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDPrice2_Label.Location = new System.Drawing.Point(157, 83);
             this.IDPrice2_Label.Name = "IDPrice2_Label";
-            this.IDPrice2_Label.Size = new System.Drawing.Size(41, 16);
+            this.IDPrice2_Label.Size = new System.Drawing.Size(53, 20);
             this.IDPrice2_Label.TabIndex = 4;
             this.IDPrice2_Label.Text = "Price:";
             // 
@@ -751,7 +751,7 @@
             this.IDStatus2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDStatus2_Label.Location = new System.Drawing.Point(15, 83);
             this.IDStatus2_Label.Name = "IDStatus2_Label";
-            this.IDStatus2_Label.Size = new System.Drawing.Size(47, 16);
+            this.IDStatus2_Label.Size = new System.Drawing.Size(62, 20);
             this.IDStatus2_Label.TabIndex = 2;
             this.IDStatus2_Label.Text = "Status:";
             // 
@@ -856,7 +856,7 @@
             this.Price8_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price8_Label.Location = new System.Drawing.Point(155, 83);
             this.Price8_Label.Name = "Price8_Label";
-            this.Price8_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price8_Label.Size = new System.Drawing.Size(53, 20);
             this.Price8_Label.TabIndex = 4;
             this.Price8_Label.Text = "Price:";
             // 
@@ -893,7 +893,7 @@
             this.Status8_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status8_Label.Location = new System.Drawing.Point(13, 83);
             this.Status8_Label.Name = "Status8_Label";
-            this.Status8_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status8_Label.Size = new System.Drawing.Size(62, 20);
             this.Status8_Label.TabIndex = 2;
             this.Status8_Label.Text = "Status:";
             // 
@@ -998,7 +998,7 @@
             this.IDPrice1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDPrice1_Label.Location = new System.Drawing.Point(157, 83);
             this.IDPrice1_Label.Name = "IDPrice1_Label";
-            this.IDPrice1_Label.Size = new System.Drawing.Size(41, 16);
+            this.IDPrice1_Label.Size = new System.Drawing.Size(53, 20);
             this.IDPrice1_Label.TabIndex = 4;
             this.IDPrice1_Label.Text = "Price:";
             // 
@@ -1035,7 +1035,7 @@
             this.IDStatus1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDStatus1_Label.Location = new System.Drawing.Point(15, 83);
             this.IDStatus1_Label.Name = "IDStatus1_Label";
-            this.IDStatus1_Label.Size = new System.Drawing.Size(47, 16);
+            this.IDStatus1_Label.Size = new System.Drawing.Size(62, 20);
             this.IDStatus1_Label.TabIndex = 2;
             this.IDStatus1_Label.Text = "Status:";
             // 
@@ -1140,7 +1140,7 @@
             this.Price7_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price7_Label.Location = new System.Drawing.Point(155, 83);
             this.Price7_Label.Name = "Price7_Label";
-            this.Price7_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price7_Label.Size = new System.Drawing.Size(53, 20);
             this.Price7_Label.TabIndex = 4;
             this.Price7_Label.Text = "Price:";
             // 
@@ -1177,7 +1177,7 @@
             this.Status7_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status7_Label.Location = new System.Drawing.Point(13, 83);
             this.Status7_Label.Name = "Status7_Label";
-            this.Status7_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status7_Label.Size = new System.Drawing.Size(62, 20);
             this.Status7_Label.TabIndex = 2;
             this.Status7_Label.Text = "Status:";
             // 
@@ -1282,7 +1282,7 @@
             this.Price6_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price6_Label.Location = new System.Drawing.Point(155, 83);
             this.Price6_Label.Name = "Price6_Label";
-            this.Price6_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price6_Label.Size = new System.Drawing.Size(53, 20);
             this.Price6_Label.TabIndex = 4;
             this.Price6_Label.Text = "Price:";
             // 
@@ -1319,7 +1319,7 @@
             this.Status6_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status6_Label.Location = new System.Drawing.Point(13, 83);
             this.Status6_Label.Name = "Status6_Label";
-            this.Status6_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status6_Label.Size = new System.Drawing.Size(62, 20);
             this.Status6_Label.TabIndex = 2;
             this.Status6_Label.Text = "Status:";
             // 
@@ -1424,7 +1424,7 @@
             this.Price5_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price5_Label.Location = new System.Drawing.Point(155, 83);
             this.Price5_Label.Name = "Price5_Label";
-            this.Price5_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price5_Label.Size = new System.Drawing.Size(53, 20);
             this.Price5_Label.TabIndex = 4;
             this.Price5_Label.Text = "Price:";
             // 
@@ -1461,7 +1461,7 @@
             this.Status5_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status5_Label.Location = new System.Drawing.Point(13, 83);
             this.Status5_Label.Name = "Status5_Label";
-            this.Status5_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status5_Label.Size = new System.Drawing.Size(62, 20);
             this.Status5_Label.TabIndex = 2;
             this.Status5_Label.Text = "Status:";
             // 
@@ -1566,7 +1566,7 @@
             this.Price4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price4_Label.Location = new System.Drawing.Point(155, 83);
             this.Price4_Label.Name = "Price4_Label";
-            this.Price4_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price4_Label.Size = new System.Drawing.Size(53, 20);
             this.Price4_Label.TabIndex = 4;
             this.Price4_Label.Text = "Price:";
             // 
@@ -1602,7 +1602,7 @@
             this.Status4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status4_Label.Location = new System.Drawing.Point(13, 83);
             this.Status4_Label.Name = "Status4_Label";
-            this.Status4_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status4_Label.Size = new System.Drawing.Size(62, 20);
             this.Status4_Label.TabIndex = 2;
             this.Status4_Label.Text = "Status:";
             // 
@@ -1707,7 +1707,7 @@
             this.Price3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price3_Label.Location = new System.Drawing.Point(155, 83);
             this.Price3_Label.Name = "Price3_Label";
-            this.Price3_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price3_Label.Size = new System.Drawing.Size(53, 20);
             this.Price3_Label.TabIndex = 4;
             this.Price3_Label.Text = "Price:";
             // 
@@ -1744,7 +1744,7 @@
             this.Status3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status3_Label.Location = new System.Drawing.Point(13, 83);
             this.Status3_Label.Name = "Status3_Label";
-            this.Status3_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status3_Label.Size = new System.Drawing.Size(62, 20);
             this.Status3_Label.TabIndex = 2;
             this.Status3_Label.Text = "Status:";
             // 
@@ -1849,7 +1849,7 @@
             this.Price2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price2_Label.Location = new System.Drawing.Point(155, 83);
             this.Price2_Label.Name = "Price2_Label";
-            this.Price2_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price2_Label.Size = new System.Drawing.Size(53, 20);
             this.Price2_Label.TabIndex = 4;
             this.Price2_Label.Text = "Price:";
             // 
@@ -1886,7 +1886,7 @@
             this.Status2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status2_Label.Location = new System.Drawing.Point(13, 83);
             this.Status2_Label.Name = "Status2_Label";
-            this.Status2_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status2_Label.Size = new System.Drawing.Size(62, 20);
             this.Status2_Label.TabIndex = 2;
             this.Status2_Label.Text = "Status:";
             // 
@@ -1991,7 +1991,7 @@
             this.Price1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price1_Label.Location = new System.Drawing.Point(155, 83);
             this.Price1_Label.Name = "Price1_Label";
-            this.Price1_Label.Size = new System.Drawing.Size(41, 16);
+            this.Price1_Label.Size = new System.Drawing.Size(53, 20);
             this.Price1_Label.TabIndex = 4;
             this.Price1_Label.Text = "Price:";
             // 
@@ -2028,7 +2028,7 @@
             this.Status1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status1_Label.Location = new System.Drawing.Point(13, 83);
             this.Status1_Label.Name = "Status1_Label";
-            this.Status1_Label.Size = new System.Drawing.Size(47, 16);
+            this.Status1_Label.Size = new System.Drawing.Size(62, 20);
             this.Status1_Label.TabIndex = 2;
             this.Status1_Label.Text = "Status:";
             // 
@@ -2180,7 +2180,7 @@
             this.Controls.Add(this.MainScrollPanel);
             this.Name = "UserView_ProductCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HiveStock";
+            this.Text = " ";
             this.Header_Panel.ResumeLayout(false);
             this.Header_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
