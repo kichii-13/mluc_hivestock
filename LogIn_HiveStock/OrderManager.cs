@@ -26,7 +26,7 @@ namespace LogIn_HiveStock
         }
     }
 
-    /// A paid order. Pending = paid, waiting for pick-up. Completed = received.
+    /// A paid order. Each of its products is pending or received on its own.
     public class OrderRecord
     {
         public int OrderId { get; set; }
@@ -54,8 +54,11 @@ namespace LogIn_HiveStock
         private static readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
 
-        // Saves a paid order. Returns null (after showing a message) if the database failed,
-        // so the caller must not empty the cart in that case.
+        // A product with this many left (or fewer) is shown as Low Stock. Change it to suit the shop.
+        private const int LowStockLevel = 5;
+
+        // Saves a paid order and takes the quantities off the stock. Returns null (after showing a
+        // message) if anything failed, so the caller must not empty the cart in that case.
         public static OrderRecord PlaceOrder(string userKey, IEnumerable<CartItem> items, string receiptFileName)
         {
             OrderRecord order = new OrderRecord
@@ -109,6 +112,38 @@ namespace LogIn_HiveStock
                                 cmd.Parameters.AddWithValue("@q", line.Quantity);
                                 cmd.ExecuteNonQuery();
                             }
+
+                            // Take the quantity off the stock, but only if enough is left.
+                            using (MySqlCommand cmd = new MySqlCommand(
+                                @"UPDATE product SET stock_qty = stock_qty - @q
+                                  WHERE product_id = @p AND stock_qty >= @q", conn, tx))
+                            {
+                                cmd.Parameters.AddWithValue("@p", line.ProductId);
+                                cmd.Parameters.AddWithValue("@q", line.Quantity);
+
+                                if (cmd.ExecuteNonQuery() == 0)
+                                {
+                                    tx.Rollback();
+                                    MessageBox.Show(
+                                        "Sorry, there is not enough stock of \"" + line.Name + "\" for this order.\n\n" +
+                                        "Nothing was charged or saved. Please lower the quantity in your cart.",
+                                        "Not Enough Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return null;
+                                }
+                            }
+
+                            // Refresh the status from the new quantity.
+                            using (MySqlCommand cmd = new MySqlCommand(
+                                @"UPDATE product
+                                  SET stock_status = CASE WHEN stock_qty <= 0 THEN 'Out of Stock'
+                                                          WHEN stock_qty <= @low THEN 'Low Stock'
+                                                          ELSE 'In Stock' END
+                                  WHERE product_id = @p", conn, tx))
+                            {
+                                cmd.Parameters.AddWithValue("@low", LowStockLevel);
+                                cmd.Parameters.AddWithValue("@p", line.ProductId);
+                                cmd.ExecuteNonQuery();
+                            }
                         }
 
                         tx.Commit();
@@ -134,13 +169,13 @@ namespace LogIn_HiveStock
 
             const string sql =
                 @"SELECT o.order_id, o.placed_at, o.receipt_file,
-                 i.order_item_id, i.product_id, i.product_name, i.unit_price,
-                 i.quantity, i.received_at, p.product_img
-          FROM customer_orders o
-          JOIN customer_order_items i ON i.order_id = o.order_id
-          LEFT JOIN product p ON p.product_id = i.product_id
-          WHERE o.user_key = @u AND i.is_received = @c
-          ORDER BY o.placed_at DESC, o.order_id DESC, i.order_item_id";
+                         i.order_item_id, i.product_id, i.product_name, i.unit_price,
+                         i.quantity, i.received_at, p.product_img
+                  FROM customer_orders o
+                  JOIN customer_order_items i ON i.order_id = o.order_id
+                  LEFT JOIN product p ON p.product_id = i.product_id
+                  WHERE o.user_key = @u AND i.is_received = @c
+                  ORDER BY o.placed_at DESC, o.order_id DESC, i.order_item_id";
 
             try
             {
@@ -225,9 +260,9 @@ namespace LogIn_HiveStock
                         {
                             using (MySqlCommand cmd = new MySqlCommand(
                                 @"UPDATE customer_order_items i
-                          JOIN customer_orders o ON o.order_id = i.order_id
-                          SET i.is_received = 1, i.received_at = @t
-                          WHERE i.order_item_id = @id AND i.is_received = 0 AND o.user_key = @u",
+                                  JOIN customer_orders o ON o.order_id = i.order_id
+                                  SET i.is_received = 1, i.received_at = @t
+                                  WHERE i.order_item_id = @id AND i.is_received = 0 AND o.user_key = @u",
                                 conn, tx))
                             {
                                 cmd.Parameters.AddWithValue("@t", now);
@@ -240,10 +275,10 @@ namespace LogIn_HiveStock
                         // Close out any order whose products have all been received.
                         using (MySqlCommand cmd = new MySqlCommand(
                             @"UPDATE customer_orders o
-                      SET o.is_completed = 1, o.completed_at = @t
-                      WHERE o.user_key = @u AND o.is_completed = 0
-                        AND NOT EXISTS (SELECT 1 FROM customer_order_items i
-                                        WHERE i.order_id = o.order_id AND i.is_received = 0)",
+                              SET o.is_completed = 1, o.completed_at = @t
+                              WHERE o.user_key = @u AND o.is_completed = 0
+                                AND NOT EXISTS (SELECT 1 FROM customer_order_items i
+                                                WHERE i.order_id = o.order_id AND i.is_received = 0)",
                             conn, tx))
                         {
                             cmd.Parameters.AddWithValue("@t", now);

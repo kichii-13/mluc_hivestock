@@ -14,6 +14,8 @@ namespace LogIn_HiveStock
     {
         private int productId;
         private decimal unitPrice;
+        private int stockLimit = 1;
+        private bool canAdd = true;
 
         public AddToCart_PopUp()
         {
@@ -23,11 +25,16 @@ namespace LogIn_HiveStock
         {
             productId = id;
             unitPrice = price;
+            stockLimit = maxQty > 0 ? maxQty : 1;
 
             BNProductName.Text = name;
             Price.Text = $"₱{price:N2}";
             Picture.Image = image;
             Picture.SizeMode = PictureBoxSizeMode.Zoom;
+
+            // Only what is still available after what is already in the cart may be added.
+            int remaining = stockLimit - CartManager.GetQuantity(id);
+            canAdd = remaining > 0;
 
             Quantity_UpDown.Minimum = 1;
             Quantity_UpDown.Maximum = maxQty > 0 ? maxQty : 1;
@@ -41,8 +48,16 @@ namespace LogIn_HiveStock
 
         private void ConfirmBuy_Button_Click(object sender, EventArgs e)
         {
+
+            if (!canAdd)
+            {
+                MessageBox.Show("You already have all the available stock of this item in your cart.",
+                    "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int qty = (int)Quantity_UpDown.Value;
-            CartManager.AddItem(productId, BNProductName.Text, unitPrice, Picture.Image, qty);
+            CartManager.AddItem(productId, BNProductName.Text, unitPrice, Picture.Image, qty, stockLimit);
             MessageBox.Show("Added to cart!", "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

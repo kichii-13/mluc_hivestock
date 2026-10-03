@@ -23,6 +23,7 @@ namespace LogIn_HiveStock
         public LogIn_Register()
         {
             InitializeComponent();
+            this.Load += new System.EventHandler(this.LogIn_Register_Load);
 
             // Set password mask immediately on component creation
             Password_Input.UseSystemPasswordChar = false;
@@ -233,10 +234,13 @@ namespace LogIn_HiveStock
                         if (storedHash != null)
                         {
 
-                            // Verify plain text password against the stored BCrypt hash
+                            // Remembers who logged in so Profile
                             if (BCrypt.Net.BCrypt.Verify(passwordInput, storedHash))
                             {
                                 UserSession.SignIn(dbIdNumber, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
+                                UserView_ProductCatalog catalog = new UserView_ProductCatalog();
+                                catalog.Show();
+                                this.Hide();
                             }
                             else
                             {
@@ -258,9 +262,59 @@ namespace LogIn_HiveStock
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            AdminSide adminside = new AdminSide();
-            adminside.Show();
-            this.Hide();
+            string staffId = Input_StudentID.Text.Trim();
+            string password = Input_Password.Text;
+
+            if (staffId.Length == 0 || password.Length == 0)
+            {
+                MessageBox.Show("Type your Staff ID and password in the boxes above, then click LOG IN AS STAFF.",
+                    "Staff Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        "SELECT staff_id_number, full_name, password_hash FROM staff WHERE staff_id_number = @id", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", staffId);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read() &&
+                                BCrypt.Net.BCrypt.Verify(password, reader["password_hash"].ToString()))
+                            {
+                                string staffName = reader["full_name"].ToString();
+                                string staffNumber = reader["staff_id_number"].ToString();
+
+                                ResetLoginForm();
+                                AdminSide adminside = new AdminSide(staffName, staffNumber, this);
+                                adminside.Show();
+                                this.Hide();
+                                return;
+                            }
+                        }
+                    }
+                }
+
+                MessageBox.Show("Invalid Staff ID or Password.", "Staff Login Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Called by the admin window when staff log out, so this same form is reused.
+        public void ReturnToLogin()
+        {
+            ResetLoginForm();
+            ShowPanel(LogIn_Panel);
+            this.Show();
         }
 
         private void ForgotPassword_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

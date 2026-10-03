@@ -1038,7 +1038,7 @@
             this.User_Label.Name = "User_Label";
             this.User_Label.Size = new System.Drawing.Size(85, 20);
             this.User_Label.TabIndex = 1;
-            this.User_Label.Text = "Student ID";
+            this.User_Label.Text = "ID Number";
             // 
             // pictureBox1
             // 
