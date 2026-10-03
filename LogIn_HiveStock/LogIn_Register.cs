@@ -204,25 +204,39 @@ namespace LogIn_HiveStock
                     connection.Open();
 
                     // Query the stored hash instead of comparing plain text directly
-                    string query = @"SELECT password FROM users 
+                    string query = @"SELECT password, id_number, first_name, last_name, username, email_address, phone_number FROM users  
                                     WHERE id_number = @userId OR username = @userId";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userIdInput);
 
-                        object result = cmd.ExecuteScalar();
+                        string storedHash = null;
+                        string dbIdNumber = "", dbFirstName = "", dbLastName = "";
+                        string dbUsername = "", dbEmail = "", dbPhone = "";
 
-                        if (result != null)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string storedHash = result.ToString();
+                            if (reader.Read())
+                            {
+                                storedHash = reader["password"].ToString();
+                                dbIdNumber = reader["id_number"].ToString();
+                                dbFirstName = reader["first_name"].ToString();
+                                dbLastName = reader["last_name"].ToString();
+                                dbUsername = reader["username"].ToString();
+                                dbEmail = reader["email_address"].ToString();
+                                dbPhone = reader["phone_number"].ToString();
+                            }
+                        }
+
+
+                        if (storedHash != null)
+                        {
 
                             // Verify plain text password against the stored BCrypt hash
                             if (BCrypt.Net.BCrypt.Verify(passwordInput, storedHash))
                             {
-                                UserView_ProductCatalog catalog = new UserView_ProductCatalog();
-                                catalog.Show();
-                                this.Hide();
+                                UserSession.SignIn(dbIdNumber, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
                             }
                             else
                             {
