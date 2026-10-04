@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlConnector;
+using System.IO;
 
 namespace LogIn_HiveStock
 {
@@ -19,12 +20,15 @@ namespace LogIn_HiveStock
 
         private readonly int startProductId;
         private int loadedProductId = 0;   // the product currently in the boxes (0 = none)
-
         public PM_EditProduct() : this(0) { }
+        private string selectedImagePath = "";   // a NEW picture chosen with ADD IMAGE ("" = keep the current one)
+        private PictureBox imagePreview;
+        private Label imageNameLabel;
 
         public PM_EditProduct(int productId)
         {
             InitializeComponent();
+            BuildImageControls();
             startProductId = productId;
 
             EPPrice_UpDown.Maximum = 100000;
@@ -45,6 +49,102 @@ namespace LogIn_HiveStock
                     EPProductID_TextBox.Focus();
                 }
             };
+        }
+
+        private void BuildImageControls()
+        {
+            const int extra = 100;
+            this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height + extra);
+            EPInfo_Panel.Height += extra;
+            EPCancel_Button.Top += extra;
+            EPCreate_Button.Top += extra;
+
+            Label caption = new Label();
+            caption.AutoSize = true;
+            caption.BackColor = Color.Transparent;
+            caption.Font = new Font("Malgun Gothic", 9F, FontStyle.Bold);
+            caption.ForeColor = Color.DimGray;
+            caption.Text = "Image";
+            caption.Location = new Point(57, 268);
+
+            imagePreview = new PictureBox();
+            imagePreview.Location = new Point(106, 262);
+            imagePreview.Size = new Size(120, 95);
+            imagePreview.SizeMode = PictureBoxSizeMode.Zoom;
+            imagePreview.BackColor = Color.White;
+            imagePreview.BorderStyle = BorderStyle.FixedSingle;
+
+            Guna.UI2.WinForms.Guna2Button addImage = new Guna.UI2.WinForms.Guna2Button();
+            addImage.Text = "ADD IMAGE";
+            addImage.BorderRadius = 5;
+            addImage.FillColor = Color.FromArgb(18, 77, 28);
+            addImage.ForeColor = Color.White;
+            addImage.Font = new Font("Malgun Gothic", 9.75F, FontStyle.Bold);
+            addImage.Cursor = Cursors.Hand;
+            addImage.BackColor = Color.Transparent;
+            addImage.Location = new Point(241, 262);
+            addImage.Size = new Size(127, 36);
+            addImage.Click += AddImage_Click;
+
+            imageNameLabel = new Label();
+            imageNameLabel.AutoSize = false;
+            imageNameLabel.AutoEllipsis = true;
+            imageNameLabel.BackColor = Color.Transparent;
+            imageNameLabel.ForeColor = Color.DimGray;
+            imageNameLabel.Font = new Font("Malgun Gothic", 8.25F);
+            imageNameLabel.Text = "Load a product to see its picture";
+            imageNameLabel.Location = new Point(241, 306);
+            imageNameLabel.Size = new Size(330, 20);
+
+            EPInfo_Panel.Controls.Add(caption);
+            EPInfo_Panel.Controls.Add(imagePreview);
+            EPInfo_Panel.Controls.Add(addImage);
+            EPInfo_Panel.Controls.Add(imageNameLabel);
+        }
+
+        // The preview always holds its own copy, so disposing it never harms a shared picture.
+        private void SetPreview(Image copy)
+        {
+            Image previous = imagePreview.Image;
+            imagePreview.Image = copy;
+            if (previous != null) previous.Dispose();
+        }
+
+        private void AddImage_Click(object sender, EventArgs e)
+        {
+            if (loadedProductId == 0)
+            {
+                ShowWarning("Load a product first (type its Product ID and press Enter).");
+                return;
+            }
+
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Title = "Choose a new product picture";
+                dialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                dialog.CheckFileExists = true;
+
+                if (dialog.ShowDialog(this) != DialogResult.OK) return;
+
+                try
+                {
+                    Image loaded;
+                    using (FileStream stream = new FileStream(dialog.FileName, FileMode.Open, FileAccess.Read))
+                    using (Image temp = Image.FromStream(stream))
+                    {
+                        loaded = new Bitmap(temp);
+                    }
+
+                    SetPreview(loaded);
+                    selectedImagePath = dialog.FileName;
+                    imageNameLabel.Text = "New picture: " + Path.GetFileName(dialog.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("That file could not be opened as a picture. Please choose a JPG, PNG, BMP or GIF.",
+                        "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         // Enter = search for the product.
@@ -76,7 +176,7 @@ namespace LogIn_HiveStock
                 {
                     conn.Open();
                     using (MySqlCommand cmd = new MySqlCommand(
-                        @"SELECT product_name, description, price, category_id, stock_qty, stock_status
+                        @"SELECT product_name, description, price, category_id, stock_qty, stock_status, product_img
                           FROM product WHERE product_id = @id", conn))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
@@ -112,6 +212,14 @@ namespace LogIn_HiveStock
                                 default: EPStatus_Dropdown.SelectedIndex = 0; break;
                             }
 
+                            string imgName = r["product_img"] == DBNull.Value ? null : r["product_img"].ToString().Trim();
+                            Image current = ProductImages.Get(id, imgName);
+                            SetPreview(current == null ? null : new Bitmap(current));   // a copy, not the shared picture
+                            selectedImagePath = "";
+                            imageNameLabel.Text = current == null
+                                ? "No picture yet. Press ADD IMAGE to add one."
+                                : "Current picture (press ADD IMAGE to replace it)";
+
                             loadedProductId = id;
                             return true;
                         }
@@ -136,6 +244,10 @@ namespace LogIn_HiveStock
             EPQuantity_UpDown.Value = EPQuantity_UpDown.Minimum;
             EPCategory_Dropdown.SelectedIndex = 0;
             EPStatus_Dropdown.SelectedIndex = 0;
+
+            SetPreview(null);
+            selectedImagePath = "";
+            imageNameLabel.Text = "Load a product to see its picture";
         }
 
         private void EPCancel_Button_Click(object sender, EventArgs e)
@@ -207,11 +319,17 @@ namespace LogIn_HiveStock
                         }
                     }
 
+                    // A new picture is copied into the images folder; otherwise the current one is kept.
+                    string newImagePath = null;
+                    if (selectedImagePath.Length > 0)
+                        newImagePath = ProductImages.SaveProductImage(loadedProductId, selectedImagePath);
+
                     using (MySqlCommand update = new MySqlCommand(
                         @"UPDATE product
-                          SET product_name = @name, description = @desc, stock_status = @status,
-                              price = @price, category_id = @cat, stock_qty = @qty
-                          WHERE product_id = @id", conn))
+                           SET product_name = @name, description = @desc, stock_status = @status,
+                           price = @price, category_id = @cat, stock_qty = @qty" +
+                        (newImagePath != null ? ", product_img = @img" : "") +
+                        @" WHERE product_id = @id", conn))
                     {
                         update.Parameters.AddWithValue("@name", name);
                         update.Parameters.AddWithValue("@desc", description);
@@ -220,6 +338,8 @@ namespace LogIn_HiveStock
                         update.Parameters.AddWithValue("@cat", categoryId);
                         update.Parameters.AddWithValue("@qty", quantity);
                         update.Parameters.AddWithValue("@id", loadedProductId);
+                        if (newImagePath != null)
+                            update.Parameters.AddWithValue("@img", newImagePath);
                         update.ExecuteNonQuery();
                     }
                 }

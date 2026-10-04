@@ -19,11 +19,30 @@ namespace LogIn_HiveStock
         public int MaxQuantity { get; set; } = int.MaxValue;
     }
 
-    // Loads product pictures from the images folder (same lookup the catalog uses)
-    // and keeps them so the cart and orders can share them.
+    // Loads and saves product pictures and payment receipts (files in the hivestock folder;
+    // the database only keeps the file name).
     public static class ProductImages
     {
         private static readonly Dictionary<int, Image> cache = new Dictionary<int, Image>();
+
+        // Folder with the product pictures (the same place the student catalog looks).
+        public static string ImagesFolder()
+        {
+            string folder = Path.Combine(Application.StartupPath, "hivestock", "images");
+            if (!Directory.Exists(folder))
+                folder = @"C:\xampp\htdocs\hivestock\images";
+
+            Directory.CreateDirectory(folder);
+            return folder;
+        }
+
+        // Folder with the payment receipts, next to the images folder.
+        public static string ReceiptsFolder()
+        {
+            string folder = Path.Combine(Path.GetDirectoryName(ImagesFolder()), "receipts");
+            Directory.CreateDirectory(folder);
+            return folder;
+        }
 
         public static Image Get(int productId, string relativePath)
         {
@@ -43,6 +62,50 @@ namespace LogIn_HiveStock
             return img;
         }
 
+        // Forget the remembered picture so the next Get() reads the new file.
+        public static void Forget(int productId)
+        {
+            cache.Remove(productId);
+        }
+
+        // Copies a chosen picture into the images folder and returns the path to store in product_img.
+        public static string SaveProductImage(int productId, string sourceFile)
+        {
+            string ext = Path.GetExtension(sourceFile).ToLower();
+            string fileName = "product_" + productId + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ext;
+
+            File.Copy(sourceFile, Path.Combine(ImagesFolder(), fileName), true);
+            Forget(productId);
+
+            return "images/" + fileName;
+        }
+
+        // Copies a payment receipt into the receipts folder and returns the new file name.
+        public static string SaveReceipt(string sourceFile)
+        {
+            string ext = Path.GetExtension(sourceFile).ToLower();
+            string fileName = "receipt_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" +
+                              Guid.NewGuid().ToString("N").Substring(0, 6) + ext;
+
+            File.Copy(sourceFile, Path.Combine(ReceiptsFolder(), fileName), false);
+            return fileName;
+        }
+
+        // Returns a copy of the receipt picture, or null if there is none.
+        public static Image LoadReceipt(string fileName)
+        {
+            if (string.IsNullOrWhiteSpace(fileName)) return null;
+
+            string path = Path.Combine(ReceiptsFolder(), Path.GetFileName(fileName));
+            if (!File.Exists(path)) return null;
+
+            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            using (Image temp = Image.FromStream(fs))
+            {
+                return new Bitmap(temp);
+            }
+        }
+
         private static string FindPath(string relativePath)
         {
             if (string.IsNullOrWhiteSpace(relativePath)) return null;
@@ -51,19 +114,17 @@ namespace LogIn_HiveStock
             string fileName = Path.GetFileName(cleanPath);
             string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
 
-            string baseFolder = Path.Combine(Application.StartupPath, "hivestock", "images");
-            if (!Directory.Exists(baseFolder))
-                baseFolder = @"C:\xampp\htdocs\hivestock\images";
+            string baseFolder = ImagesFolder();
 
             string[] candidates =
             {
-                fileName,
-                fileNameNoExt + ".jpg",
-                fileNameNoExt + ".jpeg",
-                fileNameNoExt + ".png",
-                fileName + ".jpg",
-                fileName + ".png"
-            };
+            fileName,
+            fileNameNoExt + ".jpg",
+            fileNameNoExt + ".jpeg",
+            fileNameNoExt + ".png",
+            fileName + ".jpg",
+            fileName + ".png"
+        };
 
             foreach (string candidate in candidates.Distinct())
             {

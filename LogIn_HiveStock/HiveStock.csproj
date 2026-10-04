@@ -154,6 +154,9 @@
     <Compile Include="Notify_PopUp.Designer.cs">
       <DependentUpon>Notify_PopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OrderManager.cs" />
     <Compile Include="PaymentComplete.cs">
       <SubType>Form</SubType>

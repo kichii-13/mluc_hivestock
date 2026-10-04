@@ -15,7 +15,9 @@ namespace LogIn_HiveStock
     {
         // File name of the receipt picture the user chose; empty until one is uploaded.
         private string receiptFileName = "";
-
+        // full path of the picture the student chose
+        private string receiptSourcePath = "";  
+       
         public Upload_QR()
         {
             InitializeComponent();
@@ -51,6 +53,7 @@ namespace LogIn_HiveStock
 
                     // The label under the preview now shows the name of the uploaded receipt.
                     receiptFileName = Path.GetFileName(dialog.FileName);
+                    receiptSourcePath = dialog.FileName;
                     FileName_Label.Text = receiptFileName;
                 }
                 catch (Exception)
@@ -83,11 +86,27 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            // Record the order (it shows up under Pending Orders in the profile),
-            // then empty the cart because the transaction has happened.
-            OrderRecord placed = OrderManager.PlaceOrder(UserSession.OrderKey, CartManager.Items, receiptFileName);
-            if (placed == null) return;   // a database error was already shown; keep the cart
-            CartManager.Clear(); ;
+            // Keep a copy of the receipt picture so staff can view it later, then record the order.
+            string savedReceipt;
+            try
+            {
+                savedReceipt = ProductImages.SaveReceipt(receiptSourcePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The receipt picture could not be saved: " + ex.Message,
+                    "Receipt Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            OrderRecord placed = OrderManager.PlaceOrder(UserSession.OrderKey, CartManager.Items, savedReceipt);
+            if (placed == null)
+            {
+                // The order failed (a message was already shown): keep the cart and drop the copy.
+                try { File.Delete(Path.Combine(ProductImages.ReceiptsFolder(), savedReceipt)); } catch { }
+                return;
+            }
+            CartManager.Clear();
 
             using (PaymentComplete paymentCompleteForm = new PaymentComplete())
             {

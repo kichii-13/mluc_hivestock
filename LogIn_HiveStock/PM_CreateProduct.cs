@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlConnector;
+using System.IO;
 
 namespace LogIn_HiveStock
 {
@@ -16,10 +17,102 @@ namespace LogIn_HiveStock
     {
         private readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
+        // the picture chosen with ADD IMAGE ("" = none)
+        private string selectedImagePath = "";   
+        private PictureBox imagePreview;
+        private Label imageNameLabel;
+
+        // Adds the picture preview and the ADD IMAGE button (the form grows to make room).
+        private void BuildImageControls()
+        {
+            const int extra = 100;
+            this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height + extra);
+            CPInfo_Panel.Height += extra;
+            CPCancel_Button.Top += extra;
+            CPCreate_Button.Top += extra;
+
+            Label caption = new Label();
+            caption.AutoSize = true;
+            caption.BackColor = Color.Transparent;
+            caption.Font = new Font("Malgun Gothic", 9F, FontStyle.Bold);
+            caption.ForeColor = Color.DimGray;
+            caption.Text = "Image";
+            caption.Location = new Point(57, 268);
+
+            imagePreview = new PictureBox();
+            imagePreview.Location = new Point(105, 262);
+            imagePreview.Size = new Size(120, 95);
+            imagePreview.SizeMode = PictureBoxSizeMode.Zoom;
+            imagePreview.BackColor = Color.White;
+            imagePreview.BorderStyle = BorderStyle.FixedSingle;
+
+            Guna.UI2.WinForms.Guna2Button addImage = new Guna.UI2.WinForms.Guna2Button();
+            addImage.Text = "ADD IMAGE";
+            addImage.BorderRadius = 5;
+            addImage.FillColor = Color.FromArgb(18, 77, 28);
+            addImage.ForeColor = Color.White;
+            addImage.Font = new Font("Malgun Gothic", 9.75F, FontStyle.Bold);
+            addImage.Cursor = Cursors.Hand;
+            addImage.BackColor = Color.Transparent;
+            addImage.Location = new Point(240, 262);
+            addImage.Size = new Size(127, 36);
+            addImage.Click += AddImage_Click;
+
+            imageNameLabel = new Label();
+            imageNameLabel.AutoSize = false;
+            imageNameLabel.AutoEllipsis = true;
+            imageNameLabel.BackColor = Color.Transparent;
+            imageNameLabel.ForeColor = Color.DimGray;
+            imageNameLabel.Font = new Font("Malgun Gothic", 8.25F);
+            imageNameLabel.Text = "No image chosen";
+            imageNameLabel.Location = new Point(240, 306);
+            imageNameLabel.Size = new Size(330, 20);
+
+            CPInfo_Panel.Controls.Add(caption);
+            CPInfo_Panel.Controls.Add(imagePreview);
+            CPInfo_Panel.Controls.Add(addImage);
+            CPInfo_Panel.Controls.Add(imageNameLabel);
+        }
+
+        private void AddImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Title = "Choose a product picture";
+                dialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                dialog.CheckFileExists = true;
+
+                if (dialog.ShowDialog(this) != DialogResult.OK) return;
+
+                try
+                {
+                    // Copy into a Bitmap so the file on disk is not left locked.
+                    Image loaded;
+                    using (FileStream stream = new FileStream(dialog.FileName, FileMode.Open, FileAccess.Read))
+                    using (Image temp = Image.FromStream(stream))
+                    {
+                        loaded = new Bitmap(temp);
+                    }
+
+                    Image previous = imagePreview.Image;
+                    imagePreview.Image = loaded;
+                    if (previous != null) previous.Dispose();
+
+                    selectedImagePath = dialog.FileName;
+                    imageNameLabel.Text = Path.GetFileName(dialog.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("That file could not be opened as a picture. Please choose a JPG, PNG, BMP or GIF.",
+                        "Invalid File", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
 
         public PM_CreateProduct()
         {
             InitializeComponent();
+            BuildImageControls();
 
             // The up/down boxes default to a maximum of 100 and no decimals.
             CPPrice_UpDown.Maximum = 100000;
@@ -147,10 +240,15 @@ namespace LogIn_HiveStock
                         }
                     }
 
+                    // Copy the chosen picture into the images folder; the database keeps its path.
+                    string imagePath = "";
+                    if (selectedImagePath.Length > 0)
+                        imagePath = ProductImages.SaveProductImage(productId, selectedImagePath);
+
                     using (MySqlCommand insert = new MySqlCommand(
                         @"INSERT INTO product
-                            (product_id, product_name, description, stock_status, price, category_id, product_img, stock_qty)
-                          VALUES (@id, @name, @desc, @status, @price, @cat, '', @qty)", conn))
+                        (product_id, product_name, description, stock_status, price, category_id, product_img, stock_qty)
+                        VALUES (@id, @name, @desc, @status, @price, @cat, @img, @qty)", conn))
                     {
                         insert.Parameters.AddWithValue("@id", productId);
                         insert.Parameters.AddWithValue("@name", name);
@@ -158,6 +256,7 @@ namespace LogIn_HiveStock
                         insert.Parameters.AddWithValue("@status", status);
                         insert.Parameters.AddWithValue("@price", price);
                         insert.Parameters.AddWithValue("@cat", categoryId);
+                        insert.Parameters.AddWithValue("@img", imagePath);
                         insert.Parameters.AddWithValue("@qty", quantity);
                         insert.ExecuteNonQuery();
                     }

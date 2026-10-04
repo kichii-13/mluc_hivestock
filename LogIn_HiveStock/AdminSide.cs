@@ -22,6 +22,7 @@ namespace LogIn_HiveStock
             public object[] Cells;
             public int OrderItemId;
             public bool Received;
+            public int OrderId;
         }
 
         // The grids are filled from these lists, so searching does not need the database again.
@@ -41,6 +42,22 @@ namespace LogIn_HiveStock
             StaffIDNumber_Label.Text = staffIdNumber;
         }
 
+        private void View_Button_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Select an order row first, then press View.",
+                    "View Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            OrderRow row = dataGridView1.SelectedRows[0].Tag as OrderRow;
+            if (row == null) return;
+
+            using (OrderDetails details = new OrderDetails(row.OrderId))
+                details.ShowDialog(this);
+        }
+
         private void AdminSide_Load(object sender, EventArgs e)
         {
             SetupGrid(DataTable, false);
@@ -58,6 +75,7 @@ namespace LogIn_HiveStock
             OMSearch_Input.TextChanged += (s, ev) => FillOrderGrid();
             Delete_Button.Click += Delete_Button_Click;
             Complete_Button.Click += Complete_Button_Click;
+            View_Button.Click += View_Button_Click;
 
             // Closing the admin window with the X closes the whole app (logout does not).
             this.FormClosed += (s, ev) => { if (!loggingOut) Application.Exit(); };
@@ -436,6 +454,7 @@ namespace LogIn_HiveStock
                             orderRows.Add(new OrderRow
                             {
                                 OrderItemId = Convert.ToInt32(r["order_item_id"]),
+                                OrderId = Convert.ToInt32(r["order_id"]),
                                 Received = received,
                                 Cells = new object[]
                                 {
