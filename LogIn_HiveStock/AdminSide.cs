@@ -295,9 +295,37 @@ namespace LogIn_HiveStock
 
         private void LoadAdminData()
         {
+            TriggerRestockNotifications(); // Automatically sync pending notifications for restocked products
             LoadProducts();
             LoadOrders();
             LoadDashboardExtras();
+        }
+
+        // Flips PENDING restock notifications to SENT for any product that currently has stock
+        private void TriggerRestockNotifications()
+        {
+            try
+            {
+                using (MySqlConnection conn = OpenConnection())
+                {
+                    string notifQuery = @"UPDATE notification_subscription ns
+                                         JOIN product p ON ns.product_id = p.product_id
+                                         SET ns.status = 'SENT',
+                                             ns.notified_at = NOW()
+                                         WHERE ns.status = 'PENDING'
+                                           AND (LOWER(p.stock_status) IN ('in stock', 'low stock', 'on stock') 
+                                                OR p.stock_qty > 0)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(notifQuery, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error triggering restock notifications: " + ex.Message);
+            }
         }
 
         private MySqlConnection OpenConnection()

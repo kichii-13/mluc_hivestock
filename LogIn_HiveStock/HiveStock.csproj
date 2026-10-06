@@ -321,6 +321,8 @@
     <Content Include="hivestock\images\readingsph.jpg" />
     <Content Include="hivestock\images\understandingtheself.jpg" />
     <Content Include="hivestock\images\univgala.jpg" />
+    <None Include="Resources\notification-dot.png" />
+    <None Include="Resources\notification.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

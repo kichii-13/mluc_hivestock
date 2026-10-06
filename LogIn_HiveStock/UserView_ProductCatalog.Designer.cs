@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.Header_Panel = new System.Windows.Forms.Panel();
-            this.Profile_Button = new Guna.UI2.WinForms.Guna2Button();
-            this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
-            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
             this.MarketingCenter = new System.Windows.Forms.Label();
             this.MLUC = new System.Windows.Forms.Label();
             this.Search_Label = new System.Windows.Forms.Label();
@@ -47,7 +44,6 @@
             this.UPFStatus_Label = new System.Windows.Forms.Label();
             this.UPFInfo_Label = new System.Windows.Forms.Label();
             this.UPFTitle_Label = new System.Windows.Forms.Label();
-            this.UPF_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.UnivGala_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.UG_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.UGATC_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +54,6 @@
             this.UGStatus_Label = new System.Windows.Forms.Label();
             this.UGInfo_Label = new System.Windows.Forms.Label();
             this.UGTitle_Label = new System.Windows.Forms.Label();
-            this.UG_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.IDLace_Label = new System.Windows.Forms.Label();
             this.ID2_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ID2_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
@@ -70,7 +65,6 @@
             this.IDStatus2_Label = new System.Windows.Forms.Label();
             this.ID2Info_Label = new System.Windows.Forms.Label();
             this.ID2Title_Label = new System.Windows.Forms.Label();
-            this.ID2_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book8_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book8_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC8_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -81,7 +75,6 @@
             this.Status8_Label = new System.Windows.Forms.Label();
             this.Book8Info_Label = new System.Windows.Forms.Label();
             this.Book8Title_Label = new System.Windows.Forms.Label();
-            this.Book8_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ID1_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ID1_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.IDATC1_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -92,7 +85,6 @@
             this.IDStatus1_Label = new System.Windows.Forms.Label();
             this.ID1Info_Label = new System.Windows.Forms.Label();
             this.ID1Title_Label = new System.Windows.Forms.Label();
-            this.ID1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book7_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book7_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC7_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -103,7 +95,6 @@
             this.Status7_Label = new System.Windows.Forms.Label();
             this.Book7Info_Label = new System.Windows.Forms.Label();
             this.Book7Title_Label = new System.Windows.Forms.Label();
-            this.Book7_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book6_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book6_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC6_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -114,7 +105,6 @@
             this.Status6_Label = new System.Windows.Forms.Label();
             this.Book6Info_Label = new System.Windows.Forms.Label();
             this.Book6Title_Label = new System.Windows.Forms.Label();
-            this.Book6_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book5_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book5_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC5_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -125,7 +115,6 @@
             this.Status5_Label = new System.Windows.Forms.Label();
             this.Book5Info_Label = new System.Windows.Forms.Label();
             this.Book5Title_Label = new System.Windows.Forms.Label();
-            this.Book5_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book4_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book4_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC4_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -136,7 +125,6 @@
             this.Status4_Label = new System.Windows.Forms.Label();
             this.Book4Info_Label = new System.Windows.Forms.Label();
             this.Book4Title_Label = new System.Windows.Forms.Label();
-            this.Book4_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book3_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book3_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC3_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -147,7 +135,6 @@
             this.Status3_Label = new System.Windows.Forms.Label();
             this.Book3Info_Label = new System.Windows.Forms.Label();
             this.Book3Title_Label = new System.Windows.Forms.Label();
-            this.Book3_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book2_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book2_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC2_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -158,7 +145,6 @@
             this.Status2_Label = new System.Windows.Forms.Label();
             this.Book2Info_Label = new System.Windows.Forms.Label();
             this.Book2Title_Label = new System.Windows.Forms.Label();
-            this.Book2_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Book1_Container = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.Book1_Information = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.ATC1_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -169,63 +155,80 @@
             this.Status1_Label = new System.Windows.Forms.Label();
             this.Book1Info_Label = new System.Windows.Forms.Label();
             this.Book1Title_Label = new System.Windows.Forms.Label();
-            this.Book1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Books_Label = new System.Windows.Forms.Label();
             this.Middle_Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.Search_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Books_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.IDLace_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.Uniform_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.MainScrollPanel = new System.Windows.Forms.Panel();
+            this.Notif_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Profile_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.DMMMSU_Logo = new System.Windows.Forms.PictureBox();
+            this.Search_Input = new Guna.UI2.WinForms.Guna2TextBox();
+            this.UG_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.UPF_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ID2_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ID1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book8_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book7_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book6_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book5_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book4_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book3_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book2_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Book1_Image = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Notif_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.Header_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
             this.UnifPathFit_Container.SuspendLayout();
             this.UPF_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UPF_Image)).BeginInit();
             this.UnivGala_Container.SuspendLayout();
             this.UG_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UG_Image)).BeginInit();
             this.ID2_Container.SuspendLayout();
             this.ID2_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ID2_Image)).BeginInit();
             this.Book8_Container.SuspendLayout();
             this.Book8_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book8_Image)).BeginInit();
             this.ID1_Container.SuspendLayout();
             this.ID1_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ID1_Image)).BeginInit();
             this.Book7_Container.SuspendLayout();
             this.Book7_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book7_Image)).BeginInit();
             this.Book6_Container.SuspendLayout();
             this.Book6_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book6_Image)).BeginInit();
             this.Book5_Container.SuspendLayout();
             this.Book5_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book5_Image)).BeginInit();
             this.Book4_Container.SuspendLayout();
             this.Book4_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book4_Image)).BeginInit();
             this.Book3_Container.SuspendLayout();
             this.Book3_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book3_Image)).BeginInit();
             this.Book2_Container.SuspendLayout();
             this.Book2_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).BeginInit();
             this.Book1_Container.SuspendLayout();
             this.Book1_Information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).BeginInit();
             this.Middle_Panel.SuspendLayout();
             this.Books_Panel.SuspendLayout();
             this.IDLace_Panel.SuspendLayout();
             this.Uniform_Panel.SuspendLayout();
             this.MainScrollPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UG_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UPF_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ID2_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ID1_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book8_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book7_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book6_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book5_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book4_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book3_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // Header_Panel
             // 
             this.Header_Panel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Header_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Header_Panel.Controls.Add(this.Notif_Button);
             this.Header_Panel.Controls.Add(this.Profile_Button);
             this.Header_Panel.Controls.Add(this.LogIn_Button);
             this.Header_Panel.Controls.Add(this.DMMMSU_Logo);
@@ -236,55 +239,6 @@
             this.Header_Panel.Size = new System.Drawing.Size(1272, 79);
             this.Header_Panel.TabIndex = 0;
             // 
-            // Profile_Button
-            // 
-            this.Profile_Button.BorderRadius = 10;
-            this.Profile_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Profile_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Profile_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Profile_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Profile_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Profile_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.Profile_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Profile_Button.ForeColor = System.Drawing.Color.Black;
-            this.Profile_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.Profile_Button.Image = global::LogIn_HiveStock.Properties.Resources.user__1_;
-            this.Profile_Button.Location = new System.Drawing.Point(1195, 17);
-            this.Profile_Button.Name = "Profile_Button";
-            this.Profile_Button.Size = new System.Drawing.Size(38, 38);
-            this.Profile_Button.TabIndex = 12;
-            this.Profile_Button.Click += new System.EventHandler(this.Profile_Button_Click_1);
-            // 
-            // LogIn_Button
-            // 
-            this.LogIn_Button.BorderRadius = 10;
-            this.LogIn_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.LogIn_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
-            this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.LogIn_Button.Image = global::LogIn_HiveStock.Properties.Resources.online_shopping;
-            this.LogIn_Button.Location = new System.Drawing.Point(1052, 17);
-            this.LogIn_Button.Name = "LogIn_Button";
-            this.LogIn_Button.Size = new System.Drawing.Size(136, 38);
-            this.LogIn_Button.TabIndex = 11;
-            this.LogIn_Button.Text = "  Cart";
-            this.LogIn_Button.Click += new System.EventHandler(this.Cart_Button_Click);
-            // 
-            // DMMMSU_Logo
-            // 
-            this.DMMMSU_Logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo_w_outline;
-            this.DMMMSU_Logo.Location = new System.Drawing.Point(34, 9);
-            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
-            this.DMMMSU_Logo.Size = new System.Drawing.Size(65, 65);
-            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DMMMSU_Logo.TabIndex = 4;
-            this.DMMMSU_Logo.TabStop = false;
-            // 
             // MarketingCenter
             // 
             this.MarketingCenter.AutoSize = true;
@@ -293,7 +247,7 @@
             this.MarketingCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.MarketingCenter.Location = new System.Drawing.Point(98, 33);
             this.MarketingCenter.Name = "MarketingCenter";
-            this.MarketingCenter.Size = new System.Drawing.Size(318, 41);
+            this.MarketingCenter.Size = new System.Drawing.Size(253, 32);
             this.MarketingCenter.TabIndex = 3;
             this.MarketingCenter.Text = "MARKETING CENTER";
             // 
@@ -305,7 +259,7 @@
             this.MLUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.MLUC.Location = new System.Drawing.Point(102, 17);
             this.MLUC.Name = "MLUC";
-            this.MLUC.Size = new System.Drawing.Size(129, 20);
+            this.MLUC.Size = new System.Drawing.Size(107, 15);
             this.MLUC.TabIndex = 2;
             this.MLUC.Text = "DMMMSU MLUC";
             // 
@@ -316,7 +270,7 @@
             this.Search_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_Label.Location = new System.Drawing.Point(803, 33);
             this.Search_Label.Name = "Search_Label";
-            this.Search_Label.Size = new System.Drawing.Size(55, 20);
+            this.Search_Label.Size = new System.Drawing.Size(46, 15);
             this.Search_Label.TabIndex = 7;
             this.Search_Label.Text = "Search";
             this.Search_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -424,7 +378,7 @@
             this.UPFPrice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPFPrice_Label.Location = new System.Drawing.Point(155, 83);
             this.UPFPrice_Label.Name = "UPFPrice_Label";
-            this.UPFPrice_Label.Size = new System.Drawing.Size(53, 20);
+            this.UPFPrice_Label.Size = new System.Drawing.Size(41, 16);
             this.UPFPrice_Label.TabIndex = 4;
             this.UPFPrice_Label.Text = "Price:";
             // 
@@ -461,7 +415,7 @@
             this.UPFStatus_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UPFStatus_Label.Location = new System.Drawing.Point(13, 83);
             this.UPFStatus_Label.Name = "UPFStatus_Label";
-            this.UPFStatus_Label.Size = new System.Drawing.Size(62, 20);
+            this.UPFStatus_Label.Size = new System.Drawing.Size(47, 16);
             this.UPFStatus_Label.TabIndex = 2;
             this.UPFStatus_Label.Text = "Status:";
             // 
@@ -482,21 +436,6 @@
             this.UPFTitle_Label.Size = new System.Drawing.Size(260, 33);
             this.UPFTitle_Label.TabIndex = 0;
             this.UPFTitle_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // UPF_Image
-            // 
-            this.UPF_Image.BackColor = System.Drawing.Color.Transparent;
-            this.UPF_Image.BorderRadius = 10;
-            this.UPF_Image.FillColor = System.Drawing.Color.Transparent;
-            this.UPF_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.UPF_Image.ImageRotate = 0F;
-            this.UPF_Image.Location = new System.Drawing.Point(9, 10);
-            this.UPF_Image.Name = "UPF_Image";
-            this.UPF_Image.Size = new System.Drawing.Size(258, 141);
-            this.UPF_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UPF_Image.TabIndex = 0;
-            this.UPF_Image.TabStop = false;
-            this.UPF_Image.UseTransparentBackground = true;
             // 
             // UnivGala_Container
             // 
@@ -563,7 +502,7 @@
             this.UGPrice_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UGPrice_Label.Location = new System.Drawing.Point(155, 83);
             this.UGPrice_Label.Name = "UGPrice_Label";
-            this.UGPrice_Label.Size = new System.Drawing.Size(53, 20);
+            this.UGPrice_Label.Size = new System.Drawing.Size(41, 16);
             this.UGPrice_Label.TabIndex = 4;
             this.UGPrice_Label.Text = "Price:";
             // 
@@ -600,7 +539,7 @@
             this.UGStatus_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UGStatus_Label.Location = new System.Drawing.Point(13, 83);
             this.UGStatus_Label.Name = "UGStatus_Label";
-            this.UGStatus_Label.Size = new System.Drawing.Size(62, 20);
+            this.UGStatus_Label.Size = new System.Drawing.Size(47, 16);
             this.UGStatus_Label.TabIndex = 2;
             this.UGStatus_Label.Text = "Status:";
             // 
@@ -623,21 +562,6 @@
             this.UGTitle_Label.TabIndex = 0;
             this.UGTitle_Label.Text = "-";
             this.UGTitle_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // UG_Image
-            // 
-            this.UG_Image.BackColor = System.Drawing.Color.Transparent;
-            this.UG_Image.BorderRadius = 10;
-            this.UG_Image.FillColor = System.Drawing.Color.Transparent;
-            this.UG_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.UG_Image.ImageRotate = 0F;
-            this.UG_Image.Location = new System.Drawing.Point(9, 10);
-            this.UG_Image.Name = "UG_Image";
-            this.UG_Image.Size = new System.Drawing.Size(258, 141);
-            this.UG_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UG_Image.TabIndex = 0;
-            this.UG_Image.TabStop = false;
-            this.UG_Image.UseTransparentBackground = true;
             // 
             // IDLace_Label
             // 
@@ -714,7 +638,7 @@
             this.IDPrice2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDPrice2_Label.Location = new System.Drawing.Point(157, 83);
             this.IDPrice2_Label.Name = "IDPrice2_Label";
-            this.IDPrice2_Label.Size = new System.Drawing.Size(53, 20);
+            this.IDPrice2_Label.Size = new System.Drawing.Size(41, 16);
             this.IDPrice2_Label.TabIndex = 4;
             this.IDPrice2_Label.Text = "Price:";
             // 
@@ -751,7 +675,7 @@
             this.IDStatus2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDStatus2_Label.Location = new System.Drawing.Point(15, 83);
             this.IDStatus2_Label.Name = "IDStatus2_Label";
-            this.IDStatus2_Label.Size = new System.Drawing.Size(62, 20);
+            this.IDStatus2_Label.Size = new System.Drawing.Size(47, 16);
             this.IDStatus2_Label.TabIndex = 2;
             this.IDStatus2_Label.Text = "Status:";
             // 
@@ -774,21 +698,6 @@
             this.ID2Title_Label.TabIndex = 0;
             this.ID2Title_Label.Text = "-";
             this.ID2Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ID2_Image
-            // 
-            this.ID2_Image.BackColor = System.Drawing.Color.Transparent;
-            this.ID2_Image.BorderRadius = 10;
-            this.ID2_Image.FillColor = System.Drawing.Color.Transparent;
-            this.ID2_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.ID2_Image.ImageRotate = 0F;
-            this.ID2_Image.Location = new System.Drawing.Point(9, 10);
-            this.ID2_Image.Name = "ID2_Image";
-            this.ID2_Image.Size = new System.Drawing.Size(258, 141);
-            this.ID2_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ID2_Image.TabIndex = 0;
-            this.ID2_Image.TabStop = false;
-            this.ID2_Image.UseTransparentBackground = true;
             // 
             // Book8_Container
             // 
@@ -856,7 +765,7 @@
             this.Price8_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price8_Label.Location = new System.Drawing.Point(155, 83);
             this.Price8_Label.Name = "Price8_Label";
-            this.Price8_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price8_Label.Size = new System.Drawing.Size(41, 16);
             this.Price8_Label.TabIndex = 4;
             this.Price8_Label.Text = "Price:";
             // 
@@ -893,7 +802,7 @@
             this.Status8_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status8_Label.Location = new System.Drawing.Point(13, 83);
             this.Status8_Label.Name = "Status8_Label";
-            this.Status8_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status8_Label.Size = new System.Drawing.Size(47, 16);
             this.Status8_Label.TabIndex = 2;
             this.Status8_Label.Text = "Status:";
             // 
@@ -916,21 +825,6 @@
             this.Book8Title_Label.TabIndex = 14;
             this.Book8Title_Label.Text = "-";
             this.Book8Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book8_Image
-            // 
-            this.Book8_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book8_Image.BorderRadius = 10;
-            this.Book8_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book8_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book8_Image.ImageRotate = 0F;
-            this.Book8_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book8_Image.Name = "Book8_Image";
-            this.Book8_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book8_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book8_Image.TabIndex = 0;
-            this.Book8_Image.TabStop = false;
-            this.Book8_Image.UseTransparentBackground = true;
             // 
             // ID1_Container
             // 
@@ -998,7 +892,7 @@
             this.IDPrice1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDPrice1_Label.Location = new System.Drawing.Point(157, 83);
             this.IDPrice1_Label.Name = "IDPrice1_Label";
-            this.IDPrice1_Label.Size = new System.Drawing.Size(53, 20);
+            this.IDPrice1_Label.Size = new System.Drawing.Size(41, 16);
             this.IDPrice1_Label.TabIndex = 4;
             this.IDPrice1_Label.Text = "Price:";
             // 
@@ -1035,7 +929,7 @@
             this.IDStatus1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDStatus1_Label.Location = new System.Drawing.Point(15, 83);
             this.IDStatus1_Label.Name = "IDStatus1_Label";
-            this.IDStatus1_Label.Size = new System.Drawing.Size(62, 20);
+            this.IDStatus1_Label.Size = new System.Drawing.Size(47, 16);
             this.IDStatus1_Label.TabIndex = 2;
             this.IDStatus1_Label.Text = "Status:";
             // 
@@ -1058,21 +952,6 @@
             this.ID1Title_Label.TabIndex = 0;
             this.ID1Title_Label.Text = "-";
             this.ID1Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ID1_Image
-            // 
-            this.ID1_Image.BackColor = System.Drawing.Color.Transparent;
-            this.ID1_Image.BorderRadius = 10;
-            this.ID1_Image.FillColor = System.Drawing.Color.Transparent;
-            this.ID1_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.ID1_Image.ImageRotate = 0F;
-            this.ID1_Image.Location = new System.Drawing.Point(9, 10);
-            this.ID1_Image.Name = "ID1_Image";
-            this.ID1_Image.Size = new System.Drawing.Size(258, 141);
-            this.ID1_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ID1_Image.TabIndex = 0;
-            this.ID1_Image.TabStop = false;
-            this.ID1_Image.UseTransparentBackground = true;
             // 
             // Book7_Container
             // 
@@ -1140,7 +1019,7 @@
             this.Price7_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price7_Label.Location = new System.Drawing.Point(155, 83);
             this.Price7_Label.Name = "Price7_Label";
-            this.Price7_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price7_Label.Size = new System.Drawing.Size(41, 16);
             this.Price7_Label.TabIndex = 4;
             this.Price7_Label.Text = "Price:";
             // 
@@ -1177,7 +1056,7 @@
             this.Status7_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status7_Label.Location = new System.Drawing.Point(13, 83);
             this.Status7_Label.Name = "Status7_Label";
-            this.Status7_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status7_Label.Size = new System.Drawing.Size(47, 16);
             this.Status7_Label.TabIndex = 2;
             this.Status7_Label.Text = "Status:";
             // 
@@ -1200,21 +1079,6 @@
             this.Book7Title_Label.TabIndex = 14;
             this.Book7Title_Label.Text = "-";
             this.Book7Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book7_Image
-            // 
-            this.Book7_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book7_Image.BorderRadius = 10;
-            this.Book7_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book7_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book7_Image.ImageRotate = 0F;
-            this.Book7_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book7_Image.Name = "Book7_Image";
-            this.Book7_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book7_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book7_Image.TabIndex = 0;
-            this.Book7_Image.TabStop = false;
-            this.Book7_Image.UseTransparentBackground = true;
             // 
             // Book6_Container
             // 
@@ -1282,7 +1146,7 @@
             this.Price6_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price6_Label.Location = new System.Drawing.Point(155, 83);
             this.Price6_Label.Name = "Price6_Label";
-            this.Price6_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price6_Label.Size = new System.Drawing.Size(41, 16);
             this.Price6_Label.TabIndex = 4;
             this.Price6_Label.Text = "Price:";
             // 
@@ -1319,7 +1183,7 @@
             this.Status6_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status6_Label.Location = new System.Drawing.Point(13, 83);
             this.Status6_Label.Name = "Status6_Label";
-            this.Status6_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status6_Label.Size = new System.Drawing.Size(47, 16);
             this.Status6_Label.TabIndex = 2;
             this.Status6_Label.Text = "Status:";
             // 
@@ -1342,21 +1206,6 @@
             this.Book6Title_Label.TabIndex = 14;
             this.Book6Title_Label.Text = "-";
             this.Book6Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book6_Image
-            // 
-            this.Book6_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book6_Image.BorderRadius = 10;
-            this.Book6_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book6_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book6_Image.ImageRotate = 0F;
-            this.Book6_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book6_Image.Name = "Book6_Image";
-            this.Book6_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book6_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book6_Image.TabIndex = 0;
-            this.Book6_Image.TabStop = false;
-            this.Book6_Image.UseTransparentBackground = true;
             // 
             // Book5_Container
             // 
@@ -1424,7 +1273,7 @@
             this.Price5_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price5_Label.Location = new System.Drawing.Point(155, 83);
             this.Price5_Label.Name = "Price5_Label";
-            this.Price5_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price5_Label.Size = new System.Drawing.Size(41, 16);
             this.Price5_Label.TabIndex = 4;
             this.Price5_Label.Text = "Price:";
             // 
@@ -1461,7 +1310,7 @@
             this.Status5_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status5_Label.Location = new System.Drawing.Point(13, 83);
             this.Status5_Label.Name = "Status5_Label";
-            this.Status5_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status5_Label.Size = new System.Drawing.Size(47, 16);
             this.Status5_Label.TabIndex = 2;
             this.Status5_Label.Text = "Status:";
             // 
@@ -1484,21 +1333,6 @@
             this.Book5Title_Label.TabIndex = 14;
             this.Book5Title_Label.Text = "-";
             this.Book5Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book5_Image
-            // 
-            this.Book5_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book5_Image.BorderRadius = 10;
-            this.Book5_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book5_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book5_Image.ImageRotate = 0F;
-            this.Book5_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book5_Image.Name = "Book5_Image";
-            this.Book5_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book5_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book5_Image.TabIndex = 0;
-            this.Book5_Image.TabStop = false;
-            this.Book5_Image.UseTransparentBackground = true;
             // 
             // Book4_Container
             // 
@@ -1566,7 +1400,7 @@
             this.Price4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price4_Label.Location = new System.Drawing.Point(155, 83);
             this.Price4_Label.Name = "Price4_Label";
-            this.Price4_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price4_Label.Size = new System.Drawing.Size(41, 16);
             this.Price4_Label.TabIndex = 4;
             this.Price4_Label.Text = "Price:";
             // 
@@ -1602,7 +1436,7 @@
             this.Status4_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status4_Label.Location = new System.Drawing.Point(13, 83);
             this.Status4_Label.Name = "Status4_Label";
-            this.Status4_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status4_Label.Size = new System.Drawing.Size(47, 16);
             this.Status4_Label.TabIndex = 2;
             this.Status4_Label.Text = "Status:";
             // 
@@ -1625,21 +1459,6 @@
             this.Book4Title_Label.TabIndex = 14;
             this.Book4Title_Label.Text = "-";
             this.Book4Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book4_Image
-            // 
-            this.Book4_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book4_Image.BorderRadius = 10;
-            this.Book4_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book4_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book4_Image.ImageRotate = 0F;
-            this.Book4_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book4_Image.Name = "Book4_Image";
-            this.Book4_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book4_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book4_Image.TabIndex = 0;
-            this.Book4_Image.TabStop = false;
-            this.Book4_Image.UseTransparentBackground = true;
             // 
             // Book3_Container
             // 
@@ -1707,7 +1526,7 @@
             this.Price3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price3_Label.Location = new System.Drawing.Point(155, 83);
             this.Price3_Label.Name = "Price3_Label";
-            this.Price3_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price3_Label.Size = new System.Drawing.Size(41, 16);
             this.Price3_Label.TabIndex = 4;
             this.Price3_Label.Text = "Price:";
             // 
@@ -1744,7 +1563,7 @@
             this.Status3_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status3_Label.Location = new System.Drawing.Point(13, 83);
             this.Status3_Label.Name = "Status3_Label";
-            this.Status3_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status3_Label.Size = new System.Drawing.Size(47, 16);
             this.Status3_Label.TabIndex = 2;
             this.Status3_Label.Text = "Status:";
             // 
@@ -1767,21 +1586,6 @@
             this.Book3Title_Label.TabIndex = 0;
             this.Book3Title_Label.Text = "-";
             this.Book3Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book3_Image
-            // 
-            this.Book3_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book3_Image.BorderRadius = 10;
-            this.Book3_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book3_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book3_Image.ImageRotate = 0F;
-            this.Book3_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book3_Image.Name = "Book3_Image";
-            this.Book3_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book3_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book3_Image.TabIndex = 0;
-            this.Book3_Image.TabStop = false;
-            this.Book3_Image.UseTransparentBackground = true;
             // 
             // Book2_Container
             // 
@@ -1849,7 +1653,7 @@
             this.Price2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price2_Label.Location = new System.Drawing.Point(155, 83);
             this.Price2_Label.Name = "Price2_Label";
-            this.Price2_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price2_Label.Size = new System.Drawing.Size(41, 16);
             this.Price2_Label.TabIndex = 4;
             this.Price2_Label.Text = "Price:";
             // 
@@ -1886,7 +1690,7 @@
             this.Status2_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status2_Label.Location = new System.Drawing.Point(13, 83);
             this.Status2_Label.Name = "Status2_Label";
-            this.Status2_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status2_Label.Size = new System.Drawing.Size(47, 16);
             this.Status2_Label.TabIndex = 2;
             this.Status2_Label.Text = "Status:";
             // 
@@ -1909,21 +1713,6 @@
             this.Book2Title_Label.TabIndex = 0;
             this.Book2Title_Label.Text = "-";
             this.Book2Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Book2_Image
-            // 
-            this.Book2_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book2_Image.BorderRadius = 10;
-            this.Book2_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book2_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book2_Image.ImageRotate = 0F;
-            this.Book2_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book2_Image.Name = "Book2_Image";
-            this.Book2_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book2_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book2_Image.TabIndex = 0;
-            this.Book2_Image.TabStop = false;
-            this.Book2_Image.UseTransparentBackground = true;
             // 
             // Book1_Container
             // 
@@ -1991,7 +1780,7 @@
             this.Price1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price1_Label.Location = new System.Drawing.Point(155, 83);
             this.Price1_Label.Name = "Price1_Label";
-            this.Price1_Label.Size = new System.Drawing.Size(53, 20);
+            this.Price1_Label.Size = new System.Drawing.Size(41, 16);
             this.Price1_Label.TabIndex = 4;
             this.Price1_Label.Text = "Price:";
             // 
@@ -2028,7 +1817,7 @@
             this.Status1_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status1_Label.Location = new System.Drawing.Point(13, 83);
             this.Status1_Label.Name = "Status1_Label";
-            this.Status1_Label.Size = new System.Drawing.Size(62, 20);
+            this.Status1_Label.Size = new System.Drawing.Size(47, 16);
             this.Status1_Label.TabIndex = 2;
             this.Status1_Label.Text = "Status:";
             // 
@@ -2052,21 +1841,6 @@
             this.Book1Title_Label.Text = "-";
             this.Book1Title_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Book1_Image
-            // 
-            this.Book1_Image.BackColor = System.Drawing.Color.Transparent;
-            this.Book1_Image.BorderRadius = 10;
-            this.Book1_Image.FillColor = System.Drawing.Color.Transparent;
-            this.Book1_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
-            this.Book1_Image.ImageRotate = 0F;
-            this.Book1_Image.Location = new System.Drawing.Point(9, 10);
-            this.Book1_Image.Name = "Book1_Image";
-            this.Book1_Image.Size = new System.Drawing.Size(258, 141);
-            this.Book1_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Book1_Image.TabIndex = 0;
-            this.Book1_Image.TabStop = false;
-            this.Book1_Image.UseTransparentBackground = true;
-            // 
             // Books_Label
             // 
             this.Books_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2087,31 +1861,6 @@
             this.Middle_Panel.Name = "Middle_Panel";
             this.Middle_Panel.Size = new System.Drawing.Size(1278, 67);
             this.Middle_Panel.TabIndex = 11;
-            // 
-            // Search_Input
-            // 
-            this.Search_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Search_Input.BorderRadius = 10;
-            this.Search_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Search_Input.DefaultText = "";
-            this.Search_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Search_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Search_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Search_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Search_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Search_Input.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_Input.ForeColor = System.Drawing.Color.Black;
-            this.Search_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Search_Input.IconRight = global::LogIn_HiveStock.Properties.Resources.search;
-            this.Search_Input.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.Search_Input.Location = new System.Drawing.Point(855, 22);
-            this.Search_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Search_Input.Name = "Search_Input";
-            this.Search_Input.PlaceholderText = "Products";
-            this.Search_Input.SelectedText = "";
-            this.Search_Input.Size = new System.Drawing.Size(229, 36);
-            this.Search_Input.TabIndex = 8;
-            this.Search_Input.IconRightClick += new System.EventHandler(this.Search_Input_IconRightClick);
             // 
             // Books_Panel
             // 
@@ -2170,11 +1919,297 @@
             this.MainScrollPanel.Size = new System.Drawing.Size(1265, 533);
             this.MainScrollPanel.TabIndex = 14;
             // 
+            // Notif_Button
+            // 
+            this.Notif_Button.BorderRadius = 10;
+            this.Notif_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Notif_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Notif_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Notif_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Notif_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Notif_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notif_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notif_Button.ForeColor = System.Drawing.Color.Black;
+            this.Notif_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Notif_Button.Image = global::LogIn_HiveStock.Properties.Resources.notification;
+            this.Notif_Button.Location = new System.Drawing.Point(1008, 17);
+            this.Notif_Button.Name = "Notif_Button";
+            this.Notif_Button.Size = new System.Drawing.Size(38, 38);
+            this.Notif_Button.TabIndex = 13;
+            this.Notif_Button.Click += new System.EventHandler(this.Notif_Button_Click);
+            // 
+            // Profile_Button
+            // 
+            this.Profile_Button.BorderRadius = 10;
+            this.Profile_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Profile_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Profile_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Profile_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Profile_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Profile_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Profile_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Profile_Button.ForeColor = System.Drawing.Color.Black;
+            this.Profile_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.Profile_Button.Image = global::LogIn_HiveStock.Properties.Resources.user__1_;
+            this.Profile_Button.Location = new System.Drawing.Point(1195, 17);
+            this.Profile_Button.Name = "Profile_Button";
+            this.Profile_Button.Size = new System.Drawing.Size(38, 38);
+            this.Profile_Button.TabIndex = 12;
+            this.Profile_Button.Click += new System.EventHandler(this.Profile_Button_Click_1);
+            // 
+            // LogIn_Button
+            // 
+            this.LogIn_Button.BorderRadius = 10;
+            this.LogIn_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogIn_Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LogIn_Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LogIn_Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LogIn_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
+            this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
+            this.LogIn_Button.Image = global::LogIn_HiveStock.Properties.Resources.online_shopping;
+            this.LogIn_Button.Location = new System.Drawing.Point(1052, 17);
+            this.LogIn_Button.Name = "LogIn_Button";
+            this.LogIn_Button.Size = new System.Drawing.Size(136, 38);
+            this.LogIn_Button.TabIndex = 11;
+            this.LogIn_Button.Text = "  Cart";
+            this.LogIn_Button.Click += new System.EventHandler(this.Cart_Button_Click);
+            // 
+            // DMMMSU_Logo
+            // 
+            this.DMMMSU_Logo.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo_w_outline;
+            this.DMMMSU_Logo.Location = new System.Drawing.Point(34, 9);
+            this.DMMMSU_Logo.Name = "DMMMSU_Logo";
+            this.DMMMSU_Logo.Size = new System.Drawing.Size(65, 65);
+            this.DMMMSU_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DMMMSU_Logo.TabIndex = 4;
+            this.DMMMSU_Logo.TabStop = false;
+            // 
+            // Search_Input
+            // 
+            this.Search_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Search_Input.BorderRadius = 10;
+            this.Search_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Search_Input.DefaultText = "";
+            this.Search_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Search_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Search_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Search_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Search_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Search_Input.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_Input.ForeColor = System.Drawing.Color.Black;
+            this.Search_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Search_Input.IconRight = global::LogIn_HiveStock.Properties.Resources.search;
+            this.Search_Input.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.Search_Input.Location = new System.Drawing.Point(855, 22);
+            this.Search_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Search_Input.Name = "Search_Input";
+            this.Search_Input.PlaceholderText = "Products";
+            this.Search_Input.SelectedText = "";
+            this.Search_Input.Size = new System.Drawing.Size(229, 36);
+            this.Search_Input.TabIndex = 8;
+            this.Search_Input.IconRightClick += new System.EventHandler(this.Search_Input_IconRightClick);
+            // 
+            // UG_Image
+            // 
+            this.UG_Image.BackColor = System.Drawing.Color.Transparent;
+            this.UG_Image.BorderRadius = 10;
+            this.UG_Image.FillColor = System.Drawing.Color.Transparent;
+            this.UG_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.UG_Image.ImageRotate = 0F;
+            this.UG_Image.Location = new System.Drawing.Point(9, 10);
+            this.UG_Image.Name = "UG_Image";
+            this.UG_Image.Size = new System.Drawing.Size(258, 141);
+            this.UG_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UG_Image.TabIndex = 0;
+            this.UG_Image.TabStop = false;
+            this.UG_Image.UseTransparentBackground = true;
+            // 
+            // UPF_Image
+            // 
+            this.UPF_Image.BackColor = System.Drawing.Color.Transparent;
+            this.UPF_Image.BorderRadius = 10;
+            this.UPF_Image.FillColor = System.Drawing.Color.Transparent;
+            this.UPF_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.UPF_Image.ImageRotate = 0F;
+            this.UPF_Image.Location = new System.Drawing.Point(9, 10);
+            this.UPF_Image.Name = "UPF_Image";
+            this.UPF_Image.Size = new System.Drawing.Size(258, 141);
+            this.UPF_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UPF_Image.TabIndex = 0;
+            this.UPF_Image.TabStop = false;
+            this.UPF_Image.UseTransparentBackground = true;
+            // 
+            // ID2_Image
+            // 
+            this.ID2_Image.BackColor = System.Drawing.Color.Transparent;
+            this.ID2_Image.BorderRadius = 10;
+            this.ID2_Image.FillColor = System.Drawing.Color.Transparent;
+            this.ID2_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.ID2_Image.ImageRotate = 0F;
+            this.ID2_Image.Location = new System.Drawing.Point(9, 10);
+            this.ID2_Image.Name = "ID2_Image";
+            this.ID2_Image.Size = new System.Drawing.Size(258, 141);
+            this.ID2_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ID2_Image.TabIndex = 0;
+            this.ID2_Image.TabStop = false;
+            this.ID2_Image.UseTransparentBackground = true;
+            // 
+            // ID1_Image
+            // 
+            this.ID1_Image.BackColor = System.Drawing.Color.Transparent;
+            this.ID1_Image.BorderRadius = 10;
+            this.ID1_Image.FillColor = System.Drawing.Color.Transparent;
+            this.ID1_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.ID1_Image.ImageRotate = 0F;
+            this.ID1_Image.Location = new System.Drawing.Point(9, 10);
+            this.ID1_Image.Name = "ID1_Image";
+            this.ID1_Image.Size = new System.Drawing.Size(258, 141);
+            this.ID1_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ID1_Image.TabIndex = 0;
+            this.ID1_Image.TabStop = false;
+            this.ID1_Image.UseTransparentBackground = true;
+            // 
+            // Book8_Image
+            // 
+            this.Book8_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book8_Image.BorderRadius = 10;
+            this.Book8_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book8_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book8_Image.ImageRotate = 0F;
+            this.Book8_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book8_Image.Name = "Book8_Image";
+            this.Book8_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book8_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book8_Image.TabIndex = 0;
+            this.Book8_Image.TabStop = false;
+            this.Book8_Image.UseTransparentBackground = true;
+            // 
+            // Book7_Image
+            // 
+            this.Book7_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book7_Image.BorderRadius = 10;
+            this.Book7_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book7_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book7_Image.ImageRotate = 0F;
+            this.Book7_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book7_Image.Name = "Book7_Image";
+            this.Book7_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book7_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book7_Image.TabIndex = 0;
+            this.Book7_Image.TabStop = false;
+            this.Book7_Image.UseTransparentBackground = true;
+            // 
+            // Book6_Image
+            // 
+            this.Book6_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book6_Image.BorderRadius = 10;
+            this.Book6_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book6_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book6_Image.ImageRotate = 0F;
+            this.Book6_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book6_Image.Name = "Book6_Image";
+            this.Book6_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book6_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book6_Image.TabIndex = 0;
+            this.Book6_Image.TabStop = false;
+            this.Book6_Image.UseTransparentBackground = true;
+            // 
+            // Book5_Image
+            // 
+            this.Book5_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book5_Image.BorderRadius = 10;
+            this.Book5_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book5_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book5_Image.ImageRotate = 0F;
+            this.Book5_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book5_Image.Name = "Book5_Image";
+            this.Book5_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book5_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book5_Image.TabIndex = 0;
+            this.Book5_Image.TabStop = false;
+            this.Book5_Image.UseTransparentBackground = true;
+            // 
+            // Book4_Image
+            // 
+            this.Book4_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book4_Image.BorderRadius = 10;
+            this.Book4_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book4_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book4_Image.ImageRotate = 0F;
+            this.Book4_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book4_Image.Name = "Book4_Image";
+            this.Book4_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book4_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book4_Image.TabIndex = 0;
+            this.Book4_Image.TabStop = false;
+            this.Book4_Image.UseTransparentBackground = true;
+            // 
+            // Book3_Image
+            // 
+            this.Book3_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book3_Image.BorderRadius = 10;
+            this.Book3_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book3_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book3_Image.ImageRotate = 0F;
+            this.Book3_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book3_Image.Name = "Book3_Image";
+            this.Book3_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book3_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book3_Image.TabIndex = 0;
+            this.Book3_Image.TabStop = false;
+            this.Book3_Image.UseTransparentBackground = true;
+            // 
+            // Book2_Image
+            // 
+            this.Book2_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book2_Image.BorderRadius = 10;
+            this.Book2_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book2_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book2_Image.ImageRotate = 0F;
+            this.Book2_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book2_Image.Name = "Book2_Image";
+            this.Book2_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book2_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book2_Image.TabIndex = 0;
+            this.Book2_Image.TabStop = false;
+            this.Book2_Image.UseTransparentBackground = true;
+            // 
+            // Book1_Image
+            // 
+            this.Book1_Image.BackColor = System.Drawing.Color.Transparent;
+            this.Book1_Image.BorderRadius = 10;
+            this.Book1_Image.FillColor = System.Drawing.Color.Transparent;
+            this.Book1_Image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;
+            this.Book1_Image.ImageRotate = 0F;
+            this.Book1_Image.Location = new System.Drawing.Point(9, 10);
+            this.Book1_Image.Name = "Book1_Image";
+            this.Book1_Image.Size = new System.Drawing.Size(258, 141);
+            this.Book1_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Book1_Image.TabIndex = 0;
+            this.Book1_Image.TabStop = false;
+            this.Book1_Image.UseTransparentBackground = true;
+            // 
+            // Notif_Panel
+            // 
+            this.Notif_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Notif_Panel.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Notif_Panel.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.Notif_Panel.FillColor = System.Drawing.Color.White;
+            this.Notif_Panel.Location = new System.Drawing.Point(0, 0);
+            this.Notif_Panel.Name = "Notif_Panel";
+            this.Notif_Panel.Size = new System.Drawing.Size(425, 682);
+            this.Notif_Panel.TabIndex = 10;
+            this.Notif_Panel.Visible = false;
+            // 
             // UserView_ProductCatalog
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.Notif_Panel);
             this.Controls.Add(this.Header_Panel);
             this.Controls.Add(this.Middle_Panel);
             this.Controls.Add(this.MainScrollPanel);
@@ -2183,61 +2218,61 @@
             this.Text = " ";
             this.Header_Panel.ResumeLayout(false);
             this.Header_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
             this.UnifPathFit_Container.ResumeLayout(false);
             this.UPF_Information.ResumeLayout(false);
             this.UPF_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UPF_Image)).EndInit();
             this.UnivGala_Container.ResumeLayout(false);
             this.UG_Information.ResumeLayout(false);
             this.UG_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UG_Image)).EndInit();
             this.ID2_Container.ResumeLayout(false);
             this.ID2_Information.ResumeLayout(false);
             this.ID2_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ID2_Image)).EndInit();
             this.Book8_Container.ResumeLayout(false);
             this.Book8_Information.ResumeLayout(false);
             this.Book8_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book8_Image)).EndInit();
             this.ID1_Container.ResumeLayout(false);
             this.ID1_Information.ResumeLayout(false);
             this.ID1_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ID1_Image)).EndInit();
             this.Book7_Container.ResumeLayout(false);
             this.Book7_Information.ResumeLayout(false);
             this.Book7_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book7_Image)).EndInit();
             this.Book6_Container.ResumeLayout(false);
             this.Book6_Information.ResumeLayout(false);
             this.Book6_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book6_Image)).EndInit();
             this.Book5_Container.ResumeLayout(false);
             this.Book5_Information.ResumeLayout(false);
             this.Book5_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book5_Image)).EndInit();
             this.Book4_Container.ResumeLayout(false);
             this.Book4_Information.ResumeLayout(false);
             this.Book4_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book4_Image)).EndInit();
             this.Book3_Container.ResumeLayout(false);
             this.Book3_Information.ResumeLayout(false);
             this.Book3_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book3_Image)).EndInit();
             this.Book2_Container.ResumeLayout(false);
             this.Book2_Information.ResumeLayout(false);
             this.Book2_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).EndInit();
             this.Book1_Container.ResumeLayout(false);
             this.Book1_Information.ResumeLayout(false);
             this.Book1_Information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).EndInit();
             this.Middle_Panel.ResumeLayout(false);
             this.Middle_Panel.PerformLayout();
             this.Books_Panel.ResumeLayout(false);
             this.IDLace_Panel.ResumeLayout(false);
             this.Uniform_Panel.ResumeLayout(false);
             this.MainScrollPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DMMMSU_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UG_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UPF_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ID2_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ID1_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book8_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book7_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book6_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book5_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book4_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book3_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book2_Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Book1_Image)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2393,5 +2428,7 @@
         private System.Windows.Forms.FlowLayoutPanel IDLace_Panel;
         private System.Windows.Forms.FlowLayoutPanel Uniform_Panel;
         private System.Windows.Forms.Panel MainScrollPanel;
+        private Guna.UI2.WinForms.Guna2Button Notif_Button;
+        private Guna.UI2.WinForms.Guna2Panel Notif_Panel;
     }
 }
