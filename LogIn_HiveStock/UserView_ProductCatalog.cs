@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration; // Required for ConfigurationManager
 using MySqlConnector;        // Matches providerName="MySqlConnector" from App.config
+using Guna.UI2.WinForms;
 
 namespace LogIn_HiveStock
 {
@@ -32,6 +33,7 @@ namespace LogIn_HiveStock
             public int CategoryId { get; set; }
             public string ContainerName { get; set; }
             public Image ProductImage { get; set; }
+            public int StockQty { get; set; }
         }
 
         private Dictionary<int, ProductData> productsCache = new Dictionary<int, ProductData>();
@@ -129,11 +131,207 @@ namespace LogIn_HiveStock
             Filter_Dropdown.SelectedIndex = 0;
         }
 
+        // Product id -> the card the designer made for it.
+        private static readonly Dictionary<int, string> fixedCards = new Dictionary<int, string>
+        {
+            { 12, "Book1_Container" }, { 7, "Book2_Container" }, { 6, "Book3_Container" }, { 5, "Book4_Container" },
+            { 4, "Book5_Container" }, { 3, "Book6_Container" }, { 2, "Book7_Container" }, { 1, "Book8_Container" },
+            { 8, "ID1_Container" }, { 9, "ID2_Container" }, { 10, "UnivGala_Container" }, { 11, "UnifPathFit_Container" }
+        };
+
+        // Hides the fixed cards of products that were deleted, and builds cards for new products.
+        private void SyncCardsWithDatabase()
+        {
+            bool changed = false;
+
+            foreach (KeyValuePair<int, string> pair in fixedCards)
+            {
+                if (productsCache.ContainsKey(pair.Key)) continue;
+
+                Control[] found = this.Controls.Find(pair.Value, true);
+                if (found.Length > 0)
+                {
+                    found[0].Visible = false;
+                    changed = true;
+                }
+            }
+
+            foreach (KeyValuePair<int, ProductData> item in productsCache.OrderBy(k => k.Key))
+            {
+                if (fixedCards.ContainsKey(item.Key)) continue;
+
+                int id = item.Key;
+                FlowLayoutPanel target = Books_Panel;
+                if (item.Value.CategoryId == 2) target = IDLace_Panel;
+                else if (item.Value.CategoryId == 3) target = Uniform_Panel;
+                if (target == null) continue;
+
+                Guna2ContainerControl card = BuildProductCard(id);
+                target.Controls.Add(card);   // it must be on the form before it can be filled in
+
+                BindProductCard(id, card.Name, "Dyn" + id + "_Image", "Dyn" + id + "Title_Label",
+                                "Dyn" + id + "Info_Label", "DynStock" + id + "_Status",
+                                "DynPricePeso" + id + "_Label", "DynATC" + id + "_Button",
+                                "DynNotify" + id + "_Button");
+                changed = true;
+            }
+
+            if (changed) RelayoutCategoryPanels();
+        }
+
+        // The three sections have fixed positions, so stack them again after the card count changed.
+        private void RelayoutCategoryPanels()
+        {
+            FlowLayoutPanel[] panels = { Books_Panel, IDLace_Panel, Uniform_Panel };
+            foreach (FlowLayoutPanel panel in panels)
+            {
+                if (panel == null) continue;
+
+                panel.PerformLayout();
+                List<Control> shown = panel.Controls.Cast<Control>().Where(c => c.Visible).ToList();
+                if (shown.Count > 0)
+                    panel.Height = shown.Max(c => c.Bottom) + 10 + panel.Padding.Bottom;
+            }
+
+            if (Books_Panel != null && IDLace_Panel != null) IDLace_Panel.Top = Books_Panel.Bottom;
+            if (IDLace_Panel != null && Uniform_Panel != null) Uniform_Panel.Top = IDLace_Panel.Bottom;
+
+            // The filter code puts the sections back to these remembered values.
+            if (Books_Panel != null) booksOriginalHeight = Books_Panel.Height;
+            if (IDLace_Panel != null) idLaceOriginalY = IDLace_Panel.Top;
+            if (Uniform_Panel != null) uniformOriginalY = Uniform_Panel.Top;
+        }
+
+        // Builds a card that looks exactly like the Book1 card in the designer.
+        private Guna2ContainerControl BuildProductCard(int id)
+        {
+            string n = "Dyn" + id;
+
+            Guna2ContainerControl card = new Guna2ContainerControl();
+            card.Name = n + "_Container";
+            card.BorderColor = Color.FromArgb(18, 77, 28);
+            card.BorderRadius = 10;
+            card.BorderThickness = 1;
+            card.FillColor = Color.FromArgb(235, 237, 227);
+            card.Margin = new Padding(10);
+            card.Size = new Size(277, 322);
+
+            Guna2PictureBox image = new Guna2PictureBox();
+            image.Name = n + "_Image";
+            image.BackColor = Color.Transparent;
+            image.BorderRadius = 10;
+            image.FillColor = Color.Transparent;
+            image.Image = global::LogIn_HiveStock.Properties.Resources.dmmmsu_logo;   // until the product's own picture is set
+            image.Location = new Point(9, 10);
+            image.Size = new Size(258, 141);
+            image.SizeMode = PictureBoxSizeMode.Zoom;
+            image.TabStop = false;
+            image.UseTransparentBackground = true;
+
+            Guna2ContainerControl info = new Guna2ContainerControl();
+            info.BackColor = Color.Transparent;
+            info.BorderRadius = 5;
+            info.FillColor = Color.FromArgb(227, 230, 217);
+            info.Location = new Point(7, 156);
+            info.Size = new Size(263, 159);
+
+            Label title = new Label();
+            title.Name = n + "Title_Label";
+            title.Font = new Font("Malgun Gothic", 11.25F, FontStyle.Bold);
+            title.Location = new Point(3, 0);
+            title.Size = new Size(260, 33);
+            title.Text = "-";
+            title.TextAlign = ContentAlignment.MiddleCenter;
+            title.AutoEllipsis = true;
+
+            Label desc = new Label();
+            desc.Name = n + "Info_Label";
+            desc.Font = new Font("Malgun Gothic", 8.25F);
+            desc.Location = new Point(9, 33);
+            desc.Size = new Size(247, 51);
+            desc.Text = "-";
+            desc.TextAlign = ContentAlignment.TopCenter;
+
+            Label statusCaption = new Label();
+            statusCaption.AutoSize = true;
+            statusCaption.Font = new Font("Microsoft Sans Serif", 9.75F);
+            statusCaption.Location = new Point(13, 83);
+            statusCaption.Text = "Status:";
+
+            Label stock = new Label();
+            stock.Name = "DynStock" + id + "_Status";
+            stock.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            stock.Location = new Point(57, 83);
+            stock.Size = new Size(98, 16);
+            stock.Text = "-";
+
+            Label priceCaption = new Label();
+            priceCaption.AutoSize = true;
+            priceCaption.Font = new Font("Microsoft Sans Serif", 9.75F);
+            priceCaption.Location = new Point(155, 83);
+            priceCaption.Text = "Price:";
+
+            Label price = new Label();
+            price.Name = "DynPricePeso" + id + "_Label";
+            price.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
+            price.Location = new Point(192, 83);
+            price.Size = new Size(64, 16);
+            price.Text = "-";
+
+            Guna2Button notify = new Guna2Button();
+            notify.Name = "DynNotify" + id + "_Button";
+            notify.BorderRadius = 8;
+            notify.Cursor = Cursors.Hand;
+            notify.FillColor = Color.FromArgb(228, 176, 40);
+            notify.ForeColor = Color.Black;
+            notify.Font = new Font("Malgun Gothic", 9F, FontStyle.Bold);
+            notify.Location = new Point(15, 111);
+            notify.Size = new Size(115, 36);
+            notify.Text = "Notify Me";
+            notify.DisabledState.BorderColor = Color.DarkGray;
+            notify.DisabledState.CustomBorderColor = Color.DarkGray;
+            notify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            notify.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            notify.Click += (s, e) =>
+            {
+                Notify_PopUp notifyPopUp = new Notify_PopUp();
+                notifyPopUp.ShowDialog();
+            };
+
+            Guna2Button addToCart = new Guna2Button();
+            addToCart.Name = "DynATC" + id + "_Button";
+            addToCart.BorderRadius = 8;
+            addToCart.Cursor = Cursors.Hand;
+            addToCart.FillColor = Color.FromArgb(18, 77, 28);
+            addToCart.ForeColor = Color.White;
+            addToCart.Font = new Font("Malgun Gothic", 9F, FontStyle.Bold);
+            addToCart.Location = new Point(133, 111);
+            addToCart.Size = new Size(115, 36);
+            addToCart.Text = "Add To Cart";
+            addToCart.DisabledState.BorderColor = Color.DarkGray;
+            addToCart.DisabledState.CustomBorderColor = Color.DarkGray;
+            addToCart.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            addToCart.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+
+            info.Controls.Add(title);
+            info.Controls.Add(desc);
+            info.Controls.Add(statusCaption);
+            info.Controls.Add(stock);
+            info.Controls.Add(priceCaption);
+            info.Controls.Add(price);
+            info.Controls.Add(notify);
+            info.Controls.Add(addToCart);
+
+            card.Controls.Add(info);
+            card.Controls.Add(image);
+            return card;
+        }
+
         private void LoadProductData()
         {
             productsCache.Clear();
 
-            string query = "SELECT product_id, product_name, description, stock_status, price, category_id, product_img FROM product";
+            string query = "SELECT product_id, product_name, description, stock_status, price, category_id, product_img, stock_qty FROM product";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -155,10 +353,10 @@ namespace LogIn_HiveStock
 
                                 if (!string.IsNullOrEmpty(resolvedPath) && File.Exists(resolvedPath))
                                 {
-                                    byte[] bytes = File.ReadAllBytes(resolvedPath);
-                                    using (MemoryStream ms = new MemoryStream(bytes))
+                                    using (FileStream fs = new FileStream(resolvedPath, FileMode.Open, FileAccess.Read))
+                                    using (Image temp = Image.FromStream(fs))
                                     {
-                                        img = Image.FromStream(ms);
+                                        img = new Bitmap(temp);
                                     }
                                 }
                             }
@@ -170,6 +368,7 @@ namespace LogIn_HiveStock
                                 StockStatus = reader["stock_status"].ToString().Trim(),
                                 Price = Convert.ToDecimal(reader["price"]),
                                 CategoryId = Convert.ToInt32(reader["category_id"]),
+                                StockQty = Convert.ToInt32(reader["stock_qty"]),
                                 ProductImage = img
                             };
                         }
@@ -200,6 +399,7 @@ namespace LogIn_HiveStock
             BindProductCard(10, "UnivGala_Container", "UG_Image", "UGTitle_Label", "UGInfo_Label", "UGStock_Status", "UGPricePeso_Label", "UGATC_Button", "UGNotify_Button");
             BindProductCard(11, "UnifPathFit_Container", "UPF_Image", "UPFTitle_Label", "UPFInfo_Label", "UPFStock_Status", "UPFPricePeso_Label", "UPFATC_Button", "UPFNotify_Button");
 
+            SyncCardsWithDatabase();
             ApplyCatalogFilter();
         }
 
@@ -211,11 +411,11 @@ namespace LogIn_HiveStock
             string fileName = Path.GetFileName(cleanPath);
             string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
 
-            string baseFolder = @"C:\xampp\htdocs\hivestock\images";
+            string baseFolder = Path.Combine(Application.StartupPath, "hivestock", "images");
 
             if (!Directory.Exists(baseFolder))
             {
-                baseFolder = Path.Combine(Application.StartupPath, "hivestock", "images");
+                baseFolder = @"C:\xampp\htdocs\hivestock\images";
             }
 
             List<string> candidates = new List<string>
@@ -256,6 +456,13 @@ namespace LogIn_HiveStock
             Control[] priceControls = this.Controls.Find(priceName, true);
 
             Control[] atcButtons = this.Controls.Find(atcName, true);
+            if (atcButtons.Length > 0)
+            {
+                atcButtons[0].Tag = productId;
+                atcButtons[0].Click -= ATC_Button_Click;
+                atcButtons[0].Click += ATC_Button_Click;
+            }
+
             Control[] notifyButtons = this.Controls.Find(notifyName, true);
 
             if (picControls.Length > 0 && picControls[0] is PictureBox pb && p.ProductImage != null)
@@ -447,10 +654,14 @@ namespace LogIn_HiveStock
         }
 
         // --- STUBS FOR DESIGNER CLICK EVENTS ---
-        private void ATC1_Button_Click(object sender, EventArgs e)
+        private void ATC_Button_Click(object sender, EventArgs e)
         {
-            AddToCart_PopUp AddToCart = new AddToCart_PopUp();
-            AddToCart.ShowDialog();
+            if (!(sender is Control ctrl) || !(ctrl.Tag is int productId)) return;
+            if (!productsCache.TryGetValue(productId, out ProductData p)) return;
+
+            AddToCart_PopUp popup = new AddToCart_PopUp();
+            popup.SetProduct(productId, p.Name, p.Price, p.ProductImage, p.StockQty);
+            popup.ShowDialog();
         }
 
         private void Notify3_Button_Click(object sender, EventArgs e)

@@ -57,10 +57,9 @@
             this.EditProduct_Label.BackColor = System.Drawing.Color.Transparent;
             this.EditProduct_Label.Font = new System.Drawing.Font("Malgun Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditProduct_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.EditProduct_Label.Location = new System.Drawing.Point(30, 17);
-            this.EditProduct_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EditProduct_Label.Location = new System.Drawing.Point(40, 21);
             this.EditProduct_Label.Name = "EditProduct_Label";
-            this.EditProduct_Label.Size = new System.Drawing.Size(189, 32);
+            this.EditProduct_Label.Size = new System.Drawing.Size(234, 41);
             this.EditProduct_Label.TabIndex = 10;
             this.EditProduct_Label.Text = "EDIT PRODUCT";
             // 
@@ -73,22 +72,22 @@
             this.EPStatus_Dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EPStatus_Dropdown.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.EPStatus_Dropdown.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.EPStatus_Dropdown.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EPStatus_Dropdown.Font = new System.Drawing.Font("Malgun Gothic", 9F);
             this.EPStatus_Dropdown.ForeColor = System.Drawing.Color.Black;
             this.EPStatus_Dropdown.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.EPStatus_Dropdown.ItemHeight = 30;
             this.EPStatus_Dropdown.Items.AddRange(new object[] {
             "Select Status",
-            "On Stock",
+            "In Stock",
             "Low Stock",
             "Out of Stock"});
             this.EPStatus_Dropdown.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.EPStatus_Dropdown.ItemsAppearance.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.EPStatus_Dropdown.Location = new System.Drawing.Point(451, 119);
-            this.EPStatus_Dropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.EPStatus_Dropdown.Location = new System.Drawing.Point(601, 146);
+            this.EPStatus_Dropdown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EPStatus_Dropdown.Name = "EPStatus_Dropdown";
             this.EPStatus_Dropdown.ShadowDecoration.Depth = 0;
-            this.EPStatus_Dropdown.Size = new System.Drawing.Size(128, 36);
+            this.EPStatus_Dropdown.Size = new System.Drawing.Size(169, 36);
             this.EPStatus_Dropdown.StartIndex = 0;
             this.EPStatus_Dropdown.TabIndex = 47;
             this.EPStatus_Dropdown.Tag = "";
@@ -98,10 +97,9 @@
             this.EPStatus_Label.AutoSize = true;
             this.EPStatus_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPStatus_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPStatus_Label.Location = new System.Drawing.Point(407, 127);
-            this.EPStatus_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPStatus_Label.Location = new System.Drawing.Point(543, 156);
             this.EPStatus_Label.Name = "EPStatus_Label";
-            this.EPStatus_Label.Size = new System.Drawing.Size(44, 15);
+            this.EPStatus_Label.Size = new System.Drawing.Size(53, 20);
             this.EPStatus_Label.TabIndex = 46;
             this.EPStatus_Label.Text = "Status";
             // 
@@ -110,10 +108,9 @@
             this.EPQuantity_Label.AutoSize = true;
             this.EPQuantity_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPQuantity_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPQuantity_Label.Location = new System.Drawing.Point(234, 127);
-            this.EPQuantity_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPQuantity_Label.Location = new System.Drawing.Point(312, 156);
             this.EPQuantity_Label.Name = "EPQuantity_Label";
-            this.EPQuantity_Label.Size = new System.Drawing.Size(56, 15);
+            this.EPQuantity_Label.Size = new System.Drawing.Size(71, 20);
             this.EPQuantity_Label.TabIndex = 45;
             this.EPQuantity_Label.Text = "Quantity";
             // 
@@ -124,10 +121,10 @@
             this.EPQuantity_UpDown.BorderRadius = 10;
             this.EPQuantity_UpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.EPQuantity_UpDown.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EPQuantity_UpDown.Location = new System.Drawing.Point(292, 118);
-            this.EPQuantity_UpDown.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.EPQuantity_UpDown.Location = new System.Drawing.Point(389, 145);
+            this.EPQuantity_UpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EPQuantity_UpDown.Name = "EPQuantity_UpDown";
-            this.EPQuantity_UpDown.Size = new System.Drawing.Size(102, 38);
+            this.EPQuantity_UpDown.Size = new System.Drawing.Size(136, 47);
             this.EPQuantity_UpDown.TabIndex = 44;
             this.EPQuantity_UpDown.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.EPQuantity_UpDown.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
@@ -137,10 +134,9 @@
             this.EPPrice_Label.AutoSize = true;
             this.EPPrice_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPPrice_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPPrice_Label.Location = new System.Drawing.Point(66, 127);
-            this.EPPrice_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPPrice_Label.Location = new System.Drawing.Point(88, 156);
             this.EPPrice_Label.Name = "EPPrice_Label";
-            this.EPPrice_Label.Size = new System.Drawing.Size(35, 15);
+            this.EPPrice_Label.Size = new System.Drawing.Size(43, 20);
             this.EPPrice_Label.TabIndex = 43;
             this.EPPrice_Label.Text = "Price";
             // 
@@ -151,10 +147,10 @@
             this.EPPrice_UpDown.BorderRadius = 10;
             this.EPPrice_UpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.EPPrice_UpDown.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EPPrice_UpDown.Location = new System.Drawing.Point(106, 118);
-            this.EPPrice_UpDown.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.EPPrice_UpDown.Location = new System.Drawing.Point(141, 145);
+            this.EPPrice_UpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EPPrice_UpDown.Name = "EPPrice_UpDown";
-            this.EPPrice_UpDown.Size = new System.Drawing.Size(117, 38);
+            this.EPPrice_UpDown.Size = new System.Drawing.Size(156, 47);
             this.EPPrice_UpDown.TabIndex = 42;
             this.EPPrice_UpDown.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.EPPrice_UpDown.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
@@ -172,9 +168,10 @@
             this.EPCancel_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPCancel_Button.ForeColor = System.Drawing.Color.Black;
             this.EPCancel_Button.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.EPCancel_Button.Location = new System.Drawing.Point(169, 277);
+            this.EPCancel_Button.Location = new System.Drawing.Point(225, 341);
+            this.EPCancel_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EPCancel_Button.Name = "EPCancel_Button";
-            this.EPCancel_Button.Size = new System.Drawing.Size(127, 36);
+            this.EPCancel_Button.Size = new System.Drawing.Size(169, 44);
             this.EPCancel_Button.TabIndex = 37;
             this.EPCancel_Button.Text = "CANCEL";
             this.EPCancel_Button.Click += new System.EventHandler(this.EPCancel_Button_Click);
@@ -192,11 +189,12 @@
             this.EPCreate_Button.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPCreate_Button.ForeColor = System.Drawing.Color.Black;
             this.EPCreate_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.EPCreate_Button.Location = new System.Drawing.Point(310, 277);
+            this.EPCreate_Button.Location = new System.Drawing.Point(413, 341);
+            this.EPCreate_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EPCreate_Button.Name = "EPCreate_Button";
-            this.EPCreate_Button.Size = new System.Drawing.Size(127, 36);
+            this.EPCreate_Button.Size = new System.Drawing.Size(169, 44);
             this.EPCreate_Button.TabIndex = 36;
-            this.EPCreate_Button.Text = "CREATE";
+            this.EPCreate_Button.Text = "UPDATE";
             this.EPCreate_Button.Click += new System.EventHandler(this.EPCreate_Button_Click);
             // 
             // EPDescription_TextBox
@@ -213,14 +211,14 @@
             this.EPDescription_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EPDescription_TextBox.ForeColor = System.Drawing.Color.Black;
             this.EPDescription_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EPDescription_TextBox.Location = new System.Drawing.Point(106, 175);
-            this.EPDescription_TextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.EPDescription_TextBox.Location = new System.Drawing.Point(141, 215);
+            this.EPDescription_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EPDescription_TextBox.MaxLength = 200;
             this.EPDescription_TextBox.Multiline = true;
             this.EPDescription_TextBox.Name = "EPDescription_TextBox";
             this.EPDescription_TextBox.PlaceholderText = "";
             this.EPDescription_TextBox.SelectedText = "";
-            this.EPDescription_TextBox.Size = new System.Drawing.Size(463, 80);
+            this.EPDescription_TextBox.Size = new System.Drawing.Size(617, 98);
             this.EPDescription_TextBox.TabIndex = 14;
             // 
             // EPDescription_Label
@@ -228,10 +226,9 @@
             this.EPDescription_Label.AutoSize = true;
             this.EPDescription_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPDescription_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPDescription_Label.Location = new System.Drawing.Point(30, 181);
-            this.EPDescription_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPDescription_Label.Location = new System.Drawing.Point(40, 223);
             this.EPDescription_Label.Name = "EPDescription_Label";
-            this.EPDescription_Label.Size = new System.Drawing.Size(73, 15);
+            this.EPDescription_Label.Size = new System.Drawing.Size(89, 20);
             this.EPDescription_Label.TabIndex = 13;
             this.EPDescription_Label.Text = "Description";
             // 
@@ -255,11 +252,11 @@
             "Uniform"});
             this.EPCategory_Dropdown.ItemsAppearance.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             this.EPCategory_Dropdown.ItemsAppearance.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(227)))));
-            this.EPCategory_Dropdown.Location = new System.Drawing.Point(438, 18);
-            this.EPCategory_Dropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.EPCategory_Dropdown.Location = new System.Drawing.Point(584, 22);
+            this.EPCategory_Dropdown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EPCategory_Dropdown.Name = "EPCategory_Dropdown";
             this.EPCategory_Dropdown.ShadowDecoration.Depth = 0;
-            this.EPCategory_Dropdown.Size = new System.Drawing.Size(148, 34);
+            this.EPCategory_Dropdown.Size = new System.Drawing.Size(196, 34);
             this.EPCategory_Dropdown.StartIndex = 0;
             this.EPCategory_Dropdown.TabIndex = 10;
             this.EPCategory_Dropdown.Tag = "";
@@ -270,10 +267,9 @@
             this.EPProductName_Label.BackColor = System.Drawing.Color.Transparent;
             this.EPProductName_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPProductName_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPProductName_Label.Location = new System.Drawing.Point(14, 76);
-            this.EPProductName_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPProductName_Label.Location = new System.Drawing.Point(19, 94);
             this.EPProductName_Label.Name = "EPProductName_Label";
-            this.EPProductName_Label.Size = new System.Drawing.Size(91, 15);
+            this.EPProductName_Label.Size = new System.Drawing.Size(111, 20);
             this.EPProductName_Label.TabIndex = 9;
             this.EPProductName_Label.Text = "Product Name";
             // 
@@ -291,13 +287,13 @@
             this.EPProductName_TextBox.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPProductName_TextBox.ForeColor = System.Drawing.Color.Black;
             this.EPProductName_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.EPProductName_TextBox.Location = new System.Drawing.Point(106, 69);
-            this.EPProductName_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.EPProductName_TextBox.Location = new System.Drawing.Point(141, 85);
+            this.EPProductName_TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EPProductName_TextBox.MaxLength = 15;
             this.EPProductName_TextBox.Name = "EPProductName_TextBox";
             this.EPProductName_TextBox.PlaceholderText = "";
             this.EPProductName_TextBox.SelectedText = "";
-            this.EPProductName_TextBox.Size = new System.Drawing.Size(252, 29);
+            this.EPProductName_TextBox.Size = new System.Drawing.Size(336, 36);
             this.EPProductName_TextBox.TabIndex = 8;
             // 
             // EPCategory_Label
@@ -305,10 +301,9 @@
             this.EPCategory_Label.AutoSize = true;
             this.EPCategory_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPCategory_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPCategory_Label.Location = new System.Drawing.Point(378, 28);
-            this.EPCategory_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPCategory_Label.Location = new System.Drawing.Point(504, 34);
             this.EPCategory_Label.Name = "EPCategory_Label";
-            this.EPCategory_Label.Size = new System.Drawing.Size(60, 15);
+            this.EPCategory_Label.Size = new System.Drawing.Size(73, 20);
             this.EPCategory_Label.TabIndex = 6;
             this.EPCategory_Label.Text = "Category";
             // 
@@ -326,13 +321,13 @@
             this.EPProductID_TextBox.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPProductID_TextBox.ForeColor = System.Drawing.Color.Black;
             this.EPProductID_TextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.EPProductID_TextBox.Location = new System.Drawing.Point(106, 19);
-            this.EPProductID_TextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.EPProductID_TextBox.Location = new System.Drawing.Point(141, 23);
+            this.EPProductID_TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EPProductID_TextBox.MaxLength = 15;
             this.EPProductID_TextBox.Name = "EPProductID_TextBox";
             this.EPProductID_TextBox.PlaceholderText = "";
             this.EPProductID_TextBox.SelectedText = "";
-            this.EPProductID_TextBox.Size = new System.Drawing.Size(252, 31);
+            this.EPProductID_TextBox.Size = new System.Drawing.Size(336, 38);
             this.EPProductID_TextBox.TabIndex = 5;
             // 
             // EPInfo_Panel
@@ -354,10 +349,10 @@
             this.EPInfo_Panel.Controls.Add(this.EPCategory_Label);
             this.EPInfo_Panel.Controls.Add(this.EPProductID_TextBox);
             this.EPInfo_Panel.Controls.Add(this.EPProductID_Label);
-            this.EPInfo_Panel.Location = new System.Drawing.Point(5, 70);
-            this.EPInfo_Panel.Margin = new System.Windows.Forms.Padding(2);
+            this.EPInfo_Panel.Location = new System.Drawing.Point(7, 86);
+            this.EPInfo_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EPInfo_Panel.Name = "EPInfo_Panel";
-            this.EPInfo_Panel.Size = new System.Drawing.Size(606, 327);
+            this.EPInfo_Panel.Size = new System.Drawing.Size(808, 402);
             this.EPInfo_Panel.TabIndex = 9;
             // 
             // EPProductID_Label
@@ -365,22 +360,22 @@
             this.EPProductID_Label.AutoSize = true;
             this.EPProductID_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPProductID_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.EPProductID_Label.Location = new System.Drawing.Point(34, 28);
-            this.EPProductID_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EPProductID_Label.Location = new System.Drawing.Point(45, 34);
             this.EPProductID_Label.Name = "EPProductID_Label";
-            this.EPProductID_Label.Size = new System.Drawing.Size(69, 15);
+            this.EPProductID_Label.Size = new System.Drawing.Size(85, 20);
             this.EPProductID_Label.TabIndex = 0;
             this.EPProductID_Label.Text = "Product ID";
             // 
             // PM_EditProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(616, 405);
+            this.ClientSize = new System.Drawing.Size(821, 498);
             this.Controls.Add(this.EditProduct_Label);
             this.Controls.Add(this.EPInfo_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PM_EditProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.EPQuantity_UpDown)).EndInit();
