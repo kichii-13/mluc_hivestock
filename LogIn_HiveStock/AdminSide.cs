@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using MySqlConnector;
+using System.Drawing;
 
 namespace LogIn_HiveStock
 {
@@ -12,7 +13,9 @@ namespace LogIn_HiveStock
     {
         private readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
-
+        private readonly System.Windows.Forms.Timer orderRefreshTimer =
+        new System.Windows.Forms.Timer { Interval = 5000 };   // 5 seconds
+        private string lastOrderSignature = "";
         private readonly LogIn_Register loginForm;   // the login form to return to on logout
         private bool loggingOut;
 
@@ -23,6 +26,7 @@ namespace LogIn_HiveStock
             public int OrderItemId;
             public bool Received;
             public int OrderId;
+            public string PaymentStatus;
         }
 
         // The grids are filled from these lists, so searching does not need the database again.
@@ -35,11 +39,16 @@ namespace LogIn_HiveStock
             this.Load += AdminSide_Load;   // the designer never attached this
         }
 
-        public AdminSide(string staffName, string staffIdNumber, LogIn_Register login) : this()
+        private readonly bool isAdmin;
+        private readonly string staffName = "";
+        public AdminSide(string staffName, string staffIdNumber, string role, LogIn_Register login) : this()
         {
             loginForm = login;
+            this.staffName = staffName;
+            isAdmin = string.Equals(role, "Admin", StringComparison.OrdinalIgnoreCase);
+
             StaffName_Label.Text = staffName;
-            StaffIDNumber_Label.Text = staffIdNumber;
+            StaffIDNumber_Label.Text = staffIdNumber + " (" + (isAdmin ? "Admin" : "Staff") + ")";
         }
 
         private void View_Button_Click(object sender, EventArgs e)
@@ -54,8 +63,11 @@ namespace LogIn_HiveStock
             OrderRow row = dataGridView1.SelectedRows[0].Tag as OrderRow;
             if (row == null) return;
 
-            using (OrderDetails details = new OrderDetails(row.OrderId))
+            using (OrderDetails details = new OrderDetails(row.OrderId, isAdmin, staffName))
+            {
                 details.ShowDialog(this);
+                if (details.Changed) LoadAdminData();   // a payment was verified or rejected
+            }
         }
 
         private void AdminSide_Load(object sender, EventArgs e)
@@ -76,11 +88,71 @@ namespace LogIn_HiveStock
             Delete_Button.Click += Delete_Button_Click;
             Complete_Button.Click += Complete_Button_Click;
             View_Button.Click += View_Button_Click;
+            orderRefreshTimer.Tick += OrderRefreshTimer_Tick;
+            orderRefreshTimer.Start();
 
             // Closing the admin window with the X closes the whole app (logout does not).
-            this.FormClosed += (s, ev) => { if (!loggingOut) Application.Exit(); };
+            this.FormClosed += (s, ev) =>
+            {
+                orderRefreshTimer.Stop();
+                orderRefreshTimer.Dispose();
+                if (!loggingOut) Application.Exit();
+            };
 
+            ApplyRolePermissions();
             ShowPanel(AdminDashboard_Panel);
+        }
+
+        // A query that changes whenever an order is placed, verified, rejected or handed over.
+        private string GetOrderSignature()
+        {
+            using (MySqlConnection conn = OpenConnection())
+            using (MySqlCommand cmd = new MySqlCommand(
+                @"SELECT COUNT(*), COALESCE(MAX(order_id), 0), COALESCE(SUM(is_completed), 0),
+                 COALESCE(SUM(payment_status = 'Paid'), 0),
+                 COALESCE(SUM(payment_status = 'Rejected'), 0),
+                 (SELECT COALESCE(SUM(is_received), 0) FROM customer_order_items)
+          FROM customer_orders", conn))
+            using (MySqlDataReader r = cmd.ExecuteReader())
+            {
+                r.Read();
+                return r[0] + "|" + r[1] + "|" + r[2] + "|" + r[3] + "|" + r[4] + "|" + r[5];
+            }
+        }
+
+        private void OrderRefreshTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                string signature = GetOrderSignature();
+                if (signature == lastOrderSignature) return;   // nothing new
+
+                lastOrderSignature = signature;
+                LoadOrders();           // order cards, dashboard cards and the order grid
+                LoadDashboardExtras();  // Highest-Demand Products depends on orders too
+            }
+            catch
+            {
+                // database busy or offline: simply try again on the next tick
+            }
+        }
+
+        // Staff can view and search everything and hand over paid orders, but cannot change products.
+        // To give staff more rights, change the lines below.
+        private void ApplyRolePermissions()
+        {
+            Create_Button.Enabled = isAdmin;
+            Edit_Button.Enabled = isAdmin;
+            Delete_Button.Enabled = isAdmin;
+        }
+
+        private bool RequireAdmin()
+        {
+            if (isAdmin) return true;
+
+            MessageBox.Show("Only an administrator can do this.", "Access Denied",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
         }
 
         private static void SetupGrid(DataGridView grid, bool multiSelect)
@@ -145,6 +217,7 @@ namespace LogIn_HiveStock
 
         private void Create_Button_Click(object sender, EventArgs e)
         {
+            if (!RequireAdmin()) return;
             PM_CreateProduct createProductForm = new PM_CreateProduct();
             if (createProductForm.ShowDialog() == DialogResult.OK)
                 LoadAdminData();
@@ -152,6 +225,7 @@ namespace LogIn_HiveStock
 
         private void Edit_Button_Click(object sender, EventArgs e)
         {
+            if (!RequireAdmin()) return;
             // If a product is selected in the table, open the form with it already loaded.
             int selectedId = 0;
             if (DataTable.SelectedRows.Count > 0)
@@ -164,6 +238,7 @@ namespace LogIn_HiveStock
 
         private void Delete_Button_Click(object sender, EventArgs e)
         {
+            if (!RequireAdmin()) return;
             if (DataTable.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Select the product you want to delete in the table first.",
@@ -221,73 +296,62 @@ namespace LogIn_HiveStock
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Select the order row(s) you want to complete first.",
+                MessageBox.Show("Select the order row(s) you want to hand over first.",
                     "Complete Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             List<int> ids = new List<int>();
+            HashSet<int> touchedOrders = new HashSet<int>();
+            bool unpaidSelected = false;
+
             foreach (DataGridViewRow gridRow in dataGridView1.SelectedRows)
             {
                 OrderRow row = gridRow.Tag as OrderRow;
-                if (row != null && !row.Received) ids.Add(row.OrderItemId);
+                if (row == null || row.Received) continue;
+
+                if (row.PaymentStatus != OrderManager.PaymentPaid) { unpaidSelected = true; continue; }
+                ids.Add(row.OrderItemId);
+                touchedOrders.Add(row.OrderId);
             }
 
             if (ids.Count == 0)
             {
-                MessageBox.Show("The selected item(s) are already completed.",
+                MessageBox.Show(unpaidSelected
+                    ? "These items cannot be handed over yet because their payment is not verified. An administrator can verify it under View."
+                    : "The selected item(s) are already completed.",
                     "Complete Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult answer = MessageBox.Show(
-                "Mark " + ids.Count + (ids.Count == 1 ? " item" : " items") + " as completed (picked up)?\n\n" +
-                "This cannot be undone.",
-                "Complete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            string message = "Hand over " + ids.Count + (ids.Count == 1 ? " item" : " items") +
+                             " to the student and mark as received?\n\nThis cannot be undone.";
+            if (unpaidSelected)
+                message += "\n\n(Selected items still waiting for payment verification are skipped.)";
 
-            if (answer != DialogResult.Yes) return;
+            if (MessageBox.Show(message, "Complete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
 
-            try
+            int released = OrderManager.ReleaseItems(ids, staffName);
+            LoadAdminData();   // reloads orderRows, so we can see which orders are now fully received
+
+            if (released > 0)
             {
-                using (MySqlConnection conn = OpenConnection())
-                using (MySqlTransaction tx = conn.BeginTransaction())
-                {
-                    DateTime now = DateTime.Now;
+                // An order counts as completed when every one of its items is now received.
+                List<string> completedOrders = touchedOrders
+                    .Where(id => orderRows.Where(r => r.OrderId == id).All(r => r.Received))
+                    .OrderBy(id => id)
+                    .Select(id => "HS-" + id.ToString("D4"))
+                    .ToList();
 
-                    foreach (int id in ids)
-                    {
-                        using (MySqlCommand cmd = new MySqlCommand(
-                            @"UPDATE customer_order_items
-                              SET is_received = 1, received_at = @t
-                              WHERE order_item_id = @id AND is_received = 0", conn, tx))
-                        {
-                            cmd.Parameters.AddWithValue("@t", now);
-                            cmd.Parameters.AddWithValue("@id", id);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
+                string done = released == 1
+                    ? "1 item was handed over and marked as received."
+                    : released + " items were handed over and marked as received.";
 
-                    // Close out any order whose products have all been received.
-                    using (MySqlCommand cmd = new MySqlCommand(
-                        @"UPDATE customer_orders o
-                          SET o.is_completed = 1, o.completed_at = @t
-                          WHERE o.is_completed = 0
-                            AND NOT EXISTS (SELECT 1 FROM customer_order_items i
-                                            WHERE i.order_id = o.order_id AND i.is_received = 0)", conn, tx))
-                    {
-                        cmd.Parameters.AddWithValue("@t", now);
-                        cmd.ExecuteNonQuery();
-                    }
+                if (completedOrders.Count > 0)
+                    done += "\n\nTransaction completed: " + string.Join(", ", completedOrders);
 
-                    tx.Commit();
-                }
-
-                LoadAdminData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Could not complete the order: " + ex.Message,
-                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(done, "Order Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -295,9 +359,37 @@ namespace LogIn_HiveStock
 
         private void LoadAdminData()
         {
+            TriggerRestockNotifications(); // Automatically sync pending notifications for restocked products
             LoadProducts();
             LoadOrders();
             LoadDashboardExtras();
+        }
+
+        // Flips PENDING restock notifications to SENT for any product that currently has stock
+        private void TriggerRestockNotifications()
+        {
+            try
+            {
+                using (MySqlConnection conn = OpenConnection())
+                {
+                    string notifQuery = @"UPDATE notification_subscription ns
+                                         JOIN product p ON ns.product_id = p.product_id
+                                         SET ns.status = 'SENT',
+                                             ns.notified_at = NOW()
+                                         WHERE ns.status = 'PENDING'
+                                           AND (LOWER(p.stock_status) IN ('in stock', 'low stock', 'on stock') 
+                                                OR p.stock_qty > 0)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(notifQuery, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error triggering restock notifications: " + ex.Message);
+            }
         }
 
         private MySqlConnection OpenConnection()
@@ -407,13 +499,12 @@ namespace LogIn_HiveStock
         private void LoadOrders()
         {
             orderRows.Clear();
-            int totalOrders = 0, completedOrders = 0;
+            int totalOrders = 0, completedOrders = 0, rejectedOrders = 0;
 
             try
             {
                 using (MySqlConnection conn = OpenConnection())
                 {
-                    // Student names come from the users table, looked up by ID number.
                     Dictionary<string, string> names =
                         new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
@@ -427,15 +518,15 @@ namespace LogIn_HiveStock
                     }
 
                     using (MySqlCommand cmd = new MySqlCommand(
-                        @"SELECT o.order_id, o.user_key, o.placed_at, o.receipt_file,
-                                 i.order_item_id, i.product_name, i.quantity, i.unit_price, i.is_received,
-                                 (SELECT COUNT(*) FROM customer_order_items x
-                                  WHERE x.order_id = o.order_id) AS item_count,
-                                 (SELECT COUNT(*) FROM customer_order_items x
-                                  WHERE x.order_id = o.order_id AND x.is_received = 1) AS received_count
-                          FROM customer_orders o
-                          JOIN customer_order_items i ON i.order_id = o.order_id
-                          ORDER BY o.placed_at DESC, o.order_id DESC, i.order_item_id", conn))
+                        @"SELECT o.order_id, o.user_key, o.placed_at, o.receipt_file, o.payment_status,
+                         i.order_item_id, i.product_name, i.quantity, i.unit_price, i.is_received,
+                         (SELECT COUNT(*) FROM customer_order_items x
+                          WHERE x.order_id = o.order_id) AS item_count,
+                         (SELECT COUNT(*) FROM customer_order_items x
+                          WHERE x.order_id = o.order_id AND x.is_received = 1) AS received_count
+                  FROM customer_orders o
+                  JOIN customer_order_items i ON i.order_id = o.order_id
+                  ORDER BY o.placed_at DESC, o.order_id DESC, i.order_item_id", conn))
                     using (MySqlDataReader r = cmd.ExecuteReader())
                     {
                         while (r.Read())
@@ -450,38 +541,42 @@ namespace LogIn_HiveStock
                             bool received = Convert.ToInt32(r["is_received"]) != 0;
                             int itemCount = Convert.ToInt32(r["item_count"]);
                             int receivedCount = Convert.ToInt32(r["received_count"]);
+                            string payment = r["payment_status"].ToString();
 
                             orderRows.Add(new OrderRow
                             {
-                                OrderItemId = Convert.ToInt32(r["order_item_id"]),
                                 OrderId = Convert.ToInt32(r["order_id"]),
+                                OrderItemId = Convert.ToInt32(r["order_item_id"]),
                                 Received = received,
+                                PaymentStatus = payment,
                                 Cells = new object[]
                                 {
-                                    "HS-" + Convert.ToInt32(r["order_id"]).ToString("D4"),
-                                    studentNo,
-                                    studentName,
-                                    r["product_name"].ToString(),
-                                    quantity,
-                                    "\u20B1" + total.ToString("N2"),
-                                    Convert.ToDateTime(r["placed_at"]).ToString("dd MMM yyyy h:mm tt", CultureInfo.InvariantCulture),
-                                    r["receipt_file"] == DBNull.Value ? "" : r["receipt_file"].ToString(),
-                                    received ? "Received" : "Pending",
-                                    TransactionStatus(itemCount, receivedCount)
+                            "HS-" + Convert.ToInt32(r["order_id"]).ToString("D4"),
+                            studentNo,
+                            studentName,
+                            r["product_name"].ToString(),
+                            quantity,
+                            "\u20B1" + total.ToString("N2"),
+                            Convert.ToDateTime(r["placed_at"]).ToString("dd MMM yyyy h:mm tt", CultureInfo.InvariantCulture),
+                            r["receipt_file"] == DBNull.Value ? "" : r["receipt_file"].ToString(),
+                            received ? "Received" : "Pending",
+                            OrderManager.TransactionStatus(payment, itemCount, receivedCount)
                                 }
                             });
                         }
                     }
 
-                    // An order is completed once all of its products have been received.
                     using (MySqlCommand cmd = new MySqlCommand(
-                        "SELECT COUNT(*), COALESCE(SUM(is_completed), 0) FROM customer_orders", conn))
+                        @"SELECT COUNT(*), COALESCE(SUM(is_completed), 0),
+                         COALESCE(SUM(payment_status = 'Rejected'), 0)
+                  FROM customer_orders", conn))
                     using (MySqlDataReader r = cmd.ExecuteReader())
                     {
                         if (r.Read())
                         {
                             totalOrders = Convert.ToInt32(r[0]);
                             completedOrders = Convert.ToInt32(r[1]);
+                            rejectedOrders = Convert.ToInt32(r[2]);
                         }
                     }
                 }
@@ -492,14 +587,13 @@ namespace LogIn_HiveStock
                     "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            int pendingOrders = totalOrders - completedOrders;
+            // Pending = not completed and not rejected (still verifying, or waiting to be handed over).
+            int pendingOrders = totalOrders - completedOrders - rejectedOrders;
 
-            // Order Management panel counters
             OMTO_Counter.Text = totalOrders.ToString();
             OMPP_Counter.Text = pendingOrders.ToString();
             OMOC_Counter.Text = completedOrders.ToString();
 
-            // Dashboard counters
             TO_Counter.Text = totalOrders.ToString();
             PP_Counter.Text = pendingOrders.ToString();
             OC_Counter.Text = completedOrders.ToString();
@@ -508,18 +602,57 @@ namespace LogIn_HiveStock
         }
 
         // Search: matches any column (order no., student, product, date, status, ...).
+        private static readonly Color VerifyingColor = Color.FromArgb(255, 224, 178);  // orange: receipt not checked yet
+        private static readonly Color ReadyColor = Color.FromArgb(255, 246, 200);  // cream: paid, waiting for pickup
+        private static readonly Color RejectedColor = Color.FromArgb(248, 213, 213);  // red: payment rejected
+
+        private static void StyleOrderRow(DataGridViewRow gridRow, OrderRow row)
+        {
+            if (row.Received)
+                gridRow.DefaultCellStyle.ForeColor = Color.DimGray;           // finished: greyed out
+            else if (row.PaymentStatus == OrderManager.PaymentRejected)
+                gridRow.DefaultCellStyle.BackColor = RejectedColor;
+            else if (row.PaymentStatus == OrderManager.PaymentPaid)
+                gridRow.DefaultCellStyle.BackColor = ReadyColor;
+            else
+                gridRow.DefaultCellStyle.BackColor = VerifyingColor;
+        }
+
         private void FillOrderGrid()
         {
             string q = (OMSearch_Input.Text ?? "").Trim().ToLower();
 
+            // remember the selection and scroll position, so a refresh does not clear them
+            HashSet<int> selectedIds = new HashSet<int>();
+            foreach (DataGridViewRow selected in dataGridView1.SelectedRows)
+            {
+                OrderRow selectedRow = selected.Tag as OrderRow;
+                if (selectedRow != null) selectedIds.Add(selectedRow.OrderItemId);
+            }
+            int firstVisible = dataGridView1.FirstDisplayedScrollingRowIndex;
+
             dataGridView1.Rows.Clear();
-            foreach (OrderRow row in orderRows)
+            foreach (OrderRow row in orderRows.OrderBy(o => o.Received ? 1 : 0))
             {
                 if (q.Length == 0 || row.Cells.Any(c => c.ToString().ToLower().Contains(q)))
                 {
                     int index = dataGridView1.Rows.Add(row.Cells);
-                    dataGridView1.Rows[index].Tag = row;   // Complete reads the item id from here
+                    DataGridViewRow gridRow = dataGridView1.Rows[index];
+                    gridRow.Tag = row;   // Complete reads the item id from here
+                    StyleOrderRow(gridRow, row);
                 }
+            }
+
+            // put the selection and scroll position back
+            dataGridView1.ClearSelection();
+            foreach (DataGridViewRow gridRow in dataGridView1.Rows)
+            {
+                OrderRow r = gridRow.Tag as OrderRow;
+                if (r != null && selectedIds.Contains(r.OrderItemId)) gridRow.Selected = true;
+            }
+            if (firstVisible >= 0 && firstVisible < dataGridView1.Rows.Count)
+            {
+                try { dataGridView1.FirstDisplayedScrollingRowIndex = firstVisible; } catch { }
             }
         }
 

@@ -65,6 +65,8 @@
             this.MLUC = new System.Windows.Forms.Label();
             this.LogIn_Panel = new System.Windows.Forms.Panel();
             this.Forgot_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ForgotPhoneNumber_Label = new System.Windows.Forms.Label();
+            this.Phone_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.FConfirmNewPass_Label = new System.Windows.Forms.Label();
             this.Confirm_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.ForgotCancel_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -76,7 +78,6 @@
             this.FEmail_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Input_Panel = new System.Windows.Forms.Panel();
             this.ForgotPassword_Link = new System.Windows.Forms.LinkLabel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Input_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.Input_StudentID = new Guna.UI2.WinForms.Guna2TextBox();
             this.LogIn_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -92,8 +93,6 @@
             this.SignUp_Hyperlink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ForgotPhoneNumber_Label = new System.Windows.Forms.Label();
-            this.Phone_Input = new Guna.UI2.WinForms.Guna2TextBox();
             this.Register_Panel.SuspendLayout();
             this.Register_Input.SuspendLayout();
             this.LogIn_Container.SuspendLayout();
@@ -278,7 +277,7 @@
             this.IDNumber_Input.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IDNumber_Input.MaxLength = 10;
             this.IDNumber_Input.Name = "IDNumber_Input";
-            this.IDNumber_Input.PlaceholderText = "8-digit ID number";
+            this.IDNumber_Input.PlaceholderText = "6 or 8 ID number";
             this.IDNumber_Input.SelectedText = "";
             this.IDNumber_Input.Size = new System.Drawing.Size(161, 29);
             this.IDNumber_Input.TabIndex = 30;
@@ -713,6 +712,43 @@
             this.Forgot_Panel.TabIndex = 11;
             this.Forgot_Panel.Visible = false;
             // 
+            // ForgotPhoneNumber_Label
+            // 
+            this.ForgotPhoneNumber_Label.AutoSize = true;
+            this.ForgotPhoneNumber_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotPhoneNumber_Label.ForeColor = System.Drawing.Color.DimGray;
+            this.ForgotPhoneNumber_Label.Location = new System.Drawing.Point(28, 58);
+            this.ForgotPhoneNumber_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ForgotPhoneNumber_Label.Name = "ForgotPhoneNumber_Label";
+            this.ForgotPhoneNumber_Label.Size = new System.Drawing.Size(94, 15);
+            this.ForgotPhoneNumber_Label.TabIndex = 29;
+            this.ForgotPhoneNumber_Label.Text = "Phone Number";
+            // 
+            // Phone_Input
+            // 
+            this.Phone_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
+            this.Phone_Input.BorderRadius = 10;
+            this.Phone_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Phone_Input.DefaultText = "";
+            this.Phone_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Phone_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Phone_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Phone_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Phone_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Phone_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phone_Input.ForeColor = System.Drawing.Color.Black;
+            this.Phone_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
+            this.Phone_Input.IconLeft = ((System.Drawing.Image)(resources.GetObject("Phone_Input.IconLeft")));
+            this.Phone_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
+            this.Phone_Input.Location = new System.Drawing.Point(32, 75);
+            this.Phone_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Phone_Input.MaxLength = 600;
+            this.Phone_Input.Name = "Phone_Input";
+            this.Phone_Input.PlaceholderText = "";
+            this.Phone_Input.SelectedText = "";
+            this.Phone_Input.Size = new System.Drawing.Size(310, 34);
+            this.Phone_Input.TabIndex = 30;
+            // 
             // FConfirmNewPass_Label
             // 
             this.FConfirmNewPass_Label.AutoSize = true;
@@ -895,7 +931,6 @@
             this.Input_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Input_Panel.CausesValidation = false;
             this.Input_Panel.Controls.Add(this.ForgotPassword_Link);
-            this.Input_Panel.Controls.Add(this.guna2Button1);
             this.Input_Panel.Controls.Add(this.Input_Password);
             this.Input_Panel.Controls.Add(this.Input_StudentID);
             this.Input_Panel.Controls.Add(this.LogIn_Button);
@@ -915,7 +950,7 @@
             this.ForgotPassword_Link.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForgotPassword_Link.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForgotPassword_Link.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.ForgotPassword_Link.Location = new System.Drawing.Point(222, 152);
+            this.ForgotPassword_Link.Location = new System.Drawing.Point(222, 179);
             this.ForgotPassword_Link.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ForgotPassword_Link.Name = "ForgotPassword_Link";
             this.ForgotPassword_Link.Size = new System.Drawing.Size(118, 17);
@@ -923,25 +958,6 @@
             this.ForgotPassword_Link.TabStop = true;
             this.ForgotPassword_Link.Text = "Forgot Password?";
             this.ForgotPassword_Link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgotPassword_Link_LinkClicked);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2Button1.Location = new System.Drawing.Point(31, 226);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(309, 30);
-            this.guna2Button1.TabIndex = 12;
-            this.guna2Button1.Text = "LOG IN AS STAFF";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Input_Password
             // 
@@ -961,7 +977,7 @@
             this.Input_Password.IconLeftOffset = new System.Drawing.Point(7, 0);
             this.Input_Password.IconRight = global::LogIn_HiveStock.Properties.Resources.hide;
             this.Input_Password.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.Input_Password.Location = new System.Drawing.Point(31, 106);
+            this.Input_Password.Location = new System.Drawing.Point(31, 127);
             this.Input_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_Password.MaxLength = 30;
             this.Input_Password.Name = "Input_Password";
@@ -988,7 +1004,7 @@
             this.Input_StudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
             this.Input_StudentID.IconLeft = global::LogIn_HiveStock.Properties.Resources.login;
             this.Input_StudentID.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Input_StudentID.Location = new System.Drawing.Point(30, 35);
+            this.Input_StudentID.Location = new System.Drawing.Point(30, 44);
             this.Input_StudentID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Input_StudentID.MaxLength = 15;
             this.Input_StudentID.Name = "Input_StudentID";
@@ -1009,7 +1025,7 @@
             this.LogIn_Button.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Button.ForeColor = System.Drawing.Color.Black;
             this.LogIn_Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(176)))), ((int)(((byte)(40)))));
-            this.LogIn_Button.Location = new System.Drawing.Point(31, 181);
+            this.LogIn_Button.Location = new System.Drawing.Point(31, 209);
             this.LogIn_Button.Name = "LogIn_Button";
             this.LogIn_Button.Size = new System.Drawing.Size(309, 38);
             this.LogIn_Button.TabIndex = 10;
@@ -1021,7 +1037,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(26, 84);
+            this.label1.Location = new System.Drawing.Point(26, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 20);
@@ -1033,10 +1049,10 @@
             this.User_Label.AutoSize = true;
             this.User_Label.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.User_Label.Location = new System.Drawing.Point(26, 14);
+            this.User_Label.Location = new System.Drawing.Point(26, 17);
             this.User_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.User_Label.Name = "User_Label";
-            this.User_Label.Size = new System.Drawing.Size(85, 20);
+            this.User_Label.Size = new System.Drawing.Size(88, 20);
             this.User_Label.TabIndex = 1;
             this.User_Label.Text = "ID Number";
             // 
@@ -1171,43 +1187,6 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "DMMMSU MLUC";
             // 
-            // ForgotPhoneNumber_Label
-            // 
-            this.ForgotPhoneNumber_Label.AutoSize = true;
-            this.ForgotPhoneNumber_Label.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotPhoneNumber_Label.ForeColor = System.Drawing.Color.DimGray;
-            this.ForgotPhoneNumber_Label.Location = new System.Drawing.Point(28, 58);
-            this.ForgotPhoneNumber_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ForgotPhoneNumber_Label.Name = "ForgotPhoneNumber_Label";
-            this.ForgotPhoneNumber_Label.Size = new System.Drawing.Size(94, 15);
-            this.ForgotPhoneNumber_Label.TabIndex = 29;
-            this.ForgotPhoneNumber_Label.Text = "Phone Number";
-            // 
-            // Phone_Input
-            // 
-            this.Phone_Input.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
-            this.Phone_Input.BorderRadius = 10;
-            this.Phone_Input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Phone_Input.DefaultText = "";
-            this.Phone_Input.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Phone_Input.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Phone_Input.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Phone_Input.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Phone_Input.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Phone_Input.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone_Input.ForeColor = System.Drawing.Color.Black;
-            this.Phone_Input.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(24)))), ((int)(((byte)(73)))));
-            this.Phone_Input.IconLeft = ((System.Drawing.Image)(resources.GetObject("Phone_Input.IconLeft")));
-            this.Phone_Input.IconLeftOffset = new System.Drawing.Point(7, 0);
-            this.Phone_Input.Location = new System.Drawing.Point(32, 75);
-            this.Phone_Input.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Phone_Input.MaxLength = 600;
-            this.Phone_Input.Name = "Phone_Input";
-            this.Phone_Input.PlaceholderText = "";
-            this.Phone_Input.SelectedText = "";
-            this.Phone_Input.Size = new System.Drawing.Size(310, 34);
-            this.Phone_Input.TabIndex = 30;
-            // 
             // LogIn_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1296,7 +1275,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2CircleButton R_Back_Button;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.LinkLabel ForgotPassword_Link;
         private Guna.UI2.WinForms.Guna2Panel Forgot_Panel;
         private System.Windows.Forms.Label FEmail_Label;

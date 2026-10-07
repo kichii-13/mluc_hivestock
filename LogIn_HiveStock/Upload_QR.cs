@@ -27,6 +27,14 @@ namespace LogIn_HiveStock
             Upload_Button.Click += Upload_Button_Click;
         }
 
+        // The ticked items from the cart: only these are paid for and ordered.
+        private List<CartItem> orderItems = new List<CartItem>();
+
+        public Upload_QR(List<CartItem> items) : this()
+        {
+            orderItems = items ?? new List<CartItem>();
+        }
+
         private void Upload_Button_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
@@ -79,14 +87,15 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            if (CartManager.Items.Count == 0)
+            if (orderItems.Count == 0)
             {
-                MessageBox.Show("Your cart is empty.", "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("There is nothing to pay for. Go back to your cart and tick the items you want to buy.",
+                    "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 return;
             }
 
-            // Keep a copy of the receipt picture so staff can view it later, then record the order.
+            // Keep a copy of the receipt picture so the admin can check it later.
             string savedReceipt;
             try
             {
@@ -99,14 +108,18 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            OrderRecord placed = OrderManager.PlaceOrder(UserSession.OrderKey, CartManager.Items, savedReceipt);
+            // Only the ticked items become an order (its status starts as "Verifying Payment").
+            OrderRecord placed = OrderManager.PlaceOrder(UserSession.OrderKey, orderItems, savedReceipt);
             if (placed == null)
             {
                 // The order failed (a message was already shown): keep the cart and drop the copy.
                 try { File.Delete(Path.Combine(ProductImages.ReceiptsFolder(), savedReceipt)); } catch { }
                 return;
             }
-            CartManager.Clear();
+
+            // Take only the bought items out of the cart; everything else stays.
+            foreach (CartItem item in orderItems.ToList())
+                CartManager.RemoveItem(item);
 
             using (PaymentComplete paymentCompleteForm = new PaymentComplete())
             {

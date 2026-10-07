@@ -36,6 +36,14 @@ namespace LogIn_HiveStock
             public int StockQty { get; set; }
         }
 
+        private class RestockNotificationData
+        {
+            public int ProductId { get; set; }
+            public string ProductName { get; set; }
+            public DateTime? NotifiedAt { get; set; }
+            public bool IsRead { get; set; }
+        }
+
         private Dictionary<int, ProductData> productsCache = new Dictionary<int, ProductData>();
 
         // Store original Y positions and panel height from Designer layout
@@ -76,6 +84,9 @@ namespace LogIn_HiveStock
             ConfigurePanels();
             SetupFilterDropdown();
             LoadProductData();
+
+            // Pre-load notifications and sync notification bell icon state
+            RefreshNotifications();
         }
 
         private void ConfigurePanels()
@@ -87,6 +98,15 @@ namespace LogIn_HiveStock
                 MainScrollPanel.HorizontalScroll.Enabled = false;
                 MainScrollPanel.HorizontalScroll.Visible = false;
                 MainScrollPanel.Layout += SuppressHorizontalScroll;
+            }
+
+            // Lock Notif_Panel vertical-only scrolling
+            if (Notif_Panel != null)
+            {
+                Notif_Panel.AutoScroll = true;
+                Notif_Panel.HorizontalScroll.Enabled = false;
+                Notif_Panel.HorizontalScroll.Visible = false;
+                Notif_Panel.Layout += SuppressHorizontalScroll;
             }
 
             // Sub FlowLayoutPanels setup
@@ -292,11 +312,6 @@ namespace LogIn_HiveStock
             notify.DisabledState.CustomBorderColor = Color.DarkGray;
             notify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             notify.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            notify.Click += (s, e) =>
-            {
-                Notify_PopUp notifyPopUp = new Notify_PopUp();
-                notifyPopUp.ShowDialog();
-            };
 
             Guna2Button addToCart = new Guna2Button();
             addToCart.Name = "DynATC" + id + "_Button";
@@ -381,6 +396,8 @@ namespace LogIn_HiveStock
                 }
             }
 
+
+
             // --- BOOKS (Category 1) ---
             BindProductCard(12, "Book1_Container", "Book1_Image", "Book1Title_Label", "Book1Info_Label", "Stock1_Status", "PricePeso1_Label", "ATC1_Button", "Notify1_Button");
             BindProductCard(7, "Book2_Container", "Book2_Image", "Book2Title_Label", "Book2Info_Label", "Stock2_Status", "PricePeso2_Label", "ATC2_Button", "Notify2_Button");
@@ -401,6 +418,57 @@ namespace LogIn_HiveStock
 
             SyncCardsWithDatabase();
             ApplyCatalogFilter();
+            ShowRestockAlerts();
+        }
+
+        // Tells the student about products they asked about that are back in stock.
+        private void ShowRestockAlerts()
+        {
+            if (!UserSession.IsLoggedIn) return;
+
+            try
+            {
+                string cs = ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
+                List<string> names = new List<string>();
+
+                using (MySqlConnection conn = new MySqlConnection(cs))
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        @"SELECT p.product_name
+                  FROM notification_subscription n
+                  JOIN users u ON u.user_id = n.user_id
+                  JOIN product p ON p.product_id = n.product_id
+                  WHERE u.id_number = @id AND n.status = 'SENT' AND n.read_at IS NULL", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.IdNumber);
+                        using (MySqlDataReader r = cmd.ExecuteReader())
+                        {
+                            while (r.Read()) names.Add(r["product_name"].ToString());
+                        }
+                    }
+
+                    if (names.Count == 0) return;
+
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        @"UPDATE notification_subscription n
+                  JOIN users u ON u.user_id = n.user_id
+                  SET n.read_at = NOW()
+                  WHERE u.id_number = @id AND n.status = 'SENT' AND n.read_at IS NULL", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.IdNumber);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Good news! These products are back in stock:\n\n- " + string.Join("\n- ", names),
+                    "Restock Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                // An alert problem should never stop the catalog from opening.
+            }
         }
 
         private string FindImagePath(string relativePath)
@@ -464,6 +532,12 @@ namespace LogIn_HiveStock
             }
 
             Control[] notifyButtons = this.Controls.Find(notifyName, true);
+            if (notifyButtons.Length > 0)
+            {
+                notifyButtons[0].Tag = productId;
+                notifyButtons[0].Click -= Notify_Button_Click;
+                notifyButtons[0].Click += Notify_Button_Click;
+            }
 
             if (picControls.Length > 0 && picControls[0] is PictureBox pb && p.ProductImage != null)
             {
@@ -653,6 +727,350 @@ namespace LogIn_HiveStock
             }
         }
 
+        // --- SUBSCRIPTION & NOTIFICATION PANEL LOGIC ---
+
+        private int GetCurrentUserId(MySqlConnection conn)
+        {
+            // Lookup numeric user_id from users table using session OrderKey (id_number or username)
+            string lookupQuery = "SELECT user_id FROM users WHERE id_number = @key OR username = @key LIMIT 1";
+            using (MySqlCommand cmd = new MySqlCommand(lookupQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("@key", UserSession.OrderKey);
+                object result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToInt32(result);
+                }
+            }
+            return 0;
+        }
+
+        // Kept so the designer can still find it; Notify_Button_Click does the work.
+        private void Notify3_Button_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Notify_Button_Click(object sender, EventArgs e)
+        {
+            if (!(sender is Control ctrl) || !(ctrl.Tag is int productId)) return;
+            if (!productsCache.TryGetValue(productId, out ProductData p)) return;
+
+            Notify_PopUp popup = new Notify_PopUp();
+            popup.SetProduct(productId, p.Name, p.ProductImage);
+            popup.ShowDialog(this);
+
+            // The popup already saved the request. Just refresh the notification list and bell.
+            RefreshNotifications();
+        }
+
+        // Swaps Notif_Button image between notification-dot (unread) and default notification (no unread)
+        private void UpdateNotificationButtonIcon(bool hasUnread)
+        {
+            Control[] notifBtnCtrls = this.Controls.Find("Notif_Button", true);
+            if (notifBtnCtrls.Length > 0)
+            {
+                if (notifBtnCtrls[0] is Guna2Button gunaBtn)
+                {
+                    gunaBtn.Image = hasUnread
+                        ? Properties.Resources.notification_dot
+                        : Properties.Resources.notification;
+                }
+                else if (notifBtnCtrls[0] is Button stdBtn)
+                {
+                    stdBtn.Image = hasUnread
+                        ? Properties.Resources.notification_dot
+                        : Properties.Resources.notification;
+                }
+            }
+        }
+
+        public void RefreshNotifications()
+        {
+            if (Notif_Panel == null) return;
+
+            Notif_Panel.SuspendLayout();
+            Notif_Panel.Controls.Clear();
+            Notif_Panel.AutoScrollPosition = new Point(0, 0);
+
+            // Card width & calculate center X coordinate
+            int cardWidth = Notif_Panel.Width - 28;
+            if (cardWidth < 200) cardWidth = 260;
+            int xPos = Math.Max(10, (Notif_Panel.Width - cardWidth) / 2);
+
+            int y = 10;
+
+            // 1. MAIN HEADER: "Notifications" (18pt Bold)
+            Label mainHeader = new Label();
+            mainHeader.Text = "Notifications";
+            mainHeader.Font = new Font("Malgun Gothic", 18F, FontStyle.Bold);
+            mainHeader.ForeColor = Color.Black;
+            mainHeader.BackColor = Color.Transparent;
+            mainHeader.Location = new Point(xPos, y);
+            mainHeader.Size = new Size(cardWidth, 36);
+            Notif_Panel.Controls.Add(mainHeader);
+
+            y += 42;
+
+            List<RestockNotificationData> notifs = GetRestockNotifications();
+            List<RestockNotificationData> unreadList = notifs.Where(n => !n.IsRead).ToList();
+            List<RestockNotificationData> readList = notifs.Where(n => n.IsRead).ToList();
+
+            // Update Bell Icon based on presence of unread notifications
+            UpdateNotificationButtonIcon(unreadList.Count > 0);
+
+            const int spacing = 10;
+
+            // 2. SECTION 1: "Unread notifications" Header (11pt Bold)
+            Label unreadHeader = new Label();
+            unreadHeader.Text = "Unread notifications";
+            unreadHeader.Font = new Font("Malgun Gothic", 11F, FontStyle.Bold);
+            unreadHeader.ForeColor = Color.FromArgb(18, 77, 28);
+            unreadHeader.BackColor = Color.Transparent;
+            unreadHeader.Location = new Point(xPos, y);
+            unreadHeader.Size = new Size(cardWidth, 24);
+            Notif_Panel.Controls.Add(unreadHeader);
+
+            y += 28;
+
+            if (unreadList.Count == 0)
+            {
+                Label emptyUnread = new Label();
+                emptyUnread.Text = "No unread notifications.";
+                emptyUnread.Font = new Font("Malgun Gothic", 9.5F, FontStyle.Regular);
+                emptyUnread.ForeColor = Color.Gray;
+                emptyUnread.BackColor = Color.Transparent;
+                emptyUnread.Location = new Point(xPos + 5, y);
+                emptyUnread.Size = new Size(cardWidth, 22);
+                Notif_Panel.Controls.Add(emptyUnread);
+                y += 28;
+            }
+            else
+            {
+                foreach (RestockNotificationData notif in unreadList)
+                {
+                    Guna2Panel card = CreateNotificationCard(notif, cardWidth, xPos, y);
+                    Notif_Panel.Controls.Add(card);
+                    y += card.Height + spacing;
+                }
+            }
+
+            y += 10; // Gap between sections
+
+            // 3. SECTION 2: "Others" Header (11pt Bold)
+            Label othersHeader = new Label();
+            othersHeader.Text = "Others";
+            othersHeader.Font = new Font("Malgun Gothic", 11F, FontStyle.Bold);
+            othersHeader.ForeColor = Color.FromArgb(18, 77, 28);
+            othersHeader.BackColor = Color.Transparent;
+            othersHeader.Location = new Point(xPos, y);
+            othersHeader.Size = new Size(cardWidth, 24);
+            Notif_Panel.Controls.Add(othersHeader);
+
+            y += 28;
+
+            if (readList.Count == 0)
+            {
+                Label emptyOthers = new Label();
+                emptyOthers.Text = "No read notifications.";
+                emptyOthers.Font = new Font("Malgun Gothic", 9.5F, FontStyle.Regular);
+                emptyOthers.ForeColor = Color.Gray;
+                emptyOthers.BackColor = Color.Transparent;
+                emptyOthers.Location = new Point(xPos + 5, y);
+                emptyOthers.Size = new Size(cardWidth, 22);
+                Notif_Panel.Controls.Add(emptyOthers);
+                y += 28;
+            }
+            else
+            {
+                foreach (RestockNotificationData notif in readList)
+                {
+                    Guna2Panel card = CreateNotificationCard(notif, cardWidth, xPos, y);
+                    Notif_Panel.Controls.Add(card);
+                    y += card.Height + spacing;
+                }
+            }
+
+            Notif_Panel.AutoScrollMinSize = new Size(0, y);
+            Notif_Panel.ResumeLayout();
+        }
+
+        private List<RestockNotificationData> GetRestockNotifications()
+        {
+            List<RestockNotificationData> list = new List<RestockNotificationData>();
+            if (!UserSession.IsLoggedIn) return list;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    int dbUserId = GetCurrentUserId(conn);
+                    if (dbUserId == 0) return list;
+
+                    // Fetch SENT notifications
+                    string query = @"SELECT ns.product_id, p.product_name, ns.notified_at, ns.read_at
+                                     FROM notification_subscription ns
+                                     JOIN product p ON ns.product_id = p.product_id
+                                     WHERE ns.user_id = @userId 
+                                       AND ns.status = 'SENT'
+                                     ORDER BY ns.notified_at DESC";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", dbUserId);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                list.Add(new RestockNotificationData
+                                {
+                                    ProductId = Convert.ToInt32(reader["product_id"]),
+                                    ProductName = reader["product_name"].ToString(),
+                                    NotifiedAt = reader.IsDBNull(reader.GetOrdinal("notified_at")) ? (DateTime?)null : reader.GetDateTime("notified_at"),
+                                    IsRead = !reader.IsDBNull(reader.GetOrdinal("read_at"))
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error fetching notifications: " + ex.Message);
+            }
+
+            return list;
+        }
+
+        private Guna2Panel CreateNotificationCard(RestockNotificationData notif, int width, int x, int y)
+        {
+            Font titleFont = new Font("Malgun Gothic", 10F, FontStyle.Bold);
+            Font msgFont = new Font("Malgun Gothic", 10F, FontStyle.Regular);
+            Font subFont = new Font("Malgun Gothic", 8.5F, FontStyle.Italic);
+            Font linkFont = new Font("Malgun Gothic", 8.5F, FontStyle.Regular); // NON-ITALIC REGULAR FONT
+
+            string fullMessage = $"\"{notif.ProductName}\" is now available for order.";
+            int innerWidth = width - 20;
+
+            // Measure height needed for message text (2 or 3 lines)
+            Size measuredSize = TextRenderer.MeasureText(fullMessage, msgFont, new Size(innerWidth, 0), TextFormatFlags.WordBreak);
+            int msgHeight = measuredSize.Height;
+
+            // Calculate card container height dynamically
+            int cardHeight = 8 + 20 + 4 + msgHeight + 8 + 18 + 8; // top padding + title + gap + message + gap + footer + bottom padding
+
+            Guna2Panel panel = new Guna2Panel();
+            panel.BackColor = Color.Transparent;
+            panel.BorderColor = Color.FromArgb(18, 77, 28);
+            panel.BorderRadius = 8;
+            panel.BorderThickness = 1;
+
+            // Background color logic: WHITE if read, original tinted color if unread
+            panel.FillColor = notif.IsRead ? Color.White : Color.FromArgb(235, 237, 227);
+
+            panel.Location = new Point(x, y);
+            panel.Size = new Size(width, cardHeight);
+
+            // Title Label
+            Label titleLabel = new Label();
+            titleLabel.Text = "Item Back in Stock!";
+            titleLabel.Font = titleFont;
+            titleLabel.ForeColor = Color.FromArgb(18, 77, 28);
+            titleLabel.Location = new Point(10, 8);
+            titleLabel.Size = new Size(innerWidth, 20);
+
+            // Announcement Body Message (2-3 lines)
+            Label msgLabel = new Label();
+            msgLabel.Text = fullMessage;
+            msgLabel.Font = msgFont;
+            msgLabel.ForeColor = Color.DarkSlateGray;
+            msgLabel.Location = new Point(10, 32);
+            msgLabel.Size = new Size(innerWidth, msgHeight);
+
+            // Footer row Y position
+            int footerY = 32 + msgHeight + 6;
+
+            // Timestamp Label
+            string timeText = notif.NotifiedAt.HasValue ? notif.NotifiedAt.Value.ToString("MMM dd, h:mm tt") : "Recently";
+            Size timeSize = TextRenderer.MeasureText(timeText, subFont);
+
+            // Toggle Mark as Read / Mark as Unread text
+            string toggleLinkText = notif.IsRead ? "• Mark as Unread" : "• Mark as Read";
+
+            LinkLabel toggleReadLink = new LinkLabel();
+            toggleReadLink.Text = toggleLinkText;
+            toggleReadLink.Font = linkFont; // Regular style (not italicized)
+            toggleReadLink.LinkColor = Color.FromArgb(18, 77, 28);
+            toggleReadLink.ActiveLinkColor = Color.DarkGreen;
+            toggleReadLink.AutoSize = true;
+            toggleReadLink.Cursor = Cursors.Hand;
+
+            // Store ProductId and current state in Tag as a Tuple
+            toggleReadLink.Tag = Tuple.Create(notif.ProductId, notif.IsRead);
+            toggleReadLink.LinkClicked += ToggleReadStatus_LinkClicked;
+
+            int linkWidth = TextRenderer.MeasureText(toggleLinkText, linkFont).Width;
+
+            // RIGHT ALIGN FOOTER CONTROLS (Timestamp + Link aligned to bottom-right)
+            int totalFooterWidth = timeSize.Width + 4 + linkWidth;
+            int footerStartX = width - 10 - totalFooterWidth;
+
+            Label dateLabel = new Label();
+            dateLabel.Text = timeText;
+            dateLabel.Font = subFont;
+            dateLabel.ForeColor = Color.Gray;
+            dateLabel.AutoSize = true;
+            dateLabel.Location = new Point(footerStartX, footerY);
+
+            toggleReadLink.Location = new Point(footerStartX + timeSize.Width + 4, footerY);
+
+            panel.Controls.Add(titleLabel);
+            panel.Controls.Add(msgLabel);
+            panel.Controls.Add(dateLabel);
+            panel.Controls.Add(toggleReadLink);
+
+            return panel;
+        }
+
+        private void ToggleReadStatus_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (!(sender is LinkLabel link) || !(link.Tag is Tuple<int, bool> tagData)) return;
+
+            int productId = tagData.Item1;
+            bool currentlyRead = tagData.Item2;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    int dbUserId = GetCurrentUserId(conn);
+
+                    if (dbUserId > 0)
+                    {
+                        // If read, set read_at = NULL (Unread). If unread, set read_at = NOW() (Read)
+                        string updateQuery = currentlyRead
+                            ? @"UPDATE notification_subscription SET read_at = NULL WHERE user_id = @userId AND product_id = @productId"
+                            : @"UPDATE notification_subscription SET read_at = NOW() WHERE user_id = @userId AND product_id = @productId";
+
+                        using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@userId", dbUserId);
+                            cmd.Parameters.AddWithValue("@productId", productId);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                // Refresh panel to re-group notifications into Unread notifications / Others and update icon
+                RefreshNotifications();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to update notification status: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         // --- STUBS FOR DESIGNER CLICK EVENTS ---
         private void ATC_Button_Click(object sender, EventArgs e)
         {
@@ -662,12 +1080,6 @@ namespace LogIn_HiveStock
             AddToCart_PopUp popup = new AddToCart_PopUp();
             popup.SetProduct(productId, p.Name, p.Price, p.ProductImage, p.StockQty);
             popup.ShowDialog();
-        }
-
-        private void Notify3_Button_Click(object sender, EventArgs e)
-        {
-            Notify_PopUp notify = new Notify_PopUp();
-            notify.ShowDialog();
         }
 
         private void Search_Input_IconRightClick(object sender, EventArgs e)
@@ -687,6 +1099,17 @@ namespace LogIn_HiveStock
             Profile profile = new Profile();
             profile.Show();
             this.Hide();
+        }
+
+        private void Notif_Button_Click(object sender, EventArgs e)
+        {
+            Notif_Panel.Visible = !Notif_Panel.Visible;
+
+            if (Notif_Panel.Visible)
+            {
+                Notif_Panel.BringToFront();
+                RefreshNotifications();
+            }
         }
     }
 }

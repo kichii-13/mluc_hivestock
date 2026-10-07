@@ -26,18 +26,9 @@ namespace LogIn_HiveStock
         private const int RowSpacing = 6;
         private readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
-
-        // One entry per pending product, so the selection can be read back.
-        private class PendingRow
-        {
-            public int OrderItemId;
-            public Guna2CheckBox Check;
-        }
-
-        private readonly List<PendingRow> pendingRows = new List<PendingRow>();
-        private Guna2CheckBox selectAllCheck;
-        private Guna2Button receiveSelectedButton;
-        private bool syncingChecks;
+        private readonly System.Windows.Forms.Timer ordersTimer =
+            new System.Windows.Forms.Timer { Interval = 5000 };   // 5 seconds
+        private string lastOrdersSignature = "";
 
         public Profile()
         {
@@ -99,7 +90,7 @@ namespace LogIn_HiveStock
 
             ordersPanel.SuspendLayout();
 
-            // Remove the old rows and toolbar but keep the two headings. Do not Dispose them:
+            // Remove the old rows but keep the two headings. Do not Dispose them:
             // the product pictures are shared with the cart and order records.
             for (int i = ordersPanel.Controls.Count - 1; i >= 0; i--)
             {
@@ -107,44 +98,83 @@ namespace LogIn_HiveStock
                 if (c == PendingOrders_Label || c == CompletedOrders_Label) continue;
                 ordersPanel.Controls.RemoveAt(i);
             }
-            ordersPanel.AutoScrollPosition = new Point(0, 0);
-
-            pendingRows.Clear();
-            selectAllCheck = null;
-            receiveSelectedButton = null;
+            // remember where the list was scrolled to (AutoScrollPosition reports negative values)
+            Point scrolled = new Point(-ordersPanel.AutoScrollPosition.X, -ordersPanel.AutoScrollPosition.Y);
 
             string userKey = UserSession.OrderKey;
 
             int y = 24;
-            y = AddOrderSection(PendingOrders_Label, OrderManager.GetOrders(userKey, false), y,
-                                "Paid", "No pending orders.", true);
-            y = AddOrderSection(CompletedOrders_Label, OrderManager.GetOrders(userKey, true), y,
-                                "Completed", "No completed orders yet.", false);
+            y = AddOrderSection(PendingOrders_Label, OrderManager.GetOrders(userKey, false), y, "No pending orders.");
+            y = AddOrderSection(CompletedOrders_Label, OrderManager.GetOrders(userKey, true), y, "No completed orders yet.");
 
             ordersPanel.AutoScrollMinSize = new Size(0, y);
             ordersPanel.ResumeLayout();
+            ordersPanel.AutoScrollPosition = scrolled;
         }
 
-        // ---- Sections and rows ----
-        // Lays out one heading (plus the selection toolbar for pending items) followed by one row
-        // per product; returns the next free Y.
-        private int AddOrderSection(Label heading, List<OrderRecord> orders, int y,
-                                    string statusText, string emptyText, bool pending)
+        // A query that changes whenever one of this student's orders changes.
+        private string GetOrdersSignature()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(
+                    @"SELECT COUNT(DISTINCT o.order_id), COUNT(i.order_item_id),
+                     COALESCE(SUM(i.is_received), 0),
+                     COALESCE(SUM(o.payment_status = 'Paid'), 0),
+                     COALESCE(SUM(o.payment_status = 'Rejected'), 0)
+              FROM customer_orders o
+              JOIN customer_order_items i ON i.order_id = o.order_id
+              WHERE o.user_key = @u", conn))
+                {
+                    cmd.Parameters.AddWithValue("@u", UserSession.OrderKey);
+                    using (MySqlDataReader r = cmd.ExecuteReader())
+                    {
+                        r.Read();
+                        return r[0] + "|" + r[1] + "|" + r[2] + "|" + r[3] + "|" + r[4];
+                    }
+                }
+            }
+        }
+
+        private void OrdersTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                string signature = GetOrdersSignature();
+                if (signature == lastOrdersSignature) return;   // nothing changed
+
+                lastOrdersSignature = signature;
+                RefreshOrders();
+            }
+            catch
+            {
+                // database busy or offline: try again on the next tick
+            }
+        }
+
+        // Stop the timer when the Profile window closes (Back or Log out).
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ordersTimer.Stop();
+            ordersTimer.Dispose();
+            base.OnFormClosed(e);
+        }
+
+        // One heading followed by one row per product; returns the next free Y.
+        private int AddOrderSection(Label heading, List<OrderRecord> orders, int y, string emptyText)
         {
             heading.Location = new Point(25, y);
             y += heading.Height + 8;
 
-            int rowCount = orders.Sum(o => o.Lines.Count);
-
-            if (pending && rowCount > 0)
-                y = AddPendingToolbar(y);
-
+            int rowCount = 0;
             foreach (OrderRecord order in orders)
             {
                 foreach (OrderLine line in order.Lines)
                 {
-                    ordersPanel.Controls.Add(CreateOrderRow(order, line, y, statusText));
+                    ordersPanel.Controls.Add(CreateOrderRow(order, line, y));
                     y += RowHeight + RowSpacing;
+                    rowCount++;
                 }
             }
 
@@ -165,56 +195,8 @@ namespace LogIn_HiveStock
             return y + 20;
         }
 
-        // "Select all" checkbox and the "Mark Selected as Received" button above the pending rows.
-        private int AddPendingToolbar(int y)
+        private Guna2Panel CreateOrderRow(OrderRecord order, OrderLine line, int y)
         {
-            selectAllCheck = new Guna2CheckBox();
-            selectAllCheck.Text = "Select all";
-            selectAllCheck.AutoSize = true;
-            selectAllCheck.Font = new Font("Malgun Gothic", 9F);
-            selectAllCheck.BackColor = Color.Transparent;
-            selectAllCheck.Location = new Point(60, y + 6);
-            StyleCheck(selectAllCheck);
-            selectAllCheck.CheckedChanged += SelectAll_CheckedChanged;
-
-            receiveSelectedButton = new Guna2Button();
-            receiveSelectedButton.Text = "Mark Selected as Received";
-            receiveSelectedButton.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Bold);
-            receiveSelectedButton.ForeColor = Color.White;
-            receiveSelectedButton.FillColor = BrandGreen;
-            receiveSelectedButton.BorderRadius = 6;
-            receiveSelectedButton.Cursor = Cursors.Hand;
-            receiveSelectedButton.Size = new Size(210, 30);
-            receiveSelectedButton.Location = new Point(365, y);
-            receiveSelectedButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            receiveSelectedButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            receiveSelectedButton.Enabled = false;
-            // BeginInvoke: the list is rebuilt, which removes this button, so wait until the click finishes.
-            receiveSelectedButton.Click += (s, e) => BeginInvoke(new Action(MarkSelectedAsReceived));
-
-            ordersPanel.Controls.Add(selectAllCheck);
-            ordersPanel.Controls.Add(receiveSelectedButton);
-
-            return y + 30 + 8;
-        }
-
-        private static void StyleCheck(Guna2CheckBox check)
-        {
-            check.CheckedState.BorderColor = BrandGold;
-            check.CheckedState.BorderRadius = 3;
-            check.CheckedState.BorderThickness = 0;
-            check.CheckedState.FillColor = BrandGold;
-            check.UncheckedState.BorderColor = CheckGray;
-            check.UncheckedState.BorderRadius = 3;
-            check.UncheckedState.BorderThickness = 0;
-            check.UncheckedState.FillColor = CheckGray;
-        }
-
-        private Guna2Panel CreateOrderRow(OrderRecord order, OrderLine line, int y, string statusText)
-        {
-            bool pending = !line.IsReceived;
-            int shift = pending ? 30 : 0;   // pending rows make room for the checkbox
-
             Guna2Panel panel = new Guna2Panel();
             panel.BackColor = Color.Transparent;
             panel.BorderColor = BrandGreen;
@@ -229,18 +211,16 @@ namespace LogIn_HiveStock
             picture.BorderRadius = 10;
             picture.FillColor = Color.Transparent;
             picture.Image = line.Image;
-            picture.Location = new Point(16 + shift, 7);
+            picture.Location = new Point(16, 7);
             picture.Size = new Size(80, 50);
             picture.SizeMode = PictureBoxSizeMode.Zoom;
             picture.TabStop = false;
             picture.UseTransparentBackground = true;
 
-            int textWidth = pending ? 250 : 298;
-
             Label title = new Label();
             title.Font = new Font("Malgun Gothic", 9.75F, FontStyle.Bold);
-            title.Location = new Point(102 + shift, 8);
-            title.Size = new Size(textWidth, 24);
+            title.Location = new Point(102, 8);
+            title.Size = new Size(275, 24);
             title.Text = $"{line.Name}  x{line.Quantity}";
             title.TextAlign = ContentAlignment.MiddleLeft;
             title.AutoEllipsis = true;
@@ -252,129 +232,47 @@ namespace LogIn_HiveStock
             Label detail = new Label();
             detail.Font = new Font("Malgun Gothic", 8.25F);
             detail.ForeColor = Color.DimGray;
-            detail.Location = new Point(102 + shift, 32);
-            detail.Size = new Size(textWidth, 22);
+            detail.Location = new Point(102, 32);
+            detail.Size = new Size(275, 22);
             detail.Text = $"{order.OrderNumber}  \u2022  {dateText}  \u2022  \u20B1{line.Subtotal:N2}";
             detail.TextAlign = ContentAlignment.MiddleLeft;
             detail.AutoEllipsis = true;
 
+            // The status is set by the shop: the admin verifies the payment, staff hand the item over.
+            string statusText;
+            Color statusColor = BrandGreen;
+            if (line.IsReceived)
+            {
+                statusText = "Received";
+            }
+            else if (order.PaymentStatus == OrderManager.PaymentRejected)
+            {
+                statusText = "Rejected";
+                statusColor = Color.DarkRed;
+            }
+            else if (order.PaymentStatus == OrderManager.PaymentPaid)
+            {
+                statusText = "Paid";
+            }
+            else
+            {
+                statusText = "Verifying Payment";
+                statusColor = Color.DarkOrange;
+            }
+
             Label status = new Label();
-            status.Font = new Font("Malgun Gothic", 9.75F, FontStyle.Bold);
-            status.ForeColor = BrandGreen;
-            status.Location = new Point(405, 22);
-            status.Size = new Size(100, 19);
+            status.Font = new Font("Malgun Gothic", 8.5F, FontStyle.Bold);
+            status.ForeColor = statusColor;
+            status.Location = new Point(380, 22);
+            status.Size = new Size(125, 19);
             status.Text = statusText;
             status.TextAlign = ContentAlignment.MiddleRight;
-
-            if (pending)
-            {
-                // Checkbox used by "Select all" / "Mark Selected as Received".
-                Guna2CheckBox check = new Guna2CheckBox();
-                check.AutoSize = true;
-                check.Location = new Point(14, 25);
-                check.Size = new Size(15, 14);
-                StyleCheck(check);
-                check.CheckedChanged += (s, e) => OnRowCheckChanged();
-                pendingRows.Add(new PendingRow { OrderItemId = line.OrderItemId, Check = check });
-                panel.Controls.Add(check);
-
-                // Button for this one product only.
-                status.Location = new Point(405, 6);
-
-                int orderItemId = line.OrderItemId;
-                string itemName = line.Name;
-
-                Guna2Button receive = new Guna2Button();
-                receive.Text = "Mark as Received";
-                receive.Font = new Font("Malgun Gothic", 8.25F, FontStyle.Bold);
-                receive.ForeColor = Color.White;
-                receive.FillColor = BrandGreen;
-                receive.BorderRadius = 6;
-                receive.Location = new Point(385, 30);
-                receive.Size = new Size(120, 26);
-                receive.Cursor = Cursors.Hand;
-
-                // BeginInvoke: the list is rebuilt, which removes this button, so wait until the click finishes.
-                receive.Click += (s, e) => BeginInvoke(new Action(() => MarkOneAsReceived(orderItemId, itemName)));
-
-                panel.Controls.Add(receive);
-            }
 
             panel.Controls.Add(status);
             panel.Controls.Add(detail);
             panel.Controls.Add(title);
             panel.Controls.Add(picture);
             return panel;
-        }
-
-        // ---- Selection ----
-        private void SelectAll_CheckedChanged(object sender, EventArgs e)
-        {
-            if (syncingChecks) return;
-
-            syncingChecks = true;
-            foreach (PendingRow row in pendingRows)
-                row.Check.Checked = selectAllCheck.Checked;
-            syncingChecks = false;
-
-            UpdateSelectionState();
-        }
-
-        private void OnRowCheckChanged()
-        {
-            if (syncingChecks) return;
-
-            syncingChecks = true;
-            selectAllCheck.Checked = pendingRows.Count > 0 && pendingRows.All(r => r.Check.Checked);
-            syncingChecks = false;
-
-            UpdateSelectionState();
-        }
-
-        private void UpdateSelectionState()
-        {
-            int selected = pendingRows.Count(r => r.Check.Checked);
-            receiveSelectedButton.Enabled = selected > 0;
-            receiveSelectedButton.Text = selected > 0
-                ? $"Mark Selected as Received ({selected})"
-                : "Mark Selected as Received";
-        }
-
-        // ---- Mark as Received ----
-        // One product.
-        private void MarkOneAsReceived(int orderItemId, string itemName)
-        {
-            DialogResult answer = MessageBox.Show(
-                "Confirm that you have received \"" + itemName + "\"?\n\n" +
-                "It will move to Completed Orders and this cannot be undone.",
-                "Mark as Received", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (answer != DialogResult.Yes) return;
-
-            if (OrderManager.MarkItemsReceived(new[] { orderItemId }, UserSession.OrderKey) > 0)
-                RefreshOrders();
-        }
-
-        // Every ticked product.
-        private void MarkSelectedAsReceived()
-        {
-            List<int> ids = pendingRows.Where(r => r.Check.Checked)
-                                       .Select(r => r.OrderItemId)
-                                       .ToList();
-            if (ids.Count == 0) return;
-
-            string question = ids.Count == 1
-                ? "Mark the selected item as received?"
-                : $"Mark {ids.Count} selected items as received?";
-
-            DialogResult answer = MessageBox.Show(
-                question + "\n\nThey will move to Completed Orders and this cannot be undone.",
-                "Mark as Received", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (answer != DialogResult.Yes) return;
-
-            if (OrderManager.MarkItemsReceived(ids, UserSession.OrderKey) > 0)
-                RefreshOrders();
         }
 
         // ---- Existing handlers (kept: the designer connects them) ----
@@ -393,6 +291,12 @@ namespace LogIn_HiveStock
         private void Profile_Load(object sender, EventArgs e)
         {
             RefreshOrders();
+
+            if (UserSession.IsLoggedIn)
+            {
+                ordersTimer.Tick += OrdersTimer_Tick;
+                ordersTimer.Start();
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySqlConnector;
-using BCrypt.Net; // ADDED: BCrypt namespace
+using BCrypt.Net;
 
 namespace LogIn_HiveStock
 {
@@ -177,7 +177,7 @@ namespace LogIn_HiveStock
             ShowPanel(LogIn_Panel);
         }
 
-        // MODIFIED: LOGIN WITH BCRYPT VERIFICATION
+        // LOGIN WITH USER & STAFF BCRYPT VERIFICATION
         private void LogIn_Button_Click(object sender, EventArgs e)
         {
             string userIdInput = Input_StudentID.Text.Trim();
@@ -204,108 +204,102 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    // Query the stored hash instead of comparing plain text directly
-                    string query = @"SELECT password, id_number, first_name, last_name, username, email_address, phone_number FROM users  
-                                    WHERE id_number = @userId OR username = @userId";
+                    // ==========================================
+                    // 1. CHECK USERS TABLE FIRST -> UserView_ProductCatalog
+                    // ==========================================
+                    string userQuery = @"SELECT password, id_number, first_name, last_name, username, email_address, phone_number 
+                                         FROM users 
+                                         WHERE id_number = @userId OR username = @userId";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    using (MySqlCommand userCmd = new MySqlCommand(userQuery, connection))
                     {
-                        cmd.Parameters.AddWithValue("@userId", userIdInput);
+                        userCmd.Parameters.AddWithValue("@userId", userIdInput);
 
-                        string storedHash = null;
-                        string dbIdNumber = "", dbFirstName = "", dbLastName = "";
-                        string dbUsername = "", dbEmail = "", dbPhone = "";
-
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        using (MySqlDataReader userReader = userCmd.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if (userReader.Read())
                             {
-                                storedHash = reader["password"].ToString();
-                                dbIdNumber = reader["id_number"].ToString();
-                                dbFirstName = reader["first_name"].ToString();
-                                dbLastName = reader["last_name"].ToString();
-                                dbUsername = reader["username"].ToString();
-                                dbEmail = reader["email_address"].ToString();
-                                dbPhone = reader["phone_number"].ToString();
-                            }
-                        }
+                                string storedHash = userReader["password"].ToString();
 
+                                if (BCrypt.Net.BCrypt.Verify(passwordInput, storedHash))
+                                {
+                                    string dbIdNumber = userReader["id_number"].ToString();
+                                    string dbFirstName = userReader["first_name"].ToString();
+                                    string dbLastName = userReader["last_name"].ToString();
+                                    string dbUsername = userReader["username"].ToString();
+                                    string dbEmail = userReader["email_address"].ToString();
+                                    string dbPhone = userReader["phone_number"].ToString();
 
-                        if (storedHash != null)
-                        {
+                                    userReader.Close();
 
-                            // Remembers who logged in so Profile
-                            if (BCrypt.Net.BCrypt.Verify(passwordInput, storedHash))
-                            {
-                                UserSession.SignIn(dbIdNumber, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
-                                UserView_ProductCatalog catalog = new UserView_ProductCatalog();
-                                catalog.Show();
-                                this.Hide();
+                                    UserSession.SignIn(dbIdNumber, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
+                                    UserView_ProductCatalog catalog = new UserView_ProductCatalog();
+                                    catalog.Show();
+                                    this.Hide();
+                                    return;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
                             }
-                            else
-                            {
-                                MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+
+                    // ==========================================
+                    // 2. CHECK STAFF TABLE NEXT -> AdminSide
+                    // ==========================================
+                    string staffQuery = @"SELECT staff_id_number, first_name, last_name, username, email_address, phone_number, password_hash, role 
+                                          FROM staff 
+                                          WHERE staff_id_number = @staffId OR username = @staffId";
+
+                    using (MySqlCommand staffCmd = new MySqlCommand(staffQuery, connection))
+                    {
+                        staffCmd.Parameters.AddWithValue("@staffId", userIdInput);
+
+                        using (MySqlDataReader staffReader = staffCmd.ExecuteReader())
+                        {
+                            if (staffReader.Read())
+                            {
+                                string storedStaffHash = staffReader["password_hash"].ToString();
+
+                                if (BCrypt.Net.BCrypt.Verify(passwordInput, storedStaffHash))
+                                {
+                                    string dbStaffId = staffReader["staff_id_number"].ToString();
+                                    string dbFirstName = staffReader["first_name"].ToString();
+                                    string dbLastName = staffReader["last_name"].ToString();
+                                    string dbUsername = staffReader["username"].ToString();
+                                    string dbEmail = staffReader["email_address"].ToString();
+                                    string dbPhone = staffReader["phone_number"].ToString();
+                                    string dbRole = staffReader["role"].ToString();
+
+                                    staffReader.Close();
+
+                                    UserSession.SignIn(dbStaffId, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
+
+                                    // Open Admin UI for Staff users
+                                    AdminSide adminView = new AdminSide((dbFirstName + " " + dbLastName).Trim(), dbStaffId, dbRole, this);
+                                    adminView.Show();
+                                    this.Hide();
+                                    return;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                    // If neither table contains a matching account
+                    MessageBox.Show("Invalid User ID / Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            string staffId = Input_StudentID.Text.Trim();
-            string password = Input_Password.Text;
-
-            if (staffId.Length == 0 || password.Length == 0)
-            {
-                MessageBox.Show("Type your Staff ID and password in the boxes above, then click LOG IN AS STAFF.",
-                    "Staff Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    connection.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(
-                        "SELECT staff_id_number, full_name, password_hash FROM staff WHERE staff_id_number = @id", connection))
-                    {
-                        cmd.Parameters.AddWithValue("@id", staffId);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read() &&
-                                BCrypt.Net.BCrypt.Verify(password, reader["password_hash"].ToString()))
-                            {
-                                string staffName = reader["full_name"].ToString();
-                                string staffNumber = reader["staff_id_number"].ToString();
-
-                                ResetLoginForm();
-                                AdminSide adminside = new AdminSide(staffName, staffNumber, this);
-                                adminside.Show();
-                                this.Hide();
-                                return;
-                            }
-                        }
-                    }
-                }
-
-                MessageBox.Show("Invalid Staff ID or Password.", "Staff Login Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database Error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -330,7 +324,7 @@ namespace LogIn_HiveStock
             ShowPanel(LogIn_Panel);
         }
 
-        // MODIFIED: SAVE NEW HASHED PASSWORD
+        // SAVE NEW HASHED PASSWORD
         private void Done_Button_Click(object sender, EventArgs e)
         {
             if (!isForgotEmailVerified)
@@ -372,13 +366,24 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string updateQuery = "UPDATE users SET password = @password WHERE email_address = @email";
-                    using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, connection))
+                    // Check both tables to reset password for user or staff
+                    string updateUsers = "UPDATE users SET password = @password WHERE email_address = @email";
+                    using (MySqlCommand cmd = new MySqlCommand(updateUsers, connection))
                     {
-                        updateCmd.Parameters.AddWithValue("@password", hashedPassword);
-                        updateCmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+                        cmd.Parameters.AddWithValue("@email", email);
+                        int rows = cmd.ExecuteNonQuery();
 
-                        int rows = updateCmd.ExecuteNonQuery();
+                        if (rows == 0)
+                        {
+                            string updateStaff = "UPDATE staff SET password_hash = @password WHERE email_address = @email";
+                            using (MySqlCommand staffCmd = new MySqlCommand(updateStaff, connection))
+                            {
+                                staffCmd.Parameters.AddWithValue("@password", hashedPassword);
+                                staffCmd.Parameters.AddWithValue("@email", email);
+                                rows = staffCmd.ExecuteNonQuery();
+                            }
+                        }
 
                         if (rows > 0)
                         {
@@ -470,7 +475,7 @@ namespace LogIn_HiveStock
             CheckRegisterButtonState();
         }
 
-        // VERIFY ACCOUNT INFORMATION
+        // VERIFY ACCOUNT INFORMATION (CHECKS FOR 6 OR 8 DIGIT ID NUMBER)
         private void AccountInfo_Button_Click(object sender, EventArgs e)
         {
             string username = Username_Input.Text.Trim();
@@ -485,17 +490,16 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            // Strip dashes/spaces to verify exactly 8 digits entered
+            // Strip dashes/spaces to verify ID length
             string cleanId = Regex.Replace(idNumber, @"[\s-]", "");
-            if (!Regex.IsMatch(cleanId, @"^[0-9]{8}$"))
+
+            // ID Number must be strictly either 6 digits (Staff) or 8 digits (User)
+            if (!Regex.IsMatch(cleanId, @"^[0-9]{6}$") && !Regex.IsMatch(cleanId, @"^[0-9]{8}$"))
             {
-                MessageBox.Show("ID Number must be exactly 8 digits (e.g., 12345678).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ID Number must be either 6 digits for Staff or 8 digits for Users.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 InvalidateStep2();
                 return;
             }
-
-            // Format to xxx-xxxx-x before checking the database
-            string formattedId = string.Format("{0}-{1}-{2}", cleanId.Substring(0, 3), cleanId.Substring(3, 4), cleanId.Substring(7, 1));
 
             try
             {
@@ -503,36 +507,55 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string checkQuery = "SELECT COUNT(*) FROM users WHERE id_number = @id_number OR username = @username OR email_address = @email";
-                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                    long existingCount = 0;
+
+                    if (cleanId.Length == 6)
                     {
-                        checkCmd.Parameters.AddWithValue("@id_number", formattedId);
-                        checkCmd.Parameters.AddWithValue("@username", username);
-                        checkCmd.Parameters.AddWithValue("@email", email);
-
-                        long existingCount = Convert.ToInt64(checkCmd.ExecuteScalar());
-
-                        if (existingCount > 0)
+                        // Check staff table for duplicate ID, Username, or Email
+                        string checkStaffQuery = "SELECT COUNT(*) FROM staff WHERE staff_id_number = @staff_id OR username = @username OR email_address = @email";
+                        using (MySqlCommand checkCmd = new MySqlCommand(checkStaffQuery, connection))
                         {
-                            MessageBox.Show("An account with this ID Number, Username, or Email already exists.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            InvalidateStep2();
+                            checkCmd.Parameters.AddWithValue("@staff_id", cleanId);
+                            checkCmd.Parameters.AddWithValue("@username", username);
+                            checkCmd.Parameters.AddWithValue("@email", email);
+                            existingCount = Convert.ToInt64(checkCmd.ExecuteScalar());
                         }
-                        else
+                    }
+                    else if (cleanId.Length == 8)
+                    {
+                        // Format to xxx-xxxx-x before checking the users database
+                        string formattedId = string.Format("{0}-{1}-{2}", cleanId.Substring(0, 3), cleanId.Substring(3, 4), cleanId.Substring(7, 1));
+
+                        string checkUserQuery = "SELECT COUNT(*) FROM users WHERE id_number = @id_number OR username = @username OR email_address = @email";
+                        using (MySqlCommand checkCmd = new MySqlCommand(checkUserQuery, connection))
                         {
-                            // SUCCESS - DISABLE VERIFIED INPUTS & UPDATE GUNA BUTTON STYLE
-                            isAccountInfoVerified = true;
-                            AccountInfo_Button.Text = "Verified";
-                            AccountInfo_Button.FillColor = verifiedButtonColor;
-                            AccountInfo_Button.HoverState.FillColor = verifiedButtonColor;
-                            AccountInfo_Button.ForeColor = Color.White;
-
-                            Username_Input.Enabled = false;
-                            IDNumber_Input.Enabled = false;
-                            Email_Input.Enabled = false;
-
-                            Password_Input.Enabled = true;
-                            ConfirmPassword_Input.Enabled = true;
+                            checkCmd.Parameters.AddWithValue("@id_number", formattedId);
+                            checkCmd.Parameters.AddWithValue("@username", username);
+                            checkCmd.Parameters.AddWithValue("@email", email);
+                            existingCount = Convert.ToInt64(checkCmd.ExecuteScalar());
                         }
+                    }
+
+                    if (existingCount > 0)
+                    {
+                        MessageBox.Show("An account with this ID Number, Username, or Email already exists.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        InvalidateStep2();
+                    }
+                    else
+                    {
+                        // SUCCESS - DISABLE VERIFIED INPUTS & UPDATE BUTTON STYLE
+                        isAccountInfoVerified = true;
+                        AccountInfo_Button.Text = "Verified";
+                        AccountInfo_Button.FillColor = verifiedButtonColor;
+                        AccountInfo_Button.HoverState.FillColor = verifiedButtonColor;
+                        AccountInfo_Button.ForeColor = Color.White;
+
+                        Username_Input.Enabled = false;
+                        IDNumber_Input.Enabled = false;
+                        Email_Input.Enabled = false;
+
+                        Password_Input.Enabled = true;
+                        ConfirmPassword_Input.Enabled = true;
                     }
                 }
             }
@@ -562,7 +585,7 @@ namespace LogIn_HiveStock
             CheckRegisterButtonState();
         }
 
-        // MODIFIED: FINAL REGISTRATION SUBMISSION WITH BCRYPT HASHING
+        // REGISTRATION SUBMISSION ROUTING BASED ON ID LENGTH (6 DIGITS -> STAFF, 8 DIGITS -> USERS)
         private void Register_Button_Click(object sender, EventArgs e)
         {
             string lastName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(LastName_Input.Text.Trim().ToLower());
@@ -594,14 +617,7 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            // Format the 8-digit input into xxx-xxxx-x before inserting into database
             string cleanId = Regex.Replace(idNumber, @"[\s-]", "");
-            if (cleanId.Length == 8)
-            {
-                idNumber = string.Format("{0}-{1}-{2}", cleanId.Substring(0, 3), cleanId.Substring(3, 4), cleanId.Substring(7, 1));
-            }
-
-            // Hash the password using BCrypt before database insert
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
             try
@@ -610,26 +626,65 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string insertQuery = @"INSERT INTO users (id_number, first_name, last_name, username, email_address, phone_number, password, created_at) 
-                                       VALUES (@id_number, @first_name, @last_name, @username, @email_address, @phone_number, @password, NOW())";
-
-                    using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, connection))
+                    if (cleanId.Length == 6)
                     {
-                        insertCmd.Parameters.AddWithValue("@id_number", idNumber);
-                        insertCmd.Parameters.AddWithValue("@first_name", firstName);
-                        insertCmd.Parameters.AddWithValue("@last_name", lastName);
-                        insertCmd.Parameters.AddWithValue("@username", username);
-                        insertCmd.Parameters.AddWithValue("@email_address", email);
-                        insertCmd.Parameters.AddWithValue("@phone_number", phone);
-                        insertCmd.Parameters.AddWithValue("@password", hashedPassword); // Store hash, not plain text
+                        // ==========================================
+                        // 6 DIGIT ID -> INSERT INTO STAFF TABLE (WITH ALL PROFILE FIELDS)
+                        // ==========================================
+                        string insertStaffQuery = @"INSERT INTO staff (staff_id_number, first_name, last_name, username, email_address, phone_number, password_hash, created_at) 
+                                                   VALUES (@staff_id, @first_name, @last_name, @username, @email_address, @phone_number, @password, NOW())";
 
-                        int rows = insertCmd.ExecuteNonQuery();
-
-                        if (rows > 0)
+                        using (MySqlCommand insertCmd = new MySqlCommand(insertStaffQuery, connection))
                         {
-                            MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ShowPanel(LogIn_Panel);
+                            insertCmd.Parameters.AddWithValue("@staff_id", cleanId);
+                            insertCmd.Parameters.AddWithValue("@first_name", firstName);
+                            insertCmd.Parameters.AddWithValue("@last_name", lastName);
+                            insertCmd.Parameters.AddWithValue("@username", username);
+                            insertCmd.Parameters.AddWithValue("@email_address", email);
+                            insertCmd.Parameters.AddWithValue("@phone_number", phone);
+                            insertCmd.Parameters.AddWithValue("@password", hashedPassword);
+
+                            int rows = insertCmd.ExecuteNonQuery();
+
+                            if (rows > 0)
+                            {
+                                MessageBox.Show("Staff registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ShowPanel(LogIn_Panel);
+                            }
                         }
+                    }
+                    else if (cleanId.Length == 8)
+                    {
+                        // ==========================================
+                        // 8 DIGIT ID -> INSERT INTO USERS TABLE
+                        // ==========================================
+                        idNumber = string.Format("{0}-{1}-{2}", cleanId.Substring(0, 3), cleanId.Substring(3, 4), cleanId.Substring(7, 1));
+
+                        string insertUserQuery = @"INSERT INTO users (id_number, first_name, last_name, username, email_address, phone_number, password, created_at) 
+                                                   VALUES (@id_number, @first_name, @last_name, @username, @email_address, @phone_number, @password, NOW())";
+
+                        using (MySqlCommand insertCmd = new MySqlCommand(insertUserQuery, connection))
+                        {
+                            insertCmd.Parameters.AddWithValue("@id_number", idNumber);
+                            insertCmd.Parameters.AddWithValue("@first_name", firstName);
+                            insertCmd.Parameters.AddWithValue("@last_name", lastName);
+                            insertCmd.Parameters.AddWithValue("@username", username);
+                            insertCmd.Parameters.AddWithValue("@email_address", email);
+                            insertCmd.Parameters.AddWithValue("@phone_number", phone);
+                            insertCmd.Parameters.AddWithValue("@password", hashedPassword);
+
+                            int rows = insertCmd.ExecuteNonQuery();
+
+                            if (rows > 0)
+                            {
+                                MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ShowPanel(LogIn_Panel);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ID Number must be either 6 digits for Staff or 8 digits for Users.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -697,7 +752,6 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            // Phone Number Validation: Check that input contains only numbers and is exactly 11 digits
             if (!Regex.IsMatch(phone, @"^[0-9]{11}$"))
             {
                 MessageBox.Show("Phone number must contain only numbers and be exactly 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -710,17 +764,28 @@ namespace LogIn_HiveStock
                 {
                     connection.Open();
 
-                    string checkQuery = "SELECT COUNT(*) FROM users WHERE email_address = @email AND phone_number = @phone";
-                    using (MySqlCommand cmd = new MySqlCommand(checkQuery, connection))
+                    // Search both tables to verify user or staff
+                    string checkUser = "SELECT COUNT(*) FROM users WHERE email_address = @email AND phone_number = @phone";
+                    using (MySqlCommand cmd = new MySqlCommand(checkUser, connection))
                     {
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@phone", phone);
 
                         long count = Convert.ToInt64(cmd.ExecuteScalar());
 
+                        if (count == 0)
+                        {
+                            string checkStaff = "SELECT COUNT(*) FROM staff WHERE email_address = @email AND phone_number = @phone";
+                            using (MySqlCommand staffCmd = new MySqlCommand(checkStaff, connection))
+                            {
+                                staffCmd.Parameters.AddWithValue("@email", email);
+                                staffCmd.Parameters.AddWithValue("@phone", phone);
+                                count = Convert.ToInt64(staffCmd.ExecuteScalar());
+                            }
+                        }
+
                         if (count > 0)
                         {
-                            // SUCCESS - UPDATE BUTTON STYLE & DISABLE INPUTS
                             isForgotEmailVerified = true;
                             ForgotEmailVerify_Button.Text = "Verified";
                             ForgotEmailVerify_Button.FillColor = verifiedButtonColor;

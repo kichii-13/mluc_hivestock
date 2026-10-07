@@ -13,13 +13,14 @@ using System.IO;
 
 namespace LogIn_HiveStock
 {
-    public partial class PM_EditProduct : Form
+    public partial class  PM_EditProduct : Form
     {
         private readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
 
         private readonly int startProductId;
         private int loadedProductId = 0;   // the product currently in the boxes (0 = none)
+        private int loadedQuantity = 0;
         public PM_EditProduct() : this(0) { }
         private string selectedImagePath = "";   // a NEW picture chosen with ADD IMAGE ("" = keep the current one)
         private PictureBox imagePreview;
@@ -35,6 +36,9 @@ namespace LogIn_HiveStock
             EPPrice_UpDown.DecimalPlaces = 2;
             EPQuantity_UpDown.Maximum = 100000;
 
+            EPStatus_Dropdown.Enabled = false;   // worked out from the quantity by the database
+            EPQuantity_UpDown.ValueChanged += (s, e) => ShowStatusFromQuantity();
+
             EPProductID_TextBox.KeyDown += EPProductID_TextBox_KeyDown;
             EPProductID_TextBox.Leave += (s, e) => LoadProduct(true);   // quiet check when leaving the box
             this.Shown += (s, e) =>
@@ -49,6 +53,12 @@ namespace LogIn_HiveStock
                     EPProductID_TextBox.Focus();
                 }
             };
+        }
+
+        private void ShowStatusFromQuantity()
+        {
+            int qty = (int)EPQuantity_UpDown.Value;
+            EPStatus_Dropdown.SelectedIndex = qty == 0 ? 3 : qty < 20 ? 2 : 1;   // Out / Low / On Stock
         }
 
         private void BuildImageControls()
@@ -220,6 +230,9 @@ namespace LogIn_HiveStock
                                 ? "No picture yet. Press ADD IMAGE to add one."
                                 : "Current picture (press ADD IMAGE to replace it)";
 
+                            loadedQuantity = qty;
+                            EPProductID_TextBox.ReadOnly = true;   // the ID can no longer be changed
+                            ShowStatusFromQuantity();
                             loadedProductId = id;
                             return true;
                         }
@@ -244,6 +257,8 @@ namespace LogIn_HiveStock
             EPQuantity_UpDown.Value = EPQuantity_UpDown.Minimum;
             EPCategory_Dropdown.SelectedIndex = 0;
             EPStatus_Dropdown.SelectedIndex = 0;
+            loadedQuantity = 0;
+            EPProductID_TextBox.ReadOnly = false;
 
             SetPreview(null);
             selectedImagePath = "";
@@ -265,39 +280,16 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            int typedId;
-            if (!int.TryParse(EPProductID_TextBox.Text.Trim(), out typedId) || typedId != loadedProductId)
-            {
-                ShowWarning("The Product ID was changed. Press Enter to load that product first.");
-                return;
-            }
-
             string name = EPProductName_TextBox.Text.Trim();
             string description = EPDescription_TextBox.Text.Trim();
             decimal price = EPPrice_UpDown.Value;
             int quantity = (int)EPQuantity_UpDown.Value;
             int categoryId = EPCategory_Dropdown.SelectedIndex;   // 1 Books, 2 ID Lace, 3 Uniform
-            int statusIndex = EPStatus_Dropdown.SelectedIndex;
 
             if (name.Length == 0) { ShowWarning("Please enter the product name."); return; }
             if (categoryId < 1) { ShowWarning("Please choose a category."); return; }
             if (description.Length == 0) { ShowWarning("Please enter a description."); return; }
             if (price <= 0) { ShowWarning("The price must be more than zero."); return; }
-            if (statusIndex < 1) { ShowWarning("Please choose a stock status."); return; }
-
-            // The catalog understands "In Stock", so "On Stock" is saved as "In Stock".
-            string status = statusIndex == 1 ? "In Stock" : statusIndex == 2 ? "Low Stock" : "Out of Stock";
-
-            if (status == "Out of Stock" && quantity > 0)
-            {
-                ShowWarning("An Out of Stock product must have a quantity of 0.");
-                return;
-            }
-            if (status != "Out of Stock" && quantity < 1)
-            {
-                ShowWarning("An In Stock or Low Stock product needs a quantity of at least 1.");
-                return;
-            }
 
             try
             {
@@ -305,7 +297,6 @@ namespace LogIn_HiveStock
                 {
                     conn.Open();
 
-                    // Another product must not already have this name.
                     using (MySqlCommand check = new MySqlCommand(
                         "SELECT COUNT(*) FROM product WHERE product_name = @name AND product_id <> @id", conn))
                     {
@@ -324,16 +315,16 @@ namespace LogIn_HiveStock
                     if (selectedImagePath.Length > 0)
                         newImagePath = ProductImages.SaveProductImage(loadedProductId, selectedImagePath);
 
+                    // The stock status is not written: the database works it out from stock_qty.
                     using (MySqlCommand update = new MySqlCommand(
                         @"UPDATE product
-                           SET product_name = @name, description = @desc, stock_status = @status,
-                           price = @price, category_id = @cat, stock_qty = @qty" +
+                  SET product_name = @name, description = @desc,
+                      price = @price, category_id = @cat, stock_qty = @qty" +
                         (newImagePath != null ? ", product_img = @img" : "") +
                         @" WHERE product_id = @id", conn))
                     {
                         update.Parameters.AddWithValue("@name", name);
                         update.Parameters.AddWithValue("@desc", description);
-                        update.Parameters.AddWithValue("@status", status);
                         update.Parameters.AddWithValue("@price", price);
                         update.Parameters.AddWithValue("@cat", categoryId);
                         update.Parameters.AddWithValue("@qty", quantity);
@@ -341,6 +332,19 @@ namespace LogIn_HiveStock
                         if (newImagePath != null)
                             update.Parameters.AddWithValue("@img", newImagePath);
                         update.ExecuteNonQuery();
+                    }
+
+                    // Back in stock after being out of stock: alert the students who pressed Notify Me.
+                    if (loadedQuantity == 0 && quantity > 0)
+                    {
+                        using (MySqlCommand notify = new MySqlCommand(
+                            @"UPDATE notification_subscription
+                      SET status = 'SENT', notified_at = NOW()
+                      WHERE product_id = @id AND status = 'PENDING'", conn))
+                        {
+                            notify.Parameters.AddWithValue("@id", loadedProductId);
+                            notify.ExecuteNonQuery();
+                        }
                     }
                 }
 
