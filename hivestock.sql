@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Oct 08, 2026 at 12:26 AM
+=======
+-- Generation Time: Oct 06, 2026 at 04:35 PM
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,16 +71,21 @@ CREATE TABLE `customer_orders` (
   `placed_at` datetime NOT NULL,
   `receipt_file` varchar(255) DEFAULT NULL,
   `is_completed` tinyint(1) NOT NULL DEFAULT 0,
+<<<<<<< HEAD
   `completed_at` datetime DEFAULT NULL,
   `payment_status` varchar(20) NOT NULL DEFAULT 'Verifying Payment',
   `payment_checked_by` varchar(100) DEFAULT NULL,
   `payment_checked_at` datetime DEFAULT NULL
+=======
+  `completed_at` datetime DEFAULT NULL
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer_orders`
 --
 
+<<<<<<< HEAD
 INSERT INTO `customer_orders` (`order_id`, `user_key`, `placed_at`, `receipt_file`, `is_completed`, `completed_at`, `payment_status`, `payment_checked_by`, `payment_checked_at`) VALUES
 (1, '241-1652-2', '2026-10-03 15:05:23', 'Screenshot (110).png', 1, '2026-10-03 15:22:30', 'Paid', NULL, NULL),
 (2, '241-1652-2', '2026-10-03 15:11:20', 'Screenshot (95).png', 1, '2026-10-03 15:22:30', 'Paid', NULL, NULL),
@@ -86,6 +95,14 @@ INSERT INTO `customer_orders` (`order_id`, `user_key`, `placed_at`, `receipt_fil
 (6, '241-1652-2', '2026-10-06 23:02:53', 'receipt_20261006_230253_be62fa.png', 0, NULL, 'Paid', NULL, NULL),
 (7, '241-1652-2', '2026-10-08 05:21:15', 'receipt_20261008_052115_3c727d.png', 1, '2026-10-08 05:28:48', 'Paid', 'System Admin', '2026-10-08 05:27:39'),
 (8, '241-1652-2', '2026-10-08 05:49:09', 'receipt_20261008_054909_21e7d1.png', 1, '2026-10-08 05:50:33', 'Paid', 'System Admin', '2026-10-08 05:50:29');
+=======
+INSERT INTO `customer_orders` (`order_id`, `user_key`, `placed_at`, `receipt_file`, `is_completed`, `completed_at`) VALUES
+(1, '241-1652-2', '2026-10-03 15:05:23', 'Screenshot (110).png', 1, '2026-10-03 15:22:30'),
+(2, '241-1652-2', '2026-10-03 15:11:20', 'Screenshot (95).png', 1, '2026-10-03 15:22:30'),
+(3, '241-1652-2', '2026-10-03 15:22:01', 'Screenshot (114).png', 1, '2026-10-03 15:22:30'),
+(4, '241-1652-2', '2026-10-03 22:03:13', 'Screenshot (95).png', 1, '2026-10-03 22:04:40'),
+(5, '241-1652-2', '2026-10-04 08:12:34', 'receipt_20261004_081234_d790a9.png', 1, '2026-10-04 08:13:29');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 -- --------------------------------------------------------
 
@@ -101,14 +118,19 @@ CREATE TABLE `customer_order_items` (
   `unit_price` decimal(10,2) NOT NULL,
   `quantity` int(11) NOT NULL,
   `is_received` tinyint(1) NOT NULL DEFAULT 0,
+<<<<<<< HEAD
   `received_at` datetime DEFAULT NULL,
   `released_by` varchar(100) DEFAULT NULL
+=======
+  `received_at` datetime DEFAULT NULL
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer_order_items`
 --
 
+<<<<<<< HEAD
 INSERT INTO `customer_order_items` (`order_item_id`, `order_id`, `product_id`, `product_name`, `unit_price`, `quantity`, `is_received`, `received_at`, `released_by`) VALUES
 (1, 1, 2, 'The Life and Works of Jose Rizal', 250.00, 1, 1, '2026-10-03 15:22:30', NULL),
 (2, 1, 3, 'The Contemporary World', 250.00, 1, 1, '2026-10-03 15:22:27', NULL),
@@ -122,6 +144,17 @@ INSERT INTO `customer_order_items` (`order_item_id`, `order_id`, `product_id`, `
 (10, 6, 3, 'The Contemporary World', 250.00, 1, 0, NULL, NULL),
 (11, 7, 4, 'Understanding the Self', 250.00, 1, 1, '2026-10-08 05:28:48', 'System Admin'),
 (12, 8, 10, 'University Gala', 520.00, 1, 1, '2026-10-08 05:50:33', 'System Admin');
+=======
+INSERT INTO `customer_order_items` (`order_item_id`, `order_id`, `product_id`, `product_name`, `unit_price`, `quantity`, `is_received`, `received_at`) VALUES
+(1, 1, 2, 'The Life and Works of Jose Rizal', 250.00, 1, 1, '2026-10-03 15:22:30'),
+(2, 1, 3, 'The Contemporary World', 250.00, 1, 1, '2026-10-03 15:22:27'),
+(3, 2, 8, 'DMMMSU ID Lace v2023', 80.00, 1, 1, '2026-10-03 15:22:23'),
+(4, 2, 11, 'PathFit Shirt', 320.00, 1, 1, '2026-10-03 15:22:30'),
+(5, 3, 2, 'The Life and Works of Jose Rizal', 250.00, 1, 1, '2026-10-03 15:22:30'),
+(6, 3, 3, 'The Contemporary World', 250.00, 1, 1, '2026-10-03 15:22:30'),
+(7, 4, 12, 'Mathematics in the Modern World', 300.00, 1, 1, '2026-10-03 22:04:40'),
+(8, 5, 5, 'Purposive Communication', 300.00, 1, 1, '2026-10-04 08:13:29');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 -- --------------------------------------------------------
 
@@ -143,7 +176,12 @@ CREATE TABLE `notification_subscription` (
 --
 
 INSERT INTO `notification_subscription` (`user_id`, `product_id`, `status`, `created_at`, `read_at`, `notified_at`) VALUES
+<<<<<<< HEAD
 (6, 1, 'PENDING', '2026-10-07 21:46:51', NULL, NULL);
+=======
+(8, 1, 'SENT', '2026-10-06 14:06:39', NULL, '2026-10-06 14:07:12'),
+(8, 2, 'SENT', '2026-10-06 14:06:41', NULL, '2026-10-06 14:07:18');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 -- --------------------------------------------------------
 
@@ -168,18 +206,32 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `description`, `category_id`, `price`, `stock_qty`, `product_img`, `updated_at`) VALUES
+<<<<<<< HEAD
 (1, 'Art Appreciation', 'A course book covering the fundamentals of art, culture, and creative expression.', 1, 250.00, 0, 'hivestock/images/artappreciation.jpg', '2026-10-03 13:08:26'),
 (2, 'The Life and Works of Jose Rizal', 'Explores the life, works, and contributions of Dr. Jose Rizal to Philippine history and nationalism.', 1, 250.00, 39, 'hivestock/images/joserizal.jpg', '2026-10-06 15:02:53'),
 (3, 'The Contemporary World', 'Examines major global issues, trends, and developments shaping the contemporary world.', 1, 250.00, 2, 'hivestock/images/contempo.jpg', '2026-10-06 15:02:53'),
 (4, 'Understanding the Self', 'Explores personal identity, self-development, and the factors that shape human behavior and experiences.', 1, 250.00, 19, 'hivestock/images/understandingtheself.jpg', '2026-10-07 21:21:15'),
+=======
+(1, 'Art Appreciation', 'A course book covering the fundamentals of art, culture, and creative expression.', 1, 250.00, 6, 'hivestock/images/artappreciation.jpg', '2026-10-06 14:07:12'),
+(2, 'The Life and Works of Jose Rizal', 'Explores the life, works, and contributions of Dr. Jose Rizal to Philippine history and nationalism.', 1, 250.00, 7, 'hivestock/images/joserizal.jpg', '2026-10-06 14:07:17'),
+(3, 'The Contemporary World', 'Examines major global issues, trends, and developments shaping the contemporary world.', 1, 250.00, 20, 'hivestock/images/contempo.jpg', '2026-10-06 13:55:39'),
+(4, 'Understanding the Self', 'Explores personal identity, self-development, and the factors that shape human behavior and experiences.', 1, 250.00, 6, 'hivestock/images/understandingtheself.jpg', '2026-10-06 13:55:50'),
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 (5, 'Purposive Communication', 'Focuses on effective communication, language use, and strategies for expressing ideas clearly across different contexts and audiences.', 1, 300.00, 9, 'hivestock/images/purposivecomm.jpg', '2026-10-04 00:12:34'),
 (6, 'Readings in Philippine History', 'Explores Philippine history through primary sources, events, and cultural developments.', 1, 250.00, 30, 'hivestock/images/readingsph.jpg', '2026-10-03 13:08:26'),
 (7, 'Ethics', 'Explores moral principles, ethical decision-making, and responsible behavior.', 1, 320.00, 10, 'hivestock/images/ethics.jpg', '2026-10-03 13:08:26'),
 (8, 'DMMMSU ID Lace v2023', 'Represents school identity and promotes a sense of belonging among DMMMSU students.', 2, 80.00, 10, 'hivestock/images/2023lace.png', '2026-10-03 13:08:26'),
 (9, 'DMMMSU ID Lace v2025', 'A newer verion of school identity and promotes a sense of belonging among DMMMSU students.', 2, 80.00, 12, 'hivestock/images/2025lace.png', '2026-10-03 13:08:26'),
+<<<<<<< HEAD
 (10, 'University Gala', 'Formal uniform worn for Monday.', 3, 520.00, 9, 'hivestock/images/univgala.jpg', '2026-10-07 21:49:10'),
 (11, 'PathFit Shirt', 'PE uniform shirt used for physical education classes and activities.', 3, 320.00, 30, 'hivestock/images/pathfitshirt.jpg', '2026-10-03 13:08:26'),
 (12, 'Mathematics in the Modern World', 'Explores core concepts and practical applications of mathematics in modern life.', 1, 300.00, 24, 'hivestock/images/mmw.jpg', '2026-10-03 14:03:13');
+=======
+(10, 'University Gala', 'Formal uniform worn for Monday.', 3, 520.00, 10, 'hivestock/images/univgala.jpg', '2026-10-03 13:08:26'),
+(11, 'PathFit Shirt', 'PE uniform shirt used for physical education classes and activities.', 3, 320.00, 30, 'hivestock/images/pathfitshirt.jpg', '2026-10-03 13:08:26'),
+(12, 'Mathematics in the Modern World', 'Explores core concepts and practical applications of mathematics in modern life.', 1, 300.00, 24, 'hivestock/images/mmw.jpg', '2026-10-03 14:03:13'),
+(13, 'Uwu', 'Test', 1, 220.00, 70, 'images/product_13_20261006210115.png', '2026-10-06 13:01:15');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 -- --------------------------------------------------------
 
@@ -196,17 +248,26 @@ CREATE TABLE `staff` (
   `email_address` varchar(100) NOT NULL,
   `phone_number` varchar(20) DEFAULT NULL,
   `password_hash` varchar(255) NOT NULL,
+<<<<<<< HEAD
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `role` enum('Admin','Staff') NOT NULL DEFAULT 'Staff'
+=======
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
+<<<<<<< HEAD
 INSERT INTO `staff` (`user_id`, `staff_id_number`, `first_name`, `last_name`, `username`, `email_address`, `phone_number`, `password_hash`, `created_at`, `role`) VALUES
 (1, '100001', 'System', 'Admin', 'admin', 'admin@dmmmsu.edu.ph', NULL, '$2a$11$rrhMAFGwqEEeVWCAmrOJd.5RjwQd1Dkyqi2PVwkmIbDKALdDEbqxe', '2026-10-06 22:07:48', 'Admin'),
 (2, '654321', 'Test', 'Staff', 'staff1', 'staff1@dmmmsu.edu.ph', '09123456789', '$2a$11$UgU/NwkYBjk84RoZ9jR4X.4cFvPx2Cd8V6Td/RDqbISa8TjcACxy6', '2026-10-07 21:36:52', 'Staff');
+=======
+INSERT INTO `staff` (`user_id`, `staff_id_number`, `first_name`, `last_name`, `username`, `email_address`, `phone_number`, `password_hash`, `created_at`) VALUES
+(2, '321123', 'Daisy', 'Jordan', 'jordand', 'djor@dmmmsu.edu.ph', '09123206066', '$2a$11$WBPKQRthQpvewSnz3E.01ORN6lY4uBw1Mvv3KdNnt4i49jr21/rO6', '2026-10-06 11:56:37');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 -- --------------------------------------------------------
 
@@ -231,9 +292,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `id_number`, `first_name`, `last_name`, `username`, `email_address`, `phone_number`, `password`, `created_at`) VALUES
+<<<<<<< HEAD
 (4, '241-0227-2', 'Karl Patrick', 'Amiller', 'kichii', 'amillerk10@gmail.com', '09123206063', 'Amiller20051231!', '2026-09-16 12:50:34'),
 (6, '241-1652-2', 'Frederick', 'Sulabo', 'Wonka', 'frederickjonsulabo@gmail.com', '09939106025', '$2a$11$NMoLRGkA1nZCcw0n2WwO..2FDKxUAhcGrqRV3gqjx3KX0s0ZUGOJK', '2026-09-28 15:56:59'),
 (7, '241-1653-2', 'Frederick Jon', 'Sulabo', 'Fred', 'fredericksulabo@gmail.com', '09939106025', '$2a$11$aUDdCFj2i11Hj9y6OKU/O.hOaAHZfTlIa.5ZB5vLO4TNbm.z9Fm0O', '2026-10-03 03:46:24');
+=======
+(6, '241-1652-2', 'Frederick', 'Sulabo', 'Wonka', 'frederickjonsulabo@gmail.com', '09939106025', '$2a$11$NMoLRGkA1nZCcw0n2WwO..2FDKxUAhcGrqRV3gqjx3KX0s0ZUGOJK', '2026-09-28 15:56:59'),
+(7, '241-1653-2', 'Frederick Jon', 'Sulabo', 'Fred', 'fredericksulabo@gmail.com', '09939106025', '$2a$11$aUDdCFj2i11Hj9y6OKU/O.hOaAHZfTlIa.5ZB5vLO4TNbm.z9Fm0O', '2026-10-03 03:46:24'),
+(8, '241-0227-2', 'Karl Patrick', 'Amiller', 'karl', 'amillerk10@gmail.com', '09123206063', '$2a$11$S6aX0gvUJCS6qX8n/kUrVeRkJjjmnZo595sCWVbPA1XvfeG0sC1p2', '2026-10-06 11:39:57');
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 --
 -- Indexes for dumped tables
@@ -304,7 +371,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart_items`
 --
 ALTER TABLE `cart_items`
+<<<<<<< HEAD
   MODIFY `cart_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+=======
+  MODIFY `cart_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -316,13 +387,21 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
+<<<<<<< HEAD
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 --
 -- AUTO_INCREMENT for table `customer_order_items`
 --
 ALTER TABLE `customer_order_items`
+<<<<<<< HEAD
   MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+=======
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -340,7 +419,11 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+=======
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+>>>>>>> 96fbcf8df12a77a077467c15d181ec0a97612759
 
 --
 -- Constraints for dumped tables
