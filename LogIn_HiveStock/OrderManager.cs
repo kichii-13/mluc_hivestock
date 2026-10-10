@@ -26,13 +26,14 @@ namespace LogIn_HiveStock
         }
     }
 
-    /// A paid order. Each of its products is pending or received on its own.
+    /// A placed order. Payment is checked per order; handing over is tracked per product.
     public class OrderRecord
     {
         public int OrderId { get; set; }
         public string UserKey { get; set; }
         public DateTime PlacedAt { get; set; }
         public string ReceiptFileName { get; set; }
+        public string PaymentStatus { get; set; }
         public bool IsCompleted { get; set; }
         public DateTime? CompletedAt { get; set; }
         public List<OrderLine> Lines { get; } = new List<OrderLine>();
@@ -48,17 +49,28 @@ namespace LogIn_HiveStock
         }
     }
 
-    /// Stores orders in the MySQL database (customer_orders / customer_order_items).
     public static class OrderManager
     {
+        public const string PaymentVerifying = "Verifying Payment";
+        public const string PaymentPaid = "Paid";
+        public const string PaymentRejected = "Rejected";
+
         private static readonly string connectionString =
             ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
 
-        // A product with this many left (or fewer) is shown as Low Stock. Change it to suit the shop.
-        private const int LowStockLevel = 5;
+        /// Status text for a whole order, from its payment status and how many products were handed over.
+        public static string TransactionStatus(string paymentStatus, int itemCount, int receivedCount)
+        {
+            if (paymentStatus == PaymentRejected) return "Payment Rejected";
+            if (paymentStatus != PaymentPaid) return "Verifying Payment";
+            if (itemCount > 0 && receivedCount >= itemCount) return "Completed";
+            if (receivedCount == 0) return "Paid - Ready for Pickup";
+            return "Partially Received (" + receivedCount + " of " + itemCount + ")";
+        }
 
-        // Saves a paid order and takes the quantities off the stock. Returns null (after showing a
-        // message) if anything failed, so the caller must not empty the cart in that case.
+        // Saves an order (status: Verifying Payment) and takes the quantities off the stock.
+        // The stock status (In / Low / Out of Stock) is worked out by the database from the quantity.
+        // Returns null (after showing a message) if anything failed, so the cart must stay as it is.
         public static OrderRecord PlaceOrder(string userKey, IEnumerable<CartItem> items, string receiptFileName)
         {
             OrderRecord order = new OrderRecord
@@ -66,6 +78,7 @@ namespace LogIn_HiveStock
                 UserKey = userKey ?? "",
                 PlacedAt = DateTime.Now,
                 ReceiptFileName = receiptFileName,
+                PaymentStatus = PaymentVerifying,
                 IsCompleted = false
             };
 
@@ -89,12 +102,13 @@ namespace LogIn_HiveStock
                     using (MySqlTransaction tx = conn.BeginTransaction())
                     {
                         using (MySqlCommand cmd = new MySqlCommand(
-                            @"INSERT INTO customer_orders (user_key, placed_at, receipt_file, is_completed)
-                              VALUES (@u, @t, @r, 0)", conn, tx))
+                            @"INSERT INTO customer_orders (user_key, placed_at, receipt_file, is_completed, payment_status)
+                              VALUES (@u, @t, @r, 0, @ps)", conn, tx))
                         {
                             cmd.Parameters.AddWithValue("@u", order.UserKey);
                             cmd.Parameters.AddWithValue("@t", order.PlacedAt);
                             cmd.Parameters.AddWithValue("@r", receiptFileName ?? "");
+                            cmd.Parameters.AddWithValue("@ps", PaymentVerifying);
                             cmd.ExecuteNonQuery();
                             order.OrderId = (int)cmd.LastInsertedId;
                         }
@@ -131,19 +145,6 @@ namespace LogIn_HiveStock
                                     return null;
                                 }
                             }
-
-                            // Refresh the status from the new quantity.
-                            using (MySqlCommand cmd = new MySqlCommand(
-                                @"UPDATE product
-                                  SET stock_status = CASE WHEN stock_qty <= 0 THEN 'Out of Stock'
-                                                          WHEN stock_qty <= @low THEN 'Low Stock'
-                                                          ELSE 'In Stock' END
-                                  WHERE product_id = @p", conn, tx))
-                            {
-                                cmd.Parameters.AddWithValue("@low", LowStockLevel);
-                                cmd.Parameters.AddWithValue("@p", line.ProductId);
-                                cmd.ExecuteNonQuery();
-                            }
                         }
 
                         tx.Commit();
@@ -168,7 +169,7 @@ namespace LogIn_HiveStock
             Dictionary<int, OrderRecord> byId = new Dictionary<int, OrderRecord>();
 
             const string sql =
-                @"SELECT o.order_id, o.placed_at, o.receipt_file,
+                @"SELECT o.order_id, o.placed_at, o.receipt_file, o.payment_status,
                          i.order_item_id, i.product_id, i.product_name, i.unit_price,
                          i.quantity, i.received_at, p.product_img
                   FROM customer_orders o
@@ -203,6 +204,7 @@ namespace LogIn_HiveStock
                                         PlacedAt = Convert.ToDateTime(r["placed_at"]),
                                         ReceiptFileName = r["receipt_file"] == DBNull.Value
                                             ? "" : r["receipt_file"].ToString(),
+                                        PaymentStatus = r["payment_status"].ToString(),
                                         IsCompleted = completed
                                     };
                                     byId[orderId] = order;
@@ -239,9 +241,93 @@ namespace LogIn_HiveStock
             return result;
         }
 
-        /// Marks the given products (order_item_id values) as received. Returns how many changed.
-        /// Once every product of an order is received, the order itself is marked completed too.
-        public static int MarkItemsReceived(IEnumerable<int> orderItemIds, string userKey)
+        /// ADMIN: the receipt is valid, so the order becomes Paid.
+        public static bool VerifyPayment(int orderId, string checkedBy)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        @"UPDATE customer_orders
+                          SET payment_status = @paid, payment_checked_by = @by, payment_checked_at = @t
+                          WHERE order_id = @id AND payment_status = @verifying", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@paid", PaymentPaid);
+                        cmd.Parameters.AddWithValue("@verifying", PaymentVerifying);
+                        cmd.Parameters.AddWithValue("@by", checkedBy ?? "");
+                        cmd.Parameters.AddWithValue("@t", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@id", orderId);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not verify the payment: " + ex.Message,
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /// ADMIN: the receipt is not valid. The order is rejected and its quantities go back into stock.
+        public static bool RejectPayment(int orderId, string checkedBy)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (MySqlTransaction tx = conn.BeginTransaction())
+                    {
+                        int changed;
+                        using (MySqlCommand cmd = new MySqlCommand(
+                            @"UPDATE customer_orders
+                              SET payment_status = @rejected, payment_checked_by = @by, payment_checked_at = @t
+                              WHERE order_id = @id AND payment_status = @verifying", conn, tx))
+                        {
+                            cmd.Parameters.AddWithValue("@rejected", PaymentRejected);
+                            cmd.Parameters.AddWithValue("@verifying", PaymentVerifying);
+                            cmd.Parameters.AddWithValue("@by", checkedBy ?? "");
+                            cmd.Parameters.AddWithValue("@t", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@id", orderId);
+                            changed = cmd.ExecuteNonQuery();
+                        }
+
+                        if (changed == 0)
+                        {
+                            tx.Rollback();
+                            return false;
+                        }
+
+                        // Nothing was paid for, so the ordered quantities return to stock.
+                        using (MySqlCommand cmd = new MySqlCommand(
+                            @"UPDATE product p
+                              JOIN customer_order_items i ON i.product_id = p.product_id
+                              SET p.stock_qty = p.stock_qty + i.quantity
+                              WHERE i.order_id = @id", conn, tx))
+                        {
+                            cmd.Parameters.AddWithValue("@id", orderId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        tx.Commit();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not reject the payment: " + ex.Message,
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /// STAFF or ADMIN: hands products over to the student (only for orders that are Paid).
+        /// Returns how many products were marked as received.
+        public static int ReleaseItems(IEnumerable<int> orderItemIds, string releasedBy)
         {
             List<int> ids = orderItemIds.Distinct().ToList();
             if (ids.Count == 0) return 0;
@@ -261,28 +347,29 @@ namespace LogIn_HiveStock
                             using (MySqlCommand cmd = new MySqlCommand(
                                 @"UPDATE customer_order_items i
                                   JOIN customer_orders o ON o.order_id = i.order_id
-                                  SET i.is_received = 1, i.received_at = @t
-                                  WHERE i.order_item_id = @id AND i.is_received = 0 AND o.user_key = @u",
+                                  SET i.is_received = 1, i.received_at = @t, i.released_by = @by
+                                  WHERE i.order_item_id = @id AND i.is_received = 0 AND o.payment_status = @paid",
                                 conn, tx))
                             {
                                 cmd.Parameters.AddWithValue("@t", now);
+                                cmd.Parameters.AddWithValue("@by", releasedBy ?? "");
                                 cmd.Parameters.AddWithValue("@id", id);
-                                cmd.Parameters.AddWithValue("@u", userKey ?? "");
+                                cmd.Parameters.AddWithValue("@paid", PaymentPaid);
                                 changed += cmd.ExecuteNonQuery();
                             }
                         }
 
-                        // Close out any order whose products have all been received.
+                        // Close out any order whose products have all been handed over.
                         using (MySqlCommand cmd = new MySqlCommand(
                             @"UPDATE customer_orders o
                               SET o.is_completed = 1, o.completed_at = @t
-                              WHERE o.user_key = @u AND o.is_completed = 0
+                              WHERE o.is_completed = 0 AND o.payment_status = @paid
                                 AND NOT EXISTS (SELECT 1 FROM customer_order_items i
                                                 WHERE i.order_id = o.order_id AND i.is_received = 0)",
                             conn, tx))
                         {
                             cmd.Parameters.AddWithValue("@t", now);
-                            cmd.Parameters.AddWithValue("@u", userKey ?? "");
+                            cmd.Parameters.AddWithValue("@paid", PaymentPaid);
                             cmd.ExecuteNonQuery();
                         }
 

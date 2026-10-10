@@ -242,9 +242,16 @@ namespace LogIn_HiveStock
         {
             return $"₱{item.Price:N2} each   •   Subtotal: ₱{item.Price * item.Quantity:N2}";
         }
+
+        private List<CartItem> SelectedItems()
+        {
+            return rows.Where(r => r.Check.Checked).Select(r => r.Item).ToList();
+        }
+
         private void UpdateTotal()
         {
-            decimal total = CartManager.GetTotal();
+            List<CartItem> chosen = SelectedItems();
+            decimal total = chosen.Sum(i => i.Price * i.Quantity);   // only the ticked items
 
             PesoTotal_Label.AutoSize = true;
             PesoTotal_Label.Text = $"₱{total:N2}";
@@ -252,7 +259,7 @@ namespace LogIn_HiveStock
             PesoTotal_Label.Left = BuyNow_Button.Left - 4 - PesoTotal_Label.Width;
             Total_Label.Left = PesoTotal_Label.Left - Total_Label.Width - 6;
 
-            ProductTotal_Label.Text = CartManager.Items.Count.ToString();
+            ProductTotal_Label.Text = chosen.Count.ToString();
         }
 
         private void SelectAll_Check_CheckedChanged(object sender, EventArgs e)
@@ -283,6 +290,8 @@ namespace LogIn_HiveStock
             int selected = rows.Count(r => r.Check.Checked);
             removeSelectedButton.Enabled = selected > 0;
             removeSelectedButton.Text = selected > 0 ? $"Remove Selected ({selected})" : "Remove Selected";
+
+            UpdateTotal();
         }
 
         private void RemoveSelected_Click(object sender, EventArgs e)
@@ -316,7 +325,15 @@ namespace LogIn_HiveStock
                 return;
             }
 
-            using (Upload_QR uploadQR = new Upload_QR())
+            List<CartItem> chosen = SelectedItems();
+            if (chosen.Count == 0)
+            {
+                MessageBox.Show("Tick the item(s) you want to buy first. Items you leave unticked stay in your cart.",
+                    "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (Upload_QR uploadQR = new Upload_QR(chosen))
             {
                 uploadQR.ShowDialog(this);
             }

@@ -250,7 +250,7 @@ namespace LogIn_HiveStock
                     // ==========================================
                     // 2. CHECK STAFF TABLE NEXT -> AdminSide
                     // ==========================================
-                    string staffQuery = @"SELECT staff_id_number, first_name, last_name, username, email_address, phone_number, password_hash 
+                    string staffQuery = @"SELECT staff_id_number, first_name, last_name, username, email_address, phone_number, password_hash, role 
                                           FROM staff 
                                           WHERE staff_id_number = @staffId OR username = @staffId";
 
@@ -272,13 +272,14 @@ namespace LogIn_HiveStock
                                     string dbUsername = staffReader["username"].ToString();
                                     string dbEmail = staffReader["email_address"].ToString();
                                     string dbPhone = staffReader["phone_number"].ToString();
+                                    string dbRole = staffReader["role"].ToString();
 
                                     staffReader.Close();
 
                                     UserSession.SignIn(dbStaffId, dbFirstName, dbLastName, dbUsername, dbEmail, dbPhone);
 
                                     // Open Admin UI for Staff users
-                                    AdminSide adminView = new AdminSide();
+                                    AdminSide adminView = new AdminSide((dbFirstName + " " + dbLastName).Trim(), dbStaffId, dbRole, this);
                                     adminView.Show();
                                     this.Hide();
                                     return;

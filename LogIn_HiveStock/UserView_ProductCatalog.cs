@@ -396,6 +396,8 @@ namespace LogIn_HiveStock
                 }
             }
 
+
+
             // --- BOOKS (Category 1) ---
             BindProductCard(12, "Book1_Container", "Book1_Image", "Book1Title_Label", "Book1Info_Label", "Stock1_Status", "PricePeso1_Label", "ATC1_Button", "Notify1_Button");
             BindProductCard(7, "Book2_Container", "Book2_Image", "Book2Title_Label", "Book2Info_Label", "Stock2_Status", "PricePeso2_Label", "ATC2_Button", "Notify2_Button");
@@ -416,6 +418,57 @@ namespace LogIn_HiveStock
 
             SyncCardsWithDatabase();
             ApplyCatalogFilter();
+            ShowRestockAlerts();
+        }
+
+        // Tells the student about products they asked about that are back in stock.
+        private void ShowRestockAlerts()
+        {
+            if (!UserSession.IsLoggedIn) return;
+
+            try
+            {
+                string cs = ConfigurationManager.ConnectionStrings["HiveStockDb"].ConnectionString;
+                List<string> names = new List<string>();
+
+                using (MySqlConnection conn = new MySqlConnection(cs))
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        @"SELECT p.product_name
+                  FROM notification_subscription n
+                  JOIN users u ON u.user_id = n.user_id
+                  JOIN product p ON p.product_id = n.product_id
+                  WHERE u.id_number = @id AND n.status = 'SENT' AND n.read_at IS NULL", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.IdNumber);
+                        using (MySqlDataReader r = cmd.ExecuteReader())
+                        {
+                            while (r.Read()) names.Add(r["product_name"].ToString());
+                        }
+                    }
+
+                    if (names.Count == 0) return;
+
+                    using (MySqlCommand cmd = new MySqlCommand(
+                        @"UPDATE notification_subscription n
+                  JOIN users u ON u.user_id = n.user_id
+                  SET n.read_at = NOW()
+                  WHERE u.id_number = @id AND n.status = 'SENT' AND n.read_at IS NULL", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.IdNumber);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Good news! These products are back in stock:\n\n- " + string.Join("\n- ", names),
+                    "Restock Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                // An alert problem should never stop the catalog from opening.
+            }
         }
 
         private string FindImagePath(string relativePath)
@@ -692,48 +745,22 @@ namespace LogIn_HiveStock
             return 0;
         }
 
+        // Kept so the designer can still find it; Notify_Button_Click does the work.
+        private void Notify3_Button_Click(object sender, EventArgs e)
+        {
+        }
+
         private void Notify_Button_Click(object sender, EventArgs e)
         {
             if (!(sender is Control ctrl) || !(ctrl.Tag is int productId)) return;
+            if (!productsCache.TryGetValue(productId, out ProductData p)) return;
 
-            if (!UserSession.IsLoggedIn)
-            {
-                MessageBox.Show("Please log in to subscribe for restock notifications.", "HiveStock", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            Notify_PopUp popup = new Notify_PopUp();
+            popup.SetProduct(productId, p.Name, p.ProductImage);
+            popup.ShowDialog(this);
 
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    conn.Open();
-                    int dbUserId = GetCurrentUserId(conn);
-
-                    if (dbUserId == 0)
-                    {
-                        MessageBox.Show("Could not verify your user account ID.", "Subscription Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    string insertQuery = @"INSERT INTO notification_subscription (user_id, product_id, status, created_at)
-                                           VALUES (@userId, @productId, 'PENDING', NOW())
-                                           ON DUPLICATE KEY UPDATE status = 'PENDING', created_at = NOW(), read_at = NULL";
-
-                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@userId", dbUserId);
-                        cmd.Parameters.AddWithValue("@productId", productId);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-
-                Notify_PopUp notifyPopUp = new Notify_PopUp();
-                notifyPopUp.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to save notification subscription: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // The popup already saved the request. Just refresh the notification list and bell.
+            RefreshNotifications();
         }
 
         // Swaps Notif_Button image between notification-dot (unread) and default notification (no unread)
